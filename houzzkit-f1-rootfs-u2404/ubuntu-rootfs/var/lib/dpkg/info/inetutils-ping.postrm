@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = 'remove' ]; then
+  for file in ping ping6; do
+    if [ -L $DPKG_ROOT/bin/$file ]; then
+      rm $DPKG_ROOT/bin/$file
+    fi
+  done
+fi
+
+

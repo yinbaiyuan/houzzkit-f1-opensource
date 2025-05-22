@@ -1,0 +1,8 @@
+3ed45d92e90e97f24f66ec890a7ab903  usr/lib/aarch64-linux-gnu/libgnutls.so.30.37.1
+b3b9d1c393271ae7791578955cfc4bf1  usr/share/doc/libgnutls30t64/AUTHORS.gz
+6cc6f3407c77f1fe174f135ffdadf365  usr/share/doc/libgnutls30t64/NEWS.gz
+1470498f29d58ebb8c88fb7442209b00  usr/share/doc/libgnutls30t64/README.md.gz
+edef2c31672f8e9ac53b1093a61e2664  usr/share/doc/libgnutls30t64/THANKS.gz
+5d47b16133af7532335f76161e6ce7e6  usr/share/doc/libgnutls30t64/changelog.Debian.gz
+69d02cece89ae0eea70cbbc70e50f926  usr/share/doc/libgnutls30t64/copyright
+0dc44df39ad0017d8c9e96c2bfe72f7d  usr/share/lintian/overrides/libgnutls30t64

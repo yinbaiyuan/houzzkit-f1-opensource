@@ -1,0 +1,19 @@
+#! /bin/sh
+
+set -e
+
+# begin-remove-after: released:forky
+# protective diversion of files moved from / to /usr, to avoid file loss.
+# Only for upgrades.
+if [ "$1" = "configure" ]; then
+    # At this point, the package will have installed the same file in */usr*.
+    dpkg-divert --package usr-is-merged --no-rename \
+        --divert /lib/udev/hwdb.d/20-libgphoto2-6.hwdb.usr-is-merged \
+        --remove /lib/udev/hwdb.d/20-libgphoto2-6.hwdb
+    dpkg-divert --package usr-is-merged --no-rename \
+        --divert /lib/udev/rules.d/60-libgphoto2-6.rules.usr-is-merged \
+        --remove /lib/udev/rules.d/60-libgphoto2-6.rules
+fi
+# end-remove-after
+
+

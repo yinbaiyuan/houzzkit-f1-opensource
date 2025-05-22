@@ -1,0 +1,9 @@
+736615acb2ce7a8edc90f5cae1ee5674  usr/sbin/ethtool
+0e196f505145c93f3d53db6e4dc645ef  usr/share/bash-completion/completions/ethtool
+8a8a2bd4d619a6eedbc3cbd23eb163da  usr/share/doc/ethtool/AUTHORS
+9aa020e1d902860570b48a412f31e0d4  usr/share/doc/ethtool/NEWS.gz
+3c8a36b0eb263e2ee9e8e6d334cb09bc  usr/share/doc/ethtool/README
+fe94b59ce34036a63d890409a65cea64  usr/share/doc/ethtool/README.Debian
+55ffc9a6335e35849d9096251b9e5068  usr/share/doc/ethtool/changelog.Debian.gz
+755ccda92dd65ee52a27a815e5041ddd  usr/share/doc/ethtool/copyright
+04329483be4f1abb0f2b16edd0075572  usr/share/man/man8/ethtool.8.gz

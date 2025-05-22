@@ -1,0 +1,5 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installdeb/13.14.1ubuntu5
+dpkg-maintscript-helper mv_conffile /etc/apparmor.d/usr.sbin.tcpdump /etc/apparmor.d/usr.bin.tcpdump 4.99.0\~ -- "$@"
+# End automatically added section

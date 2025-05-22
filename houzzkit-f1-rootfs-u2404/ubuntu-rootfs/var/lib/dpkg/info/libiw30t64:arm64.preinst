@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+# begin-remove-after: released:trixie
+if [ "$1" = install ]; then
+	dpkg-divert --package libiw30t64 --no-rename --add --divert "/lib/aarch64-linux-gnu/libiw.so.30.usr-is-merged" "/lib/aarch64-linux-gnu/libiw.so.30"
+fi
+# end-remove-after
+
+
+
+exit 0

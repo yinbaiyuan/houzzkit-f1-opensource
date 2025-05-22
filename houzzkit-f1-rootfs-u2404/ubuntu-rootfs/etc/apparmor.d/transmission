@@ -1,0 +1,76 @@
+# vim:syntax=apparmor
+# Author: Daniel Richard G. <skunk@iSKUNK.ORG>
+
+abi <abi/4.0>,
+
+include <tunables/global>
+
+profile transmission-daemon /usr/bin/transmission-daemon flags=(complain) {
+  # Don't use abstractions/transmission-common here, as the
+  # access needed is narrower than the user applications
+  include <abstractions/base>
+  include <abstractions/nameservice>
+  include <abstractions/openssl>
+
+  network inet  dgram,
+  network inet6 dgram,
+  network inet  stream,
+  network inet6 stream,
+
+  owner @{PROC}/@{pid}/mounts r,
+  @{PROC}/sys/kernel/random/uuid r,
+
+  @{run}/systemd/notify w,
+
+  /etc/transmission-daemon/** r,
+  owner /etc/transmission-daemon/settings.json{,.tmp.*} rw,
+
+  owner /tmp/tr_session_id_* rwk,
+
+  /usr/share/transmission/web/** r,
+
+  owner /var/lib/transmission-daemon/.config/transmission-daemon/** rw,
+  owner /var/lib/transmission-daemon/downloads/** rw,
+  owner /var/lib/transmission-daemon/info/**      rw,
+
+  # Site-specific additions and overrides. See local/README for details.
+  include if exists <local/transmission>
+  include if exists <local/transmission-daemon>
+}
+
+profile transmission-cli /usr/bin/transmission-cli flags=(complain) {
+  include <abstractions/transmission-common>
+  include <abstractions/consoles>
+
+  # Site-specific additions and overrides. See local/README for details.
+  include if exists <local/transmission>
+  include if exists <local/transmission-cli>
+}
+
+profile transmission-gtk /usr/bin/transmission-gtk flags=(complain) {
+  include <abstractions/transmission-common>
+  include <abstractions/dbus-session-strict>
+  include <abstractions/dconf>
+  include <abstractions/gnome>
+
+  owner @{run}/user/*/dconf/user w,
+
+  # Site-specific additions and overrides. See local/README for details.
+  include if exists <local/transmission>
+  include if exists <local/transmission-gtk>
+}
+
+profile transmission-qt /usr/bin/transmission-qt flags=(complain) {
+  include <abstractions/transmission-common>
+  include <abstractions/dbus-accessibility-strict>
+  include <abstractions/dbus-network-manager-strict>
+  include <abstractions/dbus-session-strict>
+  include <abstractions/fonts>
+  include <abstractions/X>
+  include <abstractions/qt5>
+  include <abstractions/qt5-settings-write>
+
+  # Site-specific additions and overrides. See local/README for details.
+  include if exists <local/transmission>
+  include if exists <local/transmission-qt>
+}

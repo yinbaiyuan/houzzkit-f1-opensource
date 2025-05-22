@@ -1,0 +1,10 @@
+99de55c0749e013053b340182aa56dab  usr/lib/NetworkManager/VPN/nm-pptp-service.name
+c487e1284d48eeb368394c930fe8b5ad  usr/lib/aarch64-linux-gnu/NetworkManager/libnm-vpn-plugin-pptp.so
+375a57dfdbce9c55f59a5cf0523677b6  usr/lib/pppd/2.4.9/nm-pptp-pppd-plugin.so
+3a6bb5c544f5f439a1b3352150eb8f4b  usr/libexec/nm-pptp-service
+610ba5d2d62a63acac5b86c857e74dcf  usr/share/dbus-1/system.d/nm-pptp-service.conf
+437a04a0319eb2ba776f6cb29670f3ac  usr/share/doc/network-manager-pptp/AUTHORS
+0a6633cc759d61c24b825813766bcd3a  usr/share/doc/network-manager-pptp/NEWS.gz
+87f1375b996ead835a9ce2d633c617df  usr/share/doc/network-manager-pptp/README
+456218738b6b2d19cea7394e26ee727c  usr/share/doc/network-manager-pptp/changelog.Debian.gz
+bc7e9c05022957ee006e7d7abcbf86c0  usr/share/doc/network-manager-pptp/copyright

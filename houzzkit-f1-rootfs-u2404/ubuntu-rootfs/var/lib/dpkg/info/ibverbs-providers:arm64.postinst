@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installdeb/13.14.1ubuntu5
+dpkg-maintscript-helper rm_conffile /etc/libibverbs.d/cxgb3.driver 27.0-2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/libibverbs.d/i40iw.driver 39.0-1\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/libibverbs.d/nes.driver 27.0-2\~ -- "$@"
+# End automatically added section

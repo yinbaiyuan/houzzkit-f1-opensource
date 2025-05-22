@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installnss/1.7
+if [ "$1" = "configure" ] && [ -f "${DPKG_ROOT}/etc/nsswitch.conf.nss.${DPKG_MAINTSCRIPT_PACKAGE}-will-install" ] && [ -e "${DPKG_ROOT}/etc/nsswitch.conf" ] ; then
+	if ! grep -q -E  -e '^group:[^#]*\s(systemd)(\s|#|$)' -e '^gshadow:[^#]*\s(systemd)(\s|#|$)' -e '^passwd:[^#]*\s(systemd)(\s|#|$)' -e '^shadow:[^#]*\s(systemd)(\s|#|$)' "${DPKG_ROOT}/etc/nsswitch.conf" ; then
+		# Installing passwd/systemd from libnss-systemd in position last
+		sed -E -i "${DPKG_ROOT}/etc/nsswitch.conf" -e '/^passwd:\s[^#]*$/ s/$/ systemd/' -e '/^passwd:\s.*#/ s/#/ systemd #/'
+		# Installing group/systemd from libnss-systemd in position last
+		sed -E -i "${DPKG_ROOT}/etc/nsswitch.conf" -e '/^group:\s[^#]*$/ s/$/ systemd/' -e '/^group:\s.*#/ s/#/ systemd #/'
+		# Installing shadow/systemd from libnss-systemd in position last
+		sed -E -i "${DPKG_ROOT}/etc/nsswitch.conf" -e '/^shadow:\s[^#]*$/ s/$/ systemd/' -e '/^shadow:\s.*#/ s/#/ systemd #/'
+		# Installing gshadow/systemd from libnss-systemd in position last
+		sed -E -i "${DPKG_ROOT}/etc/nsswitch.conf" -e '/^gshadow:\s[^#]*$/ s/$/ systemd/' -e '/^gshadow:\s.*#/ s/#/ systemd #/'
+	fi
+	rm "${DPKG_ROOT}/etc/nsswitch.conf.nss.${DPKG_MAINTSCRIPT_PACKAGE}-will-install"
+fi
+# End automatically added section

@@ -1,0 +1,17 @@
+c8be7955e0f23f300454a5961e3ef6dc  usr/bin/gpg-agent
+0fa4fe4177657f845db5fe580a26219f  usr/lib/gnupg/gpg-check-pattern
+b4498f2f40a15d857b7052f428dbc0eb  usr/lib/gnupg/gpg-preset-passphrase
+36e38c201d90f72f004b4b08589ae7c4  usr/lib/gnupg/gpg-protect-tool
+43a51a805e48ebb00a82ce0928cb0ff5  usr/lib/systemd/user/gpg-agent-browser.socket
+d4ae84ec812069b7fc6d91f9f2d8278c  usr/lib/systemd/user/gpg-agent-extra.socket
+6c5edb859fad08bab0a9ff91fdeb8930  usr/lib/systemd/user/gpg-agent-ssh.socket
+b94c1a39f6d95db9a5b9449f48ef067f  usr/lib/systemd/user/gpg-agent.service
+bf0fa55f8a38c201a2c1e763f8b204c8  usr/lib/systemd/user/gpg-agent.socket
+53833b26b6748077e4cbde18ae9ac762  usr/share/doc/gpg-agent/README.Debian
+46a00374d9bf0b99885eb9a391bac506  usr/share/doc/gpg-agent/copyright
+9208e1cd387c91e33cd8ffb9b5339a19  usr/share/doc/gpg-agent/examples/pwpattern.list
+58f05262566bdb245b2f60824a7f8f43  usr/share/doc/gpg-agent/examples/trustlist.txt
+54b70969a3527299b03fb857cad28034  usr/share/lintian/overrides/gpg-agent
+30cc4852a33b0735fbea543ad6e01c87  usr/share/man/man1/gpg-agent.1.gz
+300411e08b7684eafc909c2c1ce738c1  usr/share/man/man1/gpg-check-pattern.1.gz
+4088fa16a11db9a21517c188edb98161  usr/share/man/man1/gpg-preset-passphrase.1.gz

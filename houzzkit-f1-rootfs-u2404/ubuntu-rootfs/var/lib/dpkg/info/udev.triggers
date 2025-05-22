@@ -1,0 +1,6 @@
+interest-noawait /usr/lib/udev/hwdb.d
+# Trigger duplicated according to DEP17-M12. Remove the non-/usr interest after
+# forky has been released.
+interest-noawait /lib/udev/hwdb.d
+# Triggers added by dh_installinitramfs/13.14.1ubuntu5
+activate-noawait update-initramfs

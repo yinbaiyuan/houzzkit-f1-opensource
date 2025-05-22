@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+# Need to run helpztags since we're overwriting /u/s/v/a/d/tags whenever
+# vim-runtime is install/upgraded which breaks the help for other vim addons
+if which helpztags >/dev/null 2>&1; then
+  helpztags /usr/share/vim/addons/doc
+fi
+
+
+
+exit 0

@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/lib
+/usr/lib/aarch64-linux-gnu
+/usr/lib/aarch64-linux-gnu/libgpgme.so.11.27.0
+/usr/share
+/usr/share/doc
+/usr/share/doc/libgpgme11t64
+/usr/share/doc/libgpgme11t64/changelog.Debian.gz
+/usr/share/doc/libgpgme11t64/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libgpgme11t64
+/usr/lib/aarch64-linux-gnu/libgpgme-pthread.so.11
+/usr/lib/aarch64-linux-gnu/libgpgme.so.11

@@ -1,0 +1,11 @@
+/etc/apparmor.d/usr.sbin.chronyd
+/etc/chrony/conf.d/README
+/etc/chrony/sources.d/README
+/etc/default/chrony
+/etc/dhcp/dhclient-exit-hooks.d/chrony
+/etc/init.d/chrony
+/etc/logrotate.d/chrony
+/etc/network/if-post-down.d/chrony
+/etc/network/if-up.d/chrony
+/etc/ppp/ip-down.d/chrony
+/etc/ppp/ip-up.d/chrony

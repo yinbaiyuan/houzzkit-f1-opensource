@@ -1,0 +1,6 @@
+1bf27b1a6f16f0db3e42eb256486475b  usr/bin/airscan-discover
+c3bf8e14fe1e352f1ce0478c8cf80b3a  usr/lib/aarch64-linux-gnu/sane/libsane-airscan.so.1
+1f3a7198bd165ebd92840ca61fa6a2db  usr/share/doc/sane-airscan/changelog.Debian.gz
+4fd6fb15d6c3acd2362ef98025f2ad6e  usr/share/doc/sane-airscan/copyright
+575a4a9a2e375d15f63e74033328a625  usr/share/man/man1/airscan-discover.1.gz
+025b6ffa4c048d63785976d708be93fa  usr/share/man/man5/sane-airscan.5.gz

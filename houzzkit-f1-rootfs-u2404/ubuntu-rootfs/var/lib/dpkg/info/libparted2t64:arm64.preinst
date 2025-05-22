@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+# begin-remove-after: released:trixie
+if test "$1" = upgrade || test "$1" = install; then
+	for f in libparted.so.2 libparted.so.2.0.5; do
+		dpkg-divert --no-rename --package libparted2t64 --divert "/lib/aarch64-linux-gnu/$f.usr-is-merged" --add "/lib/aarch64-linux-gnu/$f"
+	done
+fi
+# end-remove-after
+
+

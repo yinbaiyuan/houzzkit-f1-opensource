@@ -1,0 +1,153 @@
+# vim:syntax=apparmor
+# LOGPROF-SUGGEST: no
+# Author: Daniel Richard G. <skunk@iSKUNK.ORG>
+
+  include <abstractions/base>
+  include <abstractions/freedesktop.org>
+  include <abstractions/nameservice>
+  include <abstractions/openssl>
+
+  network inet    dgram,
+  network inet6   dgram,
+  network netlink dgram,
+  network inet    stream,
+  network inet6   stream,
+
+  dbus (bind)
+       bus=session
+       name=com.transmissionbt.Transmission,
+  dbus (bind)
+       bus=session
+       name=com.transmissionbt.transmission_*,
+
+  dbus (receive)
+       bus=session
+       path=/ca/desrt/dconf/Writer/user
+       interface=ca.desrt.dconf.Writer
+       member=Notify,
+  dbus (send)
+       bus=session
+       path=/ca/desrt/dconf/Writer/user
+       interface=ca.desrt.dconf.Writer
+       member=Change
+       peer=(name=ca.desrt.dconf),
+
+  dbus (receive)
+       bus=accessibility
+       path=/org/a11y/atspi/accessible/root
+       interface=org.freedesktop.DBus.Properties
+       member=Set,
+  dbus (send)
+       bus=accessibility
+       path=/org/a11y/atspi/accessible/root
+       interface=org.a11y.atspi.Socket
+       member=Embed
+       peer=(name=org.a11y.atspi.Registry),
+  dbus (send)
+       bus=accessibility
+       path=/org/a11y/atspi/registry
+       interface=org.a11y.atspi.Registry
+       member=GetRegisteredEvents
+       peer=(name=org.a11y.atspi.Registry),
+  dbus (send)
+       bus=accessibility
+       path=/org/a11y/atspi/registry/deviceeventcontroller
+       interface=org.a11y.atspi.DeviceEventController
+       member={GetDeviceEventListeners,GetKeystrokeListeners}
+       peer=(name=org.a11y.atspi.Registry),
+
+  dbus (send)
+       bus={accessibility,session}
+       path=/org/freedesktop/DBus
+       interface=org.freedesktop.DBus
+       member={AddMatch,GetNameOwner,Hello,ReleaseName,RemoveMatch,RequestName,StartServiceByName}
+       peer=(name=org.freedesktop.DBus),
+  dbus (send)
+       bus=session
+       interface=org.freedesktop.DBus.Introspectable
+       path=/StatusNotifierWatcher
+       member=Introspect
+       peer=(name=org.kde.StatusNotifierWatcher),
+  dbus (send)
+       bus=session
+       interface=org.freedesktop.DBus.Properties
+       path=/StatusNotifierWatcher
+       member=Get
+       peer=(name=org.kde.StatusNotifierWatcher),
+  dbus (send)
+       bus=session
+       interface=org.freedesktop.DBus.Properties
+       path=/org/a11y/bus
+       member=Get
+       peer=(name=org.a11y.Bus),
+  dbus (send)
+       bus=system
+       interface=org.freedesktop.DBus.Properties
+       path=/org/freedesktop/hostname1
+       member=GetAll,
+
+  dbus (send)
+       bus=session
+       interface=org.freedesktop.Notifications
+       path=/org/freedesktop/Notifications
+       member={GetCapabilities,Notify},
+
+  dbus (send)
+       bus=session
+       path=/org/gtk/Private/RemoteVolumeMonitor
+       interface=org.gtk.Private.RemoteVolumeMonitor
+       member={IsSupported,List},
+  dbus (send)
+       bus=session
+       path=/org/gtk/vfs/Daemon
+       interface=org.gtk.vfs.Daemon
+       member={GetConnection,ListMonitorImplementations},
+  dbus (send)
+       bus=session
+       path=/org/gtk/vfs/mount/[1-9]*
+       interface=org.gtk.vfs.Mount
+       member={CreateFileMonitor,Enumerate,QueryInfo},
+  dbus (receive)
+       bus=session
+       path=/org/gtk/vfs/mounttracker
+       interface=org.gtk.vfs.MountTracker
+       member=Mounted,
+  dbus (send)
+       bus=session
+       path=/org/gtk/vfs/mounttracker
+       interface=org.gtk.vfs.MountTracker
+       member={ListMountableInfo,ListMounts2,LookupMount},
+
+  @{PROC}/sys/kernel/random/uuid r,
+
+  owner @{PROC}/@{pid}/mountinfo r,
+  owner @{PROC}/@{pid}/mounts r,
+
+  owner @{run}/user/@{uid}/gvfsd/socket-* rw,
+
+  @{etc_ro}/fstab r,
+
+  @{system_share_dirs}/hwdata/** r,
+  @{system_share_dirs}/lxqt/**   r,
+
+  owner /tmp/tr_session_id_* rwk,
+
+  # allow a top-level directory listing
+  @{HOME}/ r,
+
+  owner @{HOME}/.cache/transmission/    w,
+  owner @{HOME}/.cache/transmission/**  rw,
+  owner @{HOME}/.config/transmission/   w,
+  owner @{HOME}/.config/transmission/** rw,
+
+  owner @{HOME}/.config/lxqt/lxqt.conf  r,
+
+  owner @{HOME}/@{XDG_DOWNLOAD_DIR}/    r,
+  owner @{HOME}/@{XDG_DOWNLOAD_DIR}/**  rw,
+
+  # exclude these for now
+  deny /usr/share/thumbnailers/ r,
+  deny @{HOME}/.local/share/gvfs-metadata/** r,
+  deny @{HOME}/.config/lxqt/**  rw,
+
+  include if exists <abstractions/transmission-common.d>

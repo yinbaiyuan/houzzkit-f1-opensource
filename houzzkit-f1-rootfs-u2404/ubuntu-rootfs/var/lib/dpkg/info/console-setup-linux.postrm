@@ -1,0 +1,62 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installinit/13.14.1ubuntu5
+if [ "$1" = "remove" ] && [ -x "/etc/init.d/setvtrgb" ] ; then
+	chmod -x "/etc/init.d/setvtrgb" >/dev/null || true
+fi
+if [ -z "${DPKG_ROOT:-}" ] && [ "$1" = "purge" ] ; then
+	update-rc.d setvtrgb remove >/dev/null
+fi
+# End automatically added section
+# Automatically added by dh_installinit/13.14.1ubuntu5
+if [ "$1" = "remove" ] && [ -x "/etc/init.d/console-setup.sh" ] ; then
+	chmod -x "/etc/init.d/console-setup.sh" >/dev/null || true
+fi
+if [ -z "${DPKG_ROOT:-}" ] && [ "$1" = "purge" ] ; then
+	update-rc.d console-setup.sh remove >/dev/null
+fi
+# End automatically added section
+# Automatically added by dh_installinit/13.14.1ubuntu5
+if [ "$1" = "remove" ] && [ -x "/etc/init.d/keyboard-setup.sh" ] ; then
+	chmod -x "/etc/init.d/keyboard-setup.sh" >/dev/null || true
+fi
+if [ -z "${DPKG_ROOT:-}" ] && [ "$1" = "purge" ] ; then
+	update-rc.d keyboard-setup.sh remove >/dev/null
+fi
+# End automatically added section
+# Automatically added by dh_systemd_start/13.14.1ubuntu5
+if [ "$1" = remove ] && [ -d /run/systemd/system ] ; then
+	systemctl --system daemon-reload >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_systemd_start/13.14.1ubuntu5
+if [ "$1" = remove ] && [ -d /run/systemd/system ] ; then
+	systemctl --system daemon-reload >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_systemd_start/13.14.1ubuntu5
+if [ "$1" = remove ] && [ -d /run/systemd/system ] ; then
+	systemctl --system daemon-reload >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.14.1ubuntu5
+if [ "$1" = "purge" ]; then
+	if [ -x "/usr/bin/deb-systemd-helper" ]; then
+		deb-systemd-helper purge 'console-setup.service' 'keyboard-setup.service' 'setvtrgb.service' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.14.1ubuntu5
+if [ "$1" = "purge" ]; then
+	if [ -x "/usr/bin/deb-systemd-helper" ]; then
+		deb-systemd-helper purge 'console-setup.service' 'keyboard-setup.service' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.14.1ubuntu5
+if [ "$1" = "purge" ]; then
+	if [ -x "/usr/bin/deb-systemd-helper" ]; then
+		deb-systemd-helper purge 'keyboard-setup.service' >/dev/null || true
+	fi
+fi
+# End automatically added section

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+# begin-remove-after: released:forky
+# usrmerge transition from netplan.io -> netplan-generator, see https://bugs.debian.org/1060661
+if [ "$1" = install ] || [ "$1" = upgrade ]; then
+    dpkg-divert --no-rename --divert /lib/systemd/system-generators/netplan.usr-is-merged --add /lib/systemd/system-generators/netplan
+fi
+# end-remove-after
+
+
+

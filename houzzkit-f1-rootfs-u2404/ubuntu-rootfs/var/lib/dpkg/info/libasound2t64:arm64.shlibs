@@ -1,0 +1,2 @@
+libasound 2 libasound2t64 (>= 1.2.11)
+udeb: libasound 2 libasound2-udeb (>= 1.2.11)

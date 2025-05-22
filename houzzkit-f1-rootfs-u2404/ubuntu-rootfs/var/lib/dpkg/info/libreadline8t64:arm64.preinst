@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+if test "$1" = install -o "$1" = upgrade; then
+	# DEP17 P1 mitigation. Remove these diversions via postinst once trixie is released.
+	for lib in libhistory.so.8 libhistory.so.8.2 libreadline.so.8 libreadline.so.8.2; do
+		dpkg-divert --package libreadline8t64 --no-rename --divert "/lib/aarch64-linux-gnu/$lib.usr-is-merged" --add "/lib/aarch64-linux-gnu/$lib"
+	done
+fi
+
+
+
+exit 0

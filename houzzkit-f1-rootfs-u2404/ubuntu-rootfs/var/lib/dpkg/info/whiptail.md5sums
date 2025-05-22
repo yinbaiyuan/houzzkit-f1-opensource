@@ -1,0 +1,6 @@
+984eaf6ec8dd02bebec8c7fcd77b1a03  usr/bin/whiptail
+bcd454929e3a3107961ba3cb1a98c5f4  usr/share/bash-completion/completions/whiptail
+a6ad4ca598174ab065e57e63296c603d  usr/share/doc/whiptail/NEWS.Debian.gz
+408dd0317437d489fde1b01b410ecb2b  usr/share/doc/whiptail/README.whiptail
+333e9a4430db74c884f7b6ff14d97773  usr/share/doc/whiptail/copyright
+839c6102ba943cc2c3704a8bd8c80f4c  usr/share/man/man1/whiptail.1.gz

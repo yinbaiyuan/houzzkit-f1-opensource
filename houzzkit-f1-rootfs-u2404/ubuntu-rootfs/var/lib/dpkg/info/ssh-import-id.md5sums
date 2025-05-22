@@ -1,0 +1,14 @@
+c980f03799a12adf6a235fd6429ec743  usr/bin/ssh-import-id
+02521eaa1bd9c1dbf0fff0aa9338c778  usr/bin/ssh-import-id-gh
+a05c0e3cacf6fbf8fcb9f85103173f07  usr/bin/ssh-import-id-lp
+53f40cd87c9d56e5438c4a50da4d52a0  usr/lib/python3/dist-packages/ssh_import_id-5.11.egg-info/PKG-INFO
+68b329da9893e34099c7d8ad5cb9c940  usr/lib/python3/dist-packages/ssh_import_id-5.11.egg-info/dependency_links.txt
+a41dccacc53bc6477540239eed0f850a  usr/lib/python3/dist-packages/ssh_import_id-5.11.egg-info/entry_points.txt
+d41d8cd98f00b204e9800998ecf8427e  usr/lib/python3/dist-packages/ssh_import_id-5.11.egg-info/requires.txt
+ddb123ce1a5bdc8f513840de32ba979d  usr/lib/python3/dist-packages/ssh_import_id-5.11.egg-info/top_level.txt
+18517cb42e2745c6f28e233845964553  usr/lib/python3/dist-packages/ssh_import_id/__init__.py
+be5d9066d497a9d758efe799a9cd0a89  usr/lib/python3/dist-packages/ssh_import_id/__main__.py
+da1477f95c86db629e6db9dbac55164a  usr/lib/python3/dist-packages/ssh_import_id/version.py
+2496bddcb9443d0f98c59b20a489d907  usr/share/doc/ssh-import-id/changelog.Debian.gz
+de08b09d951b7bbab88b1ad403107468  usr/share/doc/ssh-import-id/copyright
+6bfd4ee859eabd13b3de09a1414e52f2  usr/share/man/man1/ssh-import-id.1.gz

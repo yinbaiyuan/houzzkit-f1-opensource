@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/lib
+/usr/lib/w3m
+/usr/lib/w3m/w3mimgdisplay
+/usr/share
+/usr/share/doc
+/usr/share/doc/w3m-img
+/usr/share/doc/w3m-img/README.img.gz
+/usr/share/doc/w3m-img/README.img.ja.gz
+/usr/share/doc/w3m-img/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/w3m-img
+/usr/share/doc/w3m-img/changelog.Debian.gz

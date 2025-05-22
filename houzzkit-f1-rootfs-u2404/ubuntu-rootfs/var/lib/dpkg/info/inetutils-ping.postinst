@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = 'configure' ]; then
+  for file in ping ping6; do
+    if [ -e $DPKG_ROOT/usr/bin/$file ] && [ ! -e $DPKG_ROOT/bin/$file ]; then
+      ln -s /usr/bin/$file $DPKG_ROOT/bin/$file
+    fi
+  done
+fi
+
+

@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+# for close Bug#1001301
+if [ "$1" = "upgrade" ]; then
+	update-alternatives --remove ftp /usr/bin/netkit-ftp
+fi
+
+

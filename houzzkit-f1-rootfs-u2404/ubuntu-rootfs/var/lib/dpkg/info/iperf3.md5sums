@@ -1,0 +1,4 @@
+044ed15bef247b7f446ecacde91a5b91  usr/bin/iperf3
+514ce9a326bfe1ac7942d7d132bd1d4b  usr/lib/systemd/system/iperf3.service
+5fb9a48dadf6b040a890b8a5d22aeb55  usr/share/doc/iperf3/copyright
+c3fb23de3e58648cb77bc33cd10d48de  usr/share/man/man1/iperf3.1.gz

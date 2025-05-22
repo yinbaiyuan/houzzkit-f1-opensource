@@ -1,0 +1,5 @@
+72b6002b926048802ad638a4a3a454fd  usr/share/doc/libxml-twig-perl/changelog.Debian.gz
+a4e540bbd9b149b429a8dd13a5d01336  usr/share/doc/libxml-twig-perl/copyright
+e69fd2c1a0c7b8f36b00348dc4a247c8  usr/share/man/man3/XML::Twig.3pm.gz
+0eb07bb024535317ea9e4717f528cd27  usr/share/perl5/XML/Twig.pm
+c7bf02840c834459303537e4679ba555  usr/share/perl5/XML/Twig/XPath.pm

@@ -1,0 +1,5 @@
+b4f85d2c54f1e05733a84869d9d33175  usr/lib/aarch64-linux-gnu/libproxy.so.0.5.4
+fffd98678e0c62c215f1c95566000bd5  usr/lib/aarch64-linux-gnu/libproxy/libpxbackend-1.0.so
+13f5f8d03a2cdae500d22e8bb171a1fb  usr/share/doc/libproxy1v5/changelog.Debian.gz
+2d5e7c97ca0f7d068126336c5777c00b  usr/share/doc/libproxy1v5/copyright
+590eb478ead5a28792c9ece602e90e7a  usr/share/lintian/overrides/libproxy1v5

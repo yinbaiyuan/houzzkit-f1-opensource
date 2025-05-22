@@ -1,0 +1,91 @@
+#!/bin/sh
+
+set -e
+
+
+remove_apt_auth(){
+    # config file created at runtime, needs explicit handling on purge
+    rm -f /etc/apt/auth.conf.d/90ubuntu-advantage
+}
+
+remove_cache_dir(){
+    rm -rf /var/lib/ubuntu-advantage
+}
+
+remove_logs(){
+    rm -f /var/log/ubuntu-advantage.log*
+    rm -f /var/log/ubuntu-advantage-timer.log*
+    rm -f /var/log/ubuntu-advantage-license-check.log*
+    rm -f /var/log/ubuntu-advantage-daemon.log*
+    rm -f /var/log/ubuntu-advantage-apt-hook.log*
+}
+
+remove_gpg_files(){
+    rm -f /etc/apt/trusted.gpg.d/ubuntu-pro-*.gpg
+}
+
+case "$1" in
+    purge)
+        remove_apt_auth
+        remove_cache_dir
+        remove_logs
+        remove_gpg_files
+        ;;
+esac
+
+# Automatically added by dh_systemd_start/13.14.1ubuntu5
+if [ "$1" = remove ] && [ -d /run/systemd/system ] ; then
+	systemctl --system daemon-reload >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_systemd_start/13.14.1ubuntu5
+if [ "$1" = remove ] && [ -d /run/systemd/system ] ; then
+	systemctl --system daemon-reload >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.14.1ubuntu5
+if [ "$1" = "purge" ]; then
+	if [ -x "/usr/bin/deb-systemd-helper" ]; then
+		deb-systemd-helper purge 'ubuntu-advantage.service' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.14.1ubuntu5
+if [ "$1" = "purge" ]; then
+	if [ -x "/usr/bin/deb-systemd-helper" ]; then
+		deb-systemd-helper purge 'ua-timer.timer' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.14.1ubuntu5
+if [ "$1" = "purge" ]; then
+	if [ -x "/usr/bin/deb-systemd-helper" ]; then
+		deb-systemd-helper purge 'ua-reboot-cmds.service' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_apparmor/4.0.1really4.0.1-0ubuntu0.24.04.3
+if [ "$1" = "purge" ] && ! [ -e "/etc/apparmor.d/ubuntu_pro_esm_cache" ] ; then
+    rm -f "/etc/apparmor.d/disable/ubuntu_pro_esm_cache" || true
+    rm -f "/etc/apparmor.d/force-complain/ubuntu_pro_esm_cache" || true
+    rm -f "/etc/apparmor.d/local/ubuntu_pro_esm_cache" || true
+    rm -f /var/cache/apparmor/*/"ubuntu_pro_esm_cache" || true
+    rmdir /etc/apparmor.d/disable 2>/dev/null || true
+    rmdir /etc/apparmor.d/local   2>/dev/null || true
+    rmdir /etc/apparmor.d         2>/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_apparmor/4.0.1really4.0.1-0ubuntu0.24.04.3
+if [ "$1" = "purge" ] && ! [ -e "/etc/apparmor.d/ubuntu_pro_apt_news" ] ; then
+    rm -f "/etc/apparmor.d/disable/ubuntu_pro_apt_news" || true
+    rm -f "/etc/apparmor.d/force-complain/ubuntu_pro_apt_news" || true
+    rm -f "/etc/apparmor.d/local/ubuntu_pro_apt_news" || true
+    rm -f /var/cache/apparmor/*/"ubuntu_pro_apt_news" || true
+    rmdir /etc/apparmor.d/disable 2>/dev/null || true
+    rmdir /etc/apparmor.d/local   2>/dev/null || true
+    rmdir /etc/apparmor.d         2>/dev/null || true
+fi
+# End automatically added section
+
+
+exit 0

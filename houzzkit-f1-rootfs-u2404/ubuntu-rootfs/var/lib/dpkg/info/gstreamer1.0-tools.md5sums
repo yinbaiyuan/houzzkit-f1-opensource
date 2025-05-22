@@ -1,0 +1,14 @@
+5ebf9bd640cf1a8edc5a1a614017185a  usr/bin/gst-inspect-1.0
+a5b2021c5713244968179a25366aaa02  usr/bin/gst-launch-1.0
+f5615ab88425593b77d2b583977c0d8b  usr/bin/gst-stats-1.0
+df72fdba25195b9e32df6cfbf58785a0  usr/bin/gst-tester-1.0
+53b3ca93f15bbe7c9bfe628ed6c2f405  usr/bin/gst-typefind-1.0
+89b6516bb8018439b01b421b80e90dff  usr/lib/aarch64-linux-gnu/gstreamer1.0/gstreamer-1.0/gst-completion-helper
+d81fb1dddf9324e7f0337e6b02034dc9  usr/share/bash-completion/completions/gst-inspect-1.0
+97889fb85dcde837aaa02e60e88f4f03  usr/share/bash-completion/completions/gst-launch-1.0
+85a35fac522d5600604ad245542f1cc1  usr/share/bash-completion/helpers/gst
+671f06bafc93d6ffbeb9cbedf403c6df  usr/share/doc/gstreamer1.0-tools/copyright
+c1cbab27500b329a09c3fdcf7106eec1  usr/share/man/man1/gst-inspect-1.0.1.gz
+ec706ce4ac57919754731c68d4fb6d27  usr/share/man/man1/gst-launch-1.0.1.gz
+ba7807e1ad286dc52e121af18e97f200  usr/share/man/man1/gst-stats-1.0.1.gz
+569b0d68aead367809441f6474177539  usr/share/man/man1/gst-typefind-1.0.1.gz

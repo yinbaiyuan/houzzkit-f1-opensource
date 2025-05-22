@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+if [ -z "${DPKG_ROOT:-}" ] && [ -d /run/systemd/system ] && [ "$1" = remove ]; then
+	# Before stopping dbus-daemon, ensure that it won't just be
+	# reactivated by dbus.socket. The "invoke-rc.d dbus stop"
+	# added by debhelper, below, will harmlessly not do anything.
+	deb-systemd-invoke stop dbus.socket dbus.service || exit $?
+fi
+
+
+
+exit 0
+
+# vim:set sw=4 sts=4 et:

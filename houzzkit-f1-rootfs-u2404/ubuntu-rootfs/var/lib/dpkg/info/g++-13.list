@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/bin
+/usr/share
+/usr/share/doc
+/usr/share/doc/gcc-13-base
+/usr/share/doc/gcc-13-base/C++
+/usr/share/doc/gcc-13-base/C++/README.C++
+/usr/share/doc/gcc-13-base/C++/changelog.gz
+/usr/share/man
+/usr/share/man/man1
+/usr/bin/g++-13
+/usr/share/doc/g++-13
+/usr/share/man/man1/g++-13.1.gz

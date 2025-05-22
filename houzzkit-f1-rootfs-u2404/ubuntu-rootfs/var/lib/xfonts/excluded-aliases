@@ -1,0 +1,2 @@
+!! Excluded alias files to be ignored by update-fonts-alias(8)
+/etc/X11/fonts/misc/xfonts-base.alias

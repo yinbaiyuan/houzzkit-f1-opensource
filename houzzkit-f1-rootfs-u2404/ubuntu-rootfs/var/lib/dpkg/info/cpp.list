@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/bin
+/usr/share
+/usr/share/doc
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man7
+/usr/share/man/man7/fsf-funding.7gcc.gz
+/usr/share/man/man7/gfdl.7gcc.gz
+/usr/share/man/man7/gpl.7gcc.gz
+/usr/bin/cpp
+/usr/share/doc/cpp
+/usr/share/man/man1/cpp.1.gz

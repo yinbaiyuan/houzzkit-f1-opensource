@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+# begin-remove-after: released:forky
+if [ "$1" = configure ]; then
+	for tool in zcat zcmp zdiff zegrep zfgrep zgrep; do
+		if [ "$(dpkg-divert --truename "/usr/bin/$tool")" = "/usr/bin/$tool.usr-is-merged" ] &&
+			[ "$(dpkg-divert --listpackage "/usr/bin/$tool")" = zutils ]; then
+			# This diversion was added by preinst and. This
+			# indicates that zutils was unpacked at preinst time
+			# and is now removed. Thus we clean up the diversion.
+			echo "Removing duplicated diversion of /bin/$tool after zutils is removed."
+			dpkg-divert --rename --package zutils \
+				--divert "/usr/bin/$tool.usr-is-merged" \
+				--remove "/usr/bin/$tool"
+		fi
+	done
+fi
+# end-remove-after
+
+

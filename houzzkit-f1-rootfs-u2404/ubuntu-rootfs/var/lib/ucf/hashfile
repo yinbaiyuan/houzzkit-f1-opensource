@@ -1,0 +1,5 @@
+1b03acc84964cf70b8a584870bcdf9b3  /etc/rsyslog.d/50-default.conf
+ef1ab31192a3c9ebf577fd39ecf7a34d  /etc/ssh/sshd_config
+2f1ad364c25bfd8dcee21c2d6ea97a3a  /etc/papersize
+514389bd2f5805e360a835ceb241f385  /etc/chrony/chrony.conf
+f1b4d934b0b1264a9c65c03b83e5e665  /etc/chrony/chrony.keys

@@ -1,0 +1,29 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+	remove)
+		# if we're removing, we need to save "nuke-graph-directory.sh" so that
+		# we can still purge "/var/lib/docker" later if necessary
+		# see also docker.io.postrm
+		if \
+			[ -d /var/lib/docker ] \
+			&& [ -x /usr/share/docker.io/contrib/nuke-graph-directory.sh ] \
+		; then
+			if cp -v /usr/share/docker.io/contrib/nuke-graph-directory.sh /var/lib/docker/; then
+				chmod +x /var/lib/docker/nuke-graph-directory.sh || :
+			fi
+		fi
+		;;
+
+	*)
+		;;
+esac
+
+
+
+# because we had to use "dh_installinit --no-start", we get to make sure the daemon is stopped on uninstall
+# (this is adapted from debhelper's "autoscripts/prerm-init-norestart")
+if [ "$1" = remove ]; then
+	invoke-rc.d docker stop
+fi

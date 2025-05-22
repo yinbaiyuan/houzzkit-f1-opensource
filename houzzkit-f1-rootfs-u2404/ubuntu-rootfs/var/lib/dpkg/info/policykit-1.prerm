@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installdeb/13.14.1ubuntu5
+dpkg-maintscript-helper rm_conffile /etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf 0.115-2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/pam.d/polkit-1 122-2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/polkit-1/localauthority.conf.d/50-localauthority.conf 121\+compat0.1-1\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/polkit-1/localauthority.conf.d/51-debian-sudo.conf 121\+compat0.1-1\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/polkit-1/localauthority.conf.d/51-ubuntu-admin.conf 121\+compat0.1-1\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/polkit-1/nullbackend.conf.d/50-nullbackend.conf 0.109-1\~ -- "$@"
+# End automatically added section

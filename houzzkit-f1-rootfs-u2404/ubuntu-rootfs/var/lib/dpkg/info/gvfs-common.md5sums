@@ -1,0 +1,7 @@
+e1eae328c7f5a8d06498be0cc9d0adb4  usr/lib/tmpfiles.d/gvfsd-fuse-tmpfiles.conf
+05f2a5ebcf833e5e2d638b7cb22c5d95  usr/share/doc/gvfs-common/changelog.Debian.gz
+528290130c1c3d81871b26638c2e2583  usr/share/doc/gvfs-common/copyright
+7c0004367dc5ef74c9a2fb06c859d7d9  usr/share/man/man1/gvfsd-fuse.1.gz
+d4cec6795ffda276a168de2ea616475d  usr/share/man/man1/gvfsd-metadata.1.gz
+42c21887a5d9b8a589b387287a6e4fe1  usr/share/man/man1/gvfsd.1.gz
+80fe05b41278addc3e820d5e1a2d31ee  usr/share/man/man7/gvfs.7.gz

@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+# begin-remove-after: released:forky
+if [ "$1" = upgrade ] || [ "$1" = install ]; then
+	for tool in zcat zcmp zdiff zegrep zfgrep zgrep; do
+		if [ "$(dpkg-divert --truename "/bin/$tool")" = "/bin/$tool.gzip" ] &&
+			[ "$(dpkg-divert --listpackage "/bin/$tool")" = zutils ] &&
+			[ "$(dpkg-divert --truename "/usr/bin/$tool")" = "/usr/bin/$tool" ]; then
+			# A pre-/usr-move diversion is installed by zutils.
+			echo "Mitigating diversion of /bin/$tool on behalf of zutils"
+			dpkg-divert --no-rename --package zutils \
+				--divert "/usr/bin/$tool.usr-is-merged" \
+				--add "/usr/bin/$tool"
+		fi
+	done
+fi
+# end-remove-after
+
+
+

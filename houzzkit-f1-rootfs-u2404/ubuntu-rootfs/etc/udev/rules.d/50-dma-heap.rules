@@ -1,0 +1,2 @@
+SUBSYSTEM=="dma_heap", KERNEL=="cma*", MODE="0664", GROUP="video"
+SUBSYSTEM=="dma_heap", KERNEL=="system*", MODE="0664", GROUP="video"

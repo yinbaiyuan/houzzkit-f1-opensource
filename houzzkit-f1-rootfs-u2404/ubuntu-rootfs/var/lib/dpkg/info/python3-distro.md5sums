@@ -1,0 +1,11 @@
+c72246579c4437c07cebb86fbcbc6d90  usr/lib/python3/dist-packages/distro-1.9.0.dist-info/INSTALLER
+dbbbaf0286c50f4cf42fe049ba92a283  usr/lib/python3/dist-packages/distro-1.9.0.dist-info/METADATA
+a227bf38fb17005b3bdb56ccc428b1bb  usr/lib/python3/dist-packages/distro-1.9.0.dist-info/WHEEL
+5cfa67bd39c62cfd27b6540ab658249d  usr/lib/python3/dist-packages/distro-1.9.0.dist-info/entry_points.txt
+a6234878be2d64a751865bd16f6fff03  usr/lib/python3/dist-packages/distro-1.9.0.dist-info/top_level.txt
+5b9b7efb166424292d033eb05b9de265  usr/lib/python3/dist-packages/distro/__init__.py
+9ba2b2b4dfc91b521f07858fc5547a23  usr/lib/python3/dist-packages/distro/__main__.py
+7d770f8e9463818bf6b8ea645aac445e  usr/lib/python3/dist-packages/distro/distro.py
+d41d8cd98f00b204e9800998ecf8427e  usr/lib/python3/dist-packages/distro/py.typed
+6f3895c99839594d3cf3687aa4aed8f5  usr/share/doc/python3-distro/changelog.Debian.gz
+83837e50a3174074dd9c7904392cab74  usr/share/doc/python3-distro/copyright

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+
+# per Helmut, these can't be safely removed again (in package postinst)
+# until forky
+case $1 in
+	remove)
+		for file in libtirpc.so.3 libtirpc.so.3.0.0; do
+			dpkg-divert --package libtirpc3t64 --no-rename \
+				--remove --divert \
+				/lib/aarch64-linux-gnu/$file.usr-is-merged \
+				/lib/aarch64-linux-gnu/$file
+                done
+                ;;
+esac
+
+

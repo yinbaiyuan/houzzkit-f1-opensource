@@ -1,0 +1,507 @@
+Package: libnvidia-cfg1-570
+Description-md5: 7dce7edcd194e980223937b38f49e8b9
+Description-en: NVIDIA binary OpenGL/GLX configuration library
+ The NVIDIA binary driver provides optimized hardware acceleration of
+ OpenGL/GLX/EGL/GLES applications via a direct-rendering X Server
+ for graphics cards using NVIDIA chip sets.
+ .
+ This package contains the libnvidia-cfg.so.1 runtime library.
+
+Package: libnvidia-common-570
+Description-md5: 259c61ba4e777f5a2f1e7ee2fd1957bc
+Description-en: Shared files used by the NVIDIA libraries
+ This package provides a set of files that are required by the NVIDIA
+ libraries.
+
+Package: libnvidia-compute-570
+Description-md5: c7c5b2d5b16b7e02eed65de795271363
+Description-en: NVIDIA libcompute package
+ This package provides a set of libraries which enable the NVIDIA driver
+ to use GPUs for parallel general purpose computation through CUDA and
+ OpenCL.
+
+Package: libnvidia-decode-570
+Description-md5: 82c3a05b45f86380632898c9b339df7a
+Description-en: NVIDIA Video Decoding runtime libraries
+ This package includes the NVIDIA CUDA Video Decoder (NVCUVID) library which
+ provides an interface to hardware video decoding capabilities on NVIDIA GPUs with CUDA.
+ .
+ The package also provides a VDPAU (Video Decode and Presentation API for Unix-like
+ systems) library for the NVIDIA vendor implementation.
+
+Package: libnvidia-encode-570
+Description-md5: 21b4191ea88e49a7e948a2b89cfed901
+Description-en: NVENC Video Encoding runtime library
+ The NVENC Video Encoding library provides an interface to video encoder
+ hardware on supported NVIDIA GPUs.
+ .
+ This package contains the nvidia-encode runtime library.
+
+Package: libnvidia-extra-570
+Description-md5: 0c26d83df4ea22dc17ba24c862fae8c7
+Description-en: Extra libraries for the NVIDIA driver
+ This package provides an additional set of libraries to be used with
+ the NVIDIA driver.
+
+Package: libnvidia-fbc1-570
+Description-md5: 19123a53d351a2e540ca869d1e74f9d2
+Description-en: NVIDIA OpenGL-based Framebuffer Capture runtime library
+ The NVIDIA OpenGL-based Framebuffer Capture (NvFBCOpenGL) library provides
+ a high performance, low latency interface to capture and optionally encode an
+ OpenGL framebuffer. NvFBCOpenGL is a private API that is only available to
+ approved partners for use in remote graphics scenarios.
+ .
+ This package contains the NvFBCOpenGL runtime library.
+
+Package: libnvidia-gl-570
+Description-md5: d899ab089124230e29489e7dcc9f137a
+Description-en: NVIDIA OpenGL/GLX/EGL/GLES GLVND libraries and Vulkan ICD
+ This package provides the NVIDIA OpenGL/GLX/EGL/GLES libraries and the
+ Vulkan ICD.
+
+Package: nvidia-compute-utils-570
+Description-md5: bf6fab9efc1024a52f79dd543478f871
+Description-en: NVIDIA compute utilities
+ This package provides utility binaries for paraller general purpose
+ computing use cases with the NVIDIA driver.
+ .
+ CUDA MPS is a feature that allows multiple CUDA processes to share a single
+ GPU context. CUDA MPS should be transparent to CUDA programs.
+ .
+ CUDA MPS requires a device that supports Unified Virtual Address (UVA) and
+ has compute capability SM 3.5 or higher.
+ Pre-CUDA 4.0 APIs are not supported under CUDA MPS.
+
+Package: nvidia-dkms-570
+Description-md5: ec8c193060b5458922cc0bda62df7796
+Description-en: NVIDIA DKMS package
+ This package builds the NVIDIA kernel module needed by the userspace
+ driver, using DKMS.
+ Provided that you have the kernel header packages installed, the kernel
+ module will be built for your running kernel, and automatically rebuilt for
+ any new kernel headers that are installed.
+
+Package: nvidia-dkms-570-open
+Description-md5: dafa8f35853882b3010cba056bb022d0
+Description-en: NVIDIA DKMS package (open kernel module)
+ This package builds the open NVIDIA kernel module needed by the userspace
+ driver, using DKMS.
+ Provided that you have the kernel header packages installed, the kernel
+ module will be built for your running kernel, and automatically rebuilt for
+ any new kernel headers that are installed.
+
+Package: nvidia-driver-570
+Description-md5: 3689bbae98bfa563926f0a345cb63579
+Description-en: NVIDIA driver metapackage
+ This metapackage depends on the NVIDIA binary driver and on all of its libraries,
+ to provide hardware acceleration for OpenGL/GLX/EGL/GLES/Vulkan
+ applications on either X11 or on Wayland.
+ .
+ See /usr/share/doc/nvidia-driver-570/README.txt.gz
+ for a complete list of supported GPUs and PCI IDs.
+
+Package: nvidia-driver-570-open
+Description-md5: 83ec74f0290fa14e5f5178df76897b50
+Description-en: NVIDIA driver (open kernel) metapackage
+ This metapackage depends on the NVIDIA binary driver and on all of its libraries,
+ to provide hardware acceleration for OpenGL/GLX/EGL/GLES/Vulkan
+ applications on either X11 or on Wayland.
+ .
+ See /usr/share/doc/nvidia-driver-570/README.txt.gz
+ for a complete list of supported GPUs and PCI IDs.
+
+Package: nvidia-firmware-570-570.133.07
+Description-md5: a9f4cc74ba3faebf0cac0795ed2434bf
+Description-en: Firmware files used by the kernel module
+ This package installs required firmware files for the NVIDIA kernel
+ module.
+
+Package: nvidia-headless-570
+Description-md5: 8856a9e1fb828cbb3186830c1048daf1
+Description-en: NVIDIA headless metapackage
+ This metapackage installs the NVIDIA driver and the libraries that enable
+ parallel general purpose computation through CUDA and
+ OpenCL.
+ .
+ Install this package if you do not need X11 or Wayland support, which is
+ provided by the nvidia-driver-570 metapackage.
+
+Package: nvidia-headless-570-open
+Description-md5: b8dec77cb342a9589d03655cb299f508
+Description-en: NVIDIA headless metapackage (open kernel module)
+ This metapackage installs the NVIDIA driver and the libraries that enable
+ parallel general purpose computation through CUDA and
+ OpenCL.
+ .
+ Install this package if you do not need X11 or Wayland support, which is
+ provided by the nvidia-driver-570 metapackage.
+
+Package: nvidia-headless-no-dkms-570
+Description-md5: 3b5f576ca2e4640d560303d12b3490af
+Description-en: NVIDIA headless metapackage - no DKMS
+ This metapackage installs the NVIDIA driver and the libraries that enable
+ parallel general purpose computation through CUDA and
+ OpenCL. DKMS will not be installed, and, therefore, the kernel module
+ will not be built.
+ .
+ Install this package if you do not need X11 or Wayland support, which is
+ provided by the nvidia-driver-570 metapackage.
+
+Package: nvidia-headless-no-dkms-570-open
+Description-md5: 9cea293b7c0b89cd091520d1edbd7eef
+Description-en: NVIDIA headless metapackage - no DKMS (open kernel module)
+ This metapackage installs the NVIDIA driver and the libraries that enable
+ parallel general purpose computation through CUDA and
+ OpenCL. DKMS will not be installed, and, therefore, the kernel module
+ will not be built.
+ .
+ Install this package if you do not need X11 or Wayland support, which is
+ provided by the nvidia-driver-570 metapackage.
+
+Package: nvidia-kernel-common-570
+Description-md5: caa64a2a10d329a0475baf9ebcdb40d5
+Description-en: Shared files used with the kernel module
+ This package installs all the optional accessory files for the NVIDIA
+ kernel module.
+ .
+ Install this package if you want to blacklist any conflicting kernel
+ modules, and if you want udev to load the the NVIDIA kernel modules,
+ and to create the uvm devices automatically.
+
+Package: nvidia-kernel-source-570
+Description-md5: dc60d6861ca351f7cadc7d8fcc74e854
+Description-en: NVIDIA kernel source package
+ This package provides the NVIDIA kernel source needed by the userspace
+ driver.
+
+Package: nvidia-kernel-source-570-open
+Description-md5: 2694f1253ed6bd4cfbccf1e22ec25a3d
+Description-en: NVIDIA kernel source package
+ This package provides the open NVIDIA kernel source needed by the userspace
+ driver.
+
+Package: nvidia-utils-570
+Description-md5: d81f3aa17f8585f803913263abcf99e2
+Description-en: NVIDIA driver support binaries
+ This package contains supporting binaries for the NVIDIA driver.
+
+Package: xserver-xorg-video-nvidia-570
+Description-md5: 7f72cf23511e3d5671bacca564284c4f
+Description-en: NVIDIA binary Xorg driver
+ The NVIDIA binary driver provides optimized hardware acceleration of
+ OpenGL/GLX/EGL/GLES applications via a direct-rendering X Server
+ for graphics cards using NVIDIA chip sets.
+ .
+ See /usr/share/doc/nvidia-driver-570/README.txt.gz
+ for a complete list of supported GPUs and PCI IDs.
+
+Package: linux-modules-nvidia-535-6.8.0-1009-azure-nvidia
+Description-md5: c663dc10f8e888856754649293b7d08a
+Description-en: Linux kernel nvidia modules for version 6.8.0-1009
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.8.0-1009 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-modules-nvidia-535-6.8.0-1012-azure-nvidia
+Description-md5: cc5bdf05d98c314a3918f2245e4d5514
+Description-en: Linux kernel nvidia modules for version 6.8.0-1012
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.8.0-1012 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-modules-nvidia-535-server-6.8.0-1009-azure-nvidia
+Description-md5: 0aad961ecfa5b10adc4664284f528c3e
+Description-en: Linux kernel nvidia modules for version 6.8.0-1009
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.8.0-1009 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-server-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-modules-nvidia-535-server-6.8.0-1012-azure-nvidia
+Description-md5: 0614297891bafb7951ce4a54b85c702e
+Description-en: Linux kernel nvidia modules for version 6.8.0-1012
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.8.0-1012 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-server-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-modules-nvidia-550-6.8.0-1009-azure-nvidia
+Description-md5: 39a62d4430fd89675fed29c20ee0ef8f
+Description-en: Linux kernel nvidia modules for version 6.8.0-1009
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.8.0-1009 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-modules-nvidia-550-6.8.0-1012-azure-nvidia
+Description-md5: be76482ebb417c063b87a7a70d8ea9b1
+Description-en: Linux kernel nvidia modules for version 6.8.0-1012
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.8.0-1012 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-modules-nvidia-550-server-6.8.0-1009-azure-nvidia
+Description-md5: 48af73b3c709a41582a768eae7ef8527
+Description-en: Linux kernel nvidia modules for version 6.8.0-1009
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.8.0-1009 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-server-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-modules-nvidia-550-server-6.8.0-1012-azure-nvidia
+Description-md5: 58f0e57c76cd13de94a8991f2344ce23
+Description-en: Linux kernel nvidia modules for version 6.8.0-1012
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.8.0-1012 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-server-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-modules-nvidia-565-server-6.8.0-1009-azure-nvidia
+Description-md5: 24357df99f2dbdeee66705e788454ad6
+Description-en: Linux kernel nvidia modules for version 6.8.0-1009
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.8.0-1009 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-565-server-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-modules-nvidia-565-server-6.8.0-1012-azure-nvidia
+Description-md5: 7cfd7ff27cb03e6b35f4bb41279ba387
+Description-en: Linux kernel nvidia modules for version 6.8.0-1012
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.8.0-1012 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-565-server-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-535-6.8.0-1009-azure-nvidia
+Description-md5: e43e43e582acad4ea4a5ce98c082c7a1
+Description-en: Linux kernel nvidia modules for version 6.8.0-1009 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1009.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-535-6.8.0-1012-azure-nvidia
+Description-md5: f6efd0644af1b85aa2eff6541cd082ea
+Description-en: Linux kernel nvidia modules for version 6.8.0-1012 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1012.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-535-open-6.8.0-1009-azure-nvidia
+Description-md5: edcf1827042f3ece92c7149eb05140d6
+Description-en: Linux kernel nvidia modules for version 6.8.0-1009 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1009.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-open-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-535-open-6.8.0-1012-azure-nvidia
+Description-md5: 1b9ca08cbfcd8ff2478ca451a7839531
+Description-en: Linux kernel nvidia modules for version 6.8.0-1012 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1012.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-open-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-535-server-6.8.0-1009-azure-nvidia
+Description-md5: 8187145d5185eaf48cc12e11fa8bf45b
+Description-en: Linux kernel nvidia modules for version 6.8.0-1009 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1009.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-server-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-535-server-6.8.0-1012-azure-nvidia
+Description-md5: bc5566fdd26f55ae87a104c6bbd6bea7
+Description-en: Linux kernel nvidia modules for version 6.8.0-1012 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1012.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-server-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-535-server-open-6.8.0-1009-azure-nvidia
+Description-md5: 3bf29647f383817c665772ac4cb49306
+Description-en: Linux kernel nvidia modules for version 6.8.0-1009 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1009.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-server-open-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-535-server-open-6.8.0-1012-azure-nvidia
+Description-md5: 15fab2bc1d69d64be5fddee0c1025903
+Description-en: Linux kernel nvidia modules for version 6.8.0-1012 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1012.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-server-open-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-550-6.8.0-1009-azure-nvidia
+Description-md5: 6926c18fd9c18a051e7b7547f388df35
+Description-en: Linux kernel nvidia modules for version 6.8.0-1009 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1009.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-550-6.8.0-1012-azure-nvidia
+Description-md5: de177822f6310d1cedfc08a041754c30
+Description-en: Linux kernel nvidia modules for version 6.8.0-1012 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1012.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-550-open-6.8.0-1009-azure-nvidia
+Description-md5: 9bda7f02e310f11941fd82562f237b16
+Description-en: Linux kernel nvidia modules for version 6.8.0-1009 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1009.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-open-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-550-open-6.8.0-1012-azure-nvidia
+Description-md5: 8b864169904a67f0d9ade67263925837
+Description-en: Linux kernel nvidia modules for version 6.8.0-1012 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1012.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-open-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-550-server-6.8.0-1009-azure-nvidia
+Description-md5: e160c2e23482f7af44c9da22745348d9
+Description-en: Linux kernel nvidia modules for version 6.8.0-1009 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1009.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-server-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-550-server-6.8.0-1012-azure-nvidia
+Description-md5: decb239d773a8d1d21c516c9a5c5542f
+Description-en: Linux kernel nvidia modules for version 6.8.0-1012 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1012.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-server-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-550-server-open-6.8.0-1009-azure-nvidia
+Description-md5: 0bb2a2504b6f35c2c96c39cfc12d48f4
+Description-en: Linux kernel nvidia modules for version 6.8.0-1009 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1009.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-server-open-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-550-server-open-6.8.0-1012-azure-nvidia
+Description-md5: ab1e8affd28665f5e8d262f985b92d79
+Description-en: Linux kernel nvidia modules for version 6.8.0-1012 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1012.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-server-open-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-565-server-6.8.0-1009-azure-nvidia
+Description-md5: f330a13ba8e9e059ed6ef0d3963c6621
+Description-en: Linux kernel nvidia modules for version 6.8.0-1009 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1009.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-565-server-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-565-server-6.8.0-1012-azure-nvidia
+Description-md5: f175e003e7321b1aa3e8d45a5f4fd05b
+Description-en: Linux kernel nvidia modules for version 6.8.0-1012 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1012.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-565-server-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-565-server-open-6.8.0-1009-azure-nvidia
+Description-md5: 087801aad8fdc5922847693758552de5
+Description-en: Linux kernel nvidia modules for version 6.8.0-1009 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1009.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-565-server-open-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-565-server-open-6.8.0-1012-azure-nvidia
+Description-md5: bbe0de38c40485f7eb25ad758b515607
+Description-en: Linux kernel nvidia modules for version 6.8.0-1012 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.8.0-1012.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-565-server-open-azure-nvidia* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+

@@ -1,0 +1,53 @@
+#!/bin/sh
+
+set -e
+
+update_hwdb() {
+    systemd-hwdb --usr update || true
+}
+
+case "$1" in
+    configure)
+        # update/create hwdb before we (re)start udev
+        update_hwdb
+
+        if dpkg --compare-versions "$2" lt-nl "254.3-1~" && [ ! -f /etc/init.d/udev ]; then
+            update-rc.d udev remove || true
+        fi
+    ;;
+
+    triggered)
+        update_hwdb
+        exit 0
+    ;;
+esac
+
+# Automatically added by dh_installsysusers/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+   systemd-sysusers ${DPKG_ROOT:+--root="$DPKG_ROOT"} debian-udev.conf
+fi
+# End automatically added section
+# Automatically added by dh_installtmpfiles/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -x "$(command -v systemd-tmpfiles)" ]; then
+		systemd-tmpfiles ${DPKG_ROOT:+--root="$DPKG_ROOT"} --create static-nodes-permissions.conf || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installdeb/13.14.1ubuntu5
+dpkg-maintscript-helper rm_conffile /etc/init.d/udev 254.3-1\~ -- "$@"
+# End automatically added section
+# Automatically added by dh_installsystemd/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -d /run/systemd/system ]; then
+		systemctl --system daemon-reload >/dev/null || true
+		if [ -n "$2" ]; then
+			_dh_action=restart
+		else
+			_dh_action=start
+		fi
+		deb-systemd-invoke $_dh_action 'systemd-udevd.service' >/dev/null || true
+	fi
+fi
+# End automatically added section
+

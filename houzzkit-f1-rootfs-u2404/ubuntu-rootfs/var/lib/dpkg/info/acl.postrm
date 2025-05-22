@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = 'remove' ]; then
+  for file in chacl getfacl setfacl; do
+    if [ -L "$DPKG_ROOT/bin/$file" ]; then
+      rm "$DPKG_ROOT/bin/$file"
+    fi
+  done
+fi
+
+

@@ -1,0 +1,5 @@
+e37fab2092ff6706592194f029b2995a  usr/bin/pkgconf
+a4ff3af702f8285b863bd89ccd79c4c9  usr/share/doc/pkgconf-bin/AUTHORS
+386294363cd4faa619ab71a72f2a619b  usr/share/doc/pkgconf-bin/README.md.gz
+549a3ecb9fbd7dd4cc0b2b90137a9dfd  usr/share/doc/pkgconf-bin/copyright
+672f3855008278ab7d4019acdc384d8b  usr/share/lintian/overrides/pkgconf-bin

@@ -1,0 +1,6 @@
+a7bc5205db2c2453664ab662c9ab1482  usr/lib/dbus-1.0/dbus-daemon-launch-helper
+9ada4627b4793917f3fb2bf8d7afa3ce  usr/lib/systemd/system/dbus.service
+4246bbf0501d8ff1657f404ab07cc6a3  usr/share/bug/dbus/control
+579f5d069b3bb8bb81d12b7dbe713cb6  usr/share/doc/dbus/README.Debian
+ac086c4d0448b7b5a95ffc7d1ca2e5e8  usr/share/doc/dbus/copyright
+a20f51d8d07fe36e0ef46ccbe31a803a  usr/share/lintian/overrides/dbus

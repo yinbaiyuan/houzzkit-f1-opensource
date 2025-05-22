@@ -1,0 +1,9 @@
+d1a15d947021a3634feaa5e424d65bca  usr/bin/xdg-user-dir
+7f3ca92c5859f403a0d5f906e662b4cd  usr/bin/xdg-user-dirs-update
+369046bd78153bf61cc389bf4600b7e9  usr/share/doc/xdg-user-dirs/changelog.Debian.gz
+98e912934e3d4fcd82e4c6918a93e2b8  usr/share/doc/xdg-user-dirs/copyright
+9058e5388b8bede7e51c05f360fe6065  usr/share/man/man1/xdg-user-dir.1.gz
+e7f0332fd268cf800b688f1b9c8b239d  usr/share/man/man1/xdg-user-dirs-update.1.gz
+a0a0d696b6470572bd2cbb9694072ddb  usr/share/man/man5/user-dirs.conf.5.gz
+81a2cd1eb7b84f03e0533191e6b8de93  usr/share/man/man5/user-dirs.defaults.5.gz
+6e6078ce797d1e24f6d8c5fcbe608535  usr/share/man/man5/user-dirs.dirs.5.gz

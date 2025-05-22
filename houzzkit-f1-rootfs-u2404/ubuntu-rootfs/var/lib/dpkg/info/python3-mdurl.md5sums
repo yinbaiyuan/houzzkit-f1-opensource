@@ -1,0 +1,12 @@
+cd4119061a6fba1f5118f5b9344e66c8  usr/lib/python3/dist-packages/mdurl-0.1.2.dist-info/METADATA
+a0af922b9da642af55daccc80b9f5125  usr/lib/python3/dist-packages/mdurl-0.1.2.dist-info/RECORD
+76e90429bc279b3f964421933668c15c  usr/lib/python3/dist-packages/mdurl-0.1.2.dist-info/WHEEL
+16caaad69eeb1c6230717f36b183c99b  usr/lib/python3/dist-packages/mdurl/__init__.py
+ddc57bb691b2b7ed16320904407fa3da  usr/lib/python3/dist-packages/mdurl/_decode.py
+0df48bb428f16ce5bd76ef6e62120e73  usr/lib/python3/dist-packages/mdurl/_encode.py
+7377edfe5f6854ed36e168d68a2848a5  usr/lib/python3/dist-packages/mdurl/_format.py
+417fe388bce99f56f38393c70ded712b  usr/lib/python3/dist-packages/mdurl/_parse.py
+ffc3e4ec590fdd325d67d27d44c7db9f  usr/lib/python3/dist-packages/mdurl/_url.py
+bd2fa011a5e69d2b68df68fbc59f8be6  usr/lib/python3/dist-packages/mdurl/py.typed
+d8a2a8b28e72bfe54ce07883aedf2d78  usr/share/doc/python3-mdurl/changelog.Debian.gz
+7aef33e435844cd9a00da6745980ee70  usr/share/doc/python3-mdurl/copyright

@@ -1,0 +1,17 @@
+8f19264a111b4ca605923c3190cf266b  usr/share/color/icc/ghostscript/a98.icc
+fd199526f0a7e0bceb294a777cd84252  usr/share/color/icc/ghostscript/default_cmyk.icc
+315828f0f85f79b8d835fd6150d72e62  usr/share/color/icc/ghostscript/default_gray.icc
+27d2435a749ae91e9974bf7a109a03e5  usr/share/color/icc/ghostscript/default_rgb.icc
+b1e523da41112d37077271b1d6fd306e  usr/share/color/icc/ghostscript/esrgb.icc
+89c593b4fb2720684236dd2a686244c5  usr/share/color/icc/ghostscript/gray_to_k.icc
+6fd0ff6e45f84366f3579ef26f8db20e  usr/share/color/icc/ghostscript/lab.icc
+3d97795cda5f4f357a6871ee44c572bd  usr/share/color/icc/ghostscript/ps_cmyk.icc
+11eed05cd827981c9687c4a22007aeb5  usr/share/color/icc/ghostscript/ps_gray.icc
+33bd357516893cf318114255eb4dcf5f  usr/share/color/icc/ghostscript/ps_rgb.icc
+8f652ab6bae9a3a5bfdaa74b3a2dc24b  usr/share/color/icc/ghostscript/rommrgb.icc
+b70d32fbbc782deaf46e49175e2a3cd5  usr/share/color/icc/ghostscript/scrgb.icc
+79e8621d62557a547d591527405a388a  usr/share/color/icc/ghostscript/sgray.icc
+27d2435a749ae91e9974bf7a109a03e5  usr/share/color/icc/ghostscript/srgb.icc
+7e7792848ad0f56e6fb989fe2b146ea9  usr/share/doc/libgs-common/NEWS.Debian.gz
+fb5f9402faf17db701fd58b1ef7644de  usr/share/doc/libgs-common/changelog.Debian.gz
+100ab4b4864f6eb9ef79c7d1ef19dc19  usr/share/doc/libgs-common/copyright

@@ -1,0 +1,9 @@
+auto
+/usr/bin/ftp
+ftp.1.gz
+/usr/share/man/man1/ftp.1.gz
+
+/usr/bin/tnftp
+120
+/usr/share/man/man1/tnftp.1.gz
+

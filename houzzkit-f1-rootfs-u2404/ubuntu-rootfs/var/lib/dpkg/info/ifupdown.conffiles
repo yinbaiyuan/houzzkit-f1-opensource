@@ -1,0 +1,4 @@
+/etc/default/networking
+/etc/init.d/networking
+/etc/network/if-down.d/resolved
+/etc/network/if-up.d/resolved

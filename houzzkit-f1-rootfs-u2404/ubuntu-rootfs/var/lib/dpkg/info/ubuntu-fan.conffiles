@@ -1,0 +1,8 @@
+/etc/NetworkManager/conf.d/10-ubuntu-fan.conf
+/etc/default/ubuntu-fan
+/etc/dnsmasq.d/ubuntu-fan
+/etc/init.d/ubuntu-fan
+/etc/init/ubuntu-fan.conf
+/etc/network/if-down.d/ubuntu-fan
+/etc/network/if-post-down.d/ubuntu-fan
+/etc/network/if-up.d/ubuntu-fan

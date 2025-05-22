@@ -1,0 +1,36 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    install|upgrade)
+	if dpkg --compare-versions "$2" lt-nl 0.9.9-8; then
+		if [ -d /etc/X11/fonts/misc/xfonts-wqy.alias ]; then
+			# unconditionally wrongly placed conffile and directory introduced in 0.9.9-5
+			dpkg-maintscript-helper rm_conffile /etc/X11/fonts/misc/xfonts-wqy.alias -- "$@" || true
+			if [ -d "/etc/X11/fonts/misc/xfonts-wqy.alias.dpkg-ba*" ]; then
+			  rm -r /etc/X11/fonts/misc/xfonts-wqy.alias.dpkg-ba*
+			fi
+		fi
+	fi
+
+	if dpkg --compare-versions "$2" lt "1.0.0~rc1-1~"; then
+		if [ -d /etc/fonts/conf.avail/85-xfonts-wqy.conf ]; then
+			dpkg-maintscript-helper rm_conffile /etc/fonts/conf.avail/85-xfonts-wqy.conf -- "$@" || true
+			if [ -d "/etc/fonts/conf.avail/85-xfonts-wqy.conf.dpkg-*" ]; then
+				rm -r "/etc/fonts/conf.avail/85-xfonts-wqy.conf.dpkg-*"
+			fi
+		fi
+	fi
+    ;;
+
+    abort-upgrade)
+    ;;
+
+    *)
+	echo "preinst called with unknown argument \`$1'" >&2
+	exit 1
+    ;;
+esac
+
+

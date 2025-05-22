@@ -1,0 +1,13 @@
+/.
+/lib/aarch64-linux-gnu
+/lib/aarch64-linux-gnu/libntfs-3g.so.89.0.0
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libntfs-3g89t64
+/usr/share/doc/libntfs-3g89t64/changelog.Debian.gz
+/usr/share/doc/libntfs-3g89t64/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libntfs-3g89t64
+/lib/aarch64-linux-gnu/libntfs-3g.so.89

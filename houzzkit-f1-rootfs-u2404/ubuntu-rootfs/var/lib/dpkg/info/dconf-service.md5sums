@@ -1,0 +1,5 @@
+2239bb9a30101146e9729874fb97b07f  usr/lib/systemd/user/dconf.service
+801e9eaf9e6a53b81cdb0d0f15eb0a06  usr/libexec/dconf-service
+7f76f3435df5583f8a43546727d410c6  usr/share/dbus-1/services/ca.desrt.dconf.service
+0986de5d536023dd94efc4a313e2149e  usr/share/doc/dconf-service/copyright
+a30d3821e6a25b7ba009962016504945  usr/share/man/man1/dconf-service.1.gz

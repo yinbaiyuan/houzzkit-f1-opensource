@@ -1,0 +1,4 @@
+ENV{DEVNAME}=="/dev/dri/card0", TAG+="mutter-device-preferred-primary"
+ENV{ID_PATH}=="platform-f*.npu", TAG+="mutter-device-ignore"
+ENV{DRIVER}=="rockchip-drm" ENV{SWITCHEROO_CONTROL_VENDOR_NAME}+="ARM Mali Bifrost GPU"
+ENV{DRIVER}=="RKNPU" ENV{SWITCHEROO_CONTROL_VENDOR_NAME}+="Rockchip"

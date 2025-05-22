@@ -1,0 +1,15 @@
+3d0274eb3ad4c3f83f98daf0da5eb62a  usr/bin/cacaclock
+08576129ffd7ef9f09ab89504a2ef2d1  usr/bin/cacademo
+8ed8ed59c75f8226ca7523d8a68fb8ec  usr/bin/cacafire
+6cf018001c393ba285a56cc78e3c825e  usr/bin/cacaplay
+19ad8ce50de618dd572b0e1c464fa989  usr/bin/cacaserver
+4b9cc824f5d9d6622ef0fa76ebd9055c  usr/bin/cacaview
+d9ee68d974293e8c03dce04a3ada4a88  usr/bin/img2txt
+2299ac60044a193ac60b7a6a0e35e9ef  usr/lib/mime/packages/caca-utils
+eff5afb87b4c576cf83933bc418f3ced  usr/share/doc/caca-utils/copyright
+0a391760bc69e8b6493ad833cc5f6f48  usr/share/libcaca/caca.txt
+45d61c6dc9d5c196dc280a3f3f302923  usr/share/man/man1/cacafire.1.gz
+28dd104ac46d7a0fe3a7d8bc94e7803f  usr/share/man/man1/cacaplay.1.gz
+51ed374d564454fbae869a75a5fd91fe  usr/share/man/man1/cacaserver.1.gz
+43dcd43c91b72753a0d9ecbe4c8f4b05  usr/share/man/man1/cacaview.1.gz
+051871cf37a27985b067e9b553fdfc1f  usr/share/man/man1/img2txt.1.gz

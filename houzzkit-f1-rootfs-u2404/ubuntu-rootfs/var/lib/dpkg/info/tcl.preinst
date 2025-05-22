@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    install|upgrade)
+	# Currently the alternatives mechanism is not used
+	if dpkg --compare-versions "$2" lt-nl "8.6.0+2"; then
+	    update-alternatives --remove-all tclsh || true
+	fi
+	;;
+    abort-upgrade)
+	;;
+    *)
+	echo "preinst called with unknown argument \`$1'" >&2
+	exit 1
+	;;
+esac
+
+

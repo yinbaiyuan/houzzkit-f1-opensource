@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installalternatives/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ]; then
+        update-alternatives --install /usr/bin/ftp ftp /usr/bin/tnftp 120 \
+            --slave /usr/share/man/man1/ftp.1.gz ftp.1.gz /usr/share/man/man1/tnftp.1.gz
+fi
+# End automatically added section

@@ -1,0 +1,4 @@
+libhistory 8 libreadline8t64 (>= 8.2)
+libreadline 8 libreadline8t64 (>= 8.2)
+udeb: libhistory 8 libreadline8-udeb (>= 8.2)
+udeb: libreadline 8 libreadline8-udeb (>= 8.2)

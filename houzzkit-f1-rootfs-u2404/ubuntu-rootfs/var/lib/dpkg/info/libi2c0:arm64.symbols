@@ -1,0 +1,16 @@
+libi2c.so.0 libi2c0 #MINVER#
+* Build-Depends-Package: libi2c-dev
+ i2c_smbus_access@Base 4.0
+ i2c_smbus_block_process_call@Base 4.0
+ i2c_smbus_process_call@Base 4.0
+ i2c_smbus_read_block_data@Base 4.0
+ i2c_smbus_read_byte@Base 4.0
+ i2c_smbus_read_byte_data@Base 4.0
+ i2c_smbus_read_i2c_block_data@Base 4.0
+ i2c_smbus_read_word_data@Base 4.0
+ i2c_smbus_write_block_data@Base 4.0
+ i2c_smbus_write_byte@Base 4.0
+ i2c_smbus_write_byte_data@Base 4.0
+ i2c_smbus_write_i2c_block_data@Base 4.0
+ i2c_smbus_write_quick@Base 4.0
+ i2c_smbus_write_word_data@Base 4.0

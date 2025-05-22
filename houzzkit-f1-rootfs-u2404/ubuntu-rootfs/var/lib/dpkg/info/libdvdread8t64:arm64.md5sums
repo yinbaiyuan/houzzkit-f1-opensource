@@ -1,0 +1,6 @@
+130b7e5a988f1168e62254caa3d22b84  usr/lib/aarch64-linux-gnu/libdvdread.so.8.0.0
+3a317819e2d243ed6514fd748967778e  usr/share/bug/libdvdread8t64/control
+2572c0ec5f7b90235364c69266b5208f  usr/share/doc/libdvdread8t64/README.css
+4d95be109ac2d8599aaa4490ea9dcc13  usr/share/doc/libdvdread8t64/changelog.Debian.gz
+0277d75a16e5dfce7f3c9f125b1f2e25  usr/share/doc/libdvdread8t64/copyright
+c3be8d8c41832405d005304b4b59f868  usr/share/lintian/overrides/libdvdread8t64

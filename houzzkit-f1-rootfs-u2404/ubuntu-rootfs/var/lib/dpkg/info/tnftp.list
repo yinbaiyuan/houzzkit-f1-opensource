@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/bin
+/usr/bin/tnftp
+/usr/share
+/usr/share/doc
+/usr/share/doc/tnftp
+/usr/share/doc/tnftp/README
+/usr/share/doc/tnftp/THANKS
+/usr/share/doc/tnftp/changelog.Debian.gz
+/usr/share/doc/tnftp/copyright
+/usr/share/doc/tnftp/todo
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/tnftp.1.gz

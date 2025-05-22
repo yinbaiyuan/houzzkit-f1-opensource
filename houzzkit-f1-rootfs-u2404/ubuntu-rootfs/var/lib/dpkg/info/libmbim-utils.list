@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/bin
+/usr/bin/mbim-network
+/usr/bin/mbimcli
+/usr/share
+/usr/share/bash-completion
+/usr/share/bash-completion/completions
+/usr/share/bash-completion/completions/mbimcli
+/usr/share/doc
+/usr/share/doc/libmbim-utils
+/usr/share/doc/libmbim-utils/copyright
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/mbim-network.1.gz
+/usr/share/man/man1/mbimcli.1.gz
+/usr/share/doc/libmbim-utils/changelog.Debian.gz

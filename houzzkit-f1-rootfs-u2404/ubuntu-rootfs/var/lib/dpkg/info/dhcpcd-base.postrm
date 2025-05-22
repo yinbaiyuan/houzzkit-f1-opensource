@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+if [ "$1" = purge ]; then
+  if [ -x "$(command -v deluser)" ]; then
+      deluser --quiet --system dhcpcd > /dev/null || true
+    else
+      echo >&2 "Not removing dhcpcd system account because deluser command was not found"
+  fi
+  # The dhcpcd package stores leases and DUID in this directory,
+  # so we need to remove it on purge.
+  rm -rf /var/lib/dhcpcd
+fi
+

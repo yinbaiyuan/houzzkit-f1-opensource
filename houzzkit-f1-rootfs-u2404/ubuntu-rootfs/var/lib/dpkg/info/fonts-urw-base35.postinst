@@ -1,0 +1,41 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "configure" ]
+then
+	if [ -x "$(which update-gsfontmap 2>/dev/null)" ]
+	then
+		update-gsfontmap
+	fi
+fi
+
+# Automatically added by dh_installxfonts/13.14.1ubuntu4
+if command -v update-fonts-dir >/dev/null; then
+	update-fonts-scale Type1;update-fonts-dir --x11r7-layout Type1;update-fonts-alias --include /etc/X11/fonts/Type1/fonts-urw-base35.alias Type1
+fi
+# End automatically added section
+# Automatically added by dh_installdeb/13.14.1ubuntu4
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.d/31-fonts-urw-base35.conf 20170801-1\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.d/30-urw-bookman.conf 20170801-2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.d/30-urw-c059.conf 20170801-2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.d/30-urw-d050000l.conf 20170801-2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.d/30-urw-fallback.conf 20170801-2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.d/30-urw-gothic.conf 20170801-2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.d/30-urw-nimbus-mono-ps.conf 20170801-2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.d/30-urw-nimbus-roman.conf 20170801-2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.d/30-urw-nimbus-sans-narrow.conf 20170801-2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.d/30-urw-nimbus-sans.conf 20170801-2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.d/30-urw-p052.conf 20170801-2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.d/30-urw-standard-symbols-ps.conf 20170801-2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.d/30-urw-z003.conf 20170801-2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.d/61-urw-nimbus-sans-narrow.conf 20170801.1-1\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.d/61-urw-fallback-specifics.conf 20170801.1-1\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/ghostscript/fontmap.d/10gsfonts.conf 2:20200910-2\~ gsfonts -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/defoma/hints/gsfonts.hints 2:20200910-2\~ gsfonts -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/X11/fonts/Type1/gsfonts-x11.alias 2:20200910-2\~ gsfonts-x11 -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/X11/fonts/Type1/gsfonts-x11.scale 2:20200910-2\~ gsfonts-x11 -- "$@"
+# End automatically added section
+
+
+exit 0

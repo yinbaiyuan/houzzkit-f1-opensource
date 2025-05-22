@@ -1,0 +1,611 @@
+Package: cuda-drivers-fabricmanager-460
+Description-md5: c746aee8cee32a07762f629e3f8575a9
+Description-en: Transitional package for cuda-drivers-fabricmanager-470
+ This is a transitional package for cuda-drivers-fabricmanager-470, and can be
+ safely removed after the installation is complete.
+
+Package: cuda-drivers-fabricmanager-470
+Description-md5: 6715a1a6e39ab2cdf04d9fe216556c20
+Description-en: Meta-package for FM and Driver
+ Convenience meta-package for installing fabricmanager and the cuda-drivers
+ meta-package simultaneously while keeping version equivalence. This meta-
+ package is branch-specific.
+
+Package: cuda-drivers-fabricmanager-535
+Description-md5: 6715a1a6e39ab2cdf04d9fe216556c20
+Description-en: Meta-package for FM and Driver
+ Convenience meta-package for installing fabricmanager and the cuda-drivers
+ meta-package simultaneously while keeping version equivalence. This meta-
+ package is branch-specific.
+
+Package: cuda-drivers-fabricmanager-550
+Description-md5: 6715a1a6e39ab2cdf04d9fe216556c20
+Description-en: Meta-package for FM and Driver
+ Convenience meta-package for installing fabricmanager and the cuda-drivers
+ meta-package simultaneously while keeping version equivalence. This meta-
+ package is branch-specific.
+
+Package: cuda-drivers-fabricmanager-570
+Description-md5: 6715a1a6e39ab2cdf04d9fe216556c20
+Description-en: Meta-package for FM and Driver
+ Convenience meta-package for installing fabricmanager and the cuda-drivers
+ meta-package simultaneously while keeping version equivalence. This meta-
+ package is branch-specific.
+
+Package: libnvidia-cfg1-550-server
+Description-md5: 7dce7edcd194e980223937b38f49e8b9
+Description-en: NVIDIA binary OpenGL/GLX configuration library
+ The NVIDIA binary driver provides optimized hardware acceleration of
+ OpenGL/GLX/EGL/GLES applications via a direct-rendering X Server
+ for graphics cards using NVIDIA chip sets.
+ .
+ This package contains the libnvidia-cfg.so.1 runtime library.
+
+Package: libnvidia-common-550-server
+Description-md5: 259c61ba4e777f5a2f1e7ee2fd1957bc
+Description-en: Shared files used by the NVIDIA libraries
+ This package provides a set of files that are required by the NVIDIA
+ libraries.
+
+Package: libnvidia-compute-550-server
+Description-md5: 11b7b8b816402e282453221bd66903b4
+Description-en: NVIDIA libcompute package
+ This package provides a set of libraries which enable the NVIDIA Server Driver
+ to use GPUs for parallel general purpose computation through CUDA and
+ OpenCL.
+
+Package: libnvidia-decode-550-server
+Description-md5: 82c3a05b45f86380632898c9b339df7a
+Description-en: NVIDIA Video Decoding runtime libraries
+ This package includes the NVIDIA CUDA Video Decoder (NVCUVID) library which
+ provides an interface to hardware video decoding capabilities on NVIDIA GPUs with CUDA.
+ .
+ The package also provides a VDPAU (Video Decode and Presentation API for Unix-like
+ systems) library for the NVIDIA vendor implementation.
+
+Package: libnvidia-encode-550-server
+Description-md5: 21b4191ea88e49a7e948a2b89cfed901
+Description-en: NVENC Video Encoding runtime library
+ The NVENC Video Encoding library provides an interface to video encoder
+ hardware on supported NVIDIA GPUs.
+ .
+ This package contains the nvidia-encode runtime library.
+
+Package: libnvidia-extra-550-server
+Description-md5: d919c13960893adb9b27fa15ab4b33a4
+Description-en: Extra libraries for the NVIDIA Server Driver
+ This package provides an additional set of libraries to be used with
+ the NVIDIA Server Driver.
+
+Package: libnvidia-fbc1-550-server
+Description-md5: 19123a53d351a2e540ca869d1e74f9d2
+Description-en: NVIDIA OpenGL-based Framebuffer Capture runtime library
+ The NVIDIA OpenGL-based Framebuffer Capture (NvFBCOpenGL) library provides
+ a high performance, low latency interface to capture and optionally encode an
+ OpenGL framebuffer. NvFBCOpenGL is a private API that is only available to
+ approved partners for use in remote graphics scenarios.
+ .
+ This package contains the NvFBCOpenGL runtime library.
+
+Package: libnvidia-gl-550-server
+Description-md5: d899ab089124230e29489e7dcc9f137a
+Description-en: NVIDIA OpenGL/GLX/EGL/GLES GLVND libraries and Vulkan ICD
+ This package provides the NVIDIA OpenGL/GLX/EGL/GLES libraries and the
+ Vulkan ICD.
+
+Package: libnvidia-nscq-460
+Description-md5: 5c18da8fbc7182f2b6ef12bba5b490cb
+Description-en: Transitional package for libnvidia-nscq-470
+ This is a transitional package for libnvidia-nscq-470, and can be
+ safely removed after the installation is complete.
+
+Package: libnvidia-nscq-470
+Description-md5: 06d90fb68ae67655c00815a4db03a64e
+Description-en: NVSwitch Configuration and Query library
+ NVIDIA NVSwitch Configuration and Query (NSCQ) library provides a
+ stable driver API used by DCGM for monitoring NVSwitch devices.
+
+Package: libnvidia-nscq-535
+Description-md5: 06d90fb68ae67655c00815a4db03a64e
+Description-en: NVSwitch Configuration and Query library
+ NVIDIA NVSwitch Configuration and Query (NSCQ) library provides a
+ stable driver API used by DCGM for monitoring NVSwitch devices.
+
+Package: libnvidia-nscq-550
+Description-md5: 06d90fb68ae67655c00815a4db03a64e
+Description-en: NVSwitch Configuration and Query library
+ NVIDIA NVSwitch Configuration and Query (NSCQ) library provides a
+ stable driver API used by DCGM for monitoring NVSwitch devices.
+
+Package: libnvidia-nscq-570
+Description-md5: 06d90fb68ae67655c00815a4db03a64e
+Description-en: NVSwitch Configuration and Query library
+ NVIDIA NVSwitch Configuration and Query (NSCQ) library provides a
+ stable driver API used by DCGM for monitoring NVSwitch devices.
+
+Package: linux-modules-nvidia-470-6.11.0-1008-azure
+Description-md5: 3b649d7c9605dccdaa3afee513f748b0
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.11.0-1008 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-470-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-modules-nvidia-470-server-6.11.0-1008-azure
+Description-md5: 825c79213bfbce4ef1b5ffcea48bba7b
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.11.0-1008 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-470-server-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-modules-nvidia-535-6.11.0-1008-azure
+Description-md5: 7eacb1d6f286204dfc683bab84e32345
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.11.0-1008 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-modules-nvidia-535-server-6.11.0-1008-azure
+Description-md5: 42fffed4165868f64fab69630f46e2bd
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.11.0-1008 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-server-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-modules-nvidia-550-6.11.0-1008-azure
+Description-md5: 97049833c84303c6598dd77071da01ed
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.11.0-1008 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-modules-nvidia-550-server-6.11.0-1008-azure
+Description-md5: 251dd25233e26944468abdc135869efc
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.11.0-1008 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-server-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-modules-nvidia-565-server-6.11.0-1008-azure
+Description-md5: dfce3981f8b8ed39ba4f7a8cf5e65cbd
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.11.0-1008 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-565-server-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-modules-nvidia-570-server-6.11.0-1008-azure
+Description-md5: 9bfd61e91279ac7cef3b685f79fb1499
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008
+ This package pulls together the Linux kernel nvidia modules for
+ version 6.11.0-1008 with the appropriate signatures.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-570-server-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-470-6.11.0-1008-azure
+Description-md5: a41454535e9111a48a943c5386b2707f
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.11.0-1008.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-470-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-470-server-6.11.0-1008-azure
+Description-md5: 5ff4bbefa552548c2a1d77a5a3a865fa
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.11.0-1008.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-470-server-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-535-6.11.0-1008-azure
+Description-md5: abe9e34f20c253485d4e7ddfd4023509
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.11.0-1008.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-535-open-6.11.0-1008-azure
+Description-md5: efbbfeca7aabf6f9f3fd16313b0c45f3
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.11.0-1008.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-open-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-535-server-6.11.0-1008-azure
+Description-md5: 3059684461523dfa3e64ae47ba170693
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.11.0-1008.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-server-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-535-server-open-6.11.0-1008-azure
+Description-md5: 72bf72326c2754efd50f722dd326535d
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.11.0-1008.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-535-server-open-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-550-6.11.0-1008-azure
+Description-md5: 1040dd6746ecf44b8a520961873ee0d6
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.11.0-1008.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-550-open-6.11.0-1008-azure
+Description-md5: 4a567075c3116a9d696a9c8f1ce2de9c
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.11.0-1008.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-open-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-550-server-6.11.0-1008-azure
+Description-md5: 80c0024157aefac8d14de7b73eb445eb
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.11.0-1008.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-server-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-550-server-open-6.11.0-1008-azure
+Description-md5: b757ade3071df83bcf7d17abeacce248
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.11.0-1008.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-550-server-open-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-565-server-6.11.0-1008-azure
+Description-md5: 0cae6beab61cb1b8241ea8bb4358ade6
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.11.0-1008.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-565-server-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-565-server-open-6.11.0-1008-azure
+Description-md5: c257aac0ac623de379847c8147d8a574
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.11.0-1008.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-565-server-open-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-570-server-6.11.0-1008-azure
+Description-md5: 496242c60e8ea339904380011450a986
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.11.0-1008.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-570-server-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: linux-objects-nvidia-570-server-open-6.11.0-1008-azure
+Description-md5: 688cceb99e065b5f6998d9ff4f12e254
+Description-en: Linux kernel nvidia modules for version 6.11.0-1008 (objects)
+ This package contains the Linux kernel nvidia modules for version 6.11.0-1008.
+ .
+ You likely do not want to install this package directly. Instead, install the
+ one of the linux-modules-nvidia-570-server-open-azure* meta-packages,
+ which will ensure that upgrades work correctly, and that supporting packages are
+ also installed.
+
+Package: nvidia-compute-utils-550-server
+Description-md5: 22d91d0fcba51df4741637e102ab12c2
+Description-en: NVIDIA compute utilities
+ This package provides utility binaries for paraller general purpose
+ computing use cases with the NVIDIA Server Driver.
+ .
+ CUDA MPS is a feature that allows multiple CUDA processes to share a single
+ GPU context. CUDA MPS should be transparent to CUDA programs.
+ .
+ CUDA MPS requires a device that supports Unified Virtual Address (UVA) and
+ has compute capability SM 3.5 or higher.
+ Pre-CUDA 4.0 APIs are not supported under CUDA MPS.
+
+Package: nvidia-dkms-550
+Description-md5: ec8c193060b5458922cc0bda62df7796
+Description-en: NVIDIA DKMS package
+ This package builds the NVIDIA kernel module needed by the userspace
+ driver, using DKMS.
+ Provided that you have the kernel header packages installed, the kernel
+ module will be built for your running kernel, and automatically rebuilt for
+ any new kernel headers that are installed.
+
+Package: nvidia-dkms-550-open
+Description-md5: dafa8f35853882b3010cba056bb022d0
+Description-en: NVIDIA DKMS package (open kernel module)
+ This package builds the open NVIDIA kernel module needed by the userspace
+ driver, using DKMS.
+ Provided that you have the kernel header packages installed, the kernel
+ module will be built for your running kernel, and automatically rebuilt for
+ any new kernel headers that are installed.
+
+Package: nvidia-dkms-550-server
+Description-md5: ec8c193060b5458922cc0bda62df7796
+Description-en: NVIDIA DKMS package
+ This package builds the NVIDIA kernel module needed by the userspace
+ driver, using DKMS.
+ Provided that you have the kernel header packages installed, the kernel
+ module will be built for your running kernel, and automatically rebuilt for
+ any new kernel headers that are installed.
+
+Package: nvidia-dkms-550-server-open
+Description-md5: dafa8f35853882b3010cba056bb022d0
+Description-en: NVIDIA DKMS package (open kernel module)
+ This package builds the open NVIDIA kernel module needed by the userspace
+ driver, using DKMS.
+ Provided that you have the kernel header packages installed, the kernel
+ module will be built for your running kernel, and automatically rebuilt for
+ any new kernel headers that are installed.
+
+Package: nvidia-driver-550-open
+Description-md5: 08a277604538b99ffbda44d5d48e51ca
+Description-en: NVIDIA driver (open kernel) metapackage
+ This metapackage depends on the NVIDIA binary driver and on all of its libraries,
+ to provide hardware acceleration for OpenGL/GLX/EGL/GLES/Vulkan
+ applications on either X11 or on Wayland.
+ .
+ See /usr/share/doc/nvidia-driver-550/README.txt.gz
+ for a complete list of supported GPUs and PCI IDs.
+
+Package: nvidia-driver-550-server
+Description-md5: 1f97b6c1bc45fb8d1da875a0e6bd21a9
+Description-en: NVIDIA Server Driver metapackage
+ This metapackage depends on the NVIDIA binary driver and on all of its libraries,
+ to provide hardware acceleration for OpenGL/GLX/EGL/GLES/Vulkan
+ applications on either X11 or on Wayland.
+ .
+ See /usr/share/doc/nvidia-driver-550-server/README.txt.gz
+ for a complete list of supported GPUs and PCI IDs.
+
+Package: nvidia-driver-550-server-open
+Description-md5: 5b8b723b30f898e0953132ce7a5154e2
+Description-en: NVIDIA driver (open kernel) metapackage
+ This metapackage depends on the NVIDIA binary driver and on all of its libraries,
+ to provide hardware acceleration for OpenGL/GLX/EGL/GLES/Vulkan
+ applications on either X11 or on Wayland.
+ .
+ See /usr/share/doc/nvidia-driver-550-server/README.txt.gz
+ for a complete list of supported GPUs and PCI IDs.
+
+Package: nvidia-fabricmanager-460
+Description-md5: 127ff08d88ec25e06d9075de2427bd02
+Description-en: Transitional package for nvidia-fabricmanager-#FLAVOUR#
+ This is a transitional package for nvidia-fabricmanager-#FLAVOUR#, and can be
+ safely removed after the installation is complete.
+
+Package: nvidia-fabricmanager-470
+Description-md5: 3d49e1346de8fc10beaca066b0eb5df0
+Description-en: Fabric Manager for NVSwitch based systems.
+ Fabric Manager for NVIDIA NVSwitch based systems.
+
+Package: nvidia-fabricmanager-535
+Description-md5: 3d49e1346de8fc10beaca066b0eb5df0
+Description-en: Fabric Manager for NVSwitch based systems.
+ Fabric Manager for NVIDIA NVSwitch based systems.
+
+Package: nvidia-fabricmanager-550
+Description-md5: 3d49e1346de8fc10beaca066b0eb5df0
+Description-en: Fabric Manager for NVSwitch based systems.
+ Fabric Manager for NVIDIA NVSwitch based systems.
+
+Package: nvidia-fabricmanager-570
+Description-md5: 3d49e1346de8fc10beaca066b0eb5df0
+Description-en: Fabric Manager for NVSwitch based systems.
+ Fabric Manager for NVIDIA NVSwitch based systems.
+
+Package: nvidia-fabricmanager-dev-460
+Description-md5: 43b0b28c82f1d336e6909be154e74985
+Description-en: Transitional package for nvidia-fabricmanager-dev-470
+ This is a transitional package for nvidia-fabricmanager-dev-470, and can be
+ safely removed after the installation is complete.
+
+Package: nvidia-fabricmanager-dev-470
+Description-md5: 565605cc6a127d423c88c38e5c2f9a26
+Description-en: Fabric Manager API headers and associated library
+ Fabric Manager API headers and associated library
+
+Package: nvidia-fabricmanager-dev-535
+Description-md5: 565605cc6a127d423c88c38e5c2f9a26
+Description-en: Fabric Manager API headers and associated library
+ Fabric Manager API headers and associated library
+
+Package: nvidia-fabricmanager-dev-550
+Description-md5: 565605cc6a127d423c88c38e5c2f9a26
+Description-en: Fabric Manager API headers and associated library
+ Fabric Manager API headers and associated library
+
+Package: nvidia-fabricmanager-dev-570
+Description-md5: 565605cc6a127d423c88c38e5c2f9a26
+Description-en: Fabric Manager API headers and associated library
+ Fabric Manager API headers and associated library
+
+Package: nvidia-headless-550
+Description-md5: b35b6025ccd9f0c76e3456782d179a48
+Description-en: NVIDIA headless metapackage
+ This metapackage installs the NVIDIA driver and the libraries that enable
+ parallel general purpose computation through CUDA and
+ OpenCL.
+ .
+ Install this package if you do not need X11 or Wayland support, which is
+ provided by the nvidia-driver-550 metapackage.
+
+Package: nvidia-headless-550-open
+Description-md5: d32ac1ffaf52c51b5da6cbfabeb5bc8c
+Description-en: NVIDIA headless metapackage (open kernel module)
+ This metapackage installs the NVIDIA driver and the libraries that enable
+ parallel general purpose computation through CUDA and
+ OpenCL.
+ .
+ Install this package if you do not need X11 or Wayland support, which is
+ provided by the nvidia-driver-550 metapackage.
+
+Package: nvidia-headless-550-server
+Description-md5: e7d642d9d00b2dfb77140f3484b629a1
+Description-en: NVIDIA headless metapackage
+ This metapackage installs the NVIDIA Server Driver and the libraries that enable
+ parallel general purpose computation through CUDA and
+ OpenCL.
+ .
+ Install this package if you do not need X11 or Wayland support, which is
+ provided by the nvidia-driver-550-server metapackage.
+
+Package: nvidia-headless-550-server-open
+Description-md5: 93799bc2a5a3066fc0bd933c9d387adf
+Description-en: NVIDIA headless metapackage (open kernel module)
+ This metapackage installs the NVIDIA driver and the libraries that enable
+ parallel general purpose computation through CUDA and
+ OpenCL.
+ .
+ Install this package if you do not need X11 or Wayland support, which is
+ provided by the nvidia-driver-550-server metapackage.
+
+Package: nvidia-headless-no-dkms-550
+Description-md5: f950ded8bd15694151d6381e4a71f888
+Description-en: NVIDIA headless metapackage - no DKMS
+ This metapackage installs the NVIDIA driver and the libraries that enable
+ parallel general purpose computation through CUDA and
+ OpenCL. DKMS will not be installed, and, therefore, the kernel module
+ will not be built.
+ .
+ Install this package if you do not need X11 or Wayland support, which is
+ provided by the nvidia-driver-550 metapackage.
+
+Package: nvidia-headless-no-dkms-550-open
+Description-md5: ccfd5dd0f7972d2e2b524be798e18a68
+Description-en: NVIDIA headless metapackage - no DKMS (open kernel module)
+ This metapackage installs the NVIDIA driver and the libraries that enable
+ parallel general purpose computation through CUDA and
+ OpenCL. DKMS will not be installed, and, therefore, the kernel module
+ will not be built.
+ .
+ Install this package if you do not need X11 or Wayland support, which is
+ provided by the nvidia-driver-550 metapackage.
+
+Package: nvidia-headless-no-dkms-550-server
+Description-md5: 95e158ef9d1bc00e831315e1efd3057a
+Description-en: NVIDIA headless metapackage - no DKMS
+ This metapackage installs the NVIDIA Server Driver and the libraries that enable
+ parallel general purpose computation through CUDA and
+ OpenCL. DKMS will not be installed, and, therefore, the kernel module
+ will not be built.
+ .
+ Install this package if you do not need X11 or Wayland support, which is
+ provided by the nvidia-driver-550-server metapackage.
+
+Package: nvidia-headless-no-dkms-550-server-open
+Description-md5: e17d66a398d4ed38aec0c116a1e1444e
+Description-en: NVIDIA headless metapackage - no DKMS (open kernel module)
+ This metapackage installs the NVIDIA driver and the libraries that enable
+ parallel general purpose computation through CUDA and
+ OpenCL. DKMS will not be installed, and, therefore, the kernel module
+ will not be built.
+ .
+ Install this package if you do not need X11 or Wayland support, which is
+ provided by the nvidia-driver-550-server metapackage.
+
+Package: nvidia-imex-550
+Description-md5: f7a765b2a95d4cabcc9695466d5f6cc8
+Description-en: IMEX Manager for NVIDIA based systems.
+ IMEX Manager for NVIDIA systems.
+
+Package: nvidia-imex-570
+Description-md5: f7a765b2a95d4cabcc9695466d5f6cc8
+Description-en: IMEX Manager for NVIDIA based systems.
+ IMEX Manager for NVIDIA systems.
+
+Package: nvidia-kernel-source-550-open
+Description-md5: 2694f1253ed6bd4cfbccf1e22ec25a3d
+Description-en: NVIDIA kernel source package
+ This package provides the open NVIDIA kernel source needed by the userspace
+ driver.
+
+Package: nvidia-kernel-source-550-server
+Description-md5: dc60d6861ca351f7cadc7d8fcc74e854
+Description-en: NVIDIA kernel source package
+ This package provides the NVIDIA kernel source needed by the userspace
+ driver.
+
+Package: nvidia-kernel-source-550-server-open
+Description-md5: 2694f1253ed6bd4cfbccf1e22ec25a3d
+Description-en: NVIDIA kernel source package
+ This package provides the open NVIDIA kernel source needed by the userspace
+ driver.
+
+Package: nvidia-utils-550-server
+Description-md5: 4e4bcf98bdc87ac5b44ccdaec6901913
+Description-en: NVIDIA Server Driver support binaries
+ This package contains supporting binaries for the NVIDIA Server Driver.
+
+Package: xserver-xorg-video-nvidia-550-server
+Description-md5: ed1ab5c4b3d616031dbac87ae5af8488
+Description-en: NVIDIA binary Xorg driver
+ The NVIDIA binary driver provides optimized hardware acceleration of
+ OpenGL/GLX/EGL/GLES applications via a direct-rendering X Server
+ for graphics cards using NVIDIA chip sets.
+ .
+ See /usr/share/doc/nvidia-driver-550-server/README.txt.gz
+ for a complete list of supported GPUs and PCI IDs.
+

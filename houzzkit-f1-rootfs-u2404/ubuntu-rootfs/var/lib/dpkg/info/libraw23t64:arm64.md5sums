@@ -1,0 +1,6 @@
+31bdf8570219f5624921abf07b8c361f  usr/lib/aarch64-linux-gnu/libraw.so.23.0.0
+d6eadb221d12703f1264e337c174a447  usr/lib/aarch64-linux-gnu/libraw_r.so.23.0.0
+0550d9ffbdb7ce7274b86950945d94c2  usr/share/doc/libraw23t64/NEWS.Debian.gz
+78836a3e2fa356f0610e68c09b70eb12  usr/share/doc/libraw23t64/changelog.Debian.gz
+328f46ec6c3cb54a5a9b9bbc646a9f88  usr/share/doc/libraw23t64/copyright
+997476c5286255a0227e0e83ad37ce97  usr/share/lintian/overrides/libraw23t64

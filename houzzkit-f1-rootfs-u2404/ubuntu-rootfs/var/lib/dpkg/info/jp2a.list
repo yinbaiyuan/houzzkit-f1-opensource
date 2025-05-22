@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/bin
+/usr/bin/jp2a
+/usr/share
+/usr/share/bash-completion
+/usr/share/bash-completion/completions
+/usr/share/bash-completion/completions/jp2a
+/usr/share/doc
+/usr/share/doc/jp2a
+/usr/share/doc/jp2a/BUGS
+/usr/share/doc/jp2a/README.gz
+/usr/share/doc/jp2a/changelog.Debian.gz
+/usr/share/doc/jp2a/copyright
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/jp2a.1.gz

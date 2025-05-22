@@ -1,0 +1,207 @@
+#!/bin/sh
+
+set -e
+
+. /etc/os-release  # For VERSION_ID
+
+# Needed even if this script doesn't call debconf, see:
+# https://lintian.debian.org/tags/postinst-does-not-load-confmodule.html
+# Note: this may re-exec the postinst script.
+. /usr/share/debconf/confmodule
+
+if [ -z "${VERSION_ID}" ]; then
+    echo "Warning: missing VERSION_ID in /etc/os-release" >&2
+    VERSION_ID="NO-VERSION_ID"
+fi
+
+
+XENIAL_CLOUD_ID_SHIM_UNIT_LOCATION="/etc/systemd/system/multi-user.target.wants/ubuntu-advantage-cloud-id-shim.service"
+
+NOTICES_DIR="/var/lib/ubuntu-advantage/notices"
+TEMP_NOTICES_DIR="/run/ubuntu-advantage/notices"
+REBOOT_CMD_MARKER_FILE="/var/lib/ubuntu-advantage/marker-reboot-cmds-required"
+
+
+#
+# Helpers that change state of pro-client
+#
+add_notice() {
+    notice=$1
+    mkdir -p $NOTICES_DIR
+    touch $NOTICES_DIR/$notice
+}
+add_temp_notice() {
+    notice=$1
+    mkdir -p $TEMP_NOTICES_DIR
+    touch $TEMP_NOTICES_DIR/$notice
+}
+mark_reboot_cmds_as_needed() {
+    if [ ! -f "$REBOOT_CMD_MARKER_FILE" ]; then
+      touch $REBOOT_CMD_MARKER_FILE
+    fi
+}
+
+case "$1" in
+    configure)
+      PREVIOUS_PKG_VER=$2
+
+      #
+      # Migrations from previous ubuntu-pro-client package versions.
+      # These all exist in postinst-migrations.sh.
+      # See the explanation in that file.
+      # Do not add additional version migrations directly in this file.
+      #
+
+      if dpkg --compare-versions "$PREVIOUS_PKG_VER" ge "31~"; then
+          /usr/lib/ubuntu-advantage/postinst-migrations.sh $PREVIOUS_PKG_VER
+      fi
+
+      #
+      # do-release-upgrade migrations from previous Ubuntu release ubuntu-pro-client package versions
+      #
+
+      # Xenial -> Bionic: clean up unnecessary cloud-id-shim unit that is only in xenial packages
+      if [ "$VERSION_ID" = "18.04" ]; then
+          if echo "$PREVIOUS_PKG_VER" | grep -q "16.04"; then
+              if [ -L $XENIAL_CLOUD_ID_SHIM_UNIT_LOCATION ]; then
+                  deb-systemd-helper purge ubuntu-advantage-cloud-id-shim.service > /dev/null || true
+                  deb-systemd-helper unmask ubuntu-advantage-cloud-id-shim.service > /dev/null || true
+              fi
+          fi
+      fi
+
+
+      #
+      # Always do these to ensure ubuntu-pro-client is in correct state
+      #
+
+      /usr/lib/ubuntu-advantage/cloud-id-shim.sh || true
+
+      if grep -q "^ua_config:" /etc/ubuntu-advantage/uaclient.conf; then
+          echo "Warning: uaclient.conf contains old ua_config field." >&2
+          echo "         Please do the following:" >&2
+          echo "         1. Run 'sudo pro config set field=value' for each field/value pair" >&2
+          echo "            present under ua_config in /etc/ubuntu-advantage/uaclient.conf" >&2
+          echo "         2. Delete ua_config and all sub-fields in" >&2
+          echo "            /etc/ubuntu-advantage/uaclient.conf" >&2
+      fi
+      ;;
+esac
+
+# Automatically added by dh_apparmor/4.0.1really4.0.1-0ubuntu0.24.04.3
+if [ "$1" = "configure" ]; then
+    APP_PROFILE="/etc/apparmor.d/ubuntu_pro_apt_news"
+    if [ -f "$APP_PROFILE" ]; then
+        # Add the local/ include
+        LOCAL_APP_PROFILE="/etc/apparmor.d/local/ubuntu_pro_apt_news"
+
+        test -e "$LOCAL_APP_PROFILE" || {
+            mkdir -p `dirname "$LOCAL_APP_PROFILE"`
+            install --mode 644 /dev/null "$LOCAL_APP_PROFILE"
+        }
+
+        # Reload the profile, including any abstraction updates
+        if aa-enabled --quiet 2>/dev/null; then
+            apparmor_parser -r -T -W "$APP_PROFILE" || true
+        fi
+    fi
+fi
+# End automatically added section
+# Automatically added by dh_apparmor/4.0.1really4.0.1-0ubuntu0.24.04.3
+if [ "$1" = "configure" ]; then
+    APP_PROFILE="/etc/apparmor.d/ubuntu_pro_esm_cache"
+    if [ -f "$APP_PROFILE" ]; then
+        # Add the local/ include
+        LOCAL_APP_PROFILE="/etc/apparmor.d/local/ubuntu_pro_esm_cache"
+
+        test -e "$LOCAL_APP_PROFILE" || {
+            mkdir -p `dirname "$LOCAL_APP_PROFILE"`
+            install --mode 644 /dev/null "$LOCAL_APP_PROFILE"
+        }
+
+        # Reload the profile, including any abstraction updates
+        if aa-enabled --quiet 2>/dev/null; then
+            apparmor_parser -r -T -W "$APP_PROFILE" || true
+        fi
+    fi
+fi
+# End automatically added section
+
+# Automatically added by dh_python3
+if command -v py3compile >/dev/null 2>&1; then
+	py3compile -p ubuntu-pro-client:arm64 
+fi
+if command -v pypy3compile >/dev/null 2>&1; then
+	pypy3compile -p ubuntu-pro-client:arm64  || true
+fi
+
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	# The following line should be removed in trixie or trixie+1
+	deb-systemd-helper unmask 'ua-reboot-cmds.service' >/dev/null || true
+
+	# was-enabled defaults to true, so new installations run enable.
+	if deb-systemd-helper --quiet was-enabled 'ua-reboot-cmds.service'; then
+		# Enables the unit on first installation, creates new
+		# symlinks on upgrades if the unit file has changed.
+		deb-systemd-helper enable 'ua-reboot-cmds.service' >/dev/null || true
+	else
+		# Update the statefile to add new symlinks (if any), which need to be
+		# cleaned up on purge. Also remove old symlinks.
+		deb-systemd-helper update-state 'ua-reboot-cmds.service' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	# The following line should be removed in trixie or trixie+1
+	deb-systemd-helper unmask 'ua-timer.timer' >/dev/null || true
+
+	# was-enabled defaults to true, so new installations run enable.
+	if deb-systemd-helper --quiet was-enabled 'ua-timer.timer'; then
+		# Enables the unit on first installation, creates new
+		# symlinks on upgrades if the unit file has changed.
+		deb-systemd-helper enable 'ua-timer.timer' >/dev/null || true
+	else
+		# Update the statefile to add new symlinks (if any), which need to be
+		# cleaned up on purge. Also remove old symlinks.
+		deb-systemd-helper update-state 'ua-timer.timer' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	# The following line should be removed in trixie or trixie+1
+	deb-systemd-helper unmask 'ubuntu-advantage.service' >/dev/null || true
+
+	# was-enabled defaults to true, so new installations run enable.
+	if deb-systemd-helper --quiet was-enabled 'ubuntu-advantage.service'; then
+		# Enables the unit on first installation, creates new
+		# symlinks on upgrades if the unit file has changed.
+		deb-systemd-helper enable 'ubuntu-advantage.service' >/dev/null || true
+	else
+		# Update the statefile to add new symlinks (if any), which need to be
+		# cleaned up on purge. Also remove old symlinks.
+		deb-systemd-helper update-state 'ubuntu-advantage.service' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_systemd_start/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -z "${DPKG_ROOT:-}" ] && [ -d /run/systemd/system ]; then
+		systemctl --system daemon-reload >/dev/null || true
+		deb-systemd-invoke start 'ua-timer.timer' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_systemd_start/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -z "${DPKG_ROOT:-}" ] && [ -d /run/systemd/system ]; then
+		systemctl --system daemon-reload >/dev/null || true
+		deb-systemd-invoke start 'ubuntu-advantage.service' >/dev/null || true
+	fi
+fi
+# End automatically added section
+
+exit 0

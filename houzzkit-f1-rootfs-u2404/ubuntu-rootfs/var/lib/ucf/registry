@@ -1,0 +1,4 @@
+rsyslog 	 /etc/rsyslog.d/50-default.conf
+openssh-server 	 /etc/ssh/sshd_config
+chrony 	 /etc/chrony/chrony.conf
+chrony 	 /etc/chrony/chrony.keys

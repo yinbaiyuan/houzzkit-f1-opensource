@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/lib
+/usr/lib/python3
+/usr/lib/python3/dist-packages
+/usr/lib/python3/dist-packages/netplan
+/usr/lib/python3/dist-packages/netplan/__init__.py
+/usr/lib/python3/dist-packages/netplan/_netplan_cffi.abi3.so
+/usr/lib/python3/dist-packages/netplan/_utils.py
+/usr/lib/python3/dist-packages/netplan/netdef.py
+/usr/lib/python3/dist-packages/netplan/parser.py
+/usr/lib/python3/dist-packages/netplan/state.py
+/usr/share
+/usr/share/doc
+/usr/share/doc/python3-netplan
+/usr/share/doc/python3-netplan/copyright
+/usr/share/doc/python3-netplan/changelog.Debian.gz

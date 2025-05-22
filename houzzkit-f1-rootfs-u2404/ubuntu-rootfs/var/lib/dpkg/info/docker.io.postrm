@@ -1,0 +1,58 @@
+#!/bin/sh
+set -e
+
+# Automatically added by dh_installsystemd/13.14.1ubuntu5
+if [ "$1" = remove ] && [ -d /run/systemd/system ] ; then
+	systemctl --system daemon-reload >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.14.1ubuntu5
+if [ "$1" = "purge" ]; then
+	if [ -x "/usr/bin/deb-systemd-helper" ]; then
+		deb-systemd-helper purge 'docker.socket' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.14.1ubuntu5
+if [ "$1" = remove ] && [ -d /run/systemd/system ] ; then
+	systemctl --system daemon-reload >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.14.1ubuntu5
+if [ "$1" = "purge" ]; then
+	if [ -x "/usr/bin/deb-systemd-helper" ]; then
+		deb-systemd-helper purge 'docker.service' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installdebconf/13.14.1ubuntu5
+if [ "$1" = purge ] && [ -e /usr/share/debconf/confmodule ]; then
+	. /usr/share/debconf/confmodule
+	db_purge
+fi
+# End automatically added section
+# Automatically added by dh_apparmor/4.0.1really4.0.1-0ubuntu0.24.04.3
+if [ "$1" = "purge" ] && ! [ -e "/etc/apparmor.d/docker.io" ] ; then
+    rm -f "/etc/apparmor.d/disable/docker.io" || true
+    rm -f "/etc/apparmor.d/force-complain/docker.io" || true
+    rm -f "/etc/apparmor.d/local/docker.io" || true
+    rm -f /var/cache/apparmor/*/"docker.io" || true
+    rmdir /etc/apparmor.d/disable 2>/dev/null || true
+    rmdir /etc/apparmor.d/local   2>/dev/null || true
+    rmdir /etc/apparmor.d         2>/dev/null || true
+fi
+# End automatically added section
+
+
+case "$1" in
+	purge)
+		# if we have our saved "nuke-graph-directory.sh", let's use it
+		# see also docker.io.prerm
+		if [ -x /var/lib/docker/nuke-graph-directory.sh ]; then
+			/var/lib/docker/nuke-graph-directory.sh /var/lib/docker
+		fi
+		;;
+
+	*)
+		;;
+esac

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    purge)
+	userdel tcpdump >/dev/null 2>&1 || true
+	groupdel tcpdump >/dev/null 2>&1 || true
+	;;
+esac
+
+# Automatically added by dh_installdeb/13.14.1ubuntu5
+dpkg-maintscript-helper mv_conffile /etc/apparmor.d/usr.sbin.tcpdump /etc/apparmor.d/usr.bin.tcpdump 4.99.0\~ -- "$@"
+# End automatically added section
+# Automatically added by dh_apparmor/4.0.0-beta3-0ubuntu3
+if [ "$1" = "purge" ] && ! [ -e "/etc/apparmor.d/usr.bin.tcpdump" ] ; then
+    rm -f "/etc/apparmor.d/disable/usr.bin.tcpdump" || true
+    rm -f "/etc/apparmor.d/force-complain/usr.bin.tcpdump" || true
+    rm -f "/etc/apparmor.d/local/usr.bin.tcpdump" || true
+    rm -f /var/cache/apparmor/*/"usr.bin.tcpdump" || true
+    rmdir /etc/apparmor.d/disable 2>/dev/null || true
+    rmdir /etc/apparmor.d/local   2>/dev/null || true
+    rmdir /etc/apparmor.d         2>/dev/null || true
+fi
+# End automatically added section
+

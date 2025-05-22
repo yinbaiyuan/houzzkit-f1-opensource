@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/lib
+/usr/lib/aarch64-linux-gnu
+/usr/lib/aarch64-linux-gnu/libmpg123.so.0.48.2
+/usr/share
+/usr/share/doc
+/usr/share/doc/libmpg123-0t64
+/usr/share/doc/libmpg123-0t64/changelog.Debian.gz
+/usr/share/doc/libmpg123-0t64/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libmpg123-0t64
+/usr/lib/aarch64-linux-gnu/libmpg123.so.0

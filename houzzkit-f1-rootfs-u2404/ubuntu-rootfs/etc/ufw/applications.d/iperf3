@@ -1,0 +1,4 @@
+[iperf3]
+title=iperf3
+description=Rewritten network performance measurement tool
+ports=5201

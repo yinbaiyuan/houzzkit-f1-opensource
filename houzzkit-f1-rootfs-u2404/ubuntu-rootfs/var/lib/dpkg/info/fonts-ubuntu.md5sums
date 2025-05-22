@@ -1,0 +1,16 @@
+4bb6589f7a7b18b44aaabe58f33726e8  usr/share/doc/fonts-ubuntu/CONTRIBUTING.txt
+2993e6295c551b9476ed4914daca0095  usr/share/doc/fonts-ubuntu/FONTLOG.txt.gz
+c82053568b449d015f66f9d9df13e229  usr/share/doc/fonts-ubuntu/LICENCE-FAQ.txt.gz
+8318f7a1c6928ce32d0fa9acbd5c91bc  usr/share/doc/fonts-ubuntu/README.txt
+0db673825544870ada4d9560ec1032c1  usr/share/doc/fonts-ubuntu/TRADEMARKS.txt
+7ca2d2ce3bd6ff4df5e196fb64f6b6ef  usr/share/doc/fonts-ubuntu/changelog.Debian.gz
+b59e0b3da921755c48ed9d36270398b9  usr/share/doc/fonts-ubuntu/copyright
+bcb7b94296cf6e0ba706c7e3a6ae0dfd  usr/share/fontconfig/conf.avail/71-ubuntulegacy.conf
+b400fe374bcc4ca2a0b282e7fcf0b482  usr/share/fonts/truetype/ubuntu/Ubuntu-Italic[wdth,wght].ttf
+1135955361a9389066c16c2d2b3bdc0a  usr/share/fonts/truetype/ubuntu/UbuntuMono-Italic[wght].ttf
+77c41ca5090fa4ad714ce4dcc5a49845  usr/share/fonts/truetype/ubuntu/UbuntuMono[wght].ttf
+a09646d15a3ff785c5a979eba8ce238d  usr/share/fonts/truetype/ubuntu/UbuntuSans-Italic[wdth,wght].ttf
+b952be2056ae60c09ecc6aa953a2f0d8  usr/share/fonts/truetype/ubuntu/UbuntuSansMono-Italic[wght].ttf
+c327174deb2694d281fc6ff1b08ce305  usr/share/fonts/truetype/ubuntu/UbuntuSansMono[wght].ttf
+3dfb6426f0ac6fe53baa2068a707d843  usr/share/fonts/truetype/ubuntu/UbuntuSans[wdth,wght].ttf
+78c18daac386e4a33cac9e8e78c07379  usr/share/fonts/truetype/ubuntu/Ubuntu[wdth,wght].ttf

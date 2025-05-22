@@ -1,0 +1,6 @@
+/etc/pam.d/sudo
+/etc/pam.d/sudo-i
+/etc/sudo.conf
+/etc/sudo_logsrvd.conf
+/etc/sudoers
+/etc/sudoers.d/README

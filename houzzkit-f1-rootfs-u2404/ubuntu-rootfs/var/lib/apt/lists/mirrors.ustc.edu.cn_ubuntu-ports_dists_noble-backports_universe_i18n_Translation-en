@@ -1,0 +1,1253 @@
+Package: cockpit
+Description-md5: 24b0aa0c07779dcba10e15ca9244d9e9
+Description-en: Web Console for Linux servers
+ The Cockpit Web Console enables users to administer GNU/Linux servers using a
+ web browser.
+ .
+ It offers network configuration, log inspection, diagnostic reports, SELinux
+ troubleshooting, interactive command-line sessions, and more.
+
+Package: cockpit-bridge
+Description-md5: 34419f40043aa83e9a0fb5968fe56ce7
+Description-en: Cockpit bridge server-side component
+ The Cockpit bridge component installed server side and runs commands on
+ the system on behalf of the web based user interface.
+
+Package: cockpit-doc
+Description-md5: 917dc8f7798407683627da6ebb139a47
+Description-en: Cockpit deployment and developer guide
+ The Cockpit Deployment and Developer Guide shows sysadmins how to deploy
+ Cockpit on their machines as well as helps developers who want to embed
+ or extend Cockpit.
+
+Package: cockpit-machines
+Description-md5: 0eb6768a5275b934fab3627c568646c9
+Description-en: Cockpit user interface for virtual machines
+ The Cockpit Web Console enables users to administer GNU/Linux servers using a
+ web browser.
+ .
+ This package adds an user interface for managing virtual machines.
+ .
+ If the "virtinst" package is installed, you can also create new virtual
+ machines.
+
+Package: cockpit-networkmanager
+Description-md5: d453350593dcc4aba8e5cd9e282c9e7c
+Description-en: Cockpit user interface for networking
+ The Cockpit components for interacting with networking configuration.
+ Incompatible with systemd-networkd/ifupdown defined networks.
+
+Package: cockpit-packagekit
+Description-md5: 78e1cc24dd1b7a3c1e724e0fb54d4968
+Description-en: Cockpit user interface for apps and package updates
+ The Cockpit components installing OS updates and Cockpit add-ons,
+ via PackageKit.
+
+Package: cockpit-pcp
+Description-md5: 2bcebebdc8b56e2cd8c2ba8755912a8f
+Description-en: Cockpit PCP integration
+ Cockpit support for reading PCP metrics and loading PCP archives.
+
+Package: cockpit-podman
+Description-md5: bd8bea62609a52119a9f55b9e9e77daf
+Description-en: Cockpit component for Podman containers
+ The Cockpit Web Console enables users to administer GNU/Linux servers using a
+ web browser.
+ .
+ This package adds an user interface for Podman containers.
+
+Package: cockpit-sosreport
+Description-md5: 4758fe190de68c7b853346fee5745606
+Description-en: Cockpit user interface for diagnostic reports
+ The Cockpit component for creating diagnostic reports with the
+ sosreport tool.
+
+Package: cockpit-storaged
+Description-md5: c2ebe73ae22d08ed61f7619b0540e9d3
+Description-en: Cockpit user interface for storage
+ The Cockpit components for interacting with storage.
+ .
+ Install udisks2-lvm2 if you use LVM and want to manage it with Cockpit.
+
+Package: cockpit-system
+Description-md5: 305239ce7fcb5c6043156a1e54c69f73
+Description-en: Cockpit admin interface for a system
+ Cockpit admin interface package for configuring and
+ troubleshooting a system.
+
+Package: cockpit-tests
+Description-md5: 0b4ed46aa862cd96d493b081c605101e
+Description-en: Tests for Cockpit
+ This package contains tests and files used while testing Cockpit.
+ These files are not required for running Cockpit.
+
+Package: cockpit-ws
+Description-md5: f492a869e15f8c92004032f384bce124
+Description-en: Cockpit Web Service
+ The Cockpit Web Service listens on the network, and authenticates
+ users.
+ .
+ Install sssd-dbus for supporting client certificate/smart card authentication
+ via sssd/FreeIPA.
+
+Package: dh-dlopenlibdeps
+Description-md5: f7fa3f2e87185346827dad9c3d729ace
+Description-en: Debian Helper for parsing dlopen metadata from ELF binaries
+ Parses dlopen ELF note and generates dependencies from it that can be used
+ via ${dlopen:Depends|Recommends|Suggests}
+ See: https://systemd.io/ELF_DLOPEN_METADATA/
+
+Package: dh-package-notes
+Description-md5: f4efc55ff826f8612b67335eecdab3ac
+Description-en: Debian Helper for adding package metadata to ELF binaries
+ Provides a linker specs file to add package metadata to the ELF binaries being
+ built. See: https://systemd.io/ELF_PACKAGE_METADATA/
+
+Package: ffado-dbus-server
+Description-md5: c97651a8d42693959e021d8283d395a2
+Description-en: FFADO D-Bus server
+ FFADO is a Linux driver for FireWire (IEEE1394) audio devices.
+ .
+ The FFADO library permits discovering and configuring such
+ devices and provides an API for streaming clients.
+ .
+ This package holds the D-Bus server that exposes the mixer
+ and control interfaces through D-Bus.
+
+Package: ffado-mixer-qt4
+Description-md5: 32d310679d7f527b93f10bfd27693795
+Description-en: FFADO D-Bus mixer applets
+ FFADO is a Linux driver for FireWire (IEEE1394) audio devices.
+ .
+ The FFADO library permits discovering and configuring such
+ devices and provides an API for streaming clients.
+ .
+ This package holds the mixer and control applications that
+ communicate with ffado-dbus-server.
+ .
+ Despite the package name, the GUI has been updated.
+
+Package: ffado-tools
+Description-md5: ec6e443b88eac8af1b723cc745035716
+Description-en: FFADO debugging and firmware tools
+ FFADO is a Linux driver for FireWire (IEEE1394) audio devices.
+ .
+ The FFADO library permits discovering and configuring such
+ devices and provides an API for streaming clients.
+ .
+ This package holds the following tools for firmware updating,
+ troubleshooting and debugging:
+     * ffado-test-streaming
+     * ffado-diag
+     * ffado-test-isoxmit
+     * ffado-test-isorecv
+     * ffado-bridgeco-downloader
+     * ffado-test
+     * ffado-fireworks-downloader
+     * ffado-debug
+
+Package: gallery-dl
+Description-md5: 0510bb32672915f74b92695fc9fb569d
+Description-en: command-line program to download image galleries
+ gallery-dl is a command-line program to download image-galleries and
+ -collections from several image hosting sites. It is a cross-platform
+ tool with many configuration options and powerful filenaming capabilities.
+
+Package: hydrogen
+Description-md5: 4347dd2ef370dd3a9fe5df4dc61dd24c
+Description-en: advanced drum machine/step sequencer
+ Hydrogen is an advanced drum machine which provides a professional,
+ yet simple and intuitive, pattern-based drum programming interface.
+ .
+ General features:
+  * Very user-friendly, modular, fast and intuitive graphical interface
+    based on Qt 5.
+  * Sample-based stereo audio engine, with import of sound samples in
+    .wav, .au and .aiff formats.
+  * Support of samples in compressed FLAC file.
+ .
+ Sequencer and mixer features:
+  * Pattern-based sequencer, with unlimited number of patterns and
+    ability to chain patterns into a song.
+  * Up to 64 ticks per pattern with individual level per event and
+    variable pattern length.
+  * 32 instrument tracks with volume, mute, solo, pan capabilities.
+  * Multi layer support for instruments (up to 16 samples for each
+    instrument).
+  * Ability to import/export song files.
+  * Unique human velocity, human time, pitch and swing functions.
+  * Multiple patterns playing at once.
+ .
+ Other features:
+  * JACK, ALSA, PortAudio, OSS and PulseAudio audio drivers.
+  * ALSA MIDI and PortMidi input with assignable midi-in channel (1..16,
+    ALL).
+  * Import/export of drumkits.
+  * Export song to wav file.
+  * Export song to midi file.
+
+Package: hydrogen-data
+Description-md5: 9f7714336fb9e263594eb3f0b2a5e04c
+Description-en: advanced drum machine/step sequencer (data)
+ Hydrogen is an advanced drum machine which provides a professional,
+ yet simple and intuitive, pattern-based drum programming interface.
+ .
+ This package contains the architecture-independent data files.
+
+Package: hydrogen-doc
+Description-md5: 44f5709545bfc00811ff296b6dcdd060
+Description-en: advanced drum machine/step sequencer (doc)
+ Hydrogen is an advanced drum machine which provides a professional,
+ yet simple and intuitive, pattern-based drum programming interface.
+ .
+ This package contains the architecture-independent documentation.
+
+Package: libffado-dev
+Description-md5: 9d3a45b6227b7fe7aebb546d9d19f3a2
+Description-en: FFADO API - development files
+ FFADO is a Linux driver for FireWire (IEEE1394) audio devices.
+ .
+ The FFADO library permits discovering and configuring such
+ devices and provides an API for streaming clients.
+ .
+ This package holds the development files.
+
+Package: libffado2
+Description-md5: 4c331f90e31074719b77f3d0b71de841
+Description-en: FFADO API
+ FFADO is a Linux driver for FireWire (IEEE1394) audio devices.
+ .
+ The FFADO library permits discovering and configuring such
+ devices and provides an API for streaming clients.
+ .
+ This package holds the shared library.
+
+Package: libjuh-java
+Description-md5: 9e017c19c2cbf8cab7b83a1ee17e6890
+Description-en: transitional package for LibreOffice UNO runtime environment
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This has now been merged into liblibreoffice-java and this package thus
+ can be safely removed once installed.
+
+Package: libjurt-java
+Description-md5: 9e017c19c2cbf8cab7b83a1ee17e6890
+Description-en: transitional package for LibreOffice UNO runtime environment
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This has now been merged into liblibreoffice-java and this package thus
+ can be safely removed once installed.
+
+Package: libobs-dev
+Description-md5: 225773aeb3e625b11d710d9b8c43c078
+Description-en: recorder and streamer for live video content (development files)
+ OBS Studio is designed for efficiently recording and streaming live video
+ content. It supports live RTP streaming to various streaming sites.
+ .
+ This package contains the development files.
+
+Package: libobs0t64
+Description-md5: e656b9704323c8e11d168b672bfabb94
+Description-en: recorder and streamer for live video content (shared library)
+ OBS Studio is designed for efficiently recording and streaming live video
+ content. It supports live RTP streaming to various streaming sites.
+ .
+ This package contains the shared library libobs.
+
+Package: libreoffice
+Description-md5: 9614e13c8592ae9a0c81c629137ef53e
+Description-en: office productivity suite (metapackage)
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This metapackage installs all components of libreoffice:
+  * libreoffice-writer: Word processor
+  * libreoffice-calc: Spreadsheet
+  * libreoffice-impress: Presentation
+  * libreoffice-draw: Drawing
+  * libreoffice-base: Database
+  * libreoffice-math: Equation editor
+ It also recommends additional packages (e.g. fonts) in order to match an
+ upstream LibreOffice install as closely as possible.
+ .
+ You can extend the functionality of LibreOffice by installing these
+ packages:
+  * hunspell-*/myspell-*: Hunspell/Myspell dictionaries
+    for use with LibreOffice
+  * libreoffice-l10n-*: UI interface translation
+  * libreoffice-help-*: User help
+  * mythes-*: Thesauri for the use with LibreOffice
+  * hyphen-*: Hyphenation patterns for LibreOffice
+  * libreoffice-gtk(2|3): Gtk UI Plugin, GNOME File Picker support
+  * libreoffice-gnome: GIO backend
+  * unixodbc: ODBC database support
+  * cups-bsd: Allows LibreOffice to detect your CUPS printer queues
+    automatically
+  * libsane: Use your sane-supported scanner with LibreOffice
+  * libxrender1: Speed up display by using Xrender library
+  * libgl1: OpenGL support
+  * openclipart-libreoffice: Open Clip Art Gallery with LibreOffice index
+    files
+  * firefox-esr | thunderbird | firefox:
+    Mozilla profile with Certificates needed for XML Security...
+  * openjdk-11-jre | openjdk-8-jre | java8-runtime:
+    Java Runtime Environment for use with LibreOffice
+  * pstoedit / imagemagick / ghostscript: helper tools for EPS
+  * gstreamer0.10-plugins-*: GStreamer plugins for use with LibreOffices
+    media backend
+  * libpaper-utils: papersize detection support via paperconf
+  * bluez: Bluetooth support for Impress (slideshow remote control)
+
+Package: libreoffice-base
+Description-md5: 5529fff5c628ca6b70284749063daea4
+Description-en: office productivity suite -- database
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the database component for LibreOffice.
+
+Package: libreoffice-base-drivers
+Description-md5: 95a600bf1d7e583b757fe5b8ea210d10
+Description-en: Database connectivity drivers for LibreOffice
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the database connectivity drivers used by LibreOffices
+ database functionality:
+  - ODBC
+  - JDBC
+  - dBase
+  - Calc
+  - Flat files
+ .
+ You can extend this by installing:
+ .
+  * unixodbc: ODBC database support
+  * libmyodbc | odbc-postgresql | libsqliteodbc | tdsodbc | odbc-mdbtools: ODBC
+    drivers for:
+    - MySQL
+    - PostgreSQL
+    - SQLite
+    - MS SQL / Sybase SQL
+    - *.mdb (JET / MS Access)
+  * libmariadb-java | libpg-java | libjtds-java: JDBC Drivers
+    for:
+    - MySQL/MariaDB
+    - PostgreSQL
+    - MS SQL Server and Sybase
+  * libreoffice-sdbc-hsqldb: embedded HSQLDB SDBC Driver
+  * libreoffice-sdbc-firebird: Firebird SDBC Driver
+  * libreoffice-sdbc-postgresql: PostgreSQL SDBC Driver
+  * libreoffice-sdbc-mysql: MySQL/MariaDB SDBC Driver
+
+Package: libreoffice-base-nogui
+Description-md5: e83dd6cdb7c67ccb13c0407fd6a32ebc
+Description-en: office productivity suite -- database (no GUI variant)
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the database component for LibreOffice.
+
+Package: libreoffice-calc-nogui
+Description-md5: ed9483b973f6b2dd25d568b6ef77d8c4
+Description-en: office productivity suite -- spreadsheet (no GUI variant)
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the spreadsheet component for LibreOffice
+ for use with libreoffice-core-nogui.
+
+Package: libreoffice-core-nogui
+Description-md5: d16e9871c20b5b5c8f38d6d74c8dfe8e
+Description-en: office productivity suite -- arch-dependent files (no GUI variant)
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the architecture-dependent core files of
+ LibreOffice without GUI support for server-based or commandline usage of
+ LibreOffice.
+
+Package: libreoffice-dev-gui
+Description-md5: c7381cdfc5446c44dd4085615626c61e
+Description-en: office productivity suite -- "GUI" development stuff
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the gengal utility which was moved from
+ libreoffice-dev.
+
+Package: libreoffice-draw-nogui
+Description-md5: c4d7d9707b31ef9344d70e006f7a27af
+Description-en: office productivity suite -- drawing (no GUI variant)
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the drawing component for LibreOffice.
+
+Package: libreoffice-evolution
+Description-md5: 7d9a6b62e74d5a806f263ecd0d4bed18
+Description-en: office productivity suite -- Evolution addressbook support
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package allows LibreOffice to access Evolution address books.
+ You need to install evolution separately.
+
+Package: libreoffice-gtk4
+Description-md5: 286c3520f994b01929165fe0f5270c87
+Description-en: office productivity suite -- GTK 4 integration
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the GTK plugin for drawing LibreOffices widgets
+ with GTK 4 and GTK/GNOMEish print dialog.
+ .
+ You need to enable it manually by export SAL_USE_VCLPLUGIN=gtk4.
+
+Package: libreoffice-impress-nogui
+Description-md5: 10ce2c27d434135cd9308937c1bdb31c
+Description-en: office productivity suite -- presentation (no GUI variant)
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the presentation component for LibreOffice.
+
+Package: libreoffice-kf5
+Description-md5: 60a27e47a640a57cbd044cc3528831f5
+Description-en: office productivity suite -- KDE Frameworks 5 integration
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the KF5 plugin for LibreOffice and a KF5-based File
+ Picker when running under Plasma.
+
+Package: libreoffice-librelogo
+Description-md5: cdaef056eb365a457e28772fa2fd9de6
+Description-en: Logo-like programming language for LibreOffice
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains Librelogo, which is a pyuno-based Logo-like programming
+ language with interactive vectorgraphics for education and DTP
+  - basic Logo syntax for back compatibility with educational Logo systems
+  - interactive vectorgraphics in LibreOffice Writer
+  - native commands (easily translatable)
+  - Python data structures (list, tuple, set, dictionary) and other Python
+    features
+
+Package: libreoffice-math-nogui
+Description-md5: e104f51d572d2ee302d3c3550e97e6ff
+Description-en: office productivity suite -- equation editor (no GUI variant)
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the equation editor component for LibreOffice.
+
+Package: libreoffice-nogui
+Description-md5: b2664061ba9641158b0a41d2c958aa3e
+Description-en: office productivity suite (metapackage, no GUI)
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This metapackage installs all components of libreoffice:
+  * libreoffice-writer: Word processor
+  * libreoffice-calc: Spreadsheet
+  * libreoffice-impress: Presentation
+  * libreoffice-draw: Drawing
+  * libreoffice-base: Database
+  * libreoffice-math: Equation editor
+ .
+ WITHOUT GUI SUPPORT.
+ .
+ This package is intended mostly for scripting needs.
+
+Package: libreoffice-plasma
+Description-md5: 962e5fa862a2425941adbcdb81054cc7
+Description-en: office productivity suite -- some Plasma integration
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains some minor Plasma integration (like AppData
+ and "Create New..." integration) and a KDE/KF5 configuration backend.
+
+Package: libreoffice-qt5
+Description-md5: 459572943562e2a51d6e9c1c30d84c71
+Description-en: office productivity suite -- Qt 5 integration
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the Qt 5 plugin for drawing LibreOffices widgets
+ with Qt 5 and a Qt File Picker and print dialog.
+ .
+ You need to enable it manually by export SAL_USE_VCLPLUGIN=qt5 if you are
+ not using Plasma.
+
+Package: libreoffice-report-builder
+Description-md5: 8239ceaa4ebaf25c2b15325d48eb907c
+Description-en: LibreOffice component for building database reports
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the report builder:
+  "Create with the Sun Report Builder stylish, smart-looking database reports.
+  The flexible report editor can define group and page headers as well as
+  group and page footers and even calculation fields are available to
+  accomplish complex database reports."
+
+Package: libreoffice-report-builder-bin
+Description-md5: 4de9416ad29a7951be39b95f83055e84
+Description-en: LibreOffice component for building database reports -- libraries
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains some architecture-dependent support libraries
+ (librpt*.so) for the report builder component.
+
+Package: libreoffice-report-builder-bin-nogui
+Description-md5: 6d5263ac65fb4d1c4c7caf8eb713944d
+Description-en: LibreOffice component for building database reports -- libraries (no GUI variant)
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains some architecture-dependent support libraries
+ (librpt*.so) for the report builder component.
+
+Package: libreoffice-script-provider-bsh
+Description-md5: 720bef09745ce9eb4902772fb5c437d8
+Description-en: BeanShell script support provider for LibreOffice scripting framework
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ The Scripting Framework allows LibreOffice users to write and run macros
+ in multiple languages including LibreOffice Basic, Python, Java, BeanShell
+ and JavaScript. These macros can then be assigned to menus, toolbars,
+ keyboard shortcuts, events and embedded objects.
+ .
+ This package contains the script provider to support BeanShell.
+
+Package: libreoffice-script-provider-js
+Description-md5: 41b18315e9be2aaa24a28415b907118e
+Description-en: JavaScript script support provider for LibreOffice scripting framework
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ The Scripting Framework allows LibreOffice users to write and run macros
+ in multiple languages including LibreOffice Basic, Python, Java, BeanShell
+ and JavaScript. These macros can then be assigned to menus, toolbars,
+ keyboard shortcuts, events and embedded objects.
+ .
+ This package contains the script provider to support JavaScript.
+
+Package: libreoffice-script-provider-python
+Description-md5: 019117f2dc708fc6c1179714b81e2076
+Description-en: Python script support provider for LibreOffice scripting framework
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ The Scripting Framework allows LibreOffice users to write and run macros
+ in multiple languages including LibreOffice Basic, Python, Java, BeanShell
+ and JavaScript. These macros can then be assigned to menus, toolbars,
+ keyboard shortcuts, events and embedded objects.
+ .
+ This package contains the script provider to support Python.
+
+Package: libreoffice-sdbc-firebird
+Description-md5: 4ad372e2554b0f42b39c7e1325d5e6d0
+Description-en: Firebird SDBC driver for LibreOffice
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ The Firebird SDBC Driver allows one to use the Firebird database from
+ LibreOffice without any wrapper layer such as ODBC or JDBC.
+
+Package: libreoffice-sdbc-hsqldb
+Description-md5: 54ed9715a25b1dae2ad2d3a9b6838a65
+Description-en: HSQLDB SDBC driver for LibreOffice
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ The HSQLDB SDBC Driver allows one to use the HSQLDB embedded database from
+ LibreOffice without any wrapper layer such as ODBC or JDBC.
+
+Package: libreoffice-sdbc-mysql
+Description-md5: 1022a8fb85f50d65847256d96ae25e4f
+Description-en: MariaDB/MySQL SDBC driver for LibreOffice
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ The MariaDB/MySQL driver allows one to use the MariaDB or MySQL
+ database from LibreOffice without any wrapper layer such as ODBC or JDBC.
+
+Package: libreoffice-sdbc-postgresql
+Description-md5: 06f71158aa78dbe7201679601bd1279b
+Description-en: PostgreSQL SDBC driver for LibreOffice
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ The PostgreSQL SDBC Driver allows one to use the PostgreSQL database from
+ LibreOffice without any wrapper layer such as ODBC or JDBC.
+
+Package: libreoffice-smoketest-data
+Description-md5: 7540f40cccbf63cb8381dca8979a0828
+Description-en: data files for LibreOffices "smoketest"
+ Data files for the LibreOffice "smoketest".
+
+Package: libreoffice-style-breeze
+Description-md5: b3a725e09462ccaec72c3b8bb964827b
+Description-en: office productivity suite -- Breeze symbol style
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the "breeze" symbol style, default style for KDE 5.
+
+Package: libreoffice-style-karasa-jaga
+Description-md5: 62dc98488a5247cbad91f4e0ec562bcf
+Description-en: office productivity suite -- Karasa Jaga symbol style
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the "karasa_jaga" symbol style.
+
+Package: libreoffice-style-sifr
+Description-md5: 0fd5516a8dab8f6841c284edea8786d7
+Description-en: office productivity suite -- Sifr symbol style
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the "sifr" symbol style (an adaption of the Gnome
+ symbolic theme), needs to be manually  enabled in the LibreOffice option
+ menu.
+
+Package: libreoffice-style-sukapura
+Description-md5: b9dbd94d0660dbc8a05ba918cb3fb897
+Description-en: office productivity suite -- Sukapura symbol style
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the "sukapura" symbol style.
+
+Package: libreoffice-style-tango
+Description-md5: aaf8968f6a7dfef93cd3c0082bbe8dbd
+Description-en: transitional package for Tango symbol style
+ You can safely remove this package.
+
+Package: libreoffice-subsequentcheckbase
+Description-md5: cda482c5487d616e1ae7a228fce1d955
+Description-en: LibreOffice java test libraries
+ Java libraries LibreOffice subsequentchecks integration test suite
+
+Package: libreoffice-uiconfig-base
+Description-md5: e6ac75c394251a0c3842ae13e3f9c033
+Description-en: UI data ("config") for LibreOffice Base
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains internal "configuration" of various UI components.
+ It is not meant to be editable. It is just split out for dependencies of
+ other packages.
+ .
+ You will usually not need to install this package manually but it should
+ just be pulled in by other packages.
+
+Package: libreoffice-uiconfig-report-builder
+Description-md5: c254f403f0fe84819d9f6437b3755876
+Description-en: UI data ("config") for the LibreOffice Report Builder
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains internal "configuration" of various UI components.
+ It is not meant to be editable. It is just split out for dependencies of
+ other packages.
+ .
+ You will usually not need to install this package manually but it should
+ just be pulled in by other packages.
+
+Package: libreoffice-wiki-publisher
+Description-md5: a66aaa282ae4941588a4d314d1ebbf79
+Description-en: LibreOffice extension for working with MediaWiki articles
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains an extension to create/edit/publish MediaWiki
+ articles with LibreOffice
+
+Package: libreoffice-writer-nogui
+Description-md5: 963dc225bb14f9e5974345a7995f16a7
+Description-en: office productivity suite -- word processor (no GUI variant)
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This package contains the wordprocessor component for LibreOffice.
+
+Package: libridl-java
+Description-md5: 9e017c19c2cbf8cab7b83a1ee17e6890
+Description-en: transitional package for LibreOffice UNO runtime environment
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This has now been merged into liblibreoffice-java and this package thus
+ can be safely removed once installed.
+
+Package: libunoil-java
+Description-md5: 9e017c19c2cbf8cab7b83a1ee17e6890
+Description-en: transitional package for LibreOffice UNO runtime environment
+ LibreOffice is a full-featured office productivity suite that provides
+ a near drop-in replacement for Microsoft(R) Office.
+ .
+ This has now been merged into liblibreoffice-java and this package thus
+ can be safely removed once installed.
+
+Package: limnoria
+Description-md5: 33156b967de31535f327652d89476669
+Description-en: robust and user-friendly Python IRC bot
+ A robust, full-featured Python IRC bot with a clean and flexible plugin API.
+ Equipped with a complete ACL system for specifying user permissions with as
+ much as per-command granularity. Batteries are included in the form of
+ numerous plugins already written.
+ .
+ Limnoria is robust (it doesn't crash), user friendly (it's easy to configure)
+ and programmer friendly (plugins are *extremely* easy to write).  It aims to
+ be an adequate replacement for most existing IRC bots.
+ .
+ It is the maintained fork of supybot.
+ .
+ This package provides Python 3-only modules and scripts.
+
+Package: lsp-plugins
+Description-md5: 878ce8cd10738a8943d4c42fb4b57bb0
+Description-en: LSP (Linux Studio Plugins) audio-plugins (metapackage)
+ Linux Studio Plugins (LSP) provides a collection of audio effects,
+ synthesizers, and a selection of audio tools for music and sound
+ production. It provides standalone JACK clients and integrates
+ into the LV2, CLAP, LADSPA, VST3 and VST2 plugin frameworks.
+ .
+ LSP provides the following plugins:
+ .
+ Audio effects: limiters, dynamic processors, expanders, gates,
+ graphic equalisers, impulse responses, impulse reverbs, compressors,
+ multiband compressors, parametric equalisers, phase detector,
+ sidechain multiband compressors, sidechain limiters,
+ sidechain dynamic processors, sidechain expanders, sidechain gates,
+ sidechain compressors, slapback delays, delay compensators, triggers.
+ .
+ Synths: samplers, and multisamplers.
+ .
+ Tools: latency meters, oscillators, profiler, spectrum analyzers,
+ and MIDI triggers
+ .
+ This metapackage installs plugins for all supported frameworks and the JACK
+ standalone clients.
+
+Package: lsp-plugins-clap
+Description-md5: cffc51d0c01792470896468ae7c010d5
+Description-en: LSP (Linux Studio Plugins) audio-plugins (clap plugins)
+ Linux Studio Plugins (LSP) provides a collection of audio effects,
+ synthesizers, and a selection of audio tools for music and sound
+ production. It provides standalone JACK clients and integrates
+ into the LV2, CLAP, LADSPA, VST3 and VST2 plugin frameworks.
+ .
+ LSP provides the following plugins:
+ .
+ Audio effects: limiters, dynamic processors, expanders, gates,
+ graphic equalisers, impulse responses, impulse reverbs, compressors,
+ multiband compressors, parametric equalisers, phase detector,
+ sidechain multiband compressors, sidechain limiters,
+ sidechain dynamic processors, sidechain expanders, sidechain gates,
+ sidechain compressors, slapback delays, delay compensators, triggers.
+ .
+ Synths: samplers, and multisamplers.
+ .
+ Tools: latency meters, oscillators, profiler, spectrum analyzers,
+ and MIDI triggers
+ .
+ This package provides the CLAP plugins.
+
+Package: lsp-plugins-jack
+Description-md5: dcca13fad9daac63db876da8ea8c29f7
+Description-en: LSP (Linux Studio Plugins) audio-plugins (standalone JACK clients)
+ Linux Studio Plugins (LSP) provides a collection of audio effects,
+ synthesizers, and a selection of audio tools for music and sound
+ production. It provides standalone JACK clients and integrates
+ into the LV2, CLAP, LADSPA, VST3 and VST2 plugin frameworks.
+ .
+ LSP provides the following plugins:
+ .
+ Audio effects: limiters, dynamic processors, expanders, gates,
+ graphic equalisers, impulse responses, impulse reverbs, compressors,
+ multiband compressors, parametric equalisers, phase detector,
+ sidechain multiband compressors, sidechain limiters,
+ sidechain dynamic processors, sidechain expanders, sidechain gates,
+ sidechain compressors, slapback delays, delay compensators, triggers.
+ .
+ Synths: samplers, and multisamplers.
+ .
+ Tools: latency meters, oscillators, profiler, spectrum analyzers,
+ and MIDI triggers
+ .
+ This package provides the standalone JACK clients.
+
+Package: lsp-plugins-ladspa
+Description-md5: 8d7c8fff2f6f2f2412e292d8300b2bd3
+Description-en: LSP (Linux Studio Plugins) audio-plugins (ladspa plugins)
+ Linux Studio Plugins (LSP) provides a collection of audio effects,
+ synthesizers, and a selection of audio tools for music and sound
+ production. It provides standalone JACK clients and integrates
+ into the LV2, CLAP, LADSPA, VST3 and VST2 plugin frameworks.
+ .
+ LSP provides the following plugins:
+ .
+ Audio effects: limiters, dynamic processors, expanders, gates,
+ graphic equalisers, impulse responses, impulse reverbs, compressors,
+ multiband compressors, parametric equalisers, phase detector,
+ sidechain multiband compressors, sidechain limiters,
+ sidechain dynamic processors, sidechain expanders, sidechain gates,
+ sidechain compressors, slapback delays, delay compensators, triggers.
+ .
+ Synths: samplers, and multisamplers.
+ .
+ Tools: latency meters, oscillators, profiler, spectrum analyzers,
+ and MIDI triggers
+ .
+ This package provides the LADSPA plugins.
+
+Package: lsp-plugins-lv2
+Description-md5: ae448ed51900173db039cbecf96cae24
+Description-en: LSP (Linux Studio Plugins) audio-plugins (LV2 plugins)
+ Linux Studio Plugins (LSP) provides a collection of audio effects,
+ synthesizers, and a selection of audio tools for music and sound
+ production. It provides standalone JACK clients and integrates
+ into the LV2, CLAP, LADSPA, VST3 and VST2 plugin frameworks.
+ .
+ LSP provides the following plugins:
+ .
+ Audio effects: limiters, dynamic processors, expanders, gates,
+ graphic equalisers, impulse responses, impulse reverbs, compressors,
+ multiband compressors, parametric equalisers, phase detector,
+ sidechain multiband compressors, sidechain limiters,
+ sidechain dynamic processors, sidechain expanders, sidechain gates,
+ sidechain compressors, slapback delays, delay compensators, triggers.
+ .
+ Synths: samplers, and multisamplers.
+ .
+ Tools: latency meters, oscillators, profiler, spectrum analyzers,
+ and MIDI triggers
+ .
+ This package provides the LV2 plugins.
+
+Package: lsp-plugins-r3d-glx
+Description-md5: 492a3a0345b9d8545f6c0476769838b9
+Description-en: LSP (Linux Studio Plugins) r3d-glx library
+ Linux Studio Plugins (LSP) provides a collection of audio effects,
+ synthesizers, and a selection of audio tools for music and sound
+ production. It provides standalone JACK clients and integrates
+ into the LV2, CLAP, LADSPA, VST3 and VST2 plugin frameworks.
+ .
+ LSP provides the following plugins:
+ .
+ Audio effects: limiters, dynamic processors, expanders, gates,
+ graphic equalisers, impulse responses, impulse reverbs, compressors,
+ multiband compressors, parametric equalisers, phase detector,
+ sidechain multiband compressors, sidechain limiters,
+ sidechain dynamic processors, sidechain expanders, sidechain gates,
+ sidechain compressors, slapback delays, delay compensators, triggers.
+ .
+ Synths: samplers, and multisamplers.
+ .
+ Tools: latency meters, oscillators, profiler, spectrum analyzers,
+ and MIDI triggers
+ .
+ This package provides the LSP r3d-glx library.
+
+Package: lsp-plugins-vst
+Description-md5: 62b3a565d01d30ccbd34c576fa0987ee
+Description-en: LSP (Linux Studio Plugins) audio-plugins (VST plugins)
+ Linux Studio Plugins (LSP) provides a collection of audio effects,
+ synthesizers, and a selection of audio tools for music and sound
+ production. It provides standalone JACK clients and integrates
+ into the LV2, CLAP, LADSPA, VST3 and VST2 plugin frameworks.
+ .
+ LSP provides the following plugins:
+ .
+ Audio effects: limiters, dynamic processors, expanders, gates,
+ graphic equalisers, impulse responses, impulse reverbs, compressors,
+ multiband compressors, parametric equalisers, phase detector,
+ sidechain multiband compressors, sidechain limiters,
+ sidechain dynamic processors, sidechain expanders, sidechain gates,
+ sidechain compressors, slapback delays, delay compensators, triggers.
+ .
+ Synths: samplers, and multisamplers.
+ .
+ Tools: latency meters, oscillators, profiler, spectrum analyzers,
+ and MIDI triggers
+ .
+ This package provides the VST2 plugins.
+
+Package: lsp-plugins-vst3
+Description-md5: d81080d83a116aa14fb8f14aad3834c6
+Description-en: LSP (Linux Studio Plugins) audio-plugins (VST3 plugins)
+ Linux Studio Plugins (LSP) provides a collection of audio effects,
+ synthesizers, and a selection of audio tools for music and sound
+ production. It provides standalone JACK clients and integrates
+ into the LV2, CLAP, LADSPA, VST3 and VST2 plugin frameworks.
+ .
+ LSP provides the following plugins:
+ .
+ Audio effects: limiters, dynamic processors, expanders, gates,
+ graphic equalisers, impulse responses, impulse reverbs, compressors,
+ multiband compressors, parametric equalisers, phase detector,
+ sidechain multiband compressors, sidechain limiters,
+ sidechain dynamic processors, sidechain expanders, sidechain gates,
+ sidechain compressors, slapback delays, delay compensators, triggers.
+ .
+ Synths: samplers, and multisamplers.
+ .
+ Tools: latency meters, oscillators, profiler, spectrum analyzers,
+ and MIDI triggers
+ .
+ This package provides the VST3 plugins.
+
+Package: obs-plugins
+Description-md5: 4743a3cf0718cf932aaff6660bcfb83e
+Description-en: recorder and streamer for live video content (plugins)
+ OBS Studio is designed for efficiently recording and streaming live
+ video content. It supports live RTP streaming to various streaming sites.
+ .
+ This package contains some extra plugins (ALSA, JACK, PipeWire, DeckLink,
+ VLC).
+
+Package: obs-studio
+Description-md5: cbfc110806d932e7f3e83ac87b6bfc7e
+Description-en: recorder and streamer for live video content
+ OBS Studio is designed for efficiently recording and streaming live video
+ content. It supports live RTP streaming to various streaming sites.
+ .
+ Other features include:
+  * Encoding using H264 (x264) and AAC
+  * Unlimited number of scenes and sources
+  * File output to MP4 or FLV
+  * GPU-based game capture for high performance game streaming
+  * Bilinear or lanczos3 resampling
+ .
+ Note that OBS Studio requires an OpenGL 3.2 compatible video card.
+
+Package: python3-access2base
+Description-md5: 62049593c5d96b74959809148594af38
+Description-en: interface between Python and the LibreOffice Access2Base library
+ Access2Base is a LibreOffice/OpenOffice Basic library of macros for
+ (business or personal) application developers and advanced users.
+ .
+ Their syntax and their meaning are directly inspired by MSAccess.
+ The macros are callable from
+  - a LibreOffice / OpenOffice Base application,
+  - any LibreOffice / OpenOffice document wanting to access data
+   stored in databases.
+ .
+ This package contains an interface between Python (user) scripts
+ and Access2Base.
+
+Package: python3-scriptforge
+Description-md5: 97e0d75f97d05ddf0ead3ba75f99a8fb
+Description-en: interface between Python and the LibreOffice ScriptForge library
+ ScriptForge libraries build up an extensible collection of macro scripting
+ resources for LibreOffice to be invoked from Basic macros or Python scripts.
+ .
+ This package contains the public scriptforge python library.
+
+Package: python3-sphinxcontrib-globalsubs
+Description-md5: 2ca5b71c6ef3394bcebab1a8eb22351a
+Description-en: sphinx extension to support global substitutions
+ Sphinx extension for adding global substitutions to conf.py. One of the main
+ use cases are central abbreviation lists, but any valid reST markup can be
+ substituted.
+ .
+ This contains the Python 3 version.
+
+Package: qtractor
+Description-md5: 59cb7218e33df7e0335e161a080bf8d1
+Description-en: MIDI/Audio multi-track sequencer application
+ This is a MIDI/Audio multi-track sequencer application written
+ in C++, with LV2, VST3, CLAP, VST2, DSSI, & LADSPA hosting capabilities.
+ .
+ The Jack Audio Connection Kit (JACK) for audio, and the Advanced Linux
+ Sound Architecture (ALSA) for MIDI, are the main infrastructures to
+ evolve as a fairly-featured Linux Desktop Audio Workstation GUI, especially
+ dedicated to the personal home-studio.
+
+Package: xca
+Description-md5: db82d1221dacff719c800bc29695a864
+Description-en: x509 Certification Authority management tool based on QT
+ XCA creates and manages Certificate authorities and helps the user to
+ create and manage keys, certificates, certificate sign requests,
+ certificate revocation lists etc.
+ .
+ All data is saved in an encrypted, portable database, and can be exported
+ in various standard formats. XCA is also available for MacOS X and
+ Windows systems.
+ .
+ For a good workflow, certificate templates can be defined to make the
+ creation of new certificates an easy task.
+
+Package: yt-dlp
+Description-md5: bc4ebb5dcf4e2d78c2faf346c07ca26f
+Description-en: downloader of videos from YouTube and other sites
+ yt-dlp is a youtube-dl fork based on the now inactive youtube-dlc.
+ The main focus of this project is adding new features and patches
+ while also keeping up to date with the original project.
+ .
+ yt-dlp is a small command-line program to download videos from
+ YouTube.com and other sites that don't provide direct links to the
+ videos served.
+ .
+ yt-dlp allows the user, among other things, to choose a specific video
+ quality to download (if available) or let the program automatically
+ determine the best (or worst) quality video to grab. It supports
+ downloading entire playlists and all videos from a given user.
+ .
+ Currently supported sites (or features of sites) are:
+ .
+ 17live, 1News, 1tv, 20min, 23video, 247sports, 24tv.ua, 3qsdn, 3sat,
+ 4tube, 56.com, 6play, 7plus, 8tracks, 9c9media, 9gag, 9News, 9now.com.au,
+ abc.net.au, abcnews, abcotvs, AbemaTV, AbemaTVTitle, acast, AcFunBangumi,
+ AcFunVideo, ADN, ADNSeason, AdobeConnect, adobetv, AdultSwim, aenetworks,
+ AeonCo, AirTV, AitubeKZVideo, AliExpressLive, AlJazeera, Allocine,
+ Allstar, AllstarProfile, AlphaPorno, Alsace20TV, Alsace20TVEmbed,
+ altcensored, Alura, AluraCourse, AmadeusTV, Amara, AmazonMiniTV,
+ AmazonReviews, AmazonStore, AMCNetworks, AmericasTestKitchen,
+ AmericasTestKitchenSeason, AmHistoryChannel, AnchorFMEpisode,
+ anderetijden, Angel, AnimalPlanet, Anvato, aol.com, APA, Aparat,
+ AppleConnect, AppleDaily, ApplePodcasts, appletrailers, archive.org,
+ ArcPublishing, ARD, ARDMediathek, ARDMediathekCollection, Arkena,
+ Art19, Art19Show, arte.sky.it, ArteTV, ArteTVCategory, ArteTVEmbed,
+ ArteTVPlaylist, asobichannel, AsobiStage, AtresPlayer, AtScaleConfEvent,
+ ATVAt, AudiMedia, AudioBoom, audiomack, Audius, AWAAN, axs.tv, AZMedien,
+ BaiduVideo, BanBye, BanByeChannel, bandaichannel, Bandcamp, Bandlab,
+ BandlabPlaylist, BannedVideo, bbc, bbc.co.uk, BBVTV, BBVTVLive,
+ BBVTVRecordings, BeaconTv, BeatBumpPlaylist, BeatBumpVideo, Beatport,
+ Beeg, BehindKink, Bellator, BellMedia, BerufeTV, Bet, bfmtv, Bigflix,
+ Bigo, Bild, BiliBili, Bilibili category extractor, BilibiliAudio,
+ BilibiliAudioAlbum, BiliBiliBangumi, BiliBiliBangumiMedia,
+ BiliBiliBangumiSeason, BilibiliCheese, BilibiliCheeseSeason,
+ BilibiliCollectionList, BiliBiliDynamic, BilibiliFavoritesList,
+ BiliBiliPlayer, BilibiliPlaylist, BiliBiliSearch, BilibiliSeriesList,
+ BilibiliSpaceAudio, BilibiliSpaceVideo, BilibiliWatchlater, BiliIntl,
+ BiliLive, BioBioChileTV, Biography, BitChute, BitChuteChannel,
+ BlackboardCollaborate, BleacherReport, BleacherReportCMS, blerp,
+ blogger.com, Bloomberg, Bluesky, BokeCC, BongaCams, Boosty, BostonGlobe,
+ Box, BoxCastVideo, Bpb, BR, BrainPOP, BrainPOPELL, BrainPOPEsp,
+ BrainPOPFr, BrainPOPIl, BrainPOPJr, BravoTV, BreitBart, Bundesliga,
+ Bundestag, BusinessInsider, BuzzFeed, BYUtv, CaffeineTV, Callin,
+ Caltrans, CAM4, Camdemy, CamdemyFolder, CamFMEpisode, CamFMShow,
+ CamModels, Camsoda, CamtasiaEmbed, Canal1, CanalAlpha, canalc2.tv,
+ Canalplus, CaracolTvPlay, CartoonNetwork, cbc.ca, CBS, CBSLocal,
+ CBSLocalArticle, CBSLocalLive, cbsnews, cbssports, CCMA, CCTV, CDA,
+ CDAFolder, Cellebrite, CeskaTelevize, CGTN, CharlieRose, Chaturbate,
+ Chilloutzone, cielotv.it, Cinemax, CinetecaMilano, Cineverse,
+ CineverseDetails, CiscoLiveSearch, CiscoLiveSession, ciscowebex,
+ CJSW, Clipchamp, Clippit, ClipRs, ClipYouEmbed, CloserToTruth,
+ CloudflareStream, CloudyCDN, Clubic, Clyp, cmt.com, CNBCVideo, CNN,
+ CNNIndonesia, ComedyCentral, ComedyCentralTV, ConanClassic, CondeNast,
+ CONtv, CookingChannel, Corus, Coub, CozyTV, cp24, cpac, Cracked, Crackle,
+ Craftsy, CrooksAndLiars, CrowdBunker, CrowdBunkerChannel, Crtvg, CSpan,
+ CSpanCongress, CtsNews, CTV, CTVNews, cu.ntv.co.jp, CultureUnplugged,
+ curiositystream, CWTV, Cybrary, CybraryCourse, DacastPlaylist, DacastVOD,
+ DagelijkseKost, DailyMail, dailymotion, DailyWire, DailyWirePodcast,
+ dangalplay, daum.net, DBTV, DctpTv, DeezerAlbum, DeezerPlaylist,
+ democracynow, DestinationAmerica, DetikEmbed, DeuxM, DeuxMNews, DHM,
+ DigitalConcertHall, DigitallySpeaking, Digiteka, DiscogsReleasePlaylist,
+ DiscoveryLife, DiscoveryNetworksDe, DiscoveryPlus, DiscoveryPlusIndia,
+ DiscoveryPlusIndiaShow, DiscoveryPlusItaly, DiscoveryPlusItalyShow,
+ Disney, dlf, Douyin, DouyuShow, DouyuTV, DPlay, DRBonanza, Drooble,
+ Dropbox, Dropout, DropoutSeason, DrTalks, DrTuber, drtv, DTube,
+ duboku, Dumpert, Duoplay, dvtv, dw, EaglePlatform, EbaumsWorld,
+ Ebay, EinsUndEinsTV, EinsUndEinsTVLive, EinsUndEinsTVRecordings,
+ eitb.tv, ElementorEmbed, Elonet, ElPais, ElTreceTV, Embedly, EMPFlix,
+ Epicon, EpiconSeries, EpidemicSound, eplus, Epoch, Eporner, Erocast,
+ EroProfile, ERRJupiter, ertflix, ESPN, ESPNArticle, ESPNCricInfo,
+ EttuTv, Europa, EuroParlWebstream, EuropeanTour, Eurosport,
+ EUScreen, EWETV, EWETVLive, EWETVRecordings, Expressen, EyedoTV,
+ facebook, FacebookPluginsVideo, Fathom, faz.net, fc2, Fczenit, Fifa,
+ filmon, Filmweb, FiveThirtyEight, FiveTV, FlexTV, Flickr, Floatplane,
+ FloatplaneChannel, Folketinget, FoodNetwork, FootyRoom, Formula1, FOX,
+ FOX9, FOX9News, foxnews, FoxNewsVideo, FoxSports, fptplay, FranceCulture,
+ FranceInter, FranceTV, francetvinfo.fr, FranceTVSite, Freesound,
+ freespeech.org, FreeTvMovies, FrontendMasters, FrontendMastersCourse,
+ FrontendMastersLesson, FujiTVFODPlus7, Funk, Funker530, Fux, FuyinTV,
+ Gab, GabTV, Gaia, GameDevTVDashboard, GameJolt, GameJoltCommunity,
+ GameJoltGame, GameJoltGameSoundtrack, GameJoltSearch, GameJoltUser,
+ GameSpot, GameStar, Gaskrank, Gazeta, GBNews, GDCVault, GediDigital,
+ gem.cbc.ca, generic, Genius, GeniusLyrics, Germanupa, GetCourseRu,
+ GetCourseRuPlayer, Gettr, GettrStreaming, GiantBomb, GlattvisionTV,
+ GlattvisionTVLive, GlattvisionTVRecordings, Glide, GlobalPlayerAudio,
+ GlobalPlayerAudioEpisode, GlobalPlayerLive, GlobalPlayerLivePlaylist,
+ GlobalPlayerVideo, Globo, GloboArticle, glomex, GMANetworkVideo, Go,
+ GoDiscovery, GodResource, GodTube, Gofile, Golem, GoogleDrive, GoPlay,
+ GoPro, Goshgay, GoToStage, GPUTechConf, Graspop, Gronkh, Groupon,
+ Harpodeon, hbo, HearThisAt, Heise, HellPorno, hetklokhuis, HGTVDe,
+ HGTVUsa, HiDive, HistoricFilms, HitRecord, hketv, HollywoodReporter,
+ HollywoodReporterPlaylist, Holodex, HotNewHipHop, hotstar, hrfernsehen,
+ HRTi, HRTiPlaylist, HSEProduct, HSEShow, html5, Huajiao, HuffPost,
+ Hungama, HungamaAlbumPlaylist, HungamaSong, Hypem, Hytale, Icareus,
+ IdolPlus, IflixSeries, ign.com, IGNArticle, IGNVideo, iheartradio,
+ IlPost, Iltalehti, imdb, Imgur, Ina, Inc, IndavideoEmbed, InfoQ,
+ Instagram, InstagramIOS, Internazionale, InternetVideoArchive,
+ InvestigationDiscovery, IPrima, IPrimaCNN, iq.com, iqiyi, IslamChannel,
+ IslamChannelSeries, IsraelNationalNews, ITProTV, ITProTVCourse, ITV,
+ ITVBTCC, ivi, ivideon, IVXPlayer, iwara, Ixigua, Izlesene, Jamendo,
+ JamendoAlbum, JeuxVideo, jiocinema, Joj, JoqrAg, Jove, JStream, JTBC,
+ JWPlatform, Kakao, Kaltura, KankaNews, Karaoketv, Katsomo, KelbyOne,
+ Kenh14Playlist, Kenh14Video, Ketnet, khanacademy, Kicker, KickStarter,
+ Kika, KinoPoisk, Kommunetv, KompasVideo, Koo, KrasView, KTH, Ku6,
+ KukuluLive, la7.it, laracasts, LastFM, LastFMPlaylist, LastFMUser,
+ LaXarxaMes, lbry, LCI, Lcp, LcpPlay, Le, LearningOnScreen, Lecture2Go,
+ Lecturio, LecturioCourse, LecturioDeCourse, LeFigaroVideoEmbed,
+ LeFigaroVideoSection, LEGO, Lemonde, Lenta, LePlaylist, LetvCloud,
+ Libsyn, life, likee, limelight, LinkedIn, Liputan6, ListenNotes, LiTV,
+ LiveJournal, livestream, Livestreamfails, Lnk, loc, loom, LoveHomePorn,
+ LRTStream, LRTVOD, LSMLREmbed, LSMLTVEmbed, LSMReplay, Lumni, lynda,
+ maariv.co.il, MagellanTV, MagentaMusik, mailru, MainStreaming,
+ MangoTV, ManotoTV, ManotoTVLive, ManotoTVShow, ManyVids, MaoriTV,
+ Markiza, MarkizaPage, massengeschmack.tv, Masters, MatchTV, MBN, MDR,
+ MedalTV, media.ccc.de, Mediaite, MediaKlikk, Medialaan, Mediaset,
+ MediasetShow, Mediasite, MediasiteCatalog, MediasiteNamedCatalog,
+ MediaStream, MediaWorksNZVOD, Medici, megaphone.fm, megatvcom,
+ Meipai, MelonVOD, Metacritic, mewatch, MicrosoftBuild, MicrosoftEmbed,
+ MicrosoftLearnEpisode, MicrosoftLearnPlaylist, MicrosoftLearnSession,
+ MicrosoftMedius, microsoftstream, minds, Minoto, mirrativ, MirrorCoUK,
+ MiTele, mixch, mixcloud, MLB, MLBArticle, MLBTV, MLBVideo, MLSSoccer,
+ MNetTV, MNetTVLive, MNetTVRecordings, MochaVideo, Mojevideo, Mojvideo,
+ Monstercat, MonsterSirenHypergryphMusic, Motherless, MotherlessGallery,
+ MotherlessGroup, MotherlessUploader, Motorsport, MovieFap, Moviepilot,
+ MoviewPlay, Moviezine, MovingImage, MSN, mtg, mtv, mtv.de, mtv.it,
+ mtvjapan, MTVUutisetArticle, MuenchenTV, MujRozhlas, Murrtube,
+ MurrtubeUser, MuseAI, MuseScore, MusicdexAlbum, MusicdexArtist,
+ MusicdexPlaylist, MusicdexSong, Mx3, Mx3Neo, Mx3Volksmusik, Mxplayer,
+ MxplayerShow, MySpace, MySpass, MyVideoGe, MyVidster, Mzaalo,
+ n-tv.de, N1InfoAsset, Nate, NateProgram, NationalGeographicTV, Naver,
+ navernow, nba, NBC, NBCNews, nbcolympics, NBCSports, NBCSportsStream,
+ NBCSportsVPlayer, NBCStations, ndr, NDTV, NekoHacker, NerdCubedFeed,
+ Nest, NestClip, NetPlusTV, NetPlusTVLive, NetPlusTVRecordings, Netverse,
+ NetversePlaylist, NetverseSearch, Netzkino, Newgrounds, NewsPicks,
+ Newsy, NextMedia, NextMediaActionNews, NextTV, Nexx, NexxEmbed, nfb,
+ NFHSNetwork, nfl.com, NhkForSchoolBangumi, NhkForSchoolProgramList,
+ NhkForSchoolSubject, NhkRadioNewsPage, NhkRadiru, NhkRadiruLive,
+ NhkVod, NhkVodProgram, nhl.com, nick.com, nick.de, nickelodeonru,
+ niconico, NiconicoChannelPlus, NiconicoUser, NinaProtocol, Nintendo,
+ Nitter, njoy, NobelPrize, NoicePodcast, NonkTube, NoodleMagazine,
+ Noovo, NOSNLArticle, Nova, NovaEmbed, NovaPlay, nowness, Noz, npo,
+ Npr, NRK, NRKPlaylist, NRKRadioPodkast, NRKSkole, NRKTV, NRKTVDirekte,
+ NRKTVEpisode, NRKTVEpisodes, NRKTVSeason, NRKTVSeries, NRLTV, nts.live,
+ ntv.ru, NubilesPorn, Nuvid, NYTimes, NYTimesArticle, NYTimesCookingGuide,
+ NYTimesCookingRecipe, nzherald, NZOnScreen, NZZ, ocw.mit.edu,
+ Odnoklassniki, OfTV, OfTVPlaylist, OktoberfestTV, OlympicsReplay,
+ on24, OnDemandChinaEpisode, OnDemandKorea, OnDemandKoreaProgram,
+ OneFootball, OnePlacePodcast, onet.pl, onet.tv, OnetMVP, OnionStudios,
+ Opencast, OpencastPlaylist, openrec, OraTV, OsnatelTV, OsnatelTVLive,
+ OsnatelTVRecordings, OutsideTV, OwnCloud, PacktPub, PacktPubCourse,
+ Panopto, PanoptoList, PanoptoPlaylist, ParamountNetwork, ParamountPlus,
+ ParamountPlusSeries, ParamountPressExpress, Parler, parliamentlive.tv,
+ Parlview, patreon, pbs, PBSKids, PearVideo, PeekVids, peer.tv, PeerTube,
+ peloton, PerformGroup, periscope, PGATour, PhilharmonieDeParis,
+ phoenix.de, Photobucket, PiaLive, Piapro, Picarto, PicartoVod, Piksel,
+ Pinkbike, Pinterest, PinterestCollection, PiramideTV, PiramideTVChannel,
+ Pladform, PlanetMarathi, Platzi, PlatziCourse, player.sky.it, playeur,
+ PlayPlusTV, PlaySuisse, Playtvak, PlayVids, Playwire, pluralsight,
+ PlutoTV, PlVideo, PodbayFM, PodbayFMChannel, Podchaser, podomatic,
+ PokerGo, PokerGoCollection, PolsatGo, PolskieRadio, Popcorntimes,
+ PopcornTV, Pornbox, PornerBros, PornFlip, PornHub, PornHubPagedVideoList,
+ PornHubPlaylist, PornHubUser, PornHubUserVideosUpload, Pornotube,
+ PornoVoisines, PornoXO, PornTop, PornTube, Pr0gramm, PrankCast,
+ PrankCastPost, PremiershipRugby, PressTV, ProjectVeritas, prosiebensat1,
+ PRXAccount, PRXSeries, PRXStory, puhutv, Puls4, Pyvideo, QDance, QingTing,
+ qqmusic, QuantumTV, QuantumTVLive, QuantumTVRecordings, R7, R7Article,
+ Radiko, RadikoRadio, radio.de, Radio1Be, radiocanada, RadioComercial,
+ RadioComercialPlaylist, radiofrance, RadioFranceLive, RadioFrancePodcast,
+ RadioFranceProfile, RadioFranceProgramSchedule, RadioJavan, radiokapital,
+ RadioRadicale, RadioZetPodcast, radlive, Rai, RaiCultura, RaiNews,
+ RaiPlay, RaiPlayLive, RaiPlayPlaylist, RaiPlaySound, RaiPlaySoundLive,
+ RaiPlaySoundPlaylist, RaiSudtirol, RayWenderlich, RayWenderlichCourse,
+ RbgTum, RbgTumCourse, RbgTumNewCourse, RCS, RCSEmbeds, RCSVarious,
+ RCTIPlus, RCTIPlusSeries, RCTIPlusTV, RDS, RedBull, RedBullEmbed,
+ RedBullTV, RedBullTVRrnContent, redcdnlivx, Reddit, RedGifs,
+ RedGifsSearch, RedGifsUser, RedTube, RENTV, RENTVArticle,
+ Restudy, Reuters, ReverbNation, RheinMainTV, RideHome, RinseFM,
+ RinseFMArtistPlaylist, RMCDecouverte, RockstarGames, Rokfin,
+ RoosterTeeth, RoosterTeethSeries, RottenTomatoes, Rozhlas,
+ RozhlasVltava, RTBF, RTDocumentry, RTDocumentryPlaylist, rte, rtl.nl,
+ rtl2, RTLLuLive, RTLLuRadio, RTNews, RTP, RTRFM, RTS, RTVCKaltura,
+ RTVCPlay, RTVCPlayEmbed, RTVS, rtvslo.si, RudoVideo, Rule34Video,
+ Rumble, RumbleChannel, RumbleEmbed, Ruptly, rutube, RUTV, Ruutu, Ruv,
+ S4C, S4CSeries, safari, Saitosan, SAKTV, SAKTVLive, SAKTVRecordings,
+ SaltTV, SaltTVLive, SaltTVRecordings, SampleFocus, Sangiin, Sapo,
+ SBS, sbs.co.kr, schooltv, ScienceChannel, Screen9, Screencast,
+ Screencastify, ScreencastOMatic, ScreenRec, ScrippsNetworks, Scrolller,
+ SCTE, SCTECourse, sejm, Sen, SenalColombiaLive, SenateGov, SenateISVP,
+ SendtoNews, Servus, Sexu, SeznamZpravy, SeznamZpravyArticle, Shahid,
+ ShahidShow, SharePoint, ShareVideosEmbed, ShemarooMe, ShowRoomLive,
+ ShugiinItvLive, ShugiinItvLiveRoom, ShugiinItvVod, SibnetEmbed,
+ simplecast, Sina, Skeb, sky.it, SkylineWebcams, SkyNewsAU, Slideshare,
+ SlidesLive, Slutload, Smotrim, SnapchatSpotlight, Snotr, Sohu,
+ SohuV, SonyLIV, SonyLIVSeries, soop, soundcloud, SoundcloudEmbed,
+ soundgasm, southpark.cc.com, southpark.de, southpark.lat, southpark.nl,
+ southparkstudios.dk, SovietsCloset, SovietsClosetPlaylist, SpankBang,
+ SpankBangPlaylist, Spiegel, Sport5, SportBox, SportDeutschland, spotify,
+ Spreaker, SpreakerShow, SpringboardPlatform, Sprout, SproutVideo,
+ SRGSSR, SRGSSRPlay, StacommuLive, StacommuVOD, StagePlusVODConcert,
+ stanfordoc, StarTrek, startv, Steam, SteamCommunityBroadcast,
+ Stitcher, StitcherShow, StoryFire, StoryFireSeries, StoryFireUser,
+ Streamable, StreamCZ, StreetVoice, StretchInternet, Stripchat,
+ Subsplash, Substack, SunPorno, SVT, SVTPage, SVTPlay, SVTSeries,
+ SwearnetEpisode, Syfy, SYVDK, SztvHu, t-online.de, Tagesschau,
+ TapTapApp, TapTapAppIntl, TapTapMoment, TapTapPostIntl, Tass, TBS,
+ TBSJPEpisode, TBSJPPlaylist, TBSJPProgram, Teachable, TeachableCourse,
+ teachertube, TeachingChannel, Teamcoco, TeamTreeHouse, techtv.mit.edu,
+ TedEmbed, TedPlaylist, TedSeries, TedTalk, Tele13, Tele5, TeleBruxelles,
+ TelecaribePlay, Telecinco, Telegraaf, TeleMB, Telemundo, TeleQuebec,
+ TeleQuebecEmission, TeleQuebecLive, TeleQuebecSquat, TeleQuebecVideo,
+ TeleTask, Telewebion, Tempo, TennisTV, TenPlay, TenPlaySeason, TF1,
+ TFO, TheGuardianPodcast, TheGuardianPodcastPlaylist, TheHoleTv,
+ TheIntercept, ThePlatform, ThePlatformFeed, TheStar, TheSun,
+ TheWeatherChannel, ThisAmericanLife, ThisOldHouse, ThisVid,
+ ThisVidMember, ThisVidPlaylist, ThreeSpeak, ThreeSpeakUser, TikTok,
+ TLC, TMZ, TNAFlix, TNAFlixNetworkEmbed, toggle, toggo, ToonGoggles,
+ tou.tv, Toypics, ToypicsUser, TrailerAddict, TravelChannel, Triller,
+ TrillerShort, TrillerUser, Trovo, TrovoChannelClip, TrovoChannelVod,
+ TrovoVod, TrtCocukVideo, TrtWorld, TrueID, TruNews, Truth, TruTV,
+ Tube8, TubeTuGraz, TubeTuGrazSeries, tubitv, Tumblr, TuneInPodcast,
+ TuneInPodcastEpisode, TuneInStation, tv.dfb.de, TV2, TV2Article,
+ TV2DK, TV2DKBornholmPlay, tv2play.hu, tv2playseries.hu, TV4, TV5MONDE,
+ tv5unis, tv8.it, TVANouvelles, TVANouvellesArticle, tvaplus, TVC,
+ TVCArticle, TVer, tvigle, TVIPlayer, tvland.com, TVN24, TVNoe,
+ tvp, TVPlayer, TVPlayHome, Tweakers, TwitCasting, TwitCastingLive,
+ TwitCastingUser, TwitchCollection, TwitchVideos, TwitchVideosClips,
+ TwitchVideosCollections, twitter, Txxx, udemy, UDNEmbed, UFCArabia,
+ UFCTV, ukcolumn, UKTVPlay, UlizaPlayer, UlizaPortal, Unistra, Unity,
+ uol.com.br, uplynk, Urort, URPlay, USANetwork, USAToday, ustream,
+ ustudio, Varzesh3, Vbox7, Veo, Vesti, Vevo, VevoPlaylist, VGTV, vh1.com,
+ vice, Viddler, Videa, video.arnes.si, video.sky.it, VideoDetective,
+ videofy.me, VideoKen, VideoKenCategory, VideoKenPlayer, VideoKenPlaylist,
+ VideoKenTopic, videomore, VideoPress, Vidflex, Vidio, VidioLive,
+ VidioPremier, VidLii, Vidly, vids.io, Vidyard, viewlift, Viidea,
+ viki, vimeo, ViMP, Viously, Viqeo, Viu, ViuOTTIndonesia, vk, VKPlay,
+ VKPlayLive, vm.tiktok, Vocaroo, VODPl, VODPlatform, voicy, VolejTV,
+ VoxMedia, VoxMediaVolume, vpro, VRT, VrtNU, VTM, VTV, VTVGo, VTXTV,
+ VTXTVLive, VTXTVRecordings, VuClip, VVVVID, VVVVIDShow, Walla, WalyTV,
+ WalyTVLive, WalyTVRecordings, washingtonpost, wat.tv, WatchESPN, WDR,
+ WDRElefant, WDRPage, Webcamerapl, Webcaster, WebcasterFeed, WebOfStories,
+ WebOfStoriesPlaylist, Weibo, WeiboUser, WeiboVideo, WeiqiTV, WeTvSeries,
+ Weverse, WeverseLive, WeverseLiveTab, WeverseMedia, WeverseMediaTab,
+ WeverseMoment, WeVidi, Weyyak, whowatch, Whyp, wikimedia.org, Wimbledon,
+ WimTV, WinSportsVideo, Wistia, WistiaChannel, WistiaPlaylist, wnl,
+ WorldStarHipHop, wppilot, WrestleUniversePPV, WrestleUniverseVOD,
+ WSJ, WSJArticle, WWE, WyborczaPodcast, Xanimu, XboxClips, XHamster,
+ XHamsterEmbed, XHamsterUser, XiaoHongShu, ximalaya, Xinpianchang, XMinus,
+ XNXX, Xstream, XVideos, XXXYMovies, Yahoo, YandexDisk, YandexVideo,
+ YandexVideoPreview, YapFiles, Yappy, YappyProfile, YleAreena, YouJizz,
+ youku, YouNowChannel, YouNowLive, YouNowMoment, YouPorn, YouPornCategory,
+ YouPornChannel, YouPornCollection, YouPornStar, YouPornTag, YouPornVideos,
+ youtube, YoutubeLivestreamEmbed, YoutubeYtBe, Zaiko, ZaikoETicket, Zapiks,
+ Zattoo, ZattooLive, ZattooMovies, ZattooRecordings, ZDF, ZDFChannel,
+ Zee5, ZeeNews, ZenPorn, ZenYandex, ZenYandexChannel, ZetlandDKArticle,
+ Zhihu, zingmp3, zoom, Zype, generic,
+

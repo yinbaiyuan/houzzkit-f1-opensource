@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/bin
+/usr/bin/toilet
+/usr/share
+/usr/share/doc
+/usr/share/doc/toilet
+/usr/share/doc/toilet/NEWS.gz
+/usr/share/doc/toilet/README
+/usr/share/doc/toilet/TODO
+/usr/share/doc/toilet/changelog.Debian.gz
+/usr/share/doc/toilet/copyright
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/toilet.1.gz
+/usr/bin/figlet-toilet
+/usr/share/man/man1/figlet-toilet.1.gz

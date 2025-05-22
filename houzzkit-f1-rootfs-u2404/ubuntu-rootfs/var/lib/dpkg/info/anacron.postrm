@@ -1,0 +1,31 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "purge" ]; then
+# here for historical reasons
+	rm -f /var/log/anacron /var/log/anacron.[0-9]*
+	rm -rf /var/spool/anacron
+fi
+
+# Automatically added by dh_installinit/13.14.1ubuntu5
+if [ "$1" = "remove" ] && [ -x "/etc/init.d/anacron" ] ; then
+	chmod -x "/etc/init.d/anacron" >/dev/null || true
+fi
+if [ -z "${DPKG_ROOT:-}" ] && [ "$1" = "purge" ] ; then
+	update-rc.d anacron remove >/dev/null
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.14.1ubuntu5
+if [ "$1" = remove ] && [ -d /run/systemd/system ] ; then
+	systemctl --system daemon-reload >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.14.1ubuntu5
+if [ "$1" = "purge" ]; then
+	if [ -x "/usr/bin/deb-systemd-helper" ]; then
+		deb-systemd-helper purge 'anacron.service' 'anacron.timer' >/dev/null || true
+	fi
+fi
+# End automatically added section
+

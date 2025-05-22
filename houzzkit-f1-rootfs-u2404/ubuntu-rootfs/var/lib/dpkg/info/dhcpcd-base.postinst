@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+if [ "$1" = configure ]; then
+  # Create system user for privilege separation.
+  if ! getent passwd dhcpcd >/dev/null; then
+    adduser --system \
+    --gecos "DHCP Client Daemon" \
+    --home /usr/lib/dhcpcd --no-create-home \
+    --shell /bin/false \
+    dhcpcd
+  fi
+fi
+

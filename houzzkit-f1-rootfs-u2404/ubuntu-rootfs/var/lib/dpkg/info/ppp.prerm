@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+
+# If we are removing ppp we have to stop all ppp's
+
+if [ "$1" = remove ]; then
+  echo -n "Stopping all PPP connections..."
+  start-stop-daemon --stop --oknodo --quiet --exec /usr/sbin/pppd || true
+  echo "done."
+fi
+
+# Automatically added by dh_installdeb/13.14.1ubuntu5
+dpkg-maintscript-helper rm_conffile /etc/bash_completion.d/pon 2.4.7-1\+2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/init.d/pppd-dns 2.4.8-1\+1\~exp1\~ -- "$@"
+# End automatically added section
+

@@ -1,0 +1,2 @@
+/etc/NetworkManager/NetworkManager.conf
+/etc/NetworkManager/conf.d/default-wifi-powersave-on.conf

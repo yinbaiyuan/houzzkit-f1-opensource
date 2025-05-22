@@ -1,0 +1,59 @@
+#! /bin/sh
+set -e
+
+LC_ALL=C
+LANG=C
+unset TZ
+umask 022
+
+get_timezone() {
+	if ! [ -L "$DPKG_ROOT/etc/localtime" ] ; then
+		return
+	fi
+	timezone="$(readlink "$DPKG_ROOT/etc/localtime")"
+	timezone="$(cd "$DPKG_ROOT/etc" && realpath -m -s "$timezone")"
+	echo "${timezone#/usr/share/zoneinfo/}"
+}
+
+. /usr/share/debconf/confmodule
+db_version 2.0
+
+if [ "$1" = configure ]; then
+	# Get the values from debconf
+	AREA=Etc
+	ZONE=UTC
+	db_get tzdata/Areas && AREA="$RET"
+	db_get "tzdata/Zones/$AREA" && ZONE="$RET"
+	if [ "$AREA" = Legacy ]; then
+		TIMEZONE="$ZONE"
+	else
+		TIMEZONE="$AREA/$ZONE"
+	fi
+	db_stop
+
+	# Update the time zone
+	if test "$(get_timezone)" != "$TIMEZONE"; then
+		ln -nsf "/usr/share/zoneinfo/$TIMEZONE" "$DPKG_ROOT/etc/localtime.dpkg-new" && \
+			mv -f "$DPKG_ROOT/etc/localtime.dpkg-new" "$DPKG_ROOT/etc/localtime"
+		which restorecon >/dev/null 2>&1 && restorecon "$DPKG_ROOT/etc/localtime"
+	fi
+	echo "$TIMEZONE" > "$DPKG_ROOT/etc/timezone"
+	which restorecon >/dev/null 2>&1 && restorecon "$DPKG_ROOT/etc/timezone"
+
+	echo
+	echo "Current default time zone: '$TIMEZONE'"
+
+	# Show the new setting to the user
+	UTdate=$(LC_ALL=C TZ=UTC0 date)
+	TZdate=$(unset TZ ; LANG=C date -d "$UTdate")
+	echo "Local time is now:      $TZdate."
+	echo "Universal Time is now:  $UTdate."
+	if [ -z "$DEBCONF_RECONFIGURE" ] ; then
+		echo "Run 'dpkg-reconfigure tzdata' if you wish to change it."
+	fi
+	echo
+fi
+
+
+
+exit 0

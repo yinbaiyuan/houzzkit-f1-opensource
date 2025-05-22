@@ -1,0 +1,9 @@
+64f46c75c471f35181458b380f25bf3e  etc/apt/trusted.gpg.d/ubuntu-keyring-2012-cdimage.gpg
+2b7f905f32154af2e1ff50033f643cc5  etc/apt/trusted.gpg.d/ubuntu-keyring-2018-archive.gpg
+89d9e118431481a8d80f5c7ddb210674  usr/share/doc/ubuntu-keyring/changelog.gz
+f3a03ef829a5a14703b49929085af783  usr/share/doc/ubuntu-keyring/copyright
+8132968e5883c7ac4ed0703b971d5917  usr/share/keyrings/ubuntu-archive-keyring.gpg
+ab9c20a82e0814e2489130884a450e0c  usr/share/keyrings/ubuntu-archive-removed-keys.gpg
+46aaade72f5dda7b91a0a33d0505568b  usr/share/keyrings/ubuntu-cloudimage-keyring.gpg
+d41d8cd98f00b204e9800998ecf8427e  usr/share/keyrings/ubuntu-cloudimage-removed-keys.gpg
+4173e6c8db31422f6c6217b6345fa81d  usr/share/keyrings/ubuntu-master-keyring.gpg

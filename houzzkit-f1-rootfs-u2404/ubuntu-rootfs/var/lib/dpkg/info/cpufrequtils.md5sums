@@ -1,0 +1,17 @@
+27b3adfdad1f64c29a3c7cffe339990e  usr/bin/cpufreq-aperf
+e8f1e5bb5dd90b27fea38520c9a65c0a  usr/bin/cpufreq-info
+ef2003f4763568fda715cc8709e8b1bb  usr/bin/cpufreq-set
+9b11d2e100dcfcd3b574385fbee20212  usr/share/doc/cpufrequtils/README.Debian
+7a6f48d3365f2afd5c13001ed6f35ffa  usr/share/doc/cpufrequtils/copyright
+9793fff7d0dca14611cac47fc3fc6884  usr/share/doc/cpufrequtils/examples/cpufrequtils.loadcpufreq.sample
+b3b62a88b483d5ccf94272744e12fa8c  usr/share/doc/cpufrequtils/examples/cpufrequtils.sample
+eedfd0c7ce0d1f2c97ab2cad88007755  usr/share/lintian/overrides/cpufrequtils
+1a3c34b03e68d613740c07f8cff4ca8c  usr/share/locale/ca/LC_MESSAGES/cpufrequtils.mo
+09d7e3a3a94709826f0826e7d2bec72a  usr/share/locale/cs/LC_MESSAGES/cpufrequtils.mo
+34b97d6bee00b30ea6d422cfdd508230  usr/share/locale/de/LC_MESSAGES/cpufrequtils.mo
+5502e8cf8e65d632cb83a0cd90a1972a  usr/share/locale/fr/LC_MESSAGES/cpufrequtils.mo
+e8d76df0eafd395ef031d704c9015133  usr/share/locale/it/LC_MESSAGES/cpufrequtils.mo
+8097a7b48d2963a91bb69d4b1bd49545  usr/share/locale/pt/LC_MESSAGES/cpufrequtils.mo
+57942406853a6c844af0d5df75fc478c  usr/share/man/man1/cpufreq-aperf.1.gz
+4ff431f675059ad2d62330541c1da987  usr/share/man/man1/cpufreq-info.1.gz
+065ceb6a51e3662dc91fe6a05d130f99  usr/share/man/man1/cpufreq-set.1.gz

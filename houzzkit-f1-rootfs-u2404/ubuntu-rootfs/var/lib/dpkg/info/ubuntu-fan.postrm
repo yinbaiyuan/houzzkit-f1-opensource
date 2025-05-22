@@ -1,0 +1,70 @@
+#!/bin/sh
+
+destroy_default_config()
+{
+	[ ! -f /etc/network/fan ] && return
+
+	local sum
+	sum=$( md5sum - </etc/network/fan )
+	sum=${sum%% *}
+
+	if [ "$sum" = "6ffce66f9cfc087fff1f0befeda7e0bf" ]; then
+		echo "ubuntu-fan: removing default /etc/network/fan configuration"
+		rm -f /etc/network/fan
+	fi
+}
+
+purge_config()
+{
+	[ ! -f /etc/network/fan ] && return
+
+	echo "ubuntu-fan: purging /etc/network/fan configuration"
+	rm -f /etc/network/fan
+}
+
+purge_fanctl_config()
+{
+	# Everything is down if we get this far, so reap the configs.
+	rm -f /var/lib/ubuntu-fan/config/*
+	[ -d /var/lib/ubuntu-fan/config ] && rmdir /var/lib/ubuntu-fan/config
+
+	# This should be the end of all of our configurations.
+	[ -d /var/lib/ubuntu-fan ] && rmdir /var/lib/ubuntu-fan
+}
+
+case "$1" in
+remove)
+	# If the primary configuration is unchanged remove it.
+	destroy_default_config
+	;;
+esac
+
+case "$1" in
+purge)
+	# Remove the fanctl internal config.
+	purge_fanctl_config
+	# Remove the configuration if present.
+	purge_config
+	;;
+esac
+
+# Automatically added by dh_installinit/13.6ubuntu1
+if [ -z "${DPKG_ROOT:-}" ] && [ "$1" = "purge" ] ; then
+	update-rc.d ubuntu-fan remove >/dev/null
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.6ubuntu1
+if [ "$1" = "remove" ]; then
+	if [ -x "/usr/bin/deb-systemd-helper" ]; then
+		deb-systemd-helper mask 'ubuntu-fan.service' >/dev/null || true
+	fi
+fi
+
+if [ "$1" = "purge" ]; then
+	if [ -x "/usr/bin/deb-systemd-helper" ]; then
+		deb-systemd-helper purge 'ubuntu-fan.service' >/dev/null || true
+		deb-systemd-helper unmask 'ubuntu-fan.service' >/dev/null || true
+	fi
+fi
+# End automatically added section
+

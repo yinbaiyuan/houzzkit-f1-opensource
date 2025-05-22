@@ -1,0 +1,7 @@
+b3d8dc93b2b0bf67a75a0a8d20188447  lib/firmware/skl_hda_dsp_generic-tplg.bin
+98ce453ab79b7a11492407f3e3f94e90  usr/share/alsa/topology/broadwell/broadwell.conf
+26ef45a8c3cb6d21f96f76d7c21afc5a  usr/share/alsa/topology/bxtrt298/bxt_i2s.conf
+9d081e24a28c819ec265cb0b36be22c1  usr/share/alsa/topology/hda-dsp/skl_hda_dsp_generic-tplg.conf
+9eb8a2aa40e497b690b99a94982e0820  usr/share/alsa/topology/sklrt286/skl_i2s.conf
+6b55ad7e5c6e5161c18979a740a6e062  usr/share/doc/alsa-topology-conf/changelog.Debian.gz
+8051dedbe28143dcceb833f2281b70dc  usr/share/doc/alsa-topology-conf/copyright

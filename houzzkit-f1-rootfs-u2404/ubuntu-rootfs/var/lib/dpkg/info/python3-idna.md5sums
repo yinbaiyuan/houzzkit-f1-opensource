@@ -1,0 +1,14 @@
+c72246579c4437c07cebb86fbcbc6d90  usr/lib/python3/dist-packages/idna-3.6.dist-info/INSTALLER
+a9463e8042155297f0ba6cce3080099f  usr/lib/python3/dist-packages/idna-3.6.dist-info/METADATA
+24019423ea7c0c2df41c8272a3791e7b  usr/lib/python3/dist-packages/idna-3.6.dist-info/WHEEL
+3159dcdf671a44354eb58eb6ffb4cbea  usr/lib/python3/dist-packages/idna/__init__.py
+336c73e096e6a1008b48a5e95148b94b  usr/lib/python3/dist-packages/idna/codec.py
+f1fb109a7afb20bb1a7f89fff1691575  usr/lib/python3/dist-packages/idna/compat.py
+c980b991c85fea0ebb724459d4674e47  usr/lib/python3/dist-packages/idna/core.py
+278011c5fa7b65dda4fd1b0b79e88acc  usr/lib/python3/dist-packages/idna/idnadata.py
+f67c377c6ab481b1059598ca94af5555  usr/lib/python3/dist-packages/idna/intranges.py
+1c04cfba4d1acbd355ecd6843165bbbf  usr/lib/python3/dist-packages/idna/package_data.py
+d41d8cd98f00b204e9800998ecf8427e  usr/lib/python3/dist-packages/idna/py.typed
+fd1b0b091235c9f05cc15080486df94d  usr/lib/python3/dist-packages/idna/uts46data.py
+56f815c5bbcabb2408419552e484fab9  usr/share/doc/python3-idna/changelog.Debian.gz
+f0d87ce5737b3f09ca2312b31fd24379  usr/share/doc/python3-idna/copyright

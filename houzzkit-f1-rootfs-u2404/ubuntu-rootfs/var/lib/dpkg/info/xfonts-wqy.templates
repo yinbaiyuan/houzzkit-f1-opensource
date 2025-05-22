@@ -1,0 +1,42 @@
+Template: xfonts-wqy/enable_wqy
+Type: boolean
+Default: true
+Description: Enable WenQuanYi font in fontconfig?
+ By default, bitmapped fonts are disabled in fontconfig setting because
+ they are often lower quality. Enabling this option will bypass the
+ system wide fontconfig setting and allow applications to use WenQuanYi
+ font without affecting other bitmapped fonts.
+Description-cs.UTF-8: Povolit ve fontconfigu písmo WenQuanYi?
+ Standardně jsou bitmapová písma ve fontconfigu vypnuta, protože mají často nižší kvalitu. Povolením této volby obejdete systémová nastavení fontconfigu a umožníte aplikacím používat písmo WenQuanYi, aniž by to nějak ovlivnilo zbývající bitmapová písma.
+Description-da.UTF-8: Aktiver WenQuanYi-skrifttype i fontconfig?
+ Som standard er bitmappede skrifttyper deaktiveret i opsætningen af fontconfig, da de ofte er af lav kvalitet. Aktivering af denne indstilling vil omgå systemindstillingen for fontconfig og tillade, at programmer kan bruge skrifttypen WenQuanYi uden, at det påvirker andre bitmappede skrifttyper.
+Description-de.UTF-8: WenQuanYi in Fontconfig aktivieren?
+ Standardmäßig sind Bitmap-Schriften in den Fontconfig-Einstellungen deaktiviert, da sie oft von niedrigerer Qualität sind. Durch aktivieren dieser Option wird die systemweite Fontconfig-Einstellung umgangen und Anwendungen erlaubt, die WenQuanYi-Schrift zu benutzen, ohne andere Bitmap-Schriften zu beeinflussen.
+Description-es.UTF-8: ¿Activar el tipo de letra WenQuanYi en fontconfig?
+ De manera predeterminada, los tipos de letra de mapas de bits se encuentran desactivadas en la configuración de fontconfig ya que por lo general son de mala calidad. Al activar esta opción se ignorará la configuración global de fontconfig y las aplicaciones podrán utilizar el tipo de letra WenQuanYi sin perjudicar a otros tipos de letra como mapas de bits.
+Description-fi.UTF-8: Otetaanko WenQuanYi-fontti käyttöön ohjelmassa fontconfig?
+ Oletuksena bittikarttafontit ovat poissa käytöstä fontconfigin asetuksissa, koska ne ovat yleensä laadultaan huonompia. Tämän vaihtoehdon valinta ohittaa järjestelmän laajuisen fontconfig-asetuksen ja sallii ohjelmien käyttää WenQuanYi-fonttia vaikuttamatta muihin bittikarttafontteihin.
+Description-fr.UTF-8: Faut-il activer les polices WenQuanYi dans fontconfig ?
+ Les polices en mode point (« bitmap ») sont désactivées par défaut dans fontconfig, car elles présentent souvent une qualité moindre. L'activation de cette option court-circuitera le paramétrage global de fontconfig. Vos applications pourront alors utiliser une police WenQuanYi sans que cela ait d'incidence sur les autres polices en mode point.
+Description-gl.UTF-8: ¿Activar o tipo WenQuanYi en fontconfig?
+ Por defecto, os tipos de letra de bitmap están desactivados na configuración de fontconfig porque adoitan ser de baixa calidade. Activar esta opción ha facer que a configuración global de fontconfig se ignore para permitir que as aplicacións empreguen o tipo WenQuanYi sen afectar a outros tipos de letra de bitmap.
+Description-it.UTF-8: Attivare i caratteri WenQuanYi in fontconfig?
+ Con la configurazione predefinita di fontconfig i caratteri bitmap sono disabilitati perché spesso sono di bassa qualità. Con questa opzione è possibile aggirare l'impostazione di sistema di fontconfig e permettere alle applicazioni di usare i caratteri WenQuanYi senza influenzare gli altri caratteri bitmap.
+Description-ja.UTF-8: Wen Quan Yi フォントを fontconfig で有効にしますか?
+ fontconfig の設定では、大抵の場合は品質が落ちてしまうため、デフォルトではビットマップフォントを無効にしています。このオプションを有効にするとシステム全体での fontconfig 設定を無視して、他のビットマップフォントを有効にせず、アプリケーションが Wen Quan Yi フォントを使えるようになります。
+Description-nl.UTF-8: WenQuanYi lettertype in fontconfig activeren?
+ Standaard zijn bitmap-lettertypen in fontconfig niet geactiveerd, daar deze vaak van een lagere kwaliteit zijn. Door deze optie te activeren zal de systeemwijde lettertypeconfiguratie worden omzeild en toepassingen het gebruik van het WenQuanYi lettertype toelaten zonder de andere bitmap-lettertypen te beïnvloeden.
+Description-pt.UTF-8: Activar tipo de letra WenQuanYi no fontconfig?
+ Por omissão, os tipos de letra de mapa de bits estão desactivados na configuração do fontconfig porque são muitas vezes de qualidade inferior. Activar esta opção irá passar ao lado da opção ao nível de sistema do fontconfig e permitirá às aplicações usar o tipo de letra WenQuanYi sem afectar os outros tipos de letra de mapa de bits.
+Description-pt_BR.UTF-8: Habilitar a fonte WenQuanYi no fontconfig?
+ Por padrão, as fontes "bitmapped" são desabilitadas na configuração do fontconfig, porque muitas vezes são de qualidade inferior. Habilitar essa opção ignorará a configuração do fontconfig válida para todo o sistema e permitirá que os aplicativos usem a fonte WenQuanYi sem afetar outras fontes "bitmapped".
+Description-ru.UTF-8: Включить шрифт WenQuanYi в fontconfig?
+ По умолчанию, растровые шрифты выключены в настройке fontconfig, так как они часто имеют более низкое качество. Если ответить утвердительно, то системная настройка fontconfig будет игнорироваться, и это позволит использовать шрифт WenQuanYi в приложениях, при чём остальные растровые шрифты останутся недоступными.
+Description-sv.UTF-8: Aktivera typsnittet WenQuanYi i fontconfig?
+ Som standard är bitmappade typsnitt inaktiverade i fontconfig därfö ratt de är ofta i lägre kvalitet. Aktivera detta alternativ kommer att gå förbi systembreda inställningen i fontconfig och tillåta program att använda typsnittet WenQuanYi utan att påverka andra bitmappade typsnitt.
+Description-vi.UTF-8: Bật phông chữ WenQuanYi trong fontconfig ?
+ Mặc định là các phông chữ mẫu ảnh bị tắt trong tập tin cấu hình phông fontconfig, vì chúng thường có ít chất lượng hơn. Vậy bật tuỳ chọn này sẽ đi vòng thiết lập fontconfig trên toàn hệ thống và cho phép ứng dụng dùng phông chữ WenQuanYi mà không ảnh hưởng đến phông chữ mẫu ảnh khác.
+Description-zh_CN.UTF-8: 在 fontconfig 中启用文泉驿字体吗？
+ 由于点阵字体的显示质量较差，fontconfig 的缺省设置关闭了对它们的支持。通过开启此选项，您将能在不影响其它点阵字体的情况下，绕过 fontconfig 的全局设置让应用程序能使用文泉驿字体。
+Description-zh_TW.UTF-8: 在 fontconfig 中使用文泉驛字體嗎？
+ 由於點陣字體的顯示品質較差，fontconfig 的預設配置關閉對此的支援。透過開啟此選項，您將能在不影響其它點陣字體的情況下，跳過 fontconfig 的系統性配置讓應用程式能使用文泉驛字體。

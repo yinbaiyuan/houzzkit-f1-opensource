@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/sbin
+/usr/sbin/parted
+/usr/sbin/partprobe
+/usr/share
+/usr/share/doc
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/parted
+/usr/share/man
+/usr/share/man/man8
+/usr/share/man/man8/parted.8.gz
+/usr/share/man/man8/partprobe.8.gz
+/usr/share/doc/parted

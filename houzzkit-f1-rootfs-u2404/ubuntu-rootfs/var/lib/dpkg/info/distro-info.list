@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/bin
+/usr/bin/debian-distro-info
+/usr/bin/ubuntu-distro-info
+/usr/share
+/usr/share/doc
+/usr/share/doc/distro-info
+/usr/share/doc/distro-info/changelog.gz
+/usr/share/doc/distro-info/copyright
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/debian-distro-info.1.gz
+/usr/share/man/man1/distro-info.1.gz
+/usr/share/man/man1/ubuntu-distro-info.1.gz
+/usr/bin/distro-info

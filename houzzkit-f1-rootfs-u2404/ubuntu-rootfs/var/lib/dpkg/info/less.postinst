@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+  configure)
+    update-alternatives --quiet --install /usr/bin/pager pager \
+      /usr/bin/less 77 --slave /usr/share/man/man1/pager.1.gz \
+      pager.1.gz /usr/share/man/man1/less.1.gz
+  ;;
+  abort-upgrade|abort-remove|abort-deconfigure)
+  ;;
+  *)
+    echo "postinst called with unknown argument \`$1'" >&2
+    exit 0
+  ;;
+esac
+
+
+
+exit 0

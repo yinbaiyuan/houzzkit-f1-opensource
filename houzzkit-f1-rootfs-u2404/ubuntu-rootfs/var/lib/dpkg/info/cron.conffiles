@@ -1,0 +1,5 @@
+/etc/default/cron
+/etc/init.d/cron
+/etc/pam.d/cron
+/etc/supercat/spcrc-crontab
+/etc/supercat/spcrc-crontab-light

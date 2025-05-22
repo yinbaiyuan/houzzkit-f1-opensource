@@ -1,0 +1,38 @@
+#!/bin/sh
+
+set -e
+
+# Automatically added by dh_installdeb/13.14.1ubuntu5
+dpkg-maintscript-helper rm_conffile /etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf 0.115-2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/pam.d/polkit-1 122-2\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/polkit-1/localauthority.conf.d/50-localauthority.conf 121\+compat0.1-1\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/polkit-1/localauthority.conf.d/51-debian-sudo.conf 121\+compat0.1-1\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/polkit-1/localauthority.conf.d/51-ubuntu-admin.conf 121\+compat0.1-1\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/polkit-1/nullbackend.conf.d/50-nullbackend.conf 0.109-1\~ -- "$@"
+# End automatically added section
+
+
+# If dpkg renamed a sysadmin-modified /etc/pam.d/polkit-1 to .dpkg-bak,
+# rename it back to the original name so PAM will still load it.
+# (Workaround for missing dpkg feature requested in
+# https://bugs.debian.org/1006655)
+if [ -e /etc/pam.d/polkit-1.dpkg-bak ]; then
+    echo "Moving /etc/pam.d/polkit-1.dpkg-bak back to /etc/pam.d/polkit-1 ..."
+    mv /etc/pam.d/polkit-1.dpkg-bak /etc/pam.d/polkit-1
+fi
+
+# Clean up old directories after dpkg-maintscript-helper has removed the
+# conffiles.
+if dpkg --compare-versions "$2" lt "0.109-1"; then
+    for path in \
+        /etc/polkit-1/nullbackend.conf.d/ \
+    ; do
+        if [ -d "$path" ] \
+            && ! dpkg-query -S "$path" >/dev/null 2>/dev/null
+        then
+            rmdir --ignore-fail-on-non-empty "$path"
+        fi
+    done
+fi
+
+# vim:set sw=4 sts=4 et:

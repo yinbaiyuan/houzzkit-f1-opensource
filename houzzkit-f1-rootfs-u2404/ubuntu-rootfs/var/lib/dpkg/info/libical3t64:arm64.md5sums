@@ -1,0 +1,9 @@
+380722699d118386b99761b050807e35  usr/lib/aarch64-linux-gnu/libical-glib.so.3.0.17
+5405cfa653c9af0044c1204fd7fb6703  usr/lib/aarch64-linux-gnu/libical.so.3.0.17
+263e679a0dc9477b3f4271205ef50075  usr/lib/aarch64-linux-gnu/libical_cxx.so.3.0.17
+55975def43d19e10b7039e626cb270bf  usr/lib/aarch64-linux-gnu/libicalss.so.3.0.17
+413facb7f11fdabc9ec520beaa2b7bdc  usr/lib/aarch64-linux-gnu/libicalss_cxx.so.3.0.17
+c883a04e83618c61b8c52643a553805e  usr/lib/aarch64-linux-gnu/libicalvcal.so.3.0.17
+7956e7f13c0b3a57e930adfebd520865  usr/share/doc/libical3t64/changelog.Debian.gz
+42d2bb3a29b1cd7fb88e3e29796a8c8a  usr/share/doc/libical3t64/copyright
+4d2880da2cc2474d0d02ee55503f9177  usr/share/lintian/overrides/libical3t64

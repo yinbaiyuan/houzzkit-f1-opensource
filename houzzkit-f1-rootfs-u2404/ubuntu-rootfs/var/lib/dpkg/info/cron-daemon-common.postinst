@@ -1,0 +1,66 @@
+#!/bin/sh
+set -e
+
+crondir="/var/spool/cron"
+action="$1"
+
+# Automatically added by dh_installsysusers/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+   systemd-sysusers ${DPKG_ROOT:+--root="$DPKG_ROOT"} cron-daemon-common.conf
+fi
+# End automatically added section
+# Automatically added by dh_installtmpfiles/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -x "$(command -v systemd-tmpfiles)" ]; then
+		systemd-tmpfiles ${DPKG_ROOT:+--root="$DPKG_ROOT"} --create cron-daemon-common.conf || true
+	fi
+fi
+# End automatically added section
+
+
+if [ "$action" != configure ]; then
+    exit 0
+fi
+
+
+# Add group for crontabs
+getent group crontab > /dev/null 2>&1 || addgroup --system crontab
+
+# Fixup crontab , directory and files for new group 'crontab'.
+# Can't use dpkg-statoverride for this because it doesn't cooperate nicely
+# with cron alternatives such as bcron
+if [ -d $crondir/crontabs ] ; then
+    chown root:crontab $crondir/crontabs
+    chmod 1730 $crondir/crontabs
+    # This used to be done conditionally. For versions prior to "3.0pl1-81"
+    # It has been disabled to suit cron alternative such as bcron. 
+    cd $crondir/crontabs
+    set +e
+
+    # Iterate over each entry in the spool directory, perform some sanity
+    # checks (see CVE-2017-9525), and chown/chgroup the crontabs
+    for tab_name in *
+    do
+        [ "$tab_name" = "*" ] && continue
+        tab_links=`stat -c '%h' "$tab_name"`
+        tab_owner=`stat -c '%U' "$tab_name"`
+
+        if [ ! -f "$tab_name" ]
+        then
+            echo "Warning: $tab_name is not a regular file!"
+            continue
+        elif [ "$tab_links" -ne 1 ]
+        then
+            echo "Warning: $tab_name has more than one hard link!"
+            continue
+        elif [ "$tab_owner" != "$tab_name" ]
+        then
+            echo "Warning: $tab_name name differs from owner $tab_owner!"
+            continue
+        fi
+
+		chown "$tab_owner:crontab" "$tab_name"
+		chmod 600 "$tab_name"
+    done
+    set -e
+fi

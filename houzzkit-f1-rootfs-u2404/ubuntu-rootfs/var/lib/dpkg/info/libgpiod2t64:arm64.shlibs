@@ -1,0 +1,2 @@
+libgpiod 2 libgpiod2t64 (>= 1.6.3)
+libgpiodcxx 1 libgpiod2t64 (>= 1.6.3)

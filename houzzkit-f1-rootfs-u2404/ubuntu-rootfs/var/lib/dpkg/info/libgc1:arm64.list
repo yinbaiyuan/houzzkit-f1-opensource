@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/lib
+/usr/lib/aarch64-linux-gnu
+/usr/lib/aarch64-linux-gnu/libgc.so.1.5.3
+/usr/lib/aarch64-linux-gnu/libgccpp.so.1.5.0
+/usr/lib/aarch64-linux-gnu/libgctba.so.1.5.0
+/usr/share
+/usr/share/doc
+/usr/share/doc/libgc1
+/usr/share/doc/libgc1/README.environment.gz
+/usr/share/doc/libgc1/changelog.Debian.gz
+/usr/share/doc/libgc1/copyright
+/usr/lib/aarch64-linux-gnu/libgc.so.1
+/usr/lib/aarch64-linux-gnu/libgccpp.so.1
+/usr/lib/aarch64-linux-gnu/libgctba.so.1

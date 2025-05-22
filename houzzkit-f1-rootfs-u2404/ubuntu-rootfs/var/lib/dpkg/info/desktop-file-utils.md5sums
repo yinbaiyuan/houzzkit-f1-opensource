@@ -1,0 +1,12 @@
+f210fc5cd90d1308becc4e9af7e906e7  usr/bin/desktop-file-install
+a4831caaf46df8d00124d1aad9dc5e8e  usr/bin/desktop-file-validate
+c8f4abf437fa8e75c76fa63a2609a19d  usr/bin/update-desktop-database
+bcd456548e8af59732e78dead847def9  usr/share/doc/desktop-file-utils/NEWS.gz
+4eb58af6ca40eeab23b27608555de518  usr/share/doc/desktop-file-utils/README
+21847d8edac867b16409869687784cdd  usr/share/doc/desktop-file-utils/changelog.Debian.gz
+80013e484a017442c566d88859b3bf29  usr/share/doc/desktop-file-utils/copyright
+70000eb66e493646b9be8f580186fe11  usr/share/emacs/site-lisp/desktop-entry-mode.el
+64668c4855ba6281b197d1eb6247e6af  usr/share/man/man1/desktop-file-edit.1.gz
+64668c4855ba6281b197d1eb6247e6af  usr/share/man/man1/desktop-file-install.1.gz
+e453ccd9246666a87fae4caba45de273  usr/share/man/man1/desktop-file-validate.1.gz
+dda1033ff908de6af57d8c409168d27d  usr/share/man/man1/update-desktop-database.1.gz

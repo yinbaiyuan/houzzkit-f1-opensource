@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/lib
+/usr/lib/aarch64-linux-gnu
+/usr/lib/aarch64-linux-gnu/libusbmuxd-2.0.so.6.0.0
+/usr/share
+/usr/share/doc
+/usr/share/doc/libusbmuxd6
+/usr/share/doc/libusbmuxd6/changelog.Debian.gz
+/usr/share/doc/libusbmuxd6/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libusbmuxd6
+/usr/lib/aarch64-linux-gnu/libusbmuxd-2.0.so.6
+/usr/lib/aarch64-linux-gnu/libusbmuxd.so.6
+/usr/lib/aarch64-linux-gnu/libusbmuxd.so.6.0.0

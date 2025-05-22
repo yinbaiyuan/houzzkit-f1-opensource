@@ -1,0 +1,9 @@
+/etc/apparmor.d/ubuntu_pro_apt_news
+/etc/apparmor.d/ubuntu_pro_esm_cache
+/etc/apt/apt.conf.d/20apt-esm-hook.conf
+/etc/apt/preferences.d/ubuntu-pro-esm-apps
+/etc/apt/preferences.d/ubuntu-pro-esm-infra
+/etc/logrotate.d/ubuntu-pro-client
+/etc/ubuntu-advantage/uaclient.conf
+/etc/update-manager/release-upgrades.d/ubuntu-advantage-upgrades.cfg
+/etc/update-motd.d/91-contract-ua-esm-status

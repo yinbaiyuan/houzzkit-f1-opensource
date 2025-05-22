@@ -1,0 +1,27 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installalternatives/13.14.1ubuntu5
+if [ "$1" = "remove" ]; then
+	update-alternatives --remove view /usr/bin/vim.tiny
+fi
+# End automatically added section
+# Automatically added by dh_installalternatives/13.14.1ubuntu5
+if [ "$1" = "remove" ]; then
+	update-alternatives --remove vi /usr/bin/vim.tiny
+fi
+# End automatically added section
+# Automatically added by dh_installalternatives/13.14.1ubuntu5
+if [ "$1" = "remove" ]; then
+	update-alternatives --remove rview /usr/bin/vim.tiny
+fi
+# End automatically added section
+# Automatically added by dh_installalternatives/13.14.1ubuntu5
+if [ "$1" = "remove" ]; then
+	update-alternatives --remove ex /usr/bin/vim.tiny
+fi
+# End automatically added section
+# Automatically added by dh_installalternatives/13.14.1ubuntu5
+if [ "$1" = "remove" ]; then
+	update-alternatives --remove editor /usr/bin/vim.tiny
+fi
+# End automatically added section

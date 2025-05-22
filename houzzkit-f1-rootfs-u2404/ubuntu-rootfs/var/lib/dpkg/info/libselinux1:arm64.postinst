@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installtmpfiles/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -x "$(command -v systemd-tmpfiles)" ]; then
+		systemd-tmpfiles ${DPKG_ROOT:+--root="$DPKG_ROOT"} --create libselinux1.conf || true
+	fi
+fi
+# End automatically added section

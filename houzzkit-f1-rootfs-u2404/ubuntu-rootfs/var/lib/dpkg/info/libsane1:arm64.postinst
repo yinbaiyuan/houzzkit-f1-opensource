@@ -1,0 +1,41 @@
+#!/bin/sh
+set -e
+
+# begin-remove-after: released:trixie
+# protective diversion of files moved from / to /usr, to avoid file loss.
+# Only for upgrades.
+if [ "$1" = "configure" ]; then
+    # At this point, the package will have installed the same file in */usr*.
+    dpkg-divert --package usr-is-merged --no-rename \
+        --divert /lib/udev/hwdb.d/20-sane.hwdb.usr-is-merged \
+        --remove /lib/udev/hwdb.d/20-sane.hwdb
+    dpkg-divert --package usr-is-merged --no-rename \
+        --divert /lib/udev/rules.d/60-libsane1.rules.usr-is-merged \
+        --remove /lib/udev/rules.d/60-libsane1.rules
+    dpkg-divert --package usr-is-merged --no-rename \
+        --divert /lib/udev/rules.d/99-libsane1.rules.usr-is-merged \
+        --remove /lib/udev/rules.d/99-libsane1.rules
+fi
+# end-remove-after
+
+case "$1" in
+    configure)
+    # Add the scanner system group if it doesn't exist
+    if ! getent group | grep -q "^scanner:"; then
+	echo "Adding scanner group..."
+	addgroup --quiet --system scanner || true
+    fi
+
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+    echo "$0 called with unknown argument '$1'" >&2
+    exit 1
+    ;;
+esac
+
+
+

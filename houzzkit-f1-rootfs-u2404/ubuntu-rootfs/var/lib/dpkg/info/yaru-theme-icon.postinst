@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_icons/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if command -v update-icon-caches >/dev/null; then
+		update-icon-caches /usr/share/icons/Yaru /usr/share/icons/Yaru-bark /usr/share/icons/Yaru-blue /usr/share/icons/Yaru-magenta /usr/share/icons/Yaru-olive /usr/share/icons/Yaru-prussiangreen /usr/share/icons/Yaru-purple /usr/share/icons/Yaru-red /usr/share/icons/Yaru-sage /usr/share/icons/Yaru-viridian
+	fi
+fi
+# End automatically added section

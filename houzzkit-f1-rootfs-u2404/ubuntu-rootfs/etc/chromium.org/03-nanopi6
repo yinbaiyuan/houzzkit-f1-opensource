@@ -1,0 +1,24 @@
+# Options to pass to chromium-browser
+
+readonly BUILD_DIST="Built on NanoPC-T6"
+
+export CHROMIUM_USE_VDA=true
+
+if [ ! -c /dev/dma_heap/system-uncached ]; then
+    export mpp_dma_heap=0
+fi
+
+# Switch to ANGLE, since the newer ozone requires passthrough command decoder.
+# See:
+# https://issues.chromium.org/issues/40135856
+CHROMIUM_FLAGS+=" --ozone-platform=wayland"
+CHROMIUM_FLAGS+=" --use-gl=angle --use-angle=gles-egl --use-cmd-decoder=passthrough"
+
+CHROMIUM_FLAGS+=" --enable-accelerated-video-decode --enable-features=VaapiVideoDecoder,VaapiVideoEncoder"
+CHROMIUM_FLAGS+=" --no-default-browser-check --disable-pings"
+CHROMIUM_FLAGS+=" --media-router=0 --enable-wayland-ime"
+
+# For debug purpose
+#CHROMIUM_FLAGS+=" --vmodule=*content/common/gpu/media/*=10,gpu_video*=1"
+#echo "${CHROMIUM_FLAGS}" > /var/run/chromium.flags
+

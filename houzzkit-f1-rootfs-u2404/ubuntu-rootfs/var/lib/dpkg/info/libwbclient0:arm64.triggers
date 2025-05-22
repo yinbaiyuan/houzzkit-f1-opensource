@@ -1,0 +1,2 @@
+# Triggers added by Samba:debian/genshlibs 2:4.19.5+dfsg-4ubuntu9
+activate-noawait ldconfig

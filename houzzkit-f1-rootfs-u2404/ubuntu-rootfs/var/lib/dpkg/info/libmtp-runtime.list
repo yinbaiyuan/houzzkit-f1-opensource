@@ -1,0 +1,10 @@
+/.
+/usr
+/usr/lib
+/usr/lib/udev
+/usr/lib/udev/mtp-probe
+/usr/share
+/usr/share/doc
+/usr/share/doc/libmtp-runtime
+/usr/share/doc/libmtp-runtime/copyright
+/usr/share/doc/libmtp-runtime/changelog.Debian.gz

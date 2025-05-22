@@ -1,0 +1,55 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          iperf3
+# Required-Start:    $local_fs $remote_fs $network $syslog $named
+# Required-Stop:     $local_fs $remote_fs $network $syslog $named
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Iperf3 server
+# Description:       Debian init script for iperf3 
+### END INIT INFO
+
+test -x $DAEMON || exit 0
+
+DEFAULT_FILE=/etc/default/iperf3
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PIDFILE=/run/iperf3.pid
+DAEMON=/usr/bin/iperf3
+DAEMON_ARGS="--server --interval 0"
+# edit /etc/default/iperf3 and set START_DAEMON="yes" to enable starting iperf3 as a daemon
+START_DAEMON="no"
+
+if [ -r $DEFAULT_FILE ]; then
+  . $DEFAULT_FILE
+fi
+
+. /lib/lsb/init-functions
+
+case "$1" in
+  start)
+	if [ "$START_DAEMON" = "yes" ]; then
+		log_daemon_msg "Starting iperf3 daemon" "iperf3"
+		start-stop-daemon --start --quiet --pidfile $PIDFILE --chuid iperf3 \
+			--make-pidfile --background --exec $DAEMON -- $DAEMON_ARGS || log_end_msg 1
+                log_end_msg 0
+	fi
+    ;;
+  stop)
+	log_daemon_msg "Stopping iperf3 daemon" "iperf3"
+	killproc -p $PIDFILE $DAEMON
+	log_end_msg $?
+    ;;
+  force-reload|restart)
+    $0 stop
+    $0 start
+    ;;
+  status)
+    status_of_proc -p $PIDFILE $DAEMON iperf3 && exit 0 || exit $?
+    ;;
+  *)
+    echo "Usage: /etc/init.d/iperf3 {start|stop|restart|force-reload|status}"
+    exit 1
+    ;;
+esac
+
+exit 0

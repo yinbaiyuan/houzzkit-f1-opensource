@@ -1,0 +1,519 @@
+Package: cockpit
+Format: 3.0 (quilt)
+Binary: cockpit, cockpit-bridge, cockpit-doc, cockpit-networkmanager, cockpit-packagekit, cockpit-storaged, cockpit-system, cockpit-ws, cockpit-sosreport
+Architecture: any all
+Version: 333-1~bpo24.04.1
+Priority: optional
+Section: universe/misc
+Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@lists.alioth.debian.org>
+Uploaders: Michael Biebl <biebl@debian.org>, Martin Pitt <mpitt@debian.org>,
+Standards-Version: 4.7.0
+Build-Depends: debhelper-compat (= 13), dh-python, gettext (>= 0.21), zlib1g-dev, libkrb5-dev (>= 1.11), libxslt1-dev, libglib2.0-dev (>= 2.50), libgnutls28-dev (>= 3.4.3) | gnutls-dev, libsystemd-dev (>= 235), libpolkit-agent-1-dev, libjson-glib-dev, libpam0g-dev, pkgconf, systemd-dev | systemd (<< 253-2~), xsltproc, xmlto, docbook-xsl, glib-networking, python3, python3-pip, python3-setuptools, python3-wheel, openssh-client <!nocheck>, procps <!nocheck>, python3-pytest-asyncio <!nocheck>, python3-pytest-timeout <!nocheck>
+Testsuite: autopkgtest
+Testsuite-Triggers: adduser, curl
+Homepage: https://cockpit-project.org/
+Vcs-Browser: https://salsa.debian.org/utopia-team/cockpit
+Vcs-Git: https://salsa.debian.org/utopia-team/cockpit.git
+Directory: pool/universe/c/cockpit
+Package-List:
+ cockpit deb admin optional arch=all
+ cockpit-bridge deb admin optional arch=any
+ cockpit-doc deb doc optional arch=all
+ cockpit-networkmanager deb admin optional arch=all
+ cockpit-packagekit deb admin optional arch=all
+ cockpit-sosreport deb admin optional arch=all
+ cockpit-storaged deb admin optional arch=all
+ cockpit-system deb admin optional arch=all
+ cockpit-ws deb admin optional arch=any
+Files:
+ d4d1b93e095e95300fa8ff96936cd75c 3018 cockpit_333-1~bpo24.04.1.dsc
+ acdd6032bfd2c432ba4a1cd9c41c983a 14226172 cockpit_333.orig.tar.xz
+ 410286a8b61b6e1a7997b4f9662101e6 22100 cockpit_333-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha1:
+ 5030139efc1984c1b023ffc39b38817e44f37b91 3018 cockpit_333-1~bpo24.04.1.dsc
+ 9ca68a08a8534148bfc3372ea1a5670c2d5da6db 14226172 cockpit_333.orig.tar.xz
+ 58ee1197b8ee236c48d5aa4fcd8fb9f8c5964f53 22100 cockpit_333-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha256:
+ 334ab73ccd760a6b532df43facb06c97558fe7a932ed6bfe136b37034a6a0ac2 3018 cockpit_333-1~bpo24.04.1.dsc
+ 6d6ae566cfa8ce80d7865f7fc49faf4ff69d85c53f59593f28d7b1e9563dd6eb 14226172 cockpit_333.orig.tar.xz
+ f2bba5c717877632a7df7ed80fc4f4b3e4c2d40ec3fea0d20a55f10af4a78148 22100 cockpit_333-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha512:
+ e03da847bf36444f9945be86044b8375550020021a9ee410a16693d40a4563da1819a610169ca2195b1f8181e82d8c129d2eb4025595d70e32e917f36ff9af44 3018 cockpit_333-1~bpo24.04.1.dsc
+ abf1406967ef5edca329dc72ee04bf191f1bf2863131effa811bfa6a1fff298fd44d5a287f96cc00e68a9e6c3656c70921852f0eb0867cac858d65e0c2071281 14226172 cockpit_333.orig.tar.xz
+ a8509fff5cccce37d13d2d4f3c7a5f5a69965c646a157923c28474e3bedd9dcccd628deb62ed586979535366c4bbf70a0241bf0fc123dc314050e93ee3eeb6b3 22100 cockpit_333-1~bpo24.04.1.debian.tar.xz
+
+Package: cockpit-machines
+Format: 3.0 (quilt)
+Binary: cockpit-machines
+Architecture: all
+Version: 324-1~bpo24.04.1
+Priority: optional
+Section: universe/misc
+Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@lists.alioth.debian.org>
+Uploaders: Michael Biebl <biebl@debian.org>, Martin Pitt <mpitt@debian.org>,
+Standards-Version: 4.6.2
+Build-Depends: debhelper-compat (= 13), gettext (>= 0.19.7), gettext (>= 0.21) | appstream
+Testsuite: autopkgtest
+Testsuite-Triggers: adduser, cockpit-ws, curl
+Homepage: https://github.com/cockpit-project/cockpit-machines
+Vcs-Browser: https://salsa.debian.org/debian/cockpit-machines
+Vcs-Git: https://salsa.debian.org/debian/cockpit-machines.git
+Directory: pool/universe/c/cockpit-machines
+Package-List:
+ cockpit-machines deb admin optional arch=all
+Files:
+ aa83e8ba5c034a42bb100143704e669d 2221 cockpit-machines_324-1~bpo24.04.1.dsc
+ 5b0f5bf4b2a0628153ae8acab54f158c 1725308 cockpit-machines_324.orig.tar.xz
+ 8baee2d78ffe4b2dfe3184730f8106c8 7248 cockpit-machines_324-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha1:
+ 0b925fbc59683be8d80f340289f18d48fef86ce1 2221 cockpit-machines_324-1~bpo24.04.1.dsc
+ b0cb40b3a041b90f198061db09be6c19b0dc286b 1725308 cockpit-machines_324.orig.tar.xz
+ f5b61d0468c33727970b2663a07650f11fd0fb08 7248 cockpit-machines_324-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha256:
+ 8c2930bdda1f5b8264a7be1340a330efded156c0d2d1917bb481dc5e9a243d1d 2221 cockpit-machines_324-1~bpo24.04.1.dsc
+ ecd9970967bedf20b09bbd0594bbbe11ba55b7997f6b4e6e33a0e29b9ff3ee22 1725308 cockpit-machines_324.orig.tar.xz
+ ce78a39b38f85ed05a07b1645a3cd94eb329f7c4a9077d9334977034ec874bcb 7248 cockpit-machines_324-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha512:
+ 371b148f93cfce09b8196c358da0a8c50eb9a5f07052de56706626f934dc4f45d699fd1348e7b1c34b62b1db8ed46f7591d399ea0fe218a90594cf26e01b7a17 2221 cockpit-machines_324-1~bpo24.04.1.dsc
+ 7ce4bd5f36105dc01a37002b26cf23eafac63ae291fd333b71adcfaf6680e2c905e0c665fe54989afc4e62f23eb426e79e4cb0660f32055474735b482a3c4f39 1725308 cockpit-machines_324.orig.tar.xz
+ 7dc6174ff5cfe9e16fc2d3ad97cd56b5278a59964eafdcc5da8fa1d953d982ce6ac8d1c25da21af7774e8b9b06217eee9274a25d502be518f677985d035c55ec 7248 cockpit-machines_324-1~bpo24.04.1.debian.tar.xz
+
+Package: cockpit-podman
+Format: 3.0 (quilt)
+Binary: cockpit-podman
+Architecture: all
+Version: 99-1~bpo24.04.1
+Priority: optional
+Section: universe/misc
+Maintainer: Martin Pitt <mpitt@debian.org>
+Uploaders: Reinhard Tartler <siretart@tauware.de>
+Standards-Version: 4.7.0
+Build-Depends: debhelper-compat (= 13)
+Testsuite: autopkgtest
+Testsuite-Triggers: adduser, cockpit-ws, curl
+Homepage: https://github.com/cockpit-project/cockpit-podman
+Vcs-Browser: https://salsa.debian.org/debian/cockpit-podman
+Vcs-Git: https://salsa.debian.org/debian/cockpit-podman.git
+Directory: pool/universe/c/cockpit-podman
+Package-List:
+ cockpit-podman deb admin optional arch=all
+Files:
+ dcbade1f026ec4a9b4e7a787d56e4483 2066 cockpit-podman_99-1~bpo24.04.1.dsc
+ 191a9555b9a6927deca1a7c5338078e5 981752 cockpit-podman_99.orig.tar.xz
+ 2ae3ebdd91809e5ef965c5f834c67054 5612 cockpit-podman_99-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha1:
+ fccc72d05af52cd85ab058727a866f13fa3235a0 2066 cockpit-podman_99-1~bpo24.04.1.dsc
+ 93a2de3aced85f974aee98671cab680ccde8ff75 981752 cockpit-podman_99.orig.tar.xz
+ b0480033577fd7d46c3aeaeec2b15c81d19885ef 5612 cockpit-podman_99-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha256:
+ 99614ce026ca13faa04d207d291d165b2b39e5ddc5b9f2bfa8626d01b42f7d43 2066 cockpit-podman_99-1~bpo24.04.1.dsc
+ f957ba22f056b7f3e729057d573867ef9e29338a34df38306b6f66764ae107ae 981752 cockpit-podman_99.orig.tar.xz
+ c336859f5f0ca1a64c735536d6c4c5eebdf3487e66f4c6c68dfe0bf42f739a18 5612 cockpit-podman_99-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha512:
+ 2a151e6a67080f3bcaa1c0b76cb1f90980ff29ce7127c3a82e36af378580befdd1d686d9400c76237d1dabe8ab86ec68d41a40464c8b6e099798b1b33aa3ff5c 2066 cockpit-podman_99-1~bpo24.04.1.dsc
+ 12e239106384855afd923b24f35424bbee20493d298f878fd0deb25eb495484271271957144592f44548f1af2b40f2077b1a9ae440077661f8ba8287c2221a45 981752 cockpit-podman_99.orig.tar.xz
+ fb726ecd1229f0aa446bf7cf59fbf01a0f4baab682a44050a17237325668e223f5ee6558149db69b073a93bd83a0cca233fd662fc923bf1b3a9f732d293250c8 5612 cockpit-podman_99-1~bpo24.04.1.debian.tar.xz
+
+Package: gallery-dl
+Format: 3.0 (quilt)
+Binary: gallery-dl
+Architecture: all
+Version: 1.28.5-1~bpo24.04.1
+Priority: optional
+Section: universe/misc
+Maintainer: Unit 193 <unit193@debian.org>
+Standards-Version: 4.7.0
+Build-Depends: debhelper-compat (= 13), dh-python, python3-all, python3-setuptools
+Testsuite: autopkgtest
+Testsuite-Triggers: @builddeps@, yt-dlp
+Homepage: https://github.com/mikf/gallery-dl
+Vcs-Browser: https://git.unit193.net/cgit/users/unit193/gallery-dl.git
+Vcs-Git: https://git.unit193.net/cgit/users/unit193/gallery-dl.git
+Directory: pool/universe/g/gallery-dl
+Package-List:
+ gallery-dl deb web optional arch=all
+Files:
+ e7b7d454f55fdd6809d7263c443780fb 2278 gallery-dl_1.28.5-1~bpo24.04.1.dsc
+ 1ef229aa5c846eaebdb81189afc13e2b 523950 gallery-dl_1.28.5.orig.tar.gz
+ 601c59732255bbbb456066c1020adc1d 833 gallery-dl_1.28.5.orig.tar.gz.asc
+ 3c96e1e97d4260dfac41cced094f80d4 7896 gallery-dl_1.28.5-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha1:
+ 45d89ceb0d70f491924699356ff006cae8d05151 2278 gallery-dl_1.28.5-1~bpo24.04.1.dsc
+ 4067d5468454d79627f29cd573a34eca05fd864b 523950 gallery-dl_1.28.5.orig.tar.gz
+ f117e04398e496576af578aae1db29dc8c7ed0cd 833 gallery-dl_1.28.5.orig.tar.gz.asc
+ 3b37e3ee31841574d073634f25c4da14d3fdd5a0 7896 gallery-dl_1.28.5-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha256:
+ 76fd1d1daddd9c253553576347935d86eef9aa282164649dff19f079774bbda3 2278 gallery-dl_1.28.5-1~bpo24.04.1.dsc
+ efd57a85828caedbb3be8ec7ae546a1286ae5feee29ec10e6a3075da4ef0fd04 523950 gallery-dl_1.28.5.orig.tar.gz
+ d6e1baa5efa4b5d6dc9f100e09d708b29473d8f3bc4282268c1473f7a4a7348f 833 gallery-dl_1.28.5.orig.tar.gz.asc
+ c50f1def66739961c631e780950a634e8d00e7e29746cc8a1c80cb3b758e8bba 7896 gallery-dl_1.28.5-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha512:
+ 18e846425c0b7a0fbaa23577d00f672cf38fe2825d27134477e295790cecc42b9726a63cefd588dcc523833a56bd61c9fbbb0a85610d970edfc49ce2cc910843 2278 gallery-dl_1.28.5-1~bpo24.04.1.dsc
+ e5428592b485ba4fb344b996c0d38dcc1621483a9f7d39298f9d425325f6f048680bdf74dfe66fb1f81de16ea126145ae02c31b9467cc05ffc1e0eea96c9c9ae 523950 gallery-dl_1.28.5.orig.tar.gz
+ 3e690045af581394601c399166de673a12d9f2e92205136b3b1090e1af61404c3b094c526bbf1f41090bcffa7287c79801eaace12fa1c064e80da30a9d9f4e4b 833 gallery-dl_1.28.5.orig.tar.gz.asc
+ 078673bbe868f6d7c79cd6aa9623e708c0d7724f434dfc3aa80bf4eebb1fbc7acd99991e37f5eb0918137188e4564fa0e417bd4abdfa2a417e14135ce7dad348 7896 gallery-dl_1.28.5-1~bpo24.04.1.debian.tar.xz
+
+Package: hydrogen
+Format: 3.0 (quilt)
+Binary: hydrogen, hydrogen-data, hydrogen-doc
+Architecture: any all
+Version: 1.2.2+dfsg-2~bpo24.04.1
+Priority: optional
+Section: universe/sound
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Uploaders:  Nicholas D Steeves <sten@debian.org>, Dennis Braun <d_braun@kabelmail.de>
+Standards-Version: 4.6.1
+Build-Depends: debhelper-compat (= 13), cmake, qtbase5-dev, libqt5xmlpatterns5-dev, qttools5-dev, libcppunit-dev, libz-dev, pkgconf, libarchive-dev, docbook-utils, poxml, xmlto, libxml2-utils, libasound2-dev [linux-any], libjack-dev, liblrdf-dev, libsndfile1-dev, portaudio19-dev, libportmidi-dev [linux-any], libpulse-dev, liblo-dev, libqt5svg5-dev, qttools5-dev-tools, itstool
+Testsuite: autopkgtest
+Testsuite-Triggers: mediainfo
+Homepage: http://www.hydrogen-music.org/
+Vcs-Browser: https://salsa.debian.org/multimedia-team/hydrogen
+Vcs-Git: https://salsa.debian.org/multimedia-team/hydrogen.git
+Directory: pool/universe/h/hydrogen
+Package-List:
+ hydrogen deb sound optional arch=any
+ hydrogen-data deb sound optional arch=all
+ hydrogen-doc deb doc optional arch=all
+Files:
+ 980864d13f76f0628ff415c9901ed506 2539 hydrogen_1.2.2+dfsg-2~bpo24.04.1.dsc
+ c38768b5c86a40e59341e89665e2139f 32281060 hydrogen_1.2.2+dfsg.orig-documentation.tar.xz
+ e3c3a64e96953b4b83f58dcd1495653c 9996972 hydrogen_1.2.2+dfsg.orig.tar.xz
+ 6a45656c621ee1b1d883525b70ae55fc 22096 hydrogen_1.2.2+dfsg-2~bpo24.04.1.debian.tar.xz
+Checksums-Sha1:
+ 1d0e1f6257567de14047a5d8c2c4173141cfd9e6 2539 hydrogen_1.2.2+dfsg-2~bpo24.04.1.dsc
+ 8717e07bde34e60264daa35aabc3b85a5ed2f046 32281060 hydrogen_1.2.2+dfsg.orig-documentation.tar.xz
+ f4789c3f79c140dd735f6d19e35b420e0bafdd47 9996972 hydrogen_1.2.2+dfsg.orig.tar.xz
+ 17e4bcd7167b94239627f9f87b02dfba9eba0a3f 22096 hydrogen_1.2.2+dfsg-2~bpo24.04.1.debian.tar.xz
+Checksums-Sha256:
+ 620dbb9cd1dd41c33f8bc51f6ca15647b359ee09ff9732fd84d801c388dc4d0f 2539 hydrogen_1.2.2+dfsg-2~bpo24.04.1.dsc
+ 305252e8982aed4d74306f1ee9ea1116a8ec7344d58f1027fca020d76d561c35 32281060 hydrogen_1.2.2+dfsg.orig-documentation.tar.xz
+ 5ea2fe12d4b9dc3b345b8dd9dddd8bbf431842ee9565c3b9c8b56d8f056bae16 9996972 hydrogen_1.2.2+dfsg.orig.tar.xz
+ 7bd3307c2f65dc05e5f34729de60aad4906da249b2babeeeb388ff3860f18781 22096 hydrogen_1.2.2+dfsg-2~bpo24.04.1.debian.tar.xz
+Checksums-Sha512:
+ 91ee848da349cb02c31ea8e3970a5bc52798a6b9c56848682e98629de58889e1e5d53fceb64d606c97036024b496c84bc1ba5f421ec65c055eb23d79c434ca73 2539 hydrogen_1.2.2+dfsg-2~bpo24.04.1.dsc
+ 9ca22f66daa483c19fcf1806f701142395247836c39ea910a5c59f6deafb0f6da68b6e1897d35204c1823760a8f2242b33afeac53741609599d7030b73be2edc 32281060 hydrogen_1.2.2+dfsg.orig-documentation.tar.xz
+ 0e77ee1e3de18c43fb566bac923cdf80d981e0dbf36e9aa5aa84dd181eec6021c62406f40fd16aa116aa3952d7f4dd1928675de859ebaa13930181af03254dde 9996972 hydrogen_1.2.2+dfsg.orig.tar.xz
+ b9aece4e79068d5bb95e6eb76fe523418b8adaf2aec28b0d033fca5c97c3a6eb84f5739cadb29f96e4fb3dcc642fffac5f9941506fdf999b3d19d279d184a253 22096 hydrogen_1.2.2+dfsg-2~bpo24.04.1.debian.tar.xz
+
+Package: libffado
+Format: 3.0 (quilt)
+Binary: libffado-dev, libffado2, ffado-tools, ffado-dbus-server, ffado-mixer-qt4
+Architecture: linux-any all
+Version: 2.4.9-1~bpo24.04.1
+Priority: optional
+Section: universe/libs
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Uploaders:  Adrian Knoth <adi@drcomp.erfurt.thur.de>, Free Ekanayaka <freee@debian.org>, Sebastian Ramacher <sramacher@debian.org>,
+Standards-Version: 4.7.0
+Build-Depends: dbus <!nocheck>, debhelper-compat (= 13), dh-sequence-python3, libconfig++-dev, libdbus-1-dev, libdbus-c++-bin, libdbus-c++-dev, libiec61883-dev, libraw1394-dev, libxml++2.6-dev, libxml2-dev, pkgconf, python3, scons
+Build-Depends-Indep: pyqt5-dev-tools, python3-dbus, python3-dbus.mainloop.pyqt5, python3-pyqt5
+Homepage: http://www.ffado.org/
+Vcs-Browser: https://salsa.debian.org/multimedia-team/ffado
+Vcs-Git: https://salsa.debian.org/multimedia-team/ffado.git
+Directory: pool/universe/libf/libffado
+Package-List:
+ ffado-dbus-server deb sound optional arch=linux-any
+ ffado-mixer-qt4 deb sound optional arch=all
+ ffado-tools deb sound optional arch=linux-any
+ libffado-dev deb libdevel optional arch=linux-any
+ libffado2 deb libs optional arch=linux-any
+Files:
+ b55af78387f376f5749f6099d66ecc58 2279 libffado_2.4.9-1~bpo24.04.1.dsc
+ 06019e6e482642e643aea5baeaf2edf5 886660 libffado_2.4.9.orig.tar.xz
+ 06c663b41098fb895219afda0e4266cf 13724 libffado_2.4.9-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha1:
+ 5c2a1048a5996ee561251454ea7145d9ff41c52c 2279 libffado_2.4.9-1~bpo24.04.1.dsc
+ d5a9ebd76207af5480687d2c0e0951ac45d14d67 886660 libffado_2.4.9.orig.tar.xz
+ 93248c2b42ce0201bdf0abf0964e5c04a80fe052 13724 libffado_2.4.9-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha256:
+ b867a5c340a75f8801592f0fd21de050cd445183712131809d8719352e092aee 2279 libffado_2.4.9-1~bpo24.04.1.dsc
+ ab8b1aa31dd061dbbfbb7de439a7847baa7f3cc40106a0df6daafe853b6d1686 886660 libffado_2.4.9.orig.tar.xz
+ d06e86a15a429e714de079334e3380440a022e9d69e104097bf6b54e3c72a384 13724 libffado_2.4.9-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha512:
+ 0e833c8acdc66f59c08ddf11c315eeaf982a80ba2530104fa70760faf503d1fe0f18502f7e3930c0e678674726cfdf4b0a3232299b9c0952c149eebca094960d 2279 libffado_2.4.9-1~bpo24.04.1.dsc
+ 29a006323bd18b5afacf207cd4882c5feb4d7e9870f3f5783e795f01be3ba98826f5fccac0cbb29552d80222e67716e8180dfab6d9b58c60a487f930442ae2b5 886660 libffado_2.4.9.orig.tar.xz
+ 0e7bdbb27660aa0eeaa743e45267cc45ec9310517ebefd3f53e8db1906e6281a02f78a35f261bab6d2d9c201ba811a7b2243ea42d3eded00d971e32979566bdf 13724 libffado_2.4.9-1~bpo24.04.1.debian.tar.xz
+
+Package: limnoria
+Format: 3.0 (quilt)
+Binary: limnoria
+Architecture: all
+Version: 2024.8.26-1~bpo24.04.1
+Priority: optional
+Section: universe/misc
+Maintainer: Mattia Rizzolo <mattia@debian.org>
+Uploaders:  Unit 193 <unit193@debian.org>,
+Standards-Version: 4.7.0
+Build-Depends: debhelper-compat (= 13), dh-sequence-python3, iputils-ping <!nocheck>, procps, pybuild-plugin-pyproject, python3-all, python3-cryptography <!nocheck>, python3-dateutil <!nocheck>, python3-feedparser <!nocheck>, python3-setuptools
+Testsuite: autopkgtest
+Testsuite-Triggers: @builddeps@
+Homepage: https://github.com/ProgVal/Limnoria
+Vcs-Browser: https://salsa.debian.org/debian/limnoria
+Vcs-Git: https://salsa.debian.org/debian/limnoria.git
+Directory: pool/universe/l/limnoria
+Package-List:
+ limnoria deb net optional arch=all
+Files:
+ 1eba0343432247a822e4d209ae823d8d 2204 limnoria_2024.8.26-1~bpo24.04.1.dsc
+ e52fd13b7181eed28228287af98276eb 1107913 limnoria_2024.8.26.orig.tar.gz
+ 9b6a95cba516c4ff706a99cf969443c0 11028 limnoria_2024.8.26-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha1:
+ 0b6eaab62f4482cfd1558e6518df9e5816adf523 2204 limnoria_2024.8.26-1~bpo24.04.1.dsc
+ 87e0d839405d56142cadcb3062bfc68144771da5 1107913 limnoria_2024.8.26.orig.tar.gz
+ 60feba3777a62d80ed65c32d667e34aa51725a9e 11028 limnoria_2024.8.26-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha256:
+ d5ca7351c73767fa95994f5da3ca8ef43232fda91167215e9661571901b528f0 2204 limnoria_2024.8.26-1~bpo24.04.1.dsc
+ 5f536f9bb6dc7301e7f4a20a42e45bfa62f353011d7a22cd933cb129ad8993c6 1107913 limnoria_2024.8.26.orig.tar.gz
+ b5259694ce06615bd332f53202646f29bbd3f2a8abdf709eac6ce123a06c9cb6 11028 limnoria_2024.8.26-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha512:
+ 0d3cd628d32373e1044ad521831a974a11a1b4cb082bbab5c7b9cdc002ae03026c80217ade58e6a59f49967068d8e48f7f276a40d7e8eb4ecce3d19842635671 2204 limnoria_2024.8.26-1~bpo24.04.1.dsc
+ c335c3e3c047f221853b501bb2d88bba622cc5c344009310c32b6c82193b23441f083c040153df2771636fac552861df8f59af3cbdab11100d8696f24f66fe90 1107913 limnoria_2024.8.26.orig.tar.gz
+ b979a068925bea189bb99886c53f8a4eef9591026d542c13bbc718023d0bf4ebb04b1f9b57de901c8a2047334fb3d591b89c414c1e7280982e08d9ddf3dceae9 11028 limnoria_2024.8.26-1~bpo24.04.1.debian.tar.xz
+
+Package: lsp-plugins
+Format: 3.0 (quilt)
+Binary: lsp-plugins, lsp-plugins-clap, lsp-plugins-jack, lsp-plugins-r3d-glx, lsp-plugins-ladspa, lsp-plugins-lv2, lsp-plugins-vst, lsp-plugins-vst3
+Architecture: any
+Version: 1.2.16-1~bpo24.04.1
+Priority: optional
+Section: universe/sound
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Uploaders: Dennis Braun <snd@debian.org>
+Standards-Version: 4.7.0
+Build-Depends: debhelper-compat (= 13), ladspa-sdk, libexpat1-dev, libgl-dev, libglu1-mesa-dev, libjack-dev | libjack-jackd2-dev, lv2-dev, libcairo2-dev, libsndfile1-dev, libxrandr-dev
+Testsuite: autopkgtest
+Homepage: https://lsp-plug.in/
+Vcs-Browser: https://salsa.debian.org/multimedia-team/lsp-plugins
+Vcs-Git: https://salsa.debian.org/multimedia-team/lsp-plugins.git
+Directory: pool/universe/l/lsp-plugins
+Package-List:
+ lsp-plugins deb metapackages optional arch=any
+ lsp-plugins-clap deb sound optional arch=any
+ lsp-plugins-jack deb sound optional arch=any
+ lsp-plugins-ladspa deb sound optional arch=any
+ lsp-plugins-lv2 deb sound optional arch=any
+ lsp-plugins-r3d-glx deb sound optional arch=any
+ lsp-plugins-vst deb sound optional arch=any
+ lsp-plugins-vst3 deb sound optional arch=any
+Files:
+ db743b73c6f6489a8c800f2a2b6b53ab 2303 lsp-plugins_1.2.16-1~bpo24.04.1.dsc
+ 4d2b8425b50cee0d31e64cc97708c128 52075744 lsp-plugins_1.2.16.orig.tar.gz
+ 9c8ae860750e5e9ff9dd3931fda624aa 8864 lsp-plugins_1.2.16-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha1:
+ 71e2653fd639cb25ff216d083c6f840f059ea976 2303 lsp-plugins_1.2.16-1~bpo24.04.1.dsc
+ d54cb67f70ceacbb308351ae8d733e4eda9a2fdf 52075744 lsp-plugins_1.2.16.orig.tar.gz
+ baf032d36fe1a1c8277468fac0d18d4eabd51ff0 8864 lsp-plugins_1.2.16-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha256:
+ d43b8dedabfd17b0f272fa2b7f57284217bef4addf978f57c7f56669f778592f 2303 lsp-plugins_1.2.16-1~bpo24.04.1.dsc
+ c36054205e38cfbf2cc8bae8424d9ab155c0e5bb7d3fd3ce8aec31a6796473ca 52075744 lsp-plugins_1.2.16.orig.tar.gz
+ 2b5d3243ba5e4eee9d059e648af2fe71ba8e729876e2a758b8686e35d3e8815a 8864 lsp-plugins_1.2.16-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha512:
+ eaee395466f7cf69d480b559192a40678a661bda963fe917fe9ff16b858f0e97fd3799a2f3d39910a5edff0bafce627c7e5a63a921924fe94df85bfbb24e712f 2303 lsp-plugins_1.2.16-1~bpo24.04.1.dsc
+ 50ad81d528fa9702caf9b66950ad4d38f11095b349e0242a614e92dd06b7ff31fc55a8d32f8341a7dcbe8d0833dbdea65158c42f0948636ba5700549aee81bed 52075744 lsp-plugins_1.2.16.orig.tar.gz
+ d1654347ba63db7189a32516a39bc546694280bce019fc42deade2e495284fda1e7b8200c25440161b84b459d6f373381b786c402de0744374d418a3dcd61b1a 8864 lsp-plugins_1.2.16-1~bpo24.04.1.debian.tar.xz
+
+Package: obs-studio
+Format: 3.0 (quilt)
+Binary: obs-studio, obs-plugins, libobs0t64, libobs-dev
+Architecture: any
+Version: 30.2.3+dfsg-1~bpo24.04.1
+Priority: optional
+Section: universe/misc
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Uploaders:  Carl Fürstenberg <azatoth@gmail.com>, IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>,
+Standards-Version: 4.7.0
+Build-Depends: cmake, debhelper-compat (= 13), dh-sequence-python3, dh-sequence-scour, dpkg-dev (>= 1.22.5), gir1.2-rsvg-2.0, libasio-dev, libasound2-dev, libavcodec-dev, libavdevice-dev, libavfilter-dev, libavformat-dev, libavutil-dev, libcmocka-dev, libcurl4-gnutls-dev | libcurl-dev, libdbus-1-dev, libdrm-dev, libegl-dev, libffmpeg-nvenc-dev, libfontconfig-dev, libfreetype-dev, libglvnd-dev, libjack-jackd2-dev, libjansson-dev, libluajit-5.1-dev, libmbedtls-dev, libopengl-dev, libpci-dev, libpipewire-0.3-dev, libpulse-dev, libqrcodegencpp-dev, librist-dev, libsimde-dev, libspeexdsp-dev, libsrt-openssl-dev, libswresample-dev, libswscale-dev, libudev-dev, libv4l-dev, libva-dev, libvlc-dev, libvpl-dev [amd64], libwayland-dev, libwebsocketpp-dev, libx11-dev, libx11-xcb-dev, libx264-dev, libxcb-composite0-dev, libxcb-randr0-dev, libxcb-shm0-dev, libxcb-xfixes0-dev, libxcb-xinerama0-dev, libxcb-xinput-dev, libxcb1-dev, libxcomposite-dev, libxinerama-dev, libxkbcommon-dev, libxss-dev, ninja-build, nlohmann-json3-dev, pkgconf | pkg-config, python3-dev, python3-docutils, python3-gi-cairo, qt6-base-dev, qt6-base-private-dev, qt6-svg-dev, swig, uthash-dev
+Testsuite: autopkgtest
+Homepage: https://obsproject.com
+Vcs-Browser: https://salsa.debian.org/multimedia-team/obs-studio
+Vcs-Git: https://salsa.debian.org/multimedia-team/obs-studio.git
+Directory: pool/universe/o/obs-studio
+Package-List:
+ libobs-dev deb libdevel optional arch=any
+ libobs0t64 deb libs optional arch=any
+ obs-plugins deb video optional arch=any
+ obs-studio deb video optional arch=any
+Files:
+ b55b0a50ae41ad3cab421a96d6ac4aec 3076 obs-studio_30.2.3+dfsg-1~bpo24.04.1.dsc
+ e1ff8b91b1d146f8cc99cada45a8ac45 10945992 obs-studio_30.2.3+dfsg.orig.tar.xz
+ 930c18a931288d174e33c70c9754b33d 62880 obs-studio_30.2.3+dfsg-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha1:
+ b0a49a11585aff90e385d4e265e154a3c34252eb 3076 obs-studio_30.2.3+dfsg-1~bpo24.04.1.dsc
+ b116a1c0aed857f94fbe2684496adcf17b90ce1f 10945992 obs-studio_30.2.3+dfsg.orig.tar.xz
+ acf5a02bca7882ebba8aea18dd9b7a3a42f16509 62880 obs-studio_30.2.3+dfsg-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha256:
+ 7eccd3037f7bf40d5e4fe4055a165e047d64fb6c188900ffaff17085725930fb 3076 obs-studio_30.2.3+dfsg-1~bpo24.04.1.dsc
+ dbe54d8ff981d7b0fe93b649ed537ba8ca3c03f551566bdfa60dea1700cf7572 10945992 obs-studio_30.2.3+dfsg.orig.tar.xz
+ b98d3bb5a136785477f31f622997b68151e145a8cf053e71fed84364913f57c1 62880 obs-studio_30.2.3+dfsg-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha512:
+ c82b826107d26c3102ab647c33dc6d728bea5df8e788117e593cda89eb52eb4bd8f733675d01a872ee188bf89603dba8b2ceaa1ae3bf17d0e33bd233e880c5bf 3076 obs-studio_30.2.3+dfsg-1~bpo24.04.1.dsc
+ 59b7dc030a353330344b7a37c2b58c0462522d1de23f0c2f5c21459e5492cbea59b72aa07c27af27911b754df4452d5e255cf22184b5b8f6d227c9c8a47d9c84 10945992 obs-studio_30.2.3+dfsg.orig.tar.xz
+ 3807c9e223ec5d5cba88a8e68a3258ba6ba51c85daafb28bef43659253b13a67f605e448664e19f87a6e63b03fadf6871205cf5c2a4a4e53d9fc2f75afaa783c 62880 obs-studio_30.2.3+dfsg-1~bpo24.04.1.debian.tar.xz
+
+Package: package-notes
+Format: 3.0 (native)
+Binary: dh-package-notes, dh-dlopenlibdeps
+Architecture: all
+Version: 0.15~bpo24.04.1
+Priority: optional
+Section: universe/misc
+Maintainer: Luca Boccassi <bluca@debian.org>
+Standards-Version: 4.7.0
+Build-Depends: debhelper-compat (= 13), python3 <!nocheck>, python3-pyelftools <!nocheck>, python3-pytest <!nocheck>
+Homepage: https://systemd.io/ELF_PACKAGE_METADATA/
+Vcs-Browser: https://github.com/systemd/package-notes
+Vcs-Git: https://github.com/systemd/package-notes.git
+Directory: pool/universe/p/package-notes
+Package-List:
+ dh-dlopenlibdeps deb admin optional arch=all
+ dh-package-notes deb admin optional arch=all
+Files:
+ e661c901855ef29ce4e776214dfcb485 1776 package-notes_0.15~bpo24.04.1.dsc
+ 4259f8fe5be06fe73d1c5b1d6289ad46 12408 package-notes_0.15~bpo24.04.1.tar.xz
+Checksums-Sha1:
+ 0efc093f6f30c8c3f7b66980c986a3ecc77ed406 1776 package-notes_0.15~bpo24.04.1.dsc
+ 185c3d3eb7f922fb8733b33efe526c6a6d23ce8a 12408 package-notes_0.15~bpo24.04.1.tar.xz
+Checksums-Sha256:
+ 8083f92648bd8fd8bc1f355e6f65b43c59e6b51e240061a8c08f3b514c2236bd 1776 package-notes_0.15~bpo24.04.1.dsc
+ dadaa5f6e173d7a023157709ab9e920721be615e5541c7b9790624689a2dd7da 12408 package-notes_0.15~bpo24.04.1.tar.xz
+Checksums-Sha512:
+ 9602e12ce9b0262376c45fbdf5423b6f8f6b133aacb3c5299a19fb604ac03224060f31054f1fea0024c1522cf8c3df1f04b96ecadcd84200909c8ec899374113 1776 package-notes_0.15~bpo24.04.1.dsc
+ da14ddb91eb942a07631be1cd0e1cb38271295c7fad35ecd2c84ee8c344c0069762a1e26c65770b10f8de2d7dfd9af2cd9fff158338e6c8e2b8402a4499ee05f 12408 package-notes_0.15~bpo24.04.1.tar.xz
+
+Package: qtractor
+Format: 3.0 (quilt)
+Binary: qtractor
+Architecture: linux-any
+Version: 1.5.3-1~bpo24.04.1
+Priority: optional
+Section: universe/sound
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Uploaders:  Dennis Braun <snd@debian.org>, Free Ekanayaka <freee@debian.org>, Alessio Treglia <alessio@debian.org>, Jaromír Mikeš <mira.mikes@seznam.cz>
+Standards-Version: 4.7.0
+Build-Depends: cmake, debhelper-compat (= 13), dssi-dev, fst-dev:native, ladspa-sdk, libasound2-dev, libaubio-dev, libjack-dev | libjack-jackd2-dev, liblilv-dev, liblo-dev, libmad0-dev, libqt6svg6-dev, librubberband-dev, libsamplerate0-dev | libsamplerate-dev, libsndfile1-dev, libvorbis-dev, libx11-dev, lv2-dev, qt6-base-dev, qt6-base-dev-tools, qt6-tools-dev, qt6-tools-dev-tools, zlib1g-dev
+Homepage: https://qtractor.sourceforge.io/
+Vcs-Browser: https://salsa.debian.org/multimedia-team/qtractor
+Vcs-Git: https://salsa.debian.org/multimedia-team/qtractor.git
+Directory: pool/universe/q/qtractor
+Package-List:
+ qtractor deb sound optional arch=linux-any
+Files:
+ 0c494b7babe6394af829a6883972ec2c 2127 qtractor_1.5.3-1~bpo24.04.1.dsc
+ c2c6be3a1df057f6fd0094f8852d4437 2677233 qtractor_1.5.3.orig.tar.gz
+ c7a67dc341ca4b8854801f84eae89c66 12724 qtractor_1.5.3-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha1:
+ b7792cc796ee17a61733c7dac8a9e43956d15154 2127 qtractor_1.5.3-1~bpo24.04.1.dsc
+ 9e37dbb1ad61582a61738bc8afcee45a9e891bab 2677233 qtractor_1.5.3.orig.tar.gz
+ 65ebda00245aeaef25be6b185416d48a0574805c 12724 qtractor_1.5.3-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha256:
+ 56d271725ca6d82e55f4f6b60fa83e8f34a35348a0876b8e78f8031df282b275 2127 qtractor_1.5.3-1~bpo24.04.1.dsc
+ 3b4081f0b3db5cf139dadf7b3641302f8edf31f39bf5717a7fe11053063c25d5 2677233 qtractor_1.5.3.orig.tar.gz
+ 6155ebac20e20495b902a8b2522121dbb64ddb022d58929d771c0b0cc014cebd 12724 qtractor_1.5.3-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha512:
+ 10ee1ac4235f2348d2c6efe9075b3166ff378ac6de659314acbba6c47e608fda317047a696c2467754d07f07c77abb47ce258de2026802ffcc737171499fa961 2127 qtractor_1.5.3-1~bpo24.04.1.dsc
+ d4263e015cc78f98ee004f3631be98c1a6a0362687448b48fb9a8c48a5e74113933b5722affce1803fffc196e266e00f32a65c0e0e254b9d6818f92dc784c664 2677233 qtractor_1.5.3.orig.tar.gz
+ 9ea5777cd2524b4dc2968ed0f334489ba8864165fca970a761b2d1f0206e2bdd4b9877b74bbfceb66be616ad0785629854d3873ccb0e074c9188dbcc1ef3932b 12724 qtractor_1.5.3-1~bpo24.04.1.debian.tar.xz
+
+Package: sphinxcontrib-globalsubs
+Format: 3.0 (quilt)
+Binary: python3-sphinxcontrib-globalsubs
+Architecture: all
+Version: 0.1.2-2~bpo24.04.1
+Priority: optional
+Section: universe/python
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders: Luca Boccassi <bluca@debian.org>
+Standards-Version: 4.7.0
+Build-Depends: debhelper-compat (= 13), dh-python, dh-sequence-python3, python3-all, python3-setuptools
+Homepage: https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs
+Vcs-Browser: https://salsa.debian.org/python-team/packages/sphinxcontrib-globalsubs
+Vcs-Git: https://salsa.debian.org/python-team/packages/sphinxcontrib-globalsubs.git
+Directory: pool/universe/s/sphinxcontrib-globalsubs
+Package-List:
+ python3-sphinxcontrib-globalsubs deb python optional arch=all
+Files:
+ 00d8c95e5433641e2a3a8d2c11176a0d 2240 sphinxcontrib-globalsubs_0.1.2-2~bpo24.04.1.dsc
+ 12ecdd06b71de69cf153165e8951bf63 4156 sphinxcontrib-globalsubs_0.1.2.orig.tar.gz
+ 62a06388d6323a198493205c5777f862 2408 sphinxcontrib-globalsubs_0.1.2-2~bpo24.04.1.debian.tar.xz
+Checksums-Sha1:
+ 9b3e26ae301b34e82b8b77159143f9e3c11b1d08 2240 sphinxcontrib-globalsubs_0.1.2-2~bpo24.04.1.dsc
+ 37881da5233f4d4f7ff25281d2d184a93a3557c5 4156 sphinxcontrib-globalsubs_0.1.2.orig.tar.gz
+ 0da4af1554119a64d9b1954a68ed23efbe45dd65 2408 sphinxcontrib-globalsubs_0.1.2-2~bpo24.04.1.debian.tar.xz
+Checksums-Sha256:
+ f58fef595a88742ae365bad6ac6b0922d879460ca18db720e6f2b19efcae1131 2240 sphinxcontrib-globalsubs_0.1.2-2~bpo24.04.1.dsc
+ 96122382b3b2de01f8fc54b18dc9a3440e8c73675a38a45d33730a3d248c4620 4156 sphinxcontrib-globalsubs_0.1.2.orig.tar.gz
+ eacd83c3e92a1c6072486683e23181a85fdad9b3bf3503f96fbe05508a2736bc 2408 sphinxcontrib-globalsubs_0.1.2-2~bpo24.04.1.debian.tar.xz
+Checksums-Sha512:
+ fb2971c0bcedf7e37792c9cfc97728c6928c20d83fd8c46c80f8d4ad530bc236c4e79228433da6692f9ffe8a42ac4c3580c49ed9b10c3e2460b88de641b6114e 2240 sphinxcontrib-globalsubs_0.1.2-2~bpo24.04.1.dsc
+ b237df959e0f75789e1eca1ff7fba8602907c1eb3308e556897681b4667d14237fa3a1c03eaf84b9b2e8f0f5404e487111d2744883080e781a6efcf3f35f119c 4156 sphinxcontrib-globalsubs_0.1.2.orig.tar.gz
+ 6537e4602c7bb47a4ce8c3936305e419a19c31e8edf9facc58871d1fb82175f272d84f30a079ada859f9c2b0a8a270699a99299b0824fecdae2a412b362e84d8 2408 sphinxcontrib-globalsubs_0.1.2-2~bpo24.04.1.debian.tar.xz
+
+Package: xca
+Format: 3.0 (quilt)
+Binary: xca
+Architecture: any
+Version: 2.6.0-1~bpo24.04.1
+Priority: optional
+Section: universe/x11
+Maintainer: Thomas Ward <teward@ubuntu.com>
+Standards-Version: 4.6.2
+Build-Depends: debhelper-compat (= 12), qtbase5-dev, qttools5-dev, qttools5-dev-tools, libssl-dev, linuxdoc-tools, libltdl-dev, pkgconf | pkg-config, libqt5sql5t64, libqt5help5, python3-sphinx, python3-sphinxcontrib.qthelp, cmake
+Homepage: https://hohnstaedt.de/xca/
+Vcs-Browser: https://salsa.debian.org/debian/xca
+Vcs-Git: https://salsa.debian.org/debian/xca.git
+Directory: pool/universe/x/xca
+Package-List:
+ xca deb x11 optional arch=any
+Files:
+ 13961e3e3dd62e49b23113cc1a8659f0 1993 xca_2.6.0-1~bpo24.04.1.dsc
+ 10c170362e19501b77272534505d8914 1874590 xca_2.6.0.orig.tar.gz
+ 8d1713857640117d95528963bfef00f9 8844 xca_2.6.0-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha1:
+ 38a245736293a10921f1823a568d5381f7ddd452 1993 xca_2.6.0-1~bpo24.04.1.dsc
+ 47503e56e4fcc06575a3061c56c10d25f91f8ccb 1874590 xca_2.6.0.orig.tar.gz
+ 152485f79f72e81bbd5df737d271aae206cffd2b 8844 xca_2.6.0-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha256:
+ c6cd7cc9ab041b6f9a8d3383a8dc69be3b832cdc060f3da246c0798c849de38a 1993 xca_2.6.0-1~bpo24.04.1.dsc
+ 3dc04106bcfd751b6ee023ccf2fefa7d77486530ec0e85c39bcca95c87d813d3 1874590 xca_2.6.0.orig.tar.gz
+ 329a752dd45ca690f7b9fe303e64d85799939da49b9befafb5eaa67ed4862a77 8844 xca_2.6.0-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha512:
+ 59ee7d1593720dff4b11d279184993620b72fbe4a04d51d5ba6e027b006386d71593bd07f9e54a16fd1aa4b887101525963a4ad9087f303973b164bc6fcf63b7 1993 xca_2.6.0-1~bpo24.04.1.dsc
+ 4797445e818545c92ded8f611e53f36cab85b527772a531d7a3fae5c5fdb87e1be34139ffeb906239bc3a02221807e2d7c286990ce68f92c1964545cb8fd7986 1874590 xca_2.6.0.orig.tar.gz
+ 34d55db5ff539599c470e9e0de91cd97479aea3a0792c482813cc4915d87280faa7afb8fcc34353e2a5d40df37b141db4c7cb799bf8d569284b060cab09d7e81 8844 xca_2.6.0-1~bpo24.04.1.debian.tar.xz
+
+Package: yt-dlp
+Format: 3.0 (quilt)
+Binary: yt-dlp
+Architecture: all
+Version: 2025.01.26-1~bpo24.04.1
+Priority: optional
+Section: universe/misc
+Maintainer: Unit 193 <unit193@debian.org>
+Standards-Version: 4.7.0
+Build-Depends: debhelper-compat (= 13), dh-python (>= 5.20211213~), pandoc, pybuild-plugin-pyproject, python3-pytest <!nocheck>, python3-hatchling, zip
+Build-Depends-Indep: python3
+Testsuite: autopkgtest
+Testsuite-Triggers: @builddeps@, python3-all
+Homepage: https://github.com/yt-dlp/yt-dlp
+Vcs-Browser: https://codeberg.org/Unit193/yt-dlp
+Vcs-Git: https://codeberg.org/Unit193/yt-dlp.git
+Directory: pool/universe/y/yt-dlp
+Package-List:
+ yt-dlp deb web optional arch=all
+Files:
+ 151c4ff41459537efc26b01fb651058e 2078 yt-dlp_2025.01.26-1~bpo24.04.1.dsc
+ c5ccb17b45968ceae0373330670ddcf2 2722111 yt-dlp_2025.01.26.orig.tar.gz
+ 0b5f947738532779b305fa4f0e0d190e 6544 yt-dlp_2025.01.26-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha1:
+ 9ac7544d72cca9c418b921938329762fe83b8257 2078 yt-dlp_2025.01.26-1~bpo24.04.1.dsc
+ b7dc9bc8eb486c5024bd4f808d1130ddeca95a03 2722111 yt-dlp_2025.01.26.orig.tar.gz
+ 45cdf2cbde8ba210d90cbbb90ade475604ec1390 6544 yt-dlp_2025.01.26-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha256:
+ b17f74f0422cdf6f676122a55785cad239282718e277c9c017c0fb0d12a3ac1f 2078 yt-dlp_2025.01.26-1~bpo24.04.1.dsc
+ 5face0597286f9bee3bfe3196a3fb30badeeff2104c4f4ca2bcaa69ba85be255 2722111 yt-dlp_2025.01.26.orig.tar.gz
+ c7dc665274f580c8044e9292291eafd43457049dcd7bb299697568e8e4d58a94 6544 yt-dlp_2025.01.26-1~bpo24.04.1.debian.tar.xz
+Checksums-Sha512:
+ a01cab9cd86dc3ee7463d69a8260db6dc1288db62a174568b6d7e06cc8c34f0669c289895b47e3d7ac93a1e13080de4023f2b320e5cc693860cbed9aa37a1371 2078 yt-dlp_2025.01.26-1~bpo24.04.1.dsc
+ 67f0521ce7a16cb7276930e7babee703962799355b5ebec0b0d3a593f0d2065640677eb95efbc51fced7750b008bebd2ce974be5be663cb97feddba75fa47ace 2722111 yt-dlp_2025.01.26.orig.tar.gz
+ b0e4f428892917c71ffca715009001020f8ca0865acd8101989f447f5c7dfbe6f9531df4796f698198ae5c2053b5dde84a31660ae61fa5e4a33a10f00feff8e1 6544 yt-dlp_2025.01.26-1~bpo24.04.1.debian.tar.xz
+

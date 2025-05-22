@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/bin
+/usr/share
+/usr/share/doc
+/usr/share/doc/tcl
+/usr/share/doc/tcl/README.Debian
+/usr/share/doc/tcl/changelog.gz
+/usr/share/doc/tcl/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/man
+/usr/share/man/man1
+/usr/bin/tclsh
+/usr/share/man/man1/tclsh.1.gz

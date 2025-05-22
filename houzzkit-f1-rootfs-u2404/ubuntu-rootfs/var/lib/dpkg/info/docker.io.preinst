@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+if [ -e "/var/lib/docker/aufs" ]; then
+	echo "The aufs storage-driver is no longer supported."
+	echo "Please ensure that none of your containers are"
+	echo "using the aufs storage driver, remove the directory"
+	echo "/var/lib/docker/aufs and try again."
+	exit 1
+fi
+
+

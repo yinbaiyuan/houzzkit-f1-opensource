@@ -1,0 +1,34 @@
+#!/bin/sh
+
+fanatic_deconfigure()
+{
+	fanctl config list | \
+	while read underlay overlay x
+	do
+		config_mine=$( fanctl config show -u "$underlay" -o "$overlay" | grep "comment='fanatic configured'" | wc -l )
+
+		if [ "$config_mine" != 0 ]; then
+			fanatic disable-lxd -u "$underlay" -o "$overlay"
+			fanatic disable-docker --no-docker-restart -u "$underlay" -o "$overlay"
+			fanatic disable-fan -u "$underlay" -o "$overlay"
+		fi
+	done
+
+}
+
+case "$1" in
+remove)
+	# Deconfigure any fanatic built docker/LXD configuration.
+	fanatic_deconfigure
+
+	# Take down any fan mappings currently present.
+	fanctl down -e || exit 1
+	;;
+esac
+
+# Automatically added by dh_installinit/13.6ubuntu1
+if [ -z "${DPKG_ROOT:-}" ] && [ "$1" = remove ] && [ -x "/etc/init.d/ubuntu-fan" ] ; then
+	invoke-rc.d ubuntu-fan stop || exit 1
+fi
+# End automatically added section
+

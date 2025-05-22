@@ -1,0 +1,5 @@
+119c2647e7298110bfa8c7f3d26a2644  usr/lib/aarch64-linux-gnu/libgpiod.so.2.2.2
+121cc2fd4db3ad55ff17526950f73716  usr/lib/aarch64-linux-gnu/libgpiodcxx.so.1.1.2
+c1ff5431fbe99190d1e0f41091882d95  usr/share/doc/libgpiod2t64/changelog.Debian.gz
+abcf7fc096c9e2afeccd13aa6e3e0806  usr/share/doc/libgpiod2t64/copyright
+a43be70d9d46547178021749f843349a  usr/share/lintian/overrides/libgpiod2t64

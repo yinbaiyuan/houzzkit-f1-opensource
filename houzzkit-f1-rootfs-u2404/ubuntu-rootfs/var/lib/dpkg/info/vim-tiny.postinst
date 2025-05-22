@@ -1,0 +1,63 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installalternatives/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ]; then
+        update-alternatives --install /usr/bin/editor editor /usr/bin/vim.tiny 15 \
+            --slave /usr/share/man/man1/editor.1.gz editor.1.gz /usr/share/man/man1/vim.1.gz \
+            --slave /usr/share/man/da/man1/editor.1.gz editor.da.1.gz /usr/share/man/da/man1/vim.1.gz \
+            --slave /usr/share/man/de/man1/editor.1.gz editor.de.1.gz /usr/share/man/de/man1/vim.1.gz \
+            --slave /usr/share/man/fr/man1/editor.1.gz editor.fr.1.gz /usr/share/man/fr/man1/vim.1.gz \
+            --slave /usr/share/man/it/man1/editor.1.gz editor.it.1.gz /usr/share/man/it/man1/vim.1.gz \
+            --slave /usr/share/man/ja/man1/editor.1.gz editor.ja.1.gz /usr/share/man/ja/man1/vim.1.gz \
+            --slave /usr/share/man/pl/man1/editor.1.gz editor.pl.1.gz /usr/share/man/pl/man1/vim.1.gz \
+            --slave /usr/share/man/ru/man1/editor.1.gz editor.ru.1.gz /usr/share/man/ru/man1/vim.1.gz \
+            --slave /usr/share/man/tr/man1/editor.1.gz editor.tr.1.gz /usr/share/man/tr/man1/vim.1.gz
+fi
+# End automatically added section
+# Automatically added by dh_installalternatives/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ]; then
+        update-alternatives --install /usr/bin/ex ex /usr/bin/vim.tiny 15 \
+            --slave /usr/share/man/man1/ex.1.gz ex.1.gz /usr/share/man/man1/vim.1.gz \
+            --slave /usr/share/man/da/man1/ex.1.gz ex.da.1.gz /usr/share/man/da/man1/vim.1.gz \
+            --slave /usr/share/man/de/man1/ex.1.gz ex.de.1.gz /usr/share/man/de/man1/vim.1.gz \
+            --slave /usr/share/man/fr/man1/ex.1.gz ex.fr.1.gz /usr/share/man/fr/man1/vim.1.gz \
+            --slave /usr/share/man/it/man1/ex.1.gz ex.it.1.gz /usr/share/man/it/man1/vim.1.gz \
+            --slave /usr/share/man/ja/man1/ex.1.gz ex.ja.1.gz /usr/share/man/ja/man1/vim.1.gz \
+            --slave /usr/share/man/pl/man1/ex.1.gz ex.pl.1.gz /usr/share/man/pl/man1/vim.1.gz \
+            --slave /usr/share/man/ru/man1/ex.1.gz ex.ru.1.gz /usr/share/man/ru/man1/vim.1.gz \
+            --slave /usr/share/man/tr/man1/ex.1.gz ex.tr.1.gz /usr/share/man/tr/man1/vim.1.gz
+fi
+# End automatically added section
+# Automatically added by dh_installalternatives/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ]; then
+        update-alternatives --install /usr/bin/rview rview /usr/bin/vim.tiny 15
+fi
+# End automatically added section
+# Automatically added by dh_installalternatives/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ]; then
+        update-alternatives --install /usr/bin/vi vi /usr/bin/vim.tiny 15 \
+            --slave /usr/share/man/man1/vi.1.gz vi.1.gz /usr/share/man/man1/vim.1.gz \
+            --slave /usr/share/man/da/man1/vi.1.gz vi.da.1.gz /usr/share/man/da/man1/vim.1.gz \
+            --slave /usr/share/man/de/man1/vi.1.gz vi.de.1.gz /usr/share/man/de/man1/vim.1.gz \
+            --slave /usr/share/man/fr/man1/vi.1.gz vi.fr.1.gz /usr/share/man/fr/man1/vim.1.gz \
+            --slave /usr/share/man/it/man1/vi.1.gz vi.it.1.gz /usr/share/man/it/man1/vim.1.gz \
+            --slave /usr/share/man/ja/man1/vi.1.gz vi.ja.1.gz /usr/share/man/ja/man1/vim.1.gz \
+            --slave /usr/share/man/pl/man1/vi.1.gz vi.pl.1.gz /usr/share/man/pl/man1/vim.1.gz \
+            --slave /usr/share/man/ru/man1/vi.1.gz vi.ru.1.gz /usr/share/man/ru/man1/vim.1.gz \
+            --slave /usr/share/man/tr/man1/vi.1.gz vi.tr.1.gz /usr/share/man/tr/man1/vim.1.gz
+fi
+# End automatically added section
+# Automatically added by dh_installalternatives/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ]; then
+        update-alternatives --install /usr/bin/view view /usr/bin/vim.tiny 15 \
+            --slave /usr/share/man/man1/view.1.gz view.1.gz /usr/share/man/man1/vim.1.gz \
+            --slave /usr/share/man/da/man1/view.1.gz view.da.1.gz /usr/share/man/da/man1/vim.1.gz \
+            --slave /usr/share/man/de/man1/view.1.gz view.de.1.gz /usr/share/man/de/man1/vim.1.gz \
+            --slave /usr/share/man/fr/man1/view.1.gz view.fr.1.gz /usr/share/man/fr/man1/vim.1.gz \
+            --slave /usr/share/man/it/man1/view.1.gz view.it.1.gz /usr/share/man/it/man1/vim.1.gz \
+            --slave /usr/share/man/ja/man1/view.1.gz view.ja.1.gz /usr/share/man/ja/man1/vim.1.gz \
+            --slave /usr/share/man/pl/man1/view.1.gz view.pl.1.gz /usr/share/man/pl/man1/vim.1.gz \
+            --slave /usr/share/man/ru/man1/view.1.gz view.ru.1.gz /usr/share/man/ru/man1/vim.1.gz \
+            --slave /usr/share/man/tr/man1/view.1.gz view.tr.1.gz /usr/share/man/tr/man1/vim.1.gz
+fi
+# End automatically added section

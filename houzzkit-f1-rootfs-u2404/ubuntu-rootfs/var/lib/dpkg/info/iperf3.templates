@@ -1,0 +1,24 @@
+Template: iperf3/start_daemon
+Type: boolean
+Default: false
+Description: Start Iperf3 as a daemon automatically?
+ Choose this option if Iperf3 should start automatically as a daemon,
+ now and at boot time.
+Description-de.UTF-8: Iperf3 als Daemon automatisch starten?
+ Wählen Sie diese Option, falls Iperf3 jetzt und beim Systemstart automatisch als Daemon starten soll.
+Description-es.UTF-8: ¿Desea ejecutar Iperf3 como demonio de forma automática?
+ Escoja esta opción si Iperf3 debería ejecutarse automáticamente como un demonio, ahora y al inicio del sistema.
+Description-fr.UTF-8: Faut-il démarrer automatiquement Iperf3 en tant que démon ?
+ Choisissez cette option si Iperf3 doit démarrer automatiquement en tant que démon, maintenant et au démarrage.
+Description-it.UTF-8: Avviare automaticamente Iperf3 come demone?
+ Scegliere questa opzione per avviare automaticamente Iperf3 come demone, adesso e al momento dell'avvio.
+Description-nl.UTF-8: Iperf3 automatisch als een achtergronddienst starten?
+ Kies voor deze optie als Iperf3 automatisch als achtergronddienst moet starten, nu en bij het opstarten van de computer.
+Description-pt.UTF-8: Iniciar o Iperf3 automaticamente como um daemon?
+ Escolha esta opção se o Iperf3 deverá arrancar automaticamente como um daemon, agora e durante o arranque do sistema.
+Description-pt_BR.UTF-8: Iniciar o Iperf3 automaticamente como um daemon?
+ Escolha esta opção se o Iperf3 deve iniciar automaticamente como um daemon, agora e no momento da inicialização.
+Description-ro.UTF-8: Doriți ca Iperf3 să fie pornit automat ca demon?
+ Alegeți această opțiune dacă Iperf3 ar trebui să pornească automat ca un daemon, acum și la pornire.
+Description-sv.UTF-8: Ska Iperf3 starta som en tjänst automatiskt?
+ Ange detta alternativ om tjänsten iperf3 ska starta automatiskt vid systemets start.

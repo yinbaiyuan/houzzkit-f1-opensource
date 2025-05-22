@@ -1,0 +1,93 @@
+#!/bin/dash
+set -e
+
+# $1: dfile, $2: link target, $3: distrib
+replace_with_link() {
+	dfile="$1"; ltarget=$2; distrib="$DPKG_ROOT$3"
+	temp="$dfile.tmp"
+	[ -e "$DPKG_ROOT$dfile" ] || [ -L "$DPKG_ROOT$dfile" ] && dfile_exists=yes
+	# Safely create a symlink to $ltarget at $dfile, first
+	# making a backup of $dfile (the file being diverted)
+	# in $distrib (if specified).
+	#
+	# The cp / ln -s / mv dance avoids having to live without
+	# $dfile (think: /bin/sh) for even a moment, so applications
+	# running in parallel can continue without trouble.
+	if [ -n "$distrib" ] && [ -e "$DPKG_ROOT$dfile" ]; then
+		cp -dp "$DPKG_ROOT$dfile" "$distrib"
+	fi
+	ln -sf "$ltarget" "$DPKG_ROOT$temp"
+	mv -f "$DPKG_ROOT$temp" "$DPKG_ROOT$dfile"
+	# Since man-db stores symlink modification times in its index.db we
+	# need to set a reproducible mtime. We only do that for new symlinks
+	# (if dfile doesn't exist yet) to avoid changing to a lower mtime
+	# which breaks backup tools.
+	targetrealpath="$DPKG_ROOT$(dpkg-realpath "$dfile")"
+	if [ -e "$targetrealpath" ] && [ "$dfile_exists" != "yes" ]; then
+		touch --no-dereference --reference="$targetrealpath" "$DPKG_ROOT$dfile"
+	fi
+}
+
+claim_binsh() {
+	dfile=$1 ltarget=$2 distrib=${3:-$dfile.distrib}
+	diverter=$(dpkg-divert --listpackage $dfile)
+	truename=$(dpkg-divert --truename $dfile)
+
+	if [ -z "$diverter" ]; then
+		# good.
+		return
+	fi
+
+	if [ "$diverter" = LOCAL ]; then
+		# The sysadmin wants it this way.  Who am I to argue?
+		return
+	fi
+
+	if [ "$diverter" != bash ]; then
+		# Let dpkg-divert error out; we are not removing the
+		# diversion, unless we added it
+		# ourselves on behalf of bash.
+		dpkg-divert --package dash --no-rename --remove $dfile
+		echo "This should never be reached"
+		exit 1
+	fi
+
+	dpkg-divert --package bash --no-rename --remove $dfile
+	# remove the old equivalent of $distrib, if it existed.
+	if [ -n "$DPKG_ROOT$truename" ]; then
+	       rm -f "$DPKG_ROOT$truename"
+	fi
+	replace_with_link $dfile $ltarget $distrib
+}
+
+drop_obsolete_diversion() {
+	dfile=$1 ltarget=$2 distrib=${3:-$dfile.distrib}
+	diverter=$(dpkg-divert --listpackage "$dfile")
+	truename=$(dpkg-divert --truename "$dfile")
+	actualtarget=$(readlink "$dfile") || actualtarget=$ltarget
+
+	if [ "$diverter" != dash ] || [ "$truename" != "$distrib" ] || [ "$actualtarget" != "$ltarget" ]; then
+		# Not our diversion or a non-trivial one.
+		return
+	fi
+	dpkg-divert --package dash --no-rename --remove "$dfile"
+	rm -f "$truename"
+}
+
+if [ "$1" = configure ] && dpkg --compare-versions "$2" lt 0.5.12-3~; then
+	drop_obsolete_diversion /bin/sh dash
+	drop_obsolete_diversion /usr/share/man/man1/sh.1.gz dash.1.gz /usr/share/man/man1/sh.distrib.1.gz
+fi
+
+claim_binsh /bin/sh dash
+if [ -d "$DPKG_ROOT/usr/share/man/man1/" ]; then
+    claim_binsh /usr/share/man/man1/sh.1.gz dash.1.gz \
+        /usr/share/man/man1/sh.distrib.1.gz
+fi
+
+# Automatically added by dh_installmenu/13.14.1ubuntu5
+if [ "$1" = "configure" ] && [ -x "`command -v update-menus`" ] && [ -x "$DPKG_ROOT`command -v update-menus`" ]; then
+	update-menus
+fi
+# End automatically added section
+

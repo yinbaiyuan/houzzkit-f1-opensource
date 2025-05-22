@@ -1,0 +1,80 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    configure)
+	# creating tss group if he isn't already there
+	if ! getent group tss >/dev/null; then
+            addgroup --system tss
+	fi
+
+	# creating tss user if he isn't already there
+	if ! getent passwd tss >/dev/null; then
+            adduser --system --ingroup tss --shell /bin/false \
+                    --home /var/lib/tpm --no-create-home \
+                    --gecos "TPM software stack" \
+                    tss
+	fi
+
+	# Setting owner
+	if [ -d /var/lib/tpm ] && getent passwd tss >/dev/null; then
+	    chown tss:tss /var/lib/tpm
+	fi
+
+	# ask udev to check for new udev rules (and fix device permissions)
+	if udevadm --version > /dev/null; then
+	    udevadm control --reload-rules ||:
+	    udevadm trigger --sysname-match="tpm[0-9]*" ||:
+	    udevadm trigger --action=add --subsystem-match=tpm ||:
+	    udevadm trigger --action=add --subsystem-match=tpmrm ||:
+	fi
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+# Automatically added by dh_installsystemd/13.10.1ubuntu1
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -x "$(command -v systemd-tmpfiles)" ]; then
+		systemd-tmpfiles ${DPKG_ROOT:+--root="$DPKG_ROOT"} --create tpm-udev.conf >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.10.1ubuntu1
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	# The following line should be removed in trixie or trixie+1
+	deb-systemd-helper unmask 'tpm-udev.path' >/dev/null || true
+
+	# was-enabled defaults to true, so new installations run enable.
+	if deb-systemd-helper --quiet was-enabled 'tpm-udev.path'; then
+		# Enables the unit on first installation, creates new
+		# symlinks on upgrades if the unit file has changed.
+		deb-systemd-helper enable 'tpm-udev.path' >/dev/null || true
+	else
+		# Update the statefile to add new symlinks (if any), which need to be
+		# cleaned up on purge. Also remove old symlinks.
+		deb-systemd-helper update-state 'tpm-udev.path' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.10.1ubuntu1
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -d /run/systemd/system ]; then
+		systemctl --system daemon-reload >/dev/null || true
+		if [ -n "$2" ]; then
+			_dh_action=restart
+		else
+			_dh_action=start
+		fi
+		deb-systemd-invoke $_dh_action 'tpm-udev.path' 'tpm-udev.service' >/dev/null || true
+	fi
+fi
+# End automatically added section
+

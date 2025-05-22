@@ -1,0 +1,27 @@
+# Special profile transitioned to by unconfined when creating an unprivileged
+# user namespace.
+#
+abi <abi/4.0>,
+include <tunables/global>
+
+profile unprivileged_userns {
+     audit deny capability,
+     audit deny change_profile,
+
+     # allow block to be replaced by allow when x dominance test is fixed
+     #allow all,
+     allow network,
+     allow signal,
+     allow dbus,
+     allow file rwlkm /**,
+     allow unix,
+     allow mqueue,
+     allow ptrace,
+     allow userns,
+
+     # stack children to strip capabilities
+     allow pix /** -> &unprivileged_userns ,
+
+     # Site-specific additions and overrides. See local/README for details.
+     include if exists <local/unprivileged_userns>
+}

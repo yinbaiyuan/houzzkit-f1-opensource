@@ -1,0 +1,40 @@
+#!/bin/sh
+set -e
+
+
+handle_triggers () {
+    local trigger
+    local dirs
+
+    for trigger in "$@"; do
+        if ! [ -d $trigger ]; then
+            continue
+        fi
+        case $trigger in
+          /usr/share/glib-2.0/schemas)
+            # This is triggered everytime an application installs a
+            # GSettings schema
+            "/usr/lib/aarch64-linux-gnu/glib-2.0/glib-compile-schemas" /usr/share/glib-2.0/schemas || true
+            ;;
+
+          "/usr/lib/aarch64-linux-gnu/gio/modules")
+            # This is triggered everytime an application installs a GIO
+            # module into /usr/lib/aarch64-linux-gnu/gio/modules
+
+            "/usr/lib/aarch64-linux-gnu/glib-2.0/gio-querymodules" "/usr/lib/aarch64-linux-gnu/gio/modules" || true
+            ;;
+        esac
+    done
+}
+
+if [ "$1" = triggered ]; then
+    handle_triggers $2
+    exit 0
+fi
+
+
+
+"/usr/lib/aarch64-linux-gnu/glib-2.0/glib-compile-schemas" /usr/share/glib-2.0/schemas || true
+"/usr/lib/aarch64-linux-gnu/glib-2.0/gio-querymodules" "/usr/lib/aarch64-linux-gnu/gio/modules" || true
+
+# vim:set sw=4 sts=4 et:

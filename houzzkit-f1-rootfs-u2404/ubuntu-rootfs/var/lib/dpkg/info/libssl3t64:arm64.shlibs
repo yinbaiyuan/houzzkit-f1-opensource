@@ -1,0 +1,4 @@
+libcrypto 3 libssl3t64 (>= 3.0.13)
+libssl 3 libssl3t64 (>= 3.0.13)
+udeb: libcrypto 3 libcrypto3-udeb (>= 3.0.13)
+udeb: libssl 3 libssl3-udeb (>= 3.0.13)

@@ -1,0 +1,4 @@
+/etc/default/saned
+/etc/init.d/saned
+/etc/logrotate.d/sane-utils
+/etc/sane.d/saned.conf

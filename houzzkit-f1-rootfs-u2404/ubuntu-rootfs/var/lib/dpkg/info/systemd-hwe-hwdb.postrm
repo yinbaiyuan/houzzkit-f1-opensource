@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    remove|purge)
+        systemd-hwdb --usr update || true
+        exit 0
+        ;;
+esac
+
+

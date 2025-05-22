@@ -1,0 +1,3 @@
+Package: chromium*
+Pin: version 2:1snap1*
+Pin-Priority: 50

@@ -1,0 +1,12 @@
+092367a6ab33736604a3df4a6f2faec6  usr/lib/aarch64-linux-gnu/libgphoto2_port.so.12.2.0
+ec6b1ba20c7bfcc208249753f18f28d7  usr/lib/aarch64-linux-gnu/libgphoto2_port/0.12.2/disk.so
+893651c0f99fe66177b060c5e45259c2  usr/lib/aarch64-linux-gnu/libgphoto2_port/0.12.2/ptpip.so
+fb76ca33b54c642d8ba5af3e6799bbf2  usr/lib/aarch64-linux-gnu/libgphoto2_port/0.12.2/serial.so
+e091b18a35591cba1039653ee74e3bfa  usr/lib/aarch64-linux-gnu/libgphoto2_port/0.12.2/usb1.so
+bc5929ad3532c6b00cfdf5c9371564dd  usr/lib/aarch64-linux-gnu/libgphoto2_port/0.12.2/usbdiskdirect.so
+70e641cb709c6fbad37f29b8debfa5ca  usr/lib/aarch64-linux-gnu/libgphoto2_port/0.12.2/usbscsi.so
+fc78da6d80a23f27c155f5fc49798caf  usr/share/doc/libgphoto2-port12/NEWS.gz
+1157caa5c6cfa2e0f18ac5faf7ffe99b  usr/share/doc/libgphoto2-port12/README
+6ed9cdc48b8fb59251b5b8546055bf6d  usr/share/doc/libgphoto2-port12t64/changelog.Debian.gz
+6dd1aaf866a4fc4ca2f621ea74584a5c  usr/share/doc/libgphoto2-port12t64/copyright
+42d41a9227c7680ee6a9e26a9286fa89  usr/share/lintian/overrides/libgphoto2-port12t64

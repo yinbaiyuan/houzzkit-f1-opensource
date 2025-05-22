@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+[ -x /usr/sbin/chronyd ] || exit 0
+
+if [ -e /run/chrony/chronyd.pid ]; then
+    chronyc onoffline > /dev/null 2>&1
+fi
+
+exit 0

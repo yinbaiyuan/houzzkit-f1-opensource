@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/sbin
+/usr/sbin/rfkill
+/usr/share
+/usr/share/bash-completion
+/usr/share/bash-completion/completions
+/usr/share/bash-completion/completions/rfkill
+/usr/share/doc
+/usr/share/doc/rfkill
+/usr/share/doc/rfkill/copyright
+/usr/share/man
+/usr/share/man/man8
+/usr/share/man/man8/rfkill.8.gz
+/usr/share/doc/rfkill/changelog.Debian.gz

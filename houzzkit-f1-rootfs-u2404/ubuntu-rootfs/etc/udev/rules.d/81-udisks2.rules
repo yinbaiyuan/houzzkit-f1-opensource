@@ -1,0 +1,14 @@
+# This file contains udev rules for udisks 2.x
+
+# ------------------------------------------------------------------------
+# rules for internal eMMC
+
+KERNEL=="mmcblk2", SUBSYSTEMS=="mmc", ENV{DEVTYPE}=="disk", \
+  ENV{ID_DRIVE_FLASH_SD}="0", ENV{ID_DRIVE_MEDIA_FLASH_SD}="0"
+
+KERNEL=="mmcblk[012]p*", ENV{ID_FS_TYPE}=="ext4", ENV{ID_FS_LABEL}=="rootfs", \
+  ENV{UDISKS_IGNORE}="1"
+
+KERNEL=="mmcblk[012]p*", ENV{ID_FS_TYPE}=="ext4", ENV{ID_FS_LABEL}=="userdata", \
+  ENV{UDISKS_IGNORE}="1"
+

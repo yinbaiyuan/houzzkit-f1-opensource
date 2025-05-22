@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# Script fragment to make ifupdown supply DNS information to resolved
+#
+
+case "$ADDRFAM" in
+    inet|inet6) : ;;
+    *) exit 0 ;;
+esac
+
+if systemctl is-enabled systemd-resolved > /dev/null 2>&1; then
+    interface=$IFACE
+    if [ ! "$interface" ]; then
+        return
+    fi
+    ifindex=$(cat "/sys/class/net/$interface/ifindex")
+    if [ ! "$ifindex" ]; then
+        return
+    fi
+    mystatedir=/run/network
+    statedir=/run/systemd/resolve/netif
+    rm -f "$mystatedir/isc-dhcp-v4-$interface" "$mystatedir/isc-dhcp-v6-$interface" "$mystatedir/ifupdown-inet-$interface" "$mystatedir/ifupdown-inet6-$interface" "$statedir/$ifindex"
+    if systemctl --quiet is-active systemd-resolved; then
+        resolvectl revert "$ifindex" || true
+    fi
+fi

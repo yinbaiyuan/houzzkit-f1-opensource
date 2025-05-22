@@ -1,0 +1,180 @@
+
+Log started: 2025-03-26  14:33:59
+Log ended: 2025-03-26  14:44:43
+
+Log started: 2025-03-26  14:59:12
+Log ended: 2025-03-26  14:59:14
+
+Log started: 2025-03-26  15:01:49
+Log ended: 2025-03-26  15:01:58
+
+Log started: 2025-03-26  15:05:41
+Log ended: 2025-03-26  15:06:16
+
+Log started: 2025-03-26  15:08:05
+Log ended: 2025-03-26  15:08:08
+
+Log started: 2025-03-26  15:09:44
+Log ended: 2025-03-26  15:09:50
+
+Log started: 2025-03-26  15:12:46
+Log ended: 2025-03-26  15:13:34
+
+Log started: 2025-03-26  23:27:14
+Log ended: 2025-03-26  23:27:22
+
+Log started: 2025-03-26  23:43:20
+Log ended: 2025-03-26  23:43:26
+
+Log started: 2025-04-09  10:52:04
+Log ended: 2025-04-09  10:55:12
+
+Log started: 2025-04-09  11:07:07
+Log ended: 2025-04-09  11:07:10
+
+Log started: 2025-04-09  11:09:44
+Log ended: 2025-04-09  11:11:21
+
+Log started: 2025-04-09  12:39:48
+Log ended: 2025-04-09  12:41:00
+
+Log started: 2025-04-09  12:42:25
+Log ended: 2025-04-09  12:46:18
+
+Log started: 2025-04-09  12:49:43
+Log ended: 2025-04-09  12:50:09
+
+Log started: 2025-04-09  12:51:12
+Log ended: 2025-04-09  12:52:06
+
+Log started: 2025-04-09  12:55:08
+Log ended: 2025-04-09  12:55:32
+
+Log started: 2025-04-09  12:56:38
+Log ended: 2025-04-09  12:59:56
+
+Log started: 2025-04-09  13:05:49
+Log ended: 2025-04-09  13:06:05
+
+Log started: 2025-04-09  13:07:07
+Log ended: 2025-04-09  13:08:37
+
+Log started: 2025-04-09  13:12:32
+Log ended: 2025-04-09  13:13:16
+
+Log started: 2025-04-09  13:14:33
+Log ended: 2025-04-09  13:18:10
+
+Log started: 2025-04-09  13:25:17
+Log ended: 2025-04-09  13:25:21
+
+Log started: 2025-04-09  13:33:54
+Log ended: 2025-04-09  13:35:07
+
+Log started: 2025-04-25  19:05:29
+正在选中未选择的软件包 exfat-fuse。
+(正在读取数据库 ... (正在读取数据库 ... 5%(正在读取数据库 ... 10%(正在读取数据库 ... 15%(正在读取数据库 ... 20%(正在读取数据库 ... 25%(正在读取数据库 ... 30%(正在读取数据库 ... 35%(正在读取数据库 ... 40%(正在读取数据库 ... 45%(正在读取数据库 ... 50%(正在读取数据库 ... 55%(正在读取数据库 ... 60%(正在读取数据库 ... 65%(正在读取数据库 ... 70%(正在读取数据库 ... 75%(正在读取数据库 ... 80%(正在读取数据库 ... 85%(正在读取数据库 ... 90%(正在读取数据库 ... 95%(正在读取数据库 ... 100%(正在读取数据库 ... 系统当前共安装有 58478 个文件和目录。)
+准备解压 .../exfat-fuse_1.4.0-2_arm64.deb  ...
+正在解压 exfat-fuse (1.4.0-2) ...
+正在选中未选择的软件包 exfatprogs。
+准备解压 .../exfatprogs_1.2.2-1build1_arm64.deb  ...
+正在解压 exfatprogs (1.2.2-1build1) ...
+正在设置 exfatprogs (1.2.2-1build1) ...
+正在设置 exfat-fuse (1.4.0-2) ...
+正在处理用于 man-db (2.12.0-4build2) 的触发器 ...
+Log ended: 2025-04-25  19:05:33
+
+Log started: 2025-04-28  18:41:39
+(正在读取数据库 ... (正在读取数据库 ... 5%(正在读取数据库 ... 10%(正在读取数据库 ... 15%(正在读取数据库 ... 20%(正在读取数据库 ... 25%(正在读取数据库 ... 30%(正在读取数据库 ... 35%(正在读取数据库 ... 40%(正在读取数据库 ... 45%(正在读取数据库 ... 50%(正在读取数据库 ... 55%(正在读取数据库 ... 60%(正在读取数据库 ... 65%(正在读取数据库 ... 70%(正在读取数据库 ... 75%(正在读取数据库 ... 80%(正在读取数据库 ... 85%(正在读取数据库 ... 90%(正在读取数据库 ... 95%(正在读取数据库 ... 100%(正在读取数据库 ... 系统当前共安装有 58499 个文件和目录。)
+正在卸载 systemd-timesyncd (255.4-1ubuntu8.6) ...
+正在选中未选择的软件包 python3-ntp。
+(正在读取数据库 ... (正在读取数据库 ... 5%(正在读取数据库 ... 10%(正在读取数据库 ... 15%(正在读取数据库 ... 20%(正在读取数据库 ... 25%(正在读取数据库 ... 30%(正在读取数据库 ... 35%(正在读取数据库 ... 40%(正在读取数据库 ... 45%(正在读取数据库 ... 50%(正在读取数据库 ... 55%(正在读取数据库 ... 60%(正在读取数据库 ... 65%(正在读取数据库 ... 70%(正在读取数据库 ... 75%(正在读取数据库 ... 80%(正在读取数据库 ... 85%(正在读取数据库 ... 90%(正在读取数据库 ... 95%(正在读取数据库 ... 100%(正在读取数据库 ... 系统当前共安装有 58483 个文件和目录。)
+准备解压 .../python3-ntp_1.2.2+dfsg1-4build2_arm64.deb  ...
+正在解压 python3-ntp (1.2.2+dfsg1-4build2) ...
+正在选中未选择的软件包 ntpsec。
+准备解压 .../ntpsec_1.2.2+dfsg1-4build2_arm64.deb  ...
+正在解压 ntpsec (1.2.2+dfsg1-4build2) ...
+正在选中未选择的软件包 ntp。
+准备解压 .../ntp_1%3a4.2.8p15+dfsg-2~1.2.2+dfsg1-4build2_all.deb  ...
+正在解压 ntp (1:4.2.8p15+dfsg-2~1.2.2+dfsg1-4build2) ...
+正在设置 python3-ntp (1.2.2+dfsg1-4build2) ...
+正在设置 ntpsec (1.2.2+dfsg1-4build2) ...
+Running in chroot, ignoring request.
+Created symlink /etc/systemd/system/timers.target.wants/ntpsec-rotate-stats.timer → /usr/lib/systemd/system/ntpsec-rotate-stats.timer.
+Created symlink /etc/systemd/system/network-pre.target.wants/ntpsec-systemd-netif.path → /usr/lib/systemd/system/ntpsec-systemd-netif.path.
+Created symlink /etc/systemd/system/ntp.service → /usr/lib/systemd/system/ntpsec.service.
+Created symlink /etc/systemd/system/ntpd.service → /usr/lib/systemd/system/ntpsec.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/ntpsec.service → /usr/lib/systemd/system/ntpsec.service.
+正在设置 ntp (1:4.2.8p15+dfsg-2~1.2.2+dfsg1-4build2) ...
+正在处理用于 man-db (2.12.0-4build2) 的触发器 ...
+正在处理用于 dbus (1.14.10-4ubuntu4.1) 的触发器 ...
+Log ended: 2025-04-28  18:42:34
+
+Log started: 2025-05-12  10:06:14
+Selecting previously unselected package python3-certifi.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 58559 files and directories currently installed.)
+Preparing to unpack .../python3-certifi_2023.11.17-1_all.deb ...
+Unpacking python3-certifi (2023.11.17-1) ...
+Selecting previously unselected package python3-chardet.
+Preparing to unpack .../python3-chardet_5.2.0+dfsg-1_all.deb ...
+Unpacking python3-chardet (5.2.0+dfsg-1) ...
+Selecting previously unselected package python3-idna.
+Preparing to unpack .../python3-idna_3.6-2ubuntu0.1_all.deb ...
+Unpacking python3-idna (3.6-2ubuntu0.1) ...
+Selecting previously unselected package python3-urllib3.
+Preparing to unpack .../python3-urllib3_2.0.7-1ubuntu0.1_all.deb ...
+Unpacking python3-urllib3 (2.0.7-1ubuntu0.1) ...
+Selecting previously unselected package python3-requests.
+Preparing to unpack .../python3-requests_2.31.0+dfsg-1ubuntu1_all.deb ...
+Unpacking python3-requests (2.31.0+dfsg-1ubuntu1) ...
+Setting up python3-chardet (5.2.0+dfsg-1) ...
+Setting up python3-certifi (2023.11.17-1) ...
+Setting up python3-idna (3.6-2ubuntu0.1) ...
+Setting up python3-urllib3 (2.0.7-1ubuntu0.1) ...
+Setting up python3-requests (2.31.0+dfsg-1ubuntu1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Log ended: 2025-05-12  10:07:46
+
+Log started: 2025-05-15  16:59:25
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 58731 files and directories currently installed.)
+Removing ntp (1:4.2.8p15+dfsg-2~1.2.2+dfsg1-4build2) ...
+Removing ntpsec (1.2.2+dfsg1-4build2) ...
+Running in chroot, ignoring request.
+ * Stopping NTP server ntpd       [226G [220G[ OK ]
+Selecting previously unselected package systemd-timesyncd.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 58687 files and directories currently installed.)
+Preparing to unpack .../systemd-timesyncd_255.4-1ubuntu8.6_arm64.deb ...
+Unpacking systemd-timesyncd (255.4-1ubuntu8.6) ...
+Setting up systemd-timesyncd (255.4-1ubuntu8.6) ...
+Processing triggers for dbus (1.14.10-4ubuntu4.1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Log ended: 2025-05-15  16:59:42
+
+Log started: 2025-05-15  22:28:02
+(正在读取数据库 ... (正在读取数据库 ... 5%(正在读取数据库 ... 10%(正在读取数据库 ... 15%(正在读取数据库 ... 20%(正在读取数据库 ... 25%(正在读取数据库 ... 30%(正在读取数据库 ... 35%(正在读取数据库 ... 40%(正在读取数据库 ... 45%(正在读取数据库 ... 50%(正在读取数据库 ... 55%(正在读取数据库 ... 60%(正在读取数据库 ... 65%(正在读取数据库 ... 70%(正在读取数据库 ... 75%(正在读取数据库 ... 80%(正在读取数据库 ... 85%(正在读取数据库 ... 90%(正在读取数据库 ... 95%(正在读取数据库 ... 100%(正在读取数据库 ... 系统当前共安装有 58703 个文件和目录。)
+正在卸载 python3-ntp (1.2.2+dfsg1-4build2) ...
+正在卸载 systemd-timesyncd (255.4-1ubuntu8.6) ...
+正在处理用于 dbus (1.14.10-4ubuntu4.1) 的触发器 ...
+正在处理用于 man-db (2.12.0-4build2) 的触发器 ...
+Log ended: 2025-05-15  22:28:13
+
+Log started: 2025-05-15  22:28:52
+Selecting previously unselected package tzdata-legacy.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 58667 files and directories currently installed.)
+Preparing to unpack .../tzdata-legacy_2025b-0ubuntu0.24.04_all.deb ...
+Unpacking tzdata-legacy (2025b-0ubuntu0.24.04) ...
+Selecting previously unselected package chrony.
+Preparing to unpack .../chrony_4.5-1ubuntu4.2_arm64.deb ...
+Unpacking chrony (4.5-1ubuntu4.2) ...
+Setting up tzdata-legacy (2025b-0ubuntu0.24.04) ...
+Setting up chrony (4.5-1ubuntu4.2) ...
+
+Creating config file /etc/chrony/chrony.conf with new version
+
+Creating config file /etc/chrony/chrony.keys with new version
+[1mdpkg-statoverride:[0m [1;33mwarning:[0m --update given but /var/log/chrony does not exist
+Running in chroot, ignoring request.
+Created symlink /etc/systemd/system/chronyd.service → /usr/lib/systemd/system/chrony.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/chrony.service → /usr/lib/systemd/system/chrony.service.
+Processing triggers for man-db (2.12.0-4build2) ...
+Log ended: 2025-05-15  22:29:34

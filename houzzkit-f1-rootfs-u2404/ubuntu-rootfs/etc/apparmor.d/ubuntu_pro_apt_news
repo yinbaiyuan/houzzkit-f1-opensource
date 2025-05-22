@@ -1,0 +1,65 @@
+
+abi <abi/3.0>,
+
+include <tunables/global>
+
+# attach_disconnected is needed here because this service runs with systemd's
+# PrivateTmp=true
+
+profile ubuntu_pro_apt_news flags=(attach_disconnected) {
+  include <abstractions/base>
+  include <abstractions/nameservice>
+  include <abstractions/openssl>
+  include <abstractions/python>
+
+  # Needed because apt-news calls apt_pkg.init() which tries to
+  # switch to the _apt system user/group.
+  capability setgid,
+  capability setuid,
+  capability dac_read_search,
+  # GH: 3079
+  capability dac_override,
+
+  /etc/apt/** r,
+  /etc/default/apport r,
+  /etc/ubuntu-advantage/* r,
+  # GH: #3109
+  # Allow reading the os-release file (possibly a symlink to /usr/lib).
+  /{etc/,usr/lib/,lib/}os-release r,
+
+  /{,usr/}bin/python3.{1,}[0-9] mrix,
+  # "import uuid" in focal triggers an uname call
+  # And also see LP: #2067319
+  /{,usr/}bin/uname mrix,
+
+  /{,usr/}lib/apt/methods/http mrix,
+  /{,usr/}lib/apt/methods/https mrix,
+  /{,usr/}lib/ubuntu-advantage/apt_news.py r,
+  /usr/share/dpkg/* r,
+  /var/log/ubuntu-advantage.log rw,
+  /var/lib/ubuntu-advantage/** r,
+  /var/lib/ubuntu-advantage/messages/ rw,
+  /var/lib/ubuntu-advantage/messages/* rw,
+  /run/ubuntu-advantage/ rw,
+  /run/ubuntu-advantage/* rw,
+
+  # LP: #2072489
+  # the apt-news package selector needs access to packaging information
+  # this is a good candidate for a child profile
+  owner /tmp/** rw,
+  /etc/machine-id r,
+  /etc/dpkg/** r,
+  /{,usr/}bin/dpkg mrix,
+  /var/lib/apt/** r,
+  /var/lib/dpkg/** r,
+  /var/cache/apt/** rw,
+
+  owner @{PROC}/@{pid}/fd/ r,
+  @{PROC}/@{pid}/status r,
+  @{PROC}/@{pid}/cgroup r,
+
+
+
+  # Site-specific additions and overrides. See local/README for details.
+  #include <local/ubuntu_pro_apt_news>
+}

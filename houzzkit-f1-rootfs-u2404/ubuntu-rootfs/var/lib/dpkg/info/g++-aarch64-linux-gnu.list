@@ -1,0 +1,10 @@
+/.
+/usr
+/usr/bin
+/usr/share
+/usr/share/doc
+/usr/share/man
+/usr/share/man/man1
+/usr/bin/aarch64-linux-gnu-g++
+/usr/share/doc/g++-aarch64-linux-gnu
+/usr/share/man/man1/aarch64-linux-gnu-g++.1.gz

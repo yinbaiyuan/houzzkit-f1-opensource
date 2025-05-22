@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installdeb/13.13ubuntu1
+dpkg-maintscript-helper rm_conffile /etc/network/if-up.d/upstart 0.8.29\~ ifupdown -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/network/if-down.d/upstart 0.8.29\~ ifupdown -- "$@"
+# End automatically added section

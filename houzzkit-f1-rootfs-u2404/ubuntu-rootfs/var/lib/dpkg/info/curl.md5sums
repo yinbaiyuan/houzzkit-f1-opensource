@@ -1,0 +1,5 @@
+2d2fd35e9fb46a3124cbabf9bcc5f39b  usr/bin/curl
+a57b381d303c66863c109e18936999f1  usr/share/doc/curl/README.Debian
+f9f6598312858fead4eed4d151197550  usr/share/doc/curl/copyright
+a4053795ae8038bc84d74e6a1b99dc0a  usr/share/man/man1/curl.1.gz
+360774619929e30e933458bb4c86a42c  usr/share/zsh/vendor-completions/_curl

@@ -1,0 +1,2 @@
+liblber 2 libldap2 (>= 2.6.7+dfsg)
+libldap 2 libldap2 (>= 2.6.7+dfsg)

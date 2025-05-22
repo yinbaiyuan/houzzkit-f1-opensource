@@ -1,0 +1,35 @@
+# apparmor.d - Full set of apparmor profiles
+# Copyright (C) 2019-2021 Mikhail Morfikov
+# SPDX-License-Identifier: GPL-2.0-only
+
+# The apparmor.d project comes with several variables and abstractions
+# that are not part of upstream AppArmor yet. Therefore this profile was
+# adopted to use abstractions and variables that are available.
+# Copyright (C) Christian Boltz 2024
+
+abi <abi/4.0>,
+
+include <tunables/global>
+
+profile unix-chkpwd /{,usr/}{,s}bin/unix_chkpwd {
+  include <abstractions/base>
+  include <abstractions/nameservice>
+
+  # To write records to the kernel auditing log.
+  capability audit_write,
+
+  network netlink raw,
+
+  /{,usr/}{,s}bin/unix_chkpwd mr,
+
+  /etc/shadow r,
+
+  # systemd userdb, used in nspawn
+  /run/host/userdb/*.user r,
+  /run/host/userdb/*.user-privileged r,
+
+  # file_inherit
+  owner /dev/tty[0-9]* rw,
+
+  include if exists <local/unix-chkpwd>
+}

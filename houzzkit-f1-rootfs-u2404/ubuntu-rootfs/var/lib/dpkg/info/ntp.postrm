@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+
+
+if [ "$1" = "purge" ]; then
+	rm -f /etc/default/ntp /etc/ntp.conf
+
+	# These has been replaced by /etc/init.d/ntpsec and ntpsec.service.
+	# Since ntpsec.service has ntp.service as an alias, we do not mask it.
+	update-rc.d ntp remove >/dev/null
+	if [ -x "/usr/bin/deb-systemd-helper" ]; then
+		deb-systemd-helper purge 'ntp.service' >/dev/null || true
+	fi
+
+	deluser --system --quiet ntp || true
+	rm -rf /var/lib/ntp/
+	rm -rf /var/log/ntpstats/
+fi

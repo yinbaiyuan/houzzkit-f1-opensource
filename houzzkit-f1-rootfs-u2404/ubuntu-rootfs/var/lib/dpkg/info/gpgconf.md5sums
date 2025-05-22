@@ -1,0 +1,9 @@
+60f18641006d7150a57ca4655631a909  usr/bin/gpg-connect-agent
+e40d062a6172aab031672122d6a54606  usr/bin/gpgconf
+c93f7e76545ca57d7059117727819df8  usr/share/doc/gpgconf/NEWS.Debian.gz
+67678000ee470bebb60f33165df323ba  usr/share/doc/gpgconf/changelog.Debian.gz
+46a00374d9bf0b99885eb9a391bac506  usr/share/doc/gpgconf/copyright
+4b461b06cc42fe2f04be5181874dabc6  usr/share/doc/gpgconf/examples/gpgconf.conf
+0fb3d391d4a8de74d6527f43803ef7fc  usr/share/gnupg/distsigkey.gpg
+70d9f273621694c38ae6727901d31065  usr/share/man/man1/gpg-connect-agent.1.gz
+ec2b051522f7ea4b1cf5f84b7cce1c49  usr/share/man/man1/gpgconf.1.gz

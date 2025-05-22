@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -e
+
+# Cleanup .pyc cached files from netplan.io versions older than 0.107-3.
+# After 0.107-3, the noncli-related code was moved away from
+# share/netplan/netplan, thanks to the new python3-netplan package,
+# but dpkg would leave this directory behind due to the .pyc files.
+# Cleaning it up here will leave the directory empty so dpkg will remove
+# it properly during the update process.
+
+if [ -d /usr/share/netplan/netplan ]; then
+    find /usr/share/netplan/netplan/ -name '*.pyc' -delete
+    find /usr/share/netplan/netplan/ -name '__pycache__' -delete
+fi
+
+

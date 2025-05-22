@@ -1,0 +1,7 @@
+d4a546003c2dd4e6f1df8d647e2dc549  usr/lib/aarch64-linux-gnu/libedit.so.2.0.72
+1a4ffdebcf0b55a8731be8d593063cda  usr/share/doc/libedit2/TODO.Debian
+75a304e7048c9378278b852150d97aa1  usr/share/doc/libedit2/changelog.Debian.gz
+f7af8917847d961cd40ec83a79dea107  usr/share/doc/libedit2/copyright
+dd87d458ba3899e7bb3a71b9e2745681  usr/share/lintian/overrides/libedit2
+25c3b6989d07c047f25aaf74294b76f2  usr/share/man/man5/editrc.5edit.gz
+c9695a3713b04c772ce3ba4d21208692  usr/share/man/man7/editline.7edit.gz

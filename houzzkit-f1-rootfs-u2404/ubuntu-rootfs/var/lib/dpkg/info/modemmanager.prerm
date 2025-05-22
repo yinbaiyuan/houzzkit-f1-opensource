@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+# avoid cancelling of "stop" when NM D-BUS reactivates modemmanager
+if [ -d /run/systemd/system ] && [ "$1" = remove ]; then
+    deb-systemd-helper mask ModemManager
+fi
+
+# Automatically added by dh_installsystemd/13.14.1ubuntu5
+if [ -z "${DPKG_ROOT:-}" ] && [ "$1" = remove ] && [ -d /run/systemd/system ] ; then
+	deb-systemd-invoke stop 'ModemManager.service' >/dev/null || true
+fi
+# End automatically added section
+

@@ -1,0 +1,50 @@
+#!/bin/sh
+
+set -e
+
+if ! getent group tcpdump >/dev/null 2>&1; then
+    addgroup --system --quiet tcpdump
+fi
+if ! getent passwd tcpdump >/dev/null 2>&1; then
+    adduser --system --quiet --ingroup tcpdump		\
+	    --no-create-home --home /nonexistent	\
+	    tcpdump
+fi
+
+# dh_apparmor leaves behind the local profile for the old binary
+# location (/usr/sbin/tcpdump), we need to clean it up (#990554).
+#
+# Only remove it if it's empty, meaning that the system doesn't have
+# local configuration.
+if dpkg --compare-versions "$2" lt-nl "4.99.1-3~"; then
+    OLD_LOCAL_APP_PROFILE="/etc/apparmor.d/local/usr.sbin.tcpdump"
+    if [ -e "$OLD_LOCAL_APP_PROFILE" ]; then
+	if [ ! -s "$OLD_LOCAL_APP_PROFILE" ]; then
+	    rm -f "$OLD_LOCAL_APP_PROFILE"
+	fi
+    fi
+fi
+
+# Automatically added by dh_apparmor/4.0.0-beta3-0ubuntu3
+if [ "$1" = "configure" ]; then
+    APP_PROFILE="/etc/apparmor.d/usr.bin.tcpdump"
+    if [ -f "$APP_PROFILE" ]; then
+        # Add the local/ include
+        LOCAL_APP_PROFILE="/etc/apparmor.d/local/usr.bin.tcpdump"
+
+        test -e "$LOCAL_APP_PROFILE" || {
+            mkdir -p `dirname "$LOCAL_APP_PROFILE"`
+            install --mode 644 /dev/null "$LOCAL_APP_PROFILE"
+        }
+
+        # Reload the profile, including any abstraction updates
+        if aa-enabled --quiet 2>/dev/null; then
+            apparmor_parser -r -T -W "$APP_PROFILE" || true
+        fi
+    fi
+fi
+# End automatically added section
+# Automatically added by dh_installdeb/13.14.1ubuntu5
+dpkg-maintscript-helper mv_conffile /etc/apparmor.d/usr.sbin.tcpdump /etc/apparmor.d/usr.bin.tcpdump 4.99.0\~ -- "$@"
+# End automatically added section
+

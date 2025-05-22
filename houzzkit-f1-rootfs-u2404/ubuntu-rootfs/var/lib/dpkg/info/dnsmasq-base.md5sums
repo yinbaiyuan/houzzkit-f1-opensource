@@ -1,0 +1,15 @@
+842b4abc97b7af15ad6d4b81f028bc84  usr/sbin/dnsmasq
+9a18c8a761c2262dbf0c8b3345a85242  usr/share/dbus-1/system.d/dnsmasq.conf
+30166a6ac2000218fda4a6f6accd610e  usr/share/dnsmasq-base/trust-anchors.conf
+fc67a2e69c178c896f98fb19201a801b  usr/share/doc/dnsmasq-base/DBus-interface.gz
+56dcf4dd62763de9ef5921288b18fcbd  usr/share/doc/dnsmasq-base/FAQ.gz
+d01736aee9776fbd9b5c64f8f67ae1c6  usr/share/doc/dnsmasq-base/README.Debian.gz
+56293476927b854c4636336426aca842  usr/share/doc/dnsmasq-base/changelog.Debian.gz
+d350319eda7bfd7c9ad9612b48bf884a  usr/share/doc/dnsmasq-base/copyright
+1f8e2c0e73fe9e28cb559c48cbaf7be0  usr/share/doc/dnsmasq-base/doc.html
+6d399f04d990d216a3544430942e0cf7  usr/share/doc/dnsmasq-base/examples/dnsmasq.conf.example
+3c337452b293477a6359744bad0438c9  usr/share/doc/dnsmasq-base/setup.html
+77225b0aa684c940eb114d6ea4ffc93f  usr/share/doc/dnsmasq-base/systemd_howto
+abe6283739018910b01576e062d0b6a9  usr/share/man/es/man8/dnsmasq.8.gz
+b02132eafed502e3a6a8e326da7658dc  usr/share/man/fr/man8/dnsmasq.8.gz
+8038c25ccf706d37432a309c6cfc79dc  usr/share/man/man8/dnsmasq.8.gz

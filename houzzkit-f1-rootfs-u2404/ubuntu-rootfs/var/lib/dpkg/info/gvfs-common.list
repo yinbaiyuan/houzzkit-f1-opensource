@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/lib
+/usr/lib/tmpfiles.d
+/usr/lib/tmpfiles.d/gvfsd-fuse-tmpfiles.conf
+/usr/share
+/usr/share/doc
+/usr/share/doc/gvfs-common
+/usr/share/doc/gvfs-common/changelog.Debian.gz
+/usr/share/doc/gvfs-common/copyright
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/gvfsd-fuse.1.gz
+/usr/share/man/man1/gvfsd-metadata.1.gz
+/usr/share/man/man1/gvfsd.1.gz
+/usr/share/man/man7
+/usr/share/man/man7/gvfs.7.gz

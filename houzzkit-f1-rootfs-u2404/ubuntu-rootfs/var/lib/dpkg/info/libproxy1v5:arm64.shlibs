@@ -1,0 +1,2 @@
+libproxy 1 libproxy1v5 (>= 0.5.4)
+libpxbackend 1.0 libproxy1v5 (>= 0.5.4)

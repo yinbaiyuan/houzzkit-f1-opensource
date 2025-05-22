@@ -1,0 +1,11 @@
+libv4l2rds.so.0 libv4l2rds0t64 #MINVER#
+* Build-Depends-Package: libv4l-dev
+ v4l2_rds_add@Base 0.9.1
+ v4l2_rds_create@Base 0.9.1
+ v4l2_rds_destroy@Base 0.9.1
+ v4l2_rds_get_country_str@Base 0.9.1
+ v4l2_rds_get_coverage_str@Base 0.9.1
+ v4l2_rds_get_group@Base 0.9.1
+ v4l2_rds_get_language_str@Base 0.9.1
+ v4l2_rds_get_pty_str@Base 0.9.1
+ v4l2_rds_reset@Base 0.9.1

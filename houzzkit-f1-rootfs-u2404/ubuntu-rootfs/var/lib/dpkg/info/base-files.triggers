@@ -1,0 +1,5 @@
+# Triggers for creating multilib aliasing symlinks on demand
+interest-noawait lib32
+interest-noawait lib64
+interest-noawait libo32
+interest-noawait libx32

@@ -1,0 +1,2 @@
+SUBSYSTEM=="graphics", ACTION=="add", RUN+="/bin/chmod -R 0666 /sys/class/graphics/fbcon/cursor_blink"
+SUBSYSTEM=="graphics", ACTION=="change", ENV{TRIGGER}!="none", RUN+="/bin/chmod -R 0666 /sys/class/graphics/fbcon/cursor_blink"

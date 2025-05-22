@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = configure ]; then
+  # Add an alternative for figlet
+  update-alternatives --install /usr/bin/figlet figlet \
+        /usr/bin/figlet-toilet 20
+fi
+
+
+

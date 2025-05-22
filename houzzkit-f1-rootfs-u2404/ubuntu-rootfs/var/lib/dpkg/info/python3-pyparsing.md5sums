@@ -1,0 +1,17 @@
+c72246579c4437c07cebb86fbcbc6d90  usr/lib/python3/dist-packages/pyparsing-3.1.1.dist-info/INSTALLER
+2b582e05d9b4419d99a93658391db4d8  usr/lib/python3/dist-packages/pyparsing-3.1.1.dist-info/METADATA
+24019423ea7c0c2df41c8272a3791e7b  usr/lib/python3/dist-packages/pyparsing-3.1.1.dist-info/WHEEL
+2583aa3b9376acf6125d115d75c56522  usr/lib/python3/dist-packages/pyparsing/__init__.py
+97193c1c00ed32df51cf2e57385b514e  usr/lib/python3/dist-packages/pyparsing/actions.py
+168a86bee8a62563bd1b46047449f40c  usr/lib/python3/dist-packages/pyparsing/common.py
+7237d31a8c2b85c6c4cc97b0dcc9d6df  usr/lib/python3/dist-packages/pyparsing/core.py
+b61b7023185cfccd05f74ed2a613ddf6  usr/lib/python3/dist-packages/pyparsing/diagram/__init__.py
+d766f5adc5eea0117932cce82a2574a5  usr/lib/python3/dist-packages/pyparsing/exceptions.py
+afa5f059caf348c09b7c940bdb477f16  usr/lib/python3/dist-packages/pyparsing/helpers.py
+d41d8cd98f00b204e9800998ecf8427e  usr/lib/python3/dist-packages/pyparsing/py.typed
+502da695a726cfe3cb2735cc31b56a3e  usr/lib/python3/dist-packages/pyparsing/results.py
+090655daab366f55d2d0b8bffeb969b7  usr/lib/python3/dist-packages/pyparsing/testing.py
+cd7c7c406225afd24672ce84a5951a2b  usr/lib/python3/dist-packages/pyparsing/unicode.py
+98446240bef4e0f94dd082e933ffc8ed  usr/lib/python3/dist-packages/pyparsing/util.py
+2947886d0f85a96ef610e01742cc7433  usr/share/doc/python3-pyparsing/changelog.Debian.gz
+22bc4a26c66cc660d442ede965d3a6e3  usr/share/doc/python3-pyparsing/copyright

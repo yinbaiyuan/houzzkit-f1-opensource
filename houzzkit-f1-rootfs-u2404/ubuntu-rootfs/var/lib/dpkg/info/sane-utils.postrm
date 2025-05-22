@@ -1,0 +1,87 @@
+#!/bin/sh
+
+set -e
+
+#
+# POSIX-compliant shell function
+# to check for the existence of a command
+# Return 0 if found
+#
+pathfind() {
+    OLDIFS="$IFS"
+    IFS=:
+    for p in $PATH; do
+        if [ -x "$p/$*" ]; then
+            IFS="$OLDIFS"
+            return 0
+        fi
+    done
+    IFS="$OLDIFS"
+    return 1
+}
+
+
+if [ "$1" = purge ] ; then
+    if pathfind update-inetd ; then
+	update-inetd --remove sane-port || true
+	update-inetd --remove "#<off># sane-port" || true
+    fi
+
+#
+# purge systemd files
+#
+    rm -f /etc/systemd/system/saned.socket
+    rm -f /var/lib/systemd/deb-systemd-helper-enabled/saned.socket.dsh-also
+    rm -f /var/lib/systemd/deb-systemd-helper-masked/saned.socket
+    if [ -d /var/lib/systemd/deb-systemd-helper-enabled ]; then
+        rmdir --ignore-fail-on-non-empty /var/lib/systemd/deb-systemd-helper-enabled
+    fi
+    if [ -d /var/lib/systemd/deb-systemd-helper-masked ]; then
+	rmdir --ignore-fail-on-non-empty /var/lib/systemd/deb-systemd-helper-masked
+    fi
+#
+# remove pid file
+#
+    if [ -f /var/run/saned.pid ]; then
+	rm -f /var/run/saned.pid
+    fi
+
+#
+# remove user / group
+#
+    if pathfind deluser ; then
+	deluser -q --system --remove-home saned || true
+	deluser -q --group --system saned || true
+    fi
+
+fi
+
+# Automatically added by dh_installinit/13.14.1ubuntu5
+if [ "$1" = "remove" ] && [ -x "/etc/init.d/saned" ] ; then
+	chmod -x "/etc/init.d/saned" >/dev/null || true
+fi
+if [ -z "${DPKG_ROOT:-}" ] && [ "$1" = "purge" ] ; then
+	update-rc.d saned remove >/dev/null
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.14.1ubuntu5
+if [ "$1" = remove ] && [ -d /run/systemd/system ] ; then
+	systemctl --system daemon-reload >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.14.1ubuntu5
+if [ "$1" = "purge" ]; then
+	if [ -x "/usr/bin/deb-systemd-helper" ]; then
+		deb-systemd-helper purge 'saned.socket' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installdebconf/13.14.1ubuntu5
+if [ "$1" = purge ] && [ -e /usr/share/debconf/confmodule ]; then
+	. /usr/share/debconf/confmodule
+	db_purge
+fi
+# End automatically added section
+
+
+exit 0

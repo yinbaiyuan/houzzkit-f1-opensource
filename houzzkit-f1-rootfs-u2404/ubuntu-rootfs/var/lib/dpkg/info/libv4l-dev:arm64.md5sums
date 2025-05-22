@@ -1,0 +1,14 @@
+7ad5b0bedc3931a9cc5b1eac9abd6179  usr/include/libv4l-plugin.h
+d8e0783226cbc9125dac9daa884b48ec  usr/include/libv4l1-videodev.h
+b9c612f59ea8b667fa892049af3d696e  usr/include/libv4l1.h
+b510dae93263759e75a95fe59ff0b809  usr/include/libv4l2.h
+aafb656b4d8042d874f60693024eb83c  usr/include/libv4l2rds.h
+9e21aa1833fda76d5b1111f197a5948d  usr/include/libv4lconvert.h
+764718ce188aec8f5b5f9d23dbae277c  usr/lib/aarch64-linux-gnu/libv4l1.a
+4df53b7d2ec92725bfe68936bb90bdce  usr/lib/aarch64-linux-gnu/libv4l2.a
+6c27ed9811bdfe9315804033bca3a591  usr/lib/aarch64-linux-gnu/libv4l2rds.a
+1f458dc8ce2ccecca4f0b78192200a97  usr/lib/aarch64-linux-gnu/libv4lconvert.a
+cd3823b0e25736c17b05c45d2c8abc15  usr/lib/aarch64-linux-gnu/pkgconfig/libv4l1.pc
+b75711176912f42a936361dcbf6ac920  usr/lib/aarch64-linux-gnu/pkgconfig/libv4l2.pc
+e5e83db85dfe55ce6c71b6e4bb9de22f  usr/lib/aarch64-linux-gnu/pkgconfig/libv4l2rds.pc
+e76bbdeb1d67af05e93f94dfc9188f28  usr/lib/aarch64-linux-gnu/pkgconfig/libv4lconvert.pc

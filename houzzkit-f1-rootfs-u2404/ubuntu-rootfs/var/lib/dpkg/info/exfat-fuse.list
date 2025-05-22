@@ -1,0 +1,13 @@
+/.
+/sbin
+/sbin/mount.exfat-fuse
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/exfat-fuse
+/usr/share/doc/exfat-fuse/NEWS.Debian.gz
+/usr/share/doc/exfat-fuse/changelog.Debian.gz
+/usr/share/doc/exfat-fuse/copyright
+/usr/share/man
+/usr/share/man/man8
+/usr/share/man/man8/mount.exfat-fuse.8.gz

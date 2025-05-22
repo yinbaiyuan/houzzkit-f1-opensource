@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installinit/13.14.1ubuntu5
+if [ "$1" = "remove" ] && [ -x "/etc/init.d/x11-common" ] ; then
+	chmod -x "/etc/init.d/x11-common" >/dev/null || true
+fi
+if [ -z "${DPKG_ROOT:-}" ] && [ "$1" = "purge" ] ; then
+	update-rc.d x11-common remove >/dev/null
+fi
+# End automatically added section

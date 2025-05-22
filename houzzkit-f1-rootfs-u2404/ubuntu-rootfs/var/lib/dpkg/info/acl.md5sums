@@ -1,0 +1,8 @@
+ff342feae71ddc97305c35ec45227c3d  usr/bin/chacl
+5ea1122f2144cf1a213f3e262602ee85  usr/bin/getfacl
+684721d75edfcb2d8923940222b996b3  usr/bin/setfacl
+40822d07cf4c0fb9ab13c2bebf51d981  usr/share/doc/acl/copyright
+d05bdf3c8292028ca25fde22f7b7e412  usr/share/man/man1/chacl.1.gz
+edea7a9d2516fec71f83ba5ade7d0200  usr/share/man/man1/getfacl.1.gz
+8f3abcefc9a6d19214196efdd5346b45  usr/share/man/man1/setfacl.1.gz
+beb07b59d79694f60eb18be2026c164a  usr/share/man/man5/acl.5.gz

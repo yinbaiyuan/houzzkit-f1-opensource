@@ -1,0 +1,204 @@
+#!/bin/sh
+set -e
+
+success_v2()
+{
+	rm -f /etc/default/ubuntu-fan
+	exit 0
+}
+
+migrate_config_v2()
+{
+	# If we have not already made a new style configuration, attempt to convert
+	# the old.
+	if [ -f /etc/network/fan ]; then
+		return
+	fi
+
+	if [ ! -f /etc/default/ubuntu-fan ]; then
+		return
+	fi
+	. /etc/default/ubuntu-fan
+
+	echo "Migrating Ubuntu Fan configuration from /etc/default/ubuntu-fan to /etc/network/fan"
+
+	# If disabled nothing to convert.
+	if [ -z "${FAN_OVERLAY}" ]; then
+		success_v2
+	fi
+
+	# If we have no FAN_BRIDGE then nothing to do.
+	if [ -z "${FAN_BRIDGE}" ]; then
+		success_v2
+	fi
+
+	# If we have a FAN_PRIMARY_ADDR then we will use that address as underlay.
+	if [ ! -z "${FAN_PRIMARY_ADDR}" ]; then
+		FAN_UNDERLAY="${FAN_PRIMARY_ADDR}/16"
+
+	elif [ ! -z "${FAN_PRIMARY}" ]; then
+		FAN_UNDERLAY="${FAN_PRIMARY}/16"
+
+	else
+		FAN_UNDERLAY="default/16"
+	fi
+
+	cat - <<EOM >/etc/network/fan
+# Automatically converted from /etc/default/ubuntu-fan at `date`
+# dnsmasq configuration created in /etc/dnsmasq.d/ubuntu-fan-migrated
+${FAN_OVERLAY} ${FAN_UNDERLAY} dhcp bridge ${FAN_BRIDGE}
+EOM
+	cat - <<EOM >/etc/dnsmasq.d/ubuntu-fan-migrated
+# Automatically converted from /etc/default/ubuntu-fan at `date`
+${FAN_BRIDGE}
+EOM
+	success_v2
+}
+
+migrate_config_v3()
+{
+	# Convert up the static configuration.
+	if [ -f "/etc/network/fan" -a ! -f "/etc/network/fan.v3" ]; then
+		echo "fanctl: upgrading /etc/network/fan v3"
+		while read -r line
+		do
+			case "$line" in
+			\#*)                            ;; # Comment
+			'')                             ;; # Blank line
+			*\ mode\ *|*\ type\ *)          ;; # Real entry already converted
+			*)
+				# Real and needing migration
+				line="$line type ipip mode sliced"
+				;;
+			esac
+			echo "$line"
+		done <"/etc/network/fan" >"/etc/network/fan.new"
+		mv -f "/etc/network/fan" "/etc/network/fan.v3"
+		mv -f "/etc/network/fan.new" "/etc/network/fan"
+	fi
+}
+
+migrate_config_v6()
+{
+	# Convert up the static configuration.
+	if [ -f "/etc/network/fan" -a ! -f "/etc/network/fan.v6" ]; then
+		echo "fanctl: upgrading /etc/network/fan v6"
+		while read -r line
+		do
+			case "$line" in
+			\#*)                            ;; # Comment
+			'')                             ;; # Blank line
+			*)
+				# switch underlay/overlay order
+				# flip no argument flags to option form
+				# flip one argument flags to option form
+				echo "$line" | sed \
+					-e 's/^\(\s*\)\([^    ][^     ]*\)\(\s*\)\([^         ][^     ]*\)/\1\4\3\2/' \
+					-e 's/\<\(dhcp\|auto\|off\)\>/--\1/g' \
+					-e 's/\<\(host-reserve\|bridge\|type\|mode\)[ \t][ \t]*\([^ \t]\)/--\1=\2/'
+				continue
+				;;
+			esac
+			echo "$line"
+		done <"/etc/network/fan" >"/etc/network/fan.new"
+		mv -f "/etc/network/fan" "/etc/network/fan.v6"
+		mv -f "/etc/network/fan.new" "/etc/network/fan"
+	fi
+}
+
+create_default_config()
+{
+	if [ -f /etc/network/fan ]; then
+		return
+	fi
+
+	cat - <<EOM >/etc/network/fan
+# FAN overlay network map.
+
+# The FAN is a very fast overlay network system for docker in cloud
+# environments with limited IP addresses. The FAN multiplies host
+# addresses by mapping them to a larger overlay network. It eliminates
+# the need for a central database and myriad tunnels by mapping
+# addresses mathematically.
+
+# This map file specifies the list of maps which can be enabled in
+# /etc/network/interfaces or using the "fanctl config" command. See also
+# fanatic(1) for a tool that will configure docker to use your fans.
+# The only absolute rule is that all your participating machines use
+# the same mapping for active fans.
+
+# The map translates a local address range to an overlay range.
+
+# RFC1918 - we recommend you use these for easy interop with other
+# FAN users on small private networks. They provide around 250 IP's
+# per 192.168.0.0/16 address, or 16 per 172.16.0.0/12 address.
+
+# local          overlay       options
+192.168.0.0/16   250.0.0.0/8
+172.16.0.0/12    251.0.0.0/8
+
+# RFC1918 VPC - we recommend you use the higher ranges of 10.0.0.0/8
+# for your docker-centric VPC. This example provides 1,000 IP's per
+# base IP in 10.254.0.0/16.
+
+10.254.0.0/16    252.0.0.0/8
+10.254.0.0/16    253.0.0.0/8
+10.254.0.0/16    254.0.0.0/8
+
+# CUSTOM
+#
+# You can map large ranges onto your own, smaller, ranges for address
+# space expansion purposes. We recommend you adopt a common mapping for
+# your entire institution.
+
+# local          overlay
+EOM
+}
+
+case "$1" in
+configure)
+	if dpkg --compare-versions "$2" lt-nl "0.3.0~"; then
+		migrate_config_v2
+	fi
+	if dpkg --compare-versions "$2" lt-nl "0.4.0~"; then
+		migrate_config_v3
+		fanctl __upgrade
+	fi
+	if dpkg --compare-versions "$2" lt-nl "0.7.0~"; then
+		migrate_config_v6
+	fi
+	create_default_config
+	;;
+esac
+
+# Automatically added by dh_systemd_enable/13.6ubuntu1
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	# This will only remove masks created by d-s-h on package removal.
+	deb-systemd-helper unmask 'ubuntu-fan.service' >/dev/null || true
+
+	# was-enabled defaults to true, so new installations run enable.
+	if deb-systemd-helper --quiet was-enabled 'ubuntu-fan.service'; then
+		# Enables the unit on first installation, creates new
+		# symlinks on upgrades if the unit file has changed.
+		deb-systemd-helper enable 'ubuntu-fan.service' >/dev/null || true
+	else
+		# Update the statefile to add new symlinks (if any), which need to be
+		# cleaned up on purge. Also remove old symlinks.
+		deb-systemd-helper update-state 'ubuntu-fan.service' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installinit/13.6ubuntu1
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -z "${DPKG_ROOT:-}" ] && [ -x "/etc/init.d/ubuntu-fan" ]; then
+		update-rc.d ubuntu-fan defaults >/dev/null
+		if [ -n "$2" ]; then
+			_dh_action=restart
+		else
+			_dh_action=start
+		fi
+		invoke-rc.d ubuntu-fan $_dh_action || exit 1
+	fi
+fi
+# End automatically added section
+

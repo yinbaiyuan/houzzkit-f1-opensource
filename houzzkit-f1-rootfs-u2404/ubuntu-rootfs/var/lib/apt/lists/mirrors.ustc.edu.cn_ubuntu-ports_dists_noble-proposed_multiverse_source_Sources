@@ -1,0 +1,69 @@
+Package: nvidia-graphics-drivers-570
+Format: 3.0 (quilt)
+Binary: nvidia-driver-570, nvidia-kernel-source-570, nvidia-dkms-570, nvidia-utils-570, libnvidia-compute-570, nvidia-compute-utils-570, nvidia-headless-no-dkms-570, nvidia-headless-570, nvidia-kernel-common-570, nvidia-firmware-570-570.133.07, libnvidia-gl-570, libnvidia-common-570, libnvidia-extra-570, xserver-xorg-video-nvidia-570, libnvidia-cfg1-570, libnvidia-fbc1-570, libnvidia-decode-570, libnvidia-encode-570, nvidia-driver-570-open, nvidia-kernel-source-570-open, nvidia-dkms-570-open, nvidia-headless-no-dkms-570-open, nvidia-headless-570-open
+Architecture: amd64 arm64 i386 all
+Version: 570.133.07-0ubuntu0.24.04.1
+Priority: optional
+Section: multiverse/libs
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Uploaders:  Alberto Milone <alberto.milone@canonical.com>,
+Standards-Version: 4.1.1
+Build-Depends: debhelper (>= 12), dpkg-dev (>= 1.17.11~), xz-utils, zstd, dkms, libxext6, po-debconf, dh-modaliases, xserver-xorg-dev (>= 2:1.4), libglvnd-dev, libkmod-dev, libpciaccess-dev, pkg-config, libnvidia-egl-wayland1, libc6, libx11-6, python3
+Homepage: http://www.nvidia.com
+Vcs-Browser: https://github.com/canonical/nvidia-graphics-drivers/tree/570
+Vcs-Git: git://github.com/canonical/nvidia-graphics-drivers.git
+Directory: pool/multiverse/n/nvidia-graphics-drivers-570
+Package-List:
+ libnvidia-cfg1-570 deb non-free/libs optional arch=amd64,arm64
+ libnvidia-common-570 deb non-free/libs optional arch=all
+ libnvidia-compute-570 deb non-free/libs optional arch=i386,amd64,arm64
+ libnvidia-decode-570 deb non-free/libs optional arch=i386,amd64,arm64
+ libnvidia-encode-570 deb non-free/libs optional arch=i386,amd64,arm64
+ libnvidia-extra-570 deb non-free/libs optional arch=i386,amd64,arm64
+ libnvidia-fbc1-570 deb non-free/libs optional arch=i386,amd64,arm64
+ libnvidia-gl-570 deb non-free/libs optional arch=i386,amd64,arm64
+ nvidia-compute-utils-570 deb non-free/libs optional arch=amd64,arm64
+ nvidia-dkms-570 deb non-free/libs optional arch=amd64,arm64
+ nvidia-dkms-570-open deb non-free/libs optional arch=amd64,arm64
+ nvidia-driver-570 deb non-free/libs optional arch=amd64,arm64
+ nvidia-driver-570-open deb non-free/libs optional arch=amd64,arm64
+ nvidia-firmware-570-570.133.07 deb non-free/libs optional arch=amd64,arm64
+ nvidia-headless-570 deb non-free/libs optional arch=amd64,arm64
+ nvidia-headless-570-open deb non-free/libs optional arch=amd64,arm64
+ nvidia-headless-no-dkms-570 deb non-free/libs optional arch=amd64,arm64
+ nvidia-headless-no-dkms-570-open deb non-free/libs optional arch=amd64,arm64
+ nvidia-kernel-common-570 deb non-free/libs optional arch=amd64,arm64
+ nvidia-kernel-source-570 deb non-free/libs optional arch=amd64,arm64
+ nvidia-kernel-source-570-open deb non-free/libs optional arch=amd64,arm64
+ nvidia-utils-570 deb non-free/libs optional arch=amd64,arm64
+ xserver-xorg-video-nvidia-570 deb non-free/x11 optional arch=amd64,arm64
+Files:
+ 463ec46cc9e9c313332dd7252e489163 5555 nvidia-graphics-drivers-570_570.133.07-0ubuntu0.24.04.1.dsc
+ 906e07433b9a00dd349d80de60da1686 374184408 nvidia-graphics-drivers-570_570.133.07.orig-amd64.tar.gz
+ 2af39867aa416997170a4ff7061bb798 289012030 nvidia-graphics-drivers-570_570.133.07.orig-arm64.tar.gz
+ 67bef0a3db5e2fad8df7928884742af3 17937609 nvidia-graphics-drivers-570_570.133.07.orig-kernelsrc.tar.gz
+ fc35a826765578cb5ad81c14755bc81e 134 nvidia-graphics-drivers-570_570.133.07.orig.tar.gz
+ 226db81fcb41215f9fb9fbf1c751e91a 51624 nvidia-graphics-drivers-570_570.133.07-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha1:
+ b088f6667641afabc75e286d602491450f5c66dc 5555 nvidia-graphics-drivers-570_570.133.07-0ubuntu0.24.04.1.dsc
+ 9f06dd7aa7c50ee80213eeb70f1bdb93660de74f 374184408 nvidia-graphics-drivers-570_570.133.07.orig-amd64.tar.gz
+ 05fb2c40b0927bd3f14d45ba981d66ffc8f33a98 289012030 nvidia-graphics-drivers-570_570.133.07.orig-arm64.tar.gz
+ d2a702c16c87a8e206280d0342addf06e291177f 17937609 nvidia-graphics-drivers-570_570.133.07.orig-kernelsrc.tar.gz
+ 799d7f696cd6e7cdbf721e398fb97fb52e4107c6 134 nvidia-graphics-drivers-570_570.133.07.orig.tar.gz
+ 3861473e9c87736e96b4185bd0e159a818ac348e 51624 nvidia-graphics-drivers-570_570.133.07-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha256:
+ 5bf71e74420ccd0a738abaa6fcbc0e96c41829b2ed6db7e2a11e72a22cf1c4e7 5555 nvidia-graphics-drivers-570_570.133.07-0ubuntu0.24.04.1.dsc
+ fd075f2c85477b679e0e3e606ef242f170f95bcd947a6f91f3924a9736efe000 374184408 nvidia-graphics-drivers-570_570.133.07.orig-amd64.tar.gz
+ de80a566da8ea4330981c6cf435d7c1cb9a1113a7e322e9d3e3fc443683d42f5 289012030 nvidia-graphics-drivers-570_570.133.07.orig-arm64.tar.gz
+ b21d8c18e0f155e94690b2c0e198f7a68a3f12adae8b4e711aaa393d325cd65d 17937609 nvidia-graphics-drivers-570_570.133.07.orig-kernelsrc.tar.gz
+ 0996666be449ee425a065ef695efea82c6bc4af69a2d82766561d53095135c60 134 nvidia-graphics-drivers-570_570.133.07.orig.tar.gz
+ 61776b940b8a287b19f4c468400dfbb4e052edf9e8496f78697242432a42770a 51624 nvidia-graphics-drivers-570_570.133.07-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha512:
+ c33a5a4ee565a420c6ee4a171553309ed5bd3f06884c73d62cec4311cbd5024ae4fc991496d7072db98a66fd0eaf070e47f39e63570c8f3745475be15040056d 5555 nvidia-graphics-drivers-570_570.133.07-0ubuntu0.24.04.1.dsc
+ 7f36605e005d1523173b00c093799c9d123ad424d11dc093c79baad9dab778fe0874c538e9e1150841762bbe2216b859e2d8bcde6d924a8ff63ab3ae0559a470 374184408 nvidia-graphics-drivers-570_570.133.07.orig-amd64.tar.gz
+ 925265c8bebee37d6c78edd2dd115b3db1eea49c63269f7c278624b8d0b194e06a16843d4f9d1406f8c87a853b2c8b6f8ed65c693076432d45d69a8035ba4b4f 289012030 nvidia-graphics-drivers-570_570.133.07.orig-arm64.tar.gz
+ b2d861a63a09aa09d64b2190ff1ff697a0e7d299c7cd31a5ad2584b977645180d20983e86e38175d0cfc906f80109d838792ec3cc19aa7ec48ede3165d752066 17937609 nvidia-graphics-drivers-570_570.133.07.orig-kernelsrc.tar.gz
+ 1158292f1c649578506b525819612835912e5b666d82859ba40057b97509fb0ec3dce53b1c0dfa6fd8d2c23ed3de9bb175e53f70c07ba9156ea62991a4219850 134 nvidia-graphics-drivers-570_570.133.07.orig.tar.gz
+ 404d496e45a5ce7cea2204a38b0d829a5a99e3421ac74b89dd123513da1f20be0d734fe296029c200e50dc460a2f5066e409c4cedb055880be69fdbd78b023d8 51624 nvidia-graphics-drivers-570_570.133.07-0ubuntu0.24.04.1.debian.tar.xz
+Autobuild: yes
+

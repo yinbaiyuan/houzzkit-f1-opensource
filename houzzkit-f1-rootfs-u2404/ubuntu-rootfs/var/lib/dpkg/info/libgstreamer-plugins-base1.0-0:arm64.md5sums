@@ -1,0 +1,14 @@
+78d3eb3e9f18c46a5ddc8694896d2bda  usr/lib/aarch64-linux-gnu/libgstallocators-1.0.so.0.2402.0
+59a4635df092814458f1828dda9110e2  usr/lib/aarch64-linux-gnu/libgstapp-1.0.so.0.2402.0
+73cfb045f69c253950c74106b02db01a  usr/lib/aarch64-linux-gnu/libgstaudio-1.0.so.0.2402.0
+f84651ce65d0d9b505b5225c6bb3fc23  usr/lib/aarch64-linux-gnu/libgstfft-1.0.so.0.2402.0
+9c4a4c23753eb75edbb27417916e65bd  usr/lib/aarch64-linux-gnu/libgstpbutils-1.0.so.0.2402.0
+1d049815f1432eca805044321f91c3d9  usr/lib/aarch64-linux-gnu/libgstriff-1.0.so.0.2402.0
+72117a88ad447eb5183534ad41298018  usr/lib/aarch64-linux-gnu/libgstrtp-1.0.so.0.2402.0
+23b2d0ff8975efed6b56c4c2a316226c  usr/lib/aarch64-linux-gnu/libgstrtsp-1.0.so.0.2402.0
+9495b44c28c1cc0d4dbabb4fbb760564  usr/lib/aarch64-linux-gnu/libgstsdp-1.0.so.0.2402.0
+6555bf452769823782221def4370393c  usr/lib/aarch64-linux-gnu/libgsttag-1.0.so.0.2402.0
+89be97cdab41920cb850ced0f8d53bb0  usr/lib/aarch64-linux-gnu/libgstvideo-1.0.so.0.2402.0
+67b4ddf419db891152dc09a34518d42b  usr/share/doc/libgstreamer-plugins-base1.0-0/changelog.Debian.gz
+700f1835ede31ed6160dc1ba5cd64279  usr/share/doc/libgstreamer-plugins-base1.0-0/copyright
+b3856cc9571b1ae084deac70b44fd537  usr/share/gst-plugins-base/1.0/license-translations.dict

@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installnss/1.7
+if [ "$1" = "configure" ] && [ -f "${DPKG_ROOT}/etc/nsswitch.conf.nss.${DPKG_MAINTSCRIPT_PACKAGE}-will-install" ] && [ -e "${DPKG_ROOT}/etc/nsswitch.conf" ] ; then
+	if ! grep -q -E  -e '^hosts:[^#]*\s(mdns4_minimal|mdns|mdns_minimal|mdns4|mdns6|mdns6_minimal)(\s|#|$)' "${DPKG_ROOT}/etc/nsswitch.conf" ; then
+		# Installing hosts/mdns4_minimal[NOTFOUND=return] from libnss-mdns in position before=dns,resolve
+		sed -E -i "${DPKG_ROOT}/etc/nsswitch.conf" -e '/^hosts:\s[^#]*$/ s/(\s)(dns(\s+\[[^]]+\])?|resolve(\s+\[[^]]+\])?)(\s|$)/\1mdns4_minimal \[NOTFOUND=return\] \2 /' -e '/^hosts:\s.*#/ s/(\s)(dns(\s+\[[^]]+\])?|resolve(\s+\[[^]]+\])?)(\s|#)/\1mdns4_minimal \[NOTFOUND=return\] \2 /' -e 's/ $//'
+	fi
+	rm "${DPKG_ROOT}/etc/nsswitch.conf.nss.${DPKG_MAINTSCRIPT_PACKAGE}-will-install"
+fi
+# End automatically added section

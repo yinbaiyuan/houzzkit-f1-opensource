@@ -1,0 +1,11 @@
+947652ad3147e52e11325e5b8d0dadb5  usr/bin/lsusb
+68f39eb2a2d48b5fcdc722b5d124eed1  usr/bin/usb-devices
+82fa31ca3c8c17c7dce387c0f0a1522e  usr/bin/usbhid-dump
+38590dc213ffbec7b861ddc8378e3ed6  usr/bin/usbreset
+da3d45d0ea37e28449dc3363aa5a057a  usr/share/bug/usbutils/presubj
+62d1d2c89067fdc347ece5974591ebb9  usr/share/doc/usbutils/changelog.Debian.gz
+e8620ab2194c3588b1fb66c188fcfaf0  usr/share/doc/usbutils/copyright
+dde8f167b85fa444091ec330576247d0  usr/share/man/man1/usb-devices.1.gz
+f08b960bb9d034667430edf659c5e271  usr/share/man/man1/usbreset.1.gz
+3eaeb4dd3e79270a1b66475dd451917a  usr/share/man/man8/lsusb.8.gz
+97a55f9e05507252d8891b99b8052609  usr/share/man/man8/usbhid-dump.8.gz

@@ -1,0 +1,17 @@
+46ca0bad5206e7ee799344200430b527  usr/bin/resolvectl
+d5803728026e85376900fe915a0f9591  usr/lib/systemd/system/systemd-resolved.service
+d8ac188fbda507ba06db9ca7601b599a  usr/lib/systemd/systemd-resolved
+e105a98ac54745fd0665011108c05fe2  usr/lib/sysusers.d/systemd-resolve.conf
+60ee48edaf29fa52bb6a39493927abb3  usr/lib/tmpfiles.d/systemd-resolve.conf
+5b07e4b641c20780c87f5c5e29096c51  usr/share/bash-completion/completions/resolvectl
+ba357531ddaeb0117d601bd97a90432d  usr/share/bash-completion/completions/systemd-resolve
+abcd436d2a67ec1dcfa03c3fc8cceb1e  usr/share/dbus-1/system-services/org.freedesktop.resolve1.service
+23e6329515e3dfbbf8259d26f874dc42  usr/share/dbus-1/system.d/org.freedesktop.resolve1.conf
+b16a86fb841b001b52a5c5caccf526c2  usr/share/doc/systemd-resolved/copyright
+a602e45606340be5282b0d4e90b75738  usr/share/lintian/overrides/systemd-resolved
+270b15f80b7350b951028edb54bb46d8  usr/share/man/man1/resolvectl.1.gz
+20fe0acfa9992391130252c273f26dd3  usr/share/man/man5/org.freedesktop.resolve1.5.gz
+02fcde22f0470b725173296a70ee788d  usr/share/man/man5/resolved.conf.5.gz
+c20a7b5b8e19ab52160a4b86ea94caa9  usr/share/man/man8/systemd-resolved.service.8.gz
+2af8b20ab85e7f8dda8c9672e43fc9b5  usr/share/polkit-1/actions/org.freedesktop.resolve1.policy
+6aa602f0cab8e9399e441fca9fe065d3  usr/share/zsh/vendor-completions/_resolvectl

@@ -1,0 +1,6 @@
+b1490a907b371dde7068ee47530d6e9c  lib/systemd/system/tpm-udev.path
+c4e4d3e3801a3255192412be004fb957  lib/systemd/system/tpm-udev.service
+fce70e5150df24c72b4331a12c4ea0a4  lib/udev/rules.d/60-tpm-udev.rules
+bc8a23bac53f19a649ab5d72a2929651  usr/lib/tmpfiles.d/tpm-udev.conf
+ec013caab4ceab7f71ef23904e77b4bd  usr/share/doc/tpm-udev/changelog.gz
+7448f9c5ac8f86cc5728b0faeaf4a90d  usr/share/doc/tpm-udev/copyright

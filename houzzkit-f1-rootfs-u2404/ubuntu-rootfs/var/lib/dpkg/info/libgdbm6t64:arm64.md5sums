@@ -1,0 +1,4 @@
+a2f28cd17379b1182047c158c50e65ec  usr/lib/aarch64-linux-gnu/libgdbm.so.6.0.0
+4008c1751d7f2c819d95988494b2659d  usr/share/doc/libgdbm6t64/changelog.Debian.gz
+242d4462faec940533621023f27cf307  usr/share/doc/libgdbm6t64/copyright
+0f67e46e6ddf03b2f754d11a64412853  usr/share/lintian/overrides/libgdbm6t64

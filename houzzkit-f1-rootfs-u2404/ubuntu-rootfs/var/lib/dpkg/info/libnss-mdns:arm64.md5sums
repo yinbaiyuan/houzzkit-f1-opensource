@@ -1,0 +1,12 @@
+add77db994898c4c36153fc2f80b3459  usr/lib/aarch64-linux-gnu/libnss_mdns.so.2
+4f4c3683e33b6c6179cc88daf6ea390d  usr/lib/aarch64-linux-gnu/libnss_mdns4.so.2
+ad2a1304ee94e2affa22a3177c024950  usr/lib/aarch64-linux-gnu/libnss_mdns4_minimal.so.2
+b77d72a67263878ec49ee32bce265355  usr/lib/aarch64-linux-gnu/libnss_mdns6.so.2
+f5f5ed7bf10b3f15d57e406b74ce8e57  usr/lib/aarch64-linux-gnu/libnss_mdns6_minimal.so.2
+4fc9b16181859a7bc5906a81401cbe1f  usr/lib/aarch64-linux-gnu/libnss_mdns_minimal.so.2
+11acd5a65b7f4433250c06d1b736c6ea  usr/share/doc/libnss-mdns/ACKNOWLEDGEMENTS.md
+54ec0723297a2b84a3a5f8562d3d3c06  usr/share/doc/libnss-mdns/NEWS.md.gz
+1a627c7c2f527476cb2197fbd69d694d  usr/share/doc/libnss-mdns/README.Debian
+9d0bab19f0a242e55ad5122e90789795  usr/share/doc/libnss-mdns/README.md.gz
+c211c079833eadd71ebeb097f5ca9c14  usr/share/doc/libnss-mdns/changelog.Debian.gz
+c7b9832a71b331fb0d5e47c40ef62137  usr/share/doc/libnss-mdns/copyright

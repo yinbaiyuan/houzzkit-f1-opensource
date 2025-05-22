@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/bin
+/usr/bin/JxrDecApp
+/usr/bin/JxrEncApp
+/usr/share
+/usr/share/doc
+/usr/share/doc/libjxr-tools
+/usr/share/doc/libjxr-tools/copyright
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/JxrDecApp.1.gz
+/usr/share/man/man1/JxrEncApp.1.gz
+/usr/share/doc/libjxr-tools/changelog.Debian.gz

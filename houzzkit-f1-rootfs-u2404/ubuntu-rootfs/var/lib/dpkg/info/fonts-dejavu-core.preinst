@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installdeb/13.11.4ubuntu3
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.avail/20-unhint-small-dejavu-lgc-sans-mono.conf 2.37-7\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.avail/20-unhint-small-dejavu-sans-mono.conf 2.37-7\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.avail/57-dejavu-sans-mono.conf 2.37-7\~ -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/fonts/conf.avail/58-dejavu-lgc-sans-mono.conf 2.37-7\~ -- "$@"
+# End automatically added section

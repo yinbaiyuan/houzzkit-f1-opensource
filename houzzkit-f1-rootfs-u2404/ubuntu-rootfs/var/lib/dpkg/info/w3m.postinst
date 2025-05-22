@@ -1,0 +1,24 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+  configure)
+        update-alternatives --quiet --install /usr/bin/pager pager \
+            /usr/bin/w3m 25 \
+	    --slave /usr/share/man/man1/pager.1.gz pager.1.gz \
+	    /usr/share/man/man1/w3m.1.gz
+       update-alternatives --quiet --install /usr/bin/www-browser www-browser \
+           /usr/bin/w3m 25 \
+	   --slave /usr/share/man/man1/www-browser.1.gz www-browser.1.gz \
+	   /usr/share/man/man1/w3m.1.gz
+       ;;
+  *)
+esac
+
+# Automatically added by dh_installmenu/13.14.1ubuntu5
+if [ "$1" = "configure" ] && [ -x "`command -v update-menus`" ] && [ -x "$DPKG_ROOT`command -v update-menus`" ]; then
+	update-menus
+fi
+# End automatically added section
+

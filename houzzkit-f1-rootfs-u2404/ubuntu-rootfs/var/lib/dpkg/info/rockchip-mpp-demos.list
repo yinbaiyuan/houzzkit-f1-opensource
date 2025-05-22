@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/bin
+/usr/bin/mpi_dec_mt_test
+/usr/bin/mpi_dec_multi_test
+/usr/bin/mpi_dec_nt_test
+/usr/bin/mpi_dec_test
+/usr/bin/mpi_enc_mt_test
+/usr/bin/mpi_enc_test
+/usr/bin/mpi_rc2_test
+/usr/bin/mpp_info_test
+/usr/bin/vpu_api_test
+/usr/share
+/usr/share/doc
+/usr/share/doc/rockchip-mpp-demos
+/usr/share/doc/rockchip-mpp-demos/changelog.Debian.gz
+/usr/share/doc/rockchip-mpp-demos/copyright

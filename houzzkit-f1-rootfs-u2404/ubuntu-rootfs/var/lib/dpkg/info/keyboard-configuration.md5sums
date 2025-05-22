@@ -1,0 +1,16 @@
+26bc3f5561fd457e0b8518f1624451a0  usr/share/apport/package-hooks/source_console-setup.py
+3c0105186ad0729a1dee992c67c0ce8d  usr/share/bug/keyboard-configuration/control
+52f9774c20c74806cac40437a83ba209  usr/share/console-setup/KeyboardNames.pl
+b4567385e3918056347662bc0e6c4fa7  usr/share/console-setup/kbdnames-maker
+663a19562dd2fb01b99258619e551526  usr/share/console-setup/keyboard
+8152f9bd10ababbfc3340d29440976f8  usr/share/doc/keyboard-configuration/FAQ.gz
+a6300d587fe7327715461df2d118fbc4  usr/share/doc/keyboard-configuration/README.Debian
+04ebb7953d86c0c44173146f66beeae8  usr/share/doc/keyboard-configuration/changelog.gz
+49cab1cfd397b014807c5b2bcc63e04f  usr/share/doc/keyboard-configuration/copyright
+0ee6d905789e8fdf8ea3f4ebac577c5e  usr/share/doc/keyboard-configuration/copyright.fonts.gz
+60d40a4a9a50131084e4167a8a8b6619  usr/share/doc/keyboard-configuration/copyright.xkb.gz
+8a1be78d968c346292e3c13ca098cf6b  usr/share/initramfs-tools/hooks/console_setup
+4f417cbe33852a273ab1ab02628c344d  usr/share/initramfs-tools/scripts/init-top/console_setup
+f6435813532f44147334be8014c39004  usr/share/initramfs-tools/scripts/panic/console_setup
+b0689fab4f0baab7720a7201cc6dbd4a  usr/share/lintian/overrides/keyboard-configuration
+4afb21d20d56da87a27a1524f4fb5160  usr/share/man/man5/keyboard.5.gz

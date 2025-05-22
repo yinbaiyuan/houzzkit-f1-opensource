@@ -1,0 +1,6 @@
+4a39d7bda4f94fa94ec711c93cdf6657  lib/aarch64-linux-gnu/libcryptsetup.so.12.10.0
+4b52326d7c68659dbfa12e39080feaf1  usr/share/bug/libcryptsetup12
+4bd449d652e0d9fe3239c5d02603d47a  usr/share/doc/libcryptsetup12/NEWS.Debian.gz
+e6f27aa9a1672781fdaad8dd70fc39af  usr/share/doc/libcryptsetup12/changelog.Debian.gz
+1ed48ab697f43d7cb2a97987b21ae01d  usr/share/doc/libcryptsetup12/copyright
+9559d84bd444fa38bf81e0bf089d941b  usr/share/lintian/overrides/libcryptsetup12

@@ -1,0 +1,25 @@
+# Environment File for anacron
+
+# ANACRON_RUN_ON_BATTERY_POWER
+#
+# NOTE:
+#       For ANACRON_RUN_ON_BATTERY_POWER, settings here only works
+#       when you are not using systemd.
+#       Please read /usr/share/doc/anacron/README.Debian
+#       to see how to adjust program behaviour on AC power.
+#
+# If set to "yes", start anacron even when on battery power.  By
+# default, the /etc/init.d/anacron script tries to avoid running
+# anacron unless on AC power, so as to avoid running down the battery.
+# (Things like the locate updatedb cause a lot of I/O.)
+
+ANACRON_RUN_ON_BATTERY_POWER=no
+
+# ANACRON_ARGS
+#
+# Arguments/options to pass to anacron.
+# By default, "-s" is used to ensure serialised job arrangements.
+# If you want tasks to execute in parallel when the jobs are due to
+# start, do not pass "-s" here.
+
+ANACRON_ARGS=-s

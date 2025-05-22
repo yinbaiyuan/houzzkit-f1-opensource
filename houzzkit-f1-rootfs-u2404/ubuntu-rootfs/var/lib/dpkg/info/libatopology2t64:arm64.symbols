@@ -1,0 +1,17 @@
+libatopology.so.2 libatopology2t64 #MINVER#
+* Build-Depends-Package: libatopology2-dev
+ ALSA_0.9@ALSA_0.9 1.2.1.1
+ snd_tplg_add_object@ALSA_0.9 1.2.1.1
+ snd_tplg_build@ALSA_0.9 1.2.1.1
+ snd_tplg_build_bin@ALSA_0.9 1.2.2
+ snd_tplg_build_file@ALSA_0.9 1.2.1.1
+ snd_tplg_create@ALSA_0.9 1.2.2
+ snd_tplg_decode@ALSA_0.9 1.2.2
+ snd_tplg_free@ALSA_0.9 1.2.1.1
+ snd_tplg_load@ALSA_0.9 1.2.2
+ snd_tplg_new@ALSA_0.9 1.2.1.1
+ snd_tplg_save@ALSA_0.9 1.2.2
+ snd_tplg_set_manifest_data@ALSA_0.9 1.2.1.1
+ snd_tplg_set_version@ALSA_0.9 1.2.1.1
+ snd_tplg_verbose@ALSA_0.9 1.2.1.1
+ snd_tplg_version@ALSA_0.9 1.2.2

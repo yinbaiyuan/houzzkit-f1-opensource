@@ -1,0 +1,7 @@
+63d39d627181fec152e8fc5c0ceb2c3a  usr/bin/python3.12
+b864808b939963572b1ca1905a3b760e  usr/lib/binfmt.d/python3.12.conf
+254590d346578cc85e5fa1be79da8922  usr/share/binfmts/python3.12
+29e0b8f43389dfa39d6fa659823b8919  usr/share/doc/python3.12-minimal/README.Debian.gz
+d8c47e21fcd8f5a22f90828d568b0084  usr/share/doc/python3.12-minimal/copyright
+db56a29349ce40d8a3a700e96a180fd2  usr/share/lintian/overrides/python3.12-minimal
+0402fa577d00f7b2147778a430bd0c0c  usr/share/man/man1/python3.12.1.gz

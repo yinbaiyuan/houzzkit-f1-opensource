@@ -1,0 +1,27 @@
+#!/bin/sh
+
+set -e
+
+# begin-remove-after: released:trixie
+if [ "$1" = "configure" ]; then
+	for n in halt poweroff shutdown; do
+		fn=$(dpkg-divert --truename "/usr/sbin/$n")
+		if ! test -h "$fn"; then
+			if test "$fn" = "/usr/sbin/$n"; then
+				echo "/usr/sbin/$n vanished in /usr-merge upgrade. Restoring."
+			else
+				echo "/usr/sbin/$n (diverted to $fn) vanished in /usr-merge upgrade. Restoring."
+			fi
+			ln -sf ../bin/systemctl "$fn"
+		fi
+	done
+fi
+# end-remove-after
+
+# update grub on first install, so that the alternative init system boot
+# entries get updated
+if [ "$1" = configure ] && [ -z "$2" ] && [ -e /boot/grub/grub.cfg ] && command -v update-grub >/dev/null; then
+    update-grub || true
+fi
+
+

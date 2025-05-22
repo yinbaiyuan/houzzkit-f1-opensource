@@ -1,0 +1,42 @@
+# ============ this file is to colorize crontabs ==========
+#        1         2         3         4         5
+#2345678901234567890123456789012345678901234567890123456789
+# HTML COLOR         COL A N T STRING or REGULAR EXPRESSION
+#################### ### # # # ############################
+#Where:
+#  HTML COLOR - Standard HTML Color name for HTML output
+#  COL        - Console color name from the list
+#                 red, yel, cya, grn, mag, blk, whi, blu
+#  A          - Attribute from the list
+#                 ' ' : normal
+#                 'b' : bold
+#                 'u' : underline
+#                 'r' : reverse video
+#                 'k' : blink
+#  N          - number of matches
+#                 ' ' : all
+#                 '0' : all
+#                 '1' - '9' : number of matches
+#  T          - type of matching to perform
+#                 'c' : characters
+#                 's' : string
+#                 'r' : regex - case   sensitive
+#                 'R' : regex - case insensitive
+#                 't' : regex with Unix time conversion
+#                 ' ' : default ('r' regex)
+#        1         2         3         4         5
+#2345678901234567890123456789012345678901234567890123456789
+# HTML COLOR         COL A N T STRING or REGULAR EXPRESSION
+#################### ### # # # ############################
+#                                        dom is blue + bold
+Blue                 blu b 5   \s+(\S+)
+#                                     month is green + bold
+Green                grn b 4   \s+(\S+)
+#                              dow is green + reverse video
+Green                grn r 3   \s+(\S+)
+#                                        hour is red + bold
+Red                  red b 2   \s+(\S+)
+#                             minute is red + reverse video
+Red                  red r 1   \s*(\S+)
+#                                      comments are magenta
+Magenta              mag       (^#.*)

@@ -1,0 +1,5 @@
+1f898e74471d01d62532b620f2928102  usr/lib/aarch64-linux-gnu/libmpeg2.so.0.1.0
+0b75b3a53a5e81b4325a6fc3c698eb9e  usr/lib/aarch64-linux-gnu/libmpeg2convert.so.0.0.0
+8103309dd453c47ba0785547fe910c11  usr/share/doc/libmpeg2-4/changelog.Debian.gz
+4ac645d3dc64a86ff7b886d243658ce5  usr/share/doc/libmpeg2-4/copyright
+9d921c07103abf2b7a4c51403038e961  usr/share/lintian/overrides/libmpeg2-4

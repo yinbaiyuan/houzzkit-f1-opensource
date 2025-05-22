@@ -1,0 +1,46 @@
+#!/bin/sh -e
+
+delete_old_etc_modules() {
+  # normalize the files by ignoring empty lines
+  local modules_hash="$(sed -e '/^$/d' /etc/modules | md5sum | cut -d ' ' -f1)"
+
+  case "$modules_hash" in
+    330dcf902eae56682d44133c168fee89) ;;
+    6e5894c5d926d1e69968e64e3ffa1cbd) ;;
+    *) return ;;
+  esac
+
+  # delete the unmodified /etc/modules
+  rm -f /etc/modules
+}
+
+create_etc_modules() {
+  [ -e /etc/modules ] && return 0
+  cat <<END > /etc/modules
+# /etc/modules is obsolete and has been replaced by /etc/modules-load.d/.
+# Please see modules-load.d(5) and modprobe.d(5) for details.
+#
+# Updating this file still works, but it is undocumented and unsupported.
+END
+  chmod 644 /etc/modules
+  if which restorecon > /dev/null 2>&1; then
+    restorecon /etc/modules
+  fi
+}
+
+case "$1" in
+  configure)
+  delete_old_etc_modules
+  create_etc_modules
+esac
+
+# Automatically added by dh_installinit/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -x "/etc/init.d/kmod" ]; then
+		update-rc.d kmod defaults >/dev/null || exit 1
+	fi
+fi
+# End automatically added section
+
+
+exit 0

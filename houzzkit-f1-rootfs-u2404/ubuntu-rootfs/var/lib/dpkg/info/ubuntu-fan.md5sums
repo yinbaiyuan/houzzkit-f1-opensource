@@ -1,0 +1,10 @@
+73a2f85a1664862c5ae3b36894157e69  lib/systemd/system/ubuntu-fan.service
+d9d88a5e765c502e6092000956b59018  usr/lib/ubuntu-fan/fan-net
+0eef2983c6120909b04ac5c999b5b42b  usr/sbin/fanatic
+76543addb2342cd79e4cf2c289ddb8cb  usr/sbin/fanctl
+242e84dd5c313012694fc5e2d6b77527  usr/share/doc/ubuntu-fan/README.gz
+9236bf0092b0f4b4646f1f21b60a3862  usr/share/doc/ubuntu-fan/changelog.gz
+c350ef04cec29badd2d6c136962c869d  usr/share/doc/ubuntu-fan/copyright
+73e99e1d8f35efbf18a9a683800a5449  usr/share/man/man8/fanatic.8.gz
+82f0295ac7ee3de74c945ac134a3e68e  usr/share/man/man8/fanctl.8.gz
+58ced013fef85d66deca20b62ab4263c  var/lib/ubuntu-fan/config/README

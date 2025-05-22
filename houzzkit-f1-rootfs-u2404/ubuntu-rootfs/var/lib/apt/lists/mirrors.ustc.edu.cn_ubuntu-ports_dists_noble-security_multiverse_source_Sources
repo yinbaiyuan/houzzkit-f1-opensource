@@ -1,0 +1,460 @@
+Package: fabric-manager-470
+Format: 3.0 (quilt)
+Binary: nvidia-fabricmanager-470, nvidia-fabricmanager-dev-470, cuda-drivers-fabricmanager-470, nvidia-fabricmanager-460, nvidia-fabricmanager-dev-460, cuda-drivers-fabricmanager-460
+Architecture: amd64
+Version: 470.256.02-0ubuntu0.24.04.1
+Priority: optional
+Section: multiverse/libs
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Uploaders:  Alberto Milone <alberto.milone@canonical.com>,
+Standards-Version: 4.1.4
+Build-Depends: debhelper (>= 10)
+Vcs-Browser: https://github.com/tseliot/apt-packaging-fabric-manager/tree/470
+Vcs-Git: git://github.com/tseliot/apt-packaging-fabric-manager.git
+Directory: pool/multiverse/f/fabric-manager-470
+Package-List:
+ cuda-drivers-fabricmanager-460 deb non-free/libs optional arch=amd64
+ cuda-drivers-fabricmanager-470 deb non-free/libs optional arch=amd64
+ nvidia-fabricmanager-460 deb non-free/libs optional arch=amd64
+ nvidia-fabricmanager-470 deb non-free/libs optional arch=amd64
+ nvidia-fabricmanager-dev-460 deb non-free/libs optional arch=amd64
+ nvidia-fabricmanager-dev-470 deb non-free/libs optional arch=amd64
+Files:
+ 107587904c889c3cece130a2d7e3cf89 2948 fabric-manager-470_470.256.02-0ubuntu0.24.04.1.dsc
+ 94eea877e4b567714a3703423703cadc 1201288 fabric-manager-470_470.256.02.orig-amd64.tar.gz
+ 3680abf2e7fd29ed9cdfd17de77323d6 128 fabric-manager-470_470.256.02.orig.tar.gz
+ e1da3a68ee6f236110b002cd0a80952c 7316 fabric-manager-470_470.256.02-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha1:
+ 1c82a61aff8599a4311a9abc641299c0d13da667 2948 fabric-manager-470_470.256.02-0ubuntu0.24.04.1.dsc
+ 910705ebce07f859b2d3cb422771058ec58a5ae4 1201288 fabric-manager-470_470.256.02.orig-amd64.tar.gz
+ 45a108d0a6a448dd063edea998c40253d8013f04 128 fabric-manager-470_470.256.02.orig.tar.gz
+ 90a6344a41552721366f0a35dcfb38a3ad0b627d 7316 fabric-manager-470_470.256.02-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha256:
+ ccb4fb97378072411672608b5bc0ab88755915b6b170dc854596a3b836bdb190 2948 fabric-manager-470_470.256.02-0ubuntu0.24.04.1.dsc
+ 9717ba0ced393d1fcfdbd0759a43c466020ae3632bef5a4797b292dfa0faeb5a 1201288 fabric-manager-470_470.256.02.orig-amd64.tar.gz
+ f1797819e7eaffe7cafb21d047a2f21f00a8643c8486dfca66f266f853d60f52 128 fabric-manager-470_470.256.02.orig.tar.gz
+ 2c7489652d7bd3ded9eb9405a3cc7dd8613f4e00e09e07980157045862f72142 7316 fabric-manager-470_470.256.02-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha512:
+ 57afef0db0f4dfaecec6485d9e01dd317daa81e47cc1dee1f2c22eabc70a070fc2a0b768a94696b9f5472d125ff01df8fe64acfcf73ce919300300d457d9f036 2948 fabric-manager-470_470.256.02-0ubuntu0.24.04.1.dsc
+ 004066b051cba9c9f762c28c0cb514569ad7973faa67d6bcf8e99d9878c574be1613015ef697f30e8a3f3d2094eb87502439a40512b550601ebbcc3dbc3110c1 1201288 fabric-manager-470_470.256.02.orig-amd64.tar.gz
+ bac30cfdef21b1f0810ac77af17bacd0fc391508ac35bbb3409421c811b25f08c972fe1ea86c81b44b669c27ae234a0bce6f8d278899da0f43ecbcdae1c5c390 128 fabric-manager-470_470.256.02.orig.tar.gz
+ 508a5af3c550063dba0842d9b19b5e7fdd14e8336b2c6205f5d042d6f82ad6ce2472436a48a8fad28ff3c1c5ec114a8972a8ce251bc376f0b3e773c3919b4a6e 7316 fabric-manager-470_470.256.02-0ubuntu0.24.04.1.debian.tar.xz
+Autobuild: yes
+
+Package: fabric-manager-535
+Format: 3.0 (quilt)
+Binary: nvidia-fabricmanager-535, nvidia-fabricmanager-dev-535, cuda-drivers-fabricmanager-535
+Architecture: amd64 arm64
+Version: 535.230.02-0ubuntu0.24.04.1
+Priority: optional
+Section: multiverse/libs
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Uploaders:  Kuba Pawlak <kuba.pawlak@canonical.com>,
+Standards-Version: 4.1.4
+Build-Depends: debhelper (>= 10)
+Vcs-Browser: https://github.com/canonical/apt-packaging-fabric-manager/tree/535
+Vcs-Git: git://github.com/canonical/apt-packaging-fabric-manager.git
+Directory: pool/multiverse/f/fabric-manager-535
+Package-List:
+ cuda-drivers-fabricmanager-535 deb non-free/libs optional arch=amd64,arm64
+ nvidia-fabricmanager-535 deb non-free/libs optional arch=amd64,arm64
+ nvidia-fabricmanager-dev-535 deb non-free/libs optional arch=amd64,arm64
+Files:
+ 00e659f336a97954f92981ada762ee29 2990 fabric-manager-535_535.230.02-0ubuntu0.24.04.1.dsc
+ 9ae7fd5a06bb777c66aa21548ae8e3a7 1818986 fabric-manager-535_535.230.02.orig-amd64.tar.gz
+ a331d7f9197d33ad4779f5b343f60414 1681134 fabric-manager-535_535.230.02.orig-arm64.tar.gz
+ 44afa2e8797de38ac1ab1f9b7cf5e32e 127 fabric-manager-535_535.230.02.orig.tar.gz
+ 13f05606e377f821b86cfcf92550dd4e 7128 fabric-manager-535_535.230.02-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha1:
+ cc357b9e7d57e37f7cd101174e5815992f2b61db 2990 fabric-manager-535_535.230.02-0ubuntu0.24.04.1.dsc
+ 420d2b950c39c58337f673bae297db2e699e2e0d 1818986 fabric-manager-535_535.230.02.orig-amd64.tar.gz
+ f10a3213d6494506e4032155fb19b0d3a8272719 1681134 fabric-manager-535_535.230.02.orig-arm64.tar.gz
+ c69853b0496bd4eae853cd3afc605e3dde9fd00f 127 fabric-manager-535_535.230.02.orig.tar.gz
+ 7cdcb066779fa411fe6ef6d1670a0c1538b6dd77 7128 fabric-manager-535_535.230.02-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha256:
+ ad20065bc43a783fc0836a7bb8c792faf3a99f7030e94dc212d55a8d00cbccc9 2990 fabric-manager-535_535.230.02-0ubuntu0.24.04.1.dsc
+ 7d99cc4327f95a07ba911f5053a04c9ead32f453e5ceef48757f2cba1487ea3f 1818986 fabric-manager-535_535.230.02.orig-amd64.tar.gz
+ 056432fc8ba5783537dd4503160bf14428b727bfc6660aa08be93a9786f7c02c 1681134 fabric-manager-535_535.230.02.orig-arm64.tar.gz
+ 5790c4b5daab81a0d6cb8d816520a4cd28f0971ce5087d41f16cf4beefe7c3d0 127 fabric-manager-535_535.230.02.orig.tar.gz
+ 428c0a21baa59ae35d2fddee6cd0209bde010e3132328ee1cd9a2803d7835e16 7128 fabric-manager-535_535.230.02-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha512:
+ e2549bdda1f7bf1a242d41e9a93748b38c5141e9f85a2daffca6b66e63b9eac1ce4b26a1bb24a90507ad1ca79c29b9cdc2e534b4641225c3051022493baecb7b 2990 fabric-manager-535_535.230.02-0ubuntu0.24.04.1.dsc
+ 8ff82c085e05b088ed8172178449771d3f69b9d7afac3ee9e2226ab636df68a3eb074685987362b6d99ddf9cfab01aadc95958c3eb72a3a487b195e2bb179727 1818986 fabric-manager-535_535.230.02.orig-amd64.tar.gz
+ 0a9bec3fae19ffe19db66c727dcc9184c3d0368da238107f69c7b3d8652f36c04d01454082f1737b91001ba24b98d01316b16fa8605fcabd8dd114ef01ed8b5e 1681134 fabric-manager-535_535.230.02.orig-arm64.tar.gz
+ 6995da7733659dc9714e724ddb1421452f42cf34b252c52914bcc86d7d3a5d51ffdebcd69580732dd53e10f22b0e2928f819fe80bc50dc2457acf4fb7e30764f 127 fabric-manager-535_535.230.02.orig.tar.gz
+ 7c0912d475ae51a3d665ca49ff210a2de180f44e1722e68aa7cb24d340da301b71cfa5c3627c074d13d813adb463cce60f0b2856bba224a14420f418db25b05c 7128 fabric-manager-535_535.230.02-0ubuntu0.24.04.1.debian.tar.xz
+Autobuild: yes
+
+Package: fabric-manager-550
+Format: 3.0 (quilt)
+Binary: nvidia-fabricmanager-550, nvidia-fabricmanager-dev-550, cuda-drivers-fabricmanager-550
+Architecture: amd64 arm64
+Version: 550.144.03-0ubuntu0.24.04.1
+Priority: optional
+Section: multiverse/libs
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Uploaders:  Kuba Pawlak <kuba.pawlak@canonical.com>,
+Standards-Version: 4.1.4
+Build-Depends: debhelper (>= 10)
+Vcs-Browser: https://github.com/canonical/apt-packaging-fabric-manager/tree/550
+Vcs-Git: git://github.com/canonical/apt-packaging-fabric-manager.git
+Directory: pool/multiverse/f/fabric-manager-550
+Package-List:
+ cuda-drivers-fabricmanager-550 deb non-free/libs optional arch=amd64,arm64
+ nvidia-fabricmanager-550 deb non-free/libs optional arch=amd64,arm64
+ nvidia-fabricmanager-dev-550 deb non-free/libs optional arch=amd64,arm64
+Files:
+ 66f1b66f480964c77be2a81ca01a90b2 2990 fabric-manager-550_550.144.03-0ubuntu0.24.04.1.dsc
+ 4b7ae1da938aa2012acf8374a6b575a3 5789872 fabric-manager-550_550.144.03.orig-amd64.tar.gz
+ bd82534bf44444b3742fce07efa7c95e 5223414 fabric-manager-550_550.144.03.orig-arm64.tar.gz
+ c0575d424dcc873ebcf58402591422ef 127 fabric-manager-550_550.144.03.orig.tar.gz
+ 580ee9df9d5a40fa5c25d05d83c55abe 6896 fabric-manager-550_550.144.03-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha1:
+ 63d2624add982975fddb57108651827c747ebde5 2990 fabric-manager-550_550.144.03-0ubuntu0.24.04.1.dsc
+ ab285ba05674f9eaca313a39e0663bf927aed2b3 5789872 fabric-manager-550_550.144.03.orig-amd64.tar.gz
+ cbfb50793c097c7cfda9bcab10b9331f39075bc7 5223414 fabric-manager-550_550.144.03.orig-arm64.tar.gz
+ 7703db1e87083e00a9eee0c038b346f68c26e970 127 fabric-manager-550_550.144.03.orig.tar.gz
+ 52bce8e2858c8519086dc4ecaadc526a147b9475 6896 fabric-manager-550_550.144.03-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha256:
+ d3b7089d5e0dbc271072139ad666bb8811be80fea930da4e0a60d38fcbfe8f18 2990 fabric-manager-550_550.144.03-0ubuntu0.24.04.1.dsc
+ d096bf25f84fcc74698c2253350f1ec923af62f159a5fb1a80de801f6cb7cde9 5789872 fabric-manager-550_550.144.03.orig-amd64.tar.gz
+ 212867faf8fdd14d754ef006f59b9da54f249e979b70f67bc3ad5c537240a3de 5223414 fabric-manager-550_550.144.03.orig-arm64.tar.gz
+ ff5f1d7fc4fdec20039708c4cfed55aa4633254b8a386f368f0663502d16aed9 127 fabric-manager-550_550.144.03.orig.tar.gz
+ c7e0ec664b992cf380e2d94b5856633d3f01ee3eb0ccee9aec7cc235c4d1b820 6896 fabric-manager-550_550.144.03-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha512:
+ 8e5a5717039c3af121d9da5e93b697dc769339280990fe02d96faefebc065d84cb6e988557096f151c51d3262edf45c9088fb926a15694e22fdbe8cee48fb4a3 2990 fabric-manager-550_550.144.03-0ubuntu0.24.04.1.dsc
+ 0638681f06ac16ac12778ca709584c35bc1317e467a25d2d843cf7598318fa642427a553b151cb0e2f6407a69aad76ac1765e0a43d16cf6058c991484cc4b530 5789872 fabric-manager-550_550.144.03.orig-amd64.tar.gz
+ ac492702c4dee8392d9ef93469127d62f215dbddf6754e28cdefb48a23569c81ab829712e5ea80eb0ddbd065bacfcea3c796860baefe8021683338dd13d51c0f 5223414 fabric-manager-550_550.144.03.orig-arm64.tar.gz
+ 5ba4b36ebf09f37f476eacca78e11f9caf71b1afbb6a8915f90b5e5047c028a8ef7c5bce3334677e03441ee4bd310192634facd0f504efb1b02e7a2aa8d225dd 127 fabric-manager-550_550.144.03.orig.tar.gz
+ 0eb5e6206f31fda82bf9e17ad9fdb804984f93d7c3b7a21c3eb060c25ddbda7a70930dfd0ec9abfc51c7942ce4b94e530fe722cb862144c47117bdeb2b242fe8 6896 fabric-manager-550_550.144.03-0ubuntu0.24.04.1.debian.tar.xz
+Autobuild: yes
+
+Package: fabric-manager-570
+Format: 3.0 (quilt)
+Binary: nvidia-fabricmanager-570, nvidia-fabricmanager-dev-570, cuda-drivers-fabricmanager-570
+Architecture: amd64 arm64
+Version: 570.86.15-0ubuntu0.24.04.1
+Priority: optional
+Section: multiverse/libs
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Uploaders:  Kuba Pawlak <kuba.pawlak@canonical.com>,
+Standards-Version: 4.1.4
+Build-Depends: debhelper (>= 10)
+Vcs-Browser: https://github.com/canonical/apt-packaging-fabric-manager/tree/570
+Vcs-Git: git://github.com/canonical/apt-packaging-fabric-manager.git
+Directory: pool/multiverse/f/fabric-manager-570
+Package-List:
+ cuda-drivers-fabricmanager-570 deb non-free/libs optional arch=amd64,arm64
+ nvidia-fabricmanager-570 deb non-free/libs optional arch=amd64,arm64
+ nvidia-fabricmanager-dev-570 deb non-free/libs optional arch=amd64,arm64
+Files:
+ e45cdd9c76ab9fc30b6736e5a5bf8f61 2977 fabric-manager-570_570.86.15-0ubuntu0.24.04.1.dsc
+ 5dc220d5027699495e3c368eea9fb63a 8044431 fabric-manager-570_570.86.15.orig-amd64.tar.gz
+ 73f243f0f8d1c1e4e9b64ef654761009 7308739 fabric-manager-570_570.86.15.orig-arm64.tar.gz
+ a99906fd7eb1e4b908c3cef1880b5d72 128 fabric-manager-570_570.86.15.orig.tar.gz
+ a6cafc504c90f1ab77c61d24c558c7bb 6848 fabric-manager-570_570.86.15-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha1:
+ 5cb64e7dac66973cec9012ba167c04f1df4d5123 2977 fabric-manager-570_570.86.15-0ubuntu0.24.04.1.dsc
+ 93efbd669e7bbbd6365c4e3fc404d7b946f49e34 8044431 fabric-manager-570_570.86.15.orig-amd64.tar.gz
+ ac3a8eb7b48cf52c78eb8161ae7a44c9040128a3 7308739 fabric-manager-570_570.86.15.orig-arm64.tar.gz
+ 4a89f99aef1180749712b788958028e71ea99578 128 fabric-manager-570_570.86.15.orig.tar.gz
+ da0e44faa0060a5f5fa705b2dad02f90d11507af 6848 fabric-manager-570_570.86.15-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha256:
+ 20513104e645800336d5c9935af5de563f197d025275688eb7011778d2375f92 2977 fabric-manager-570_570.86.15-0ubuntu0.24.04.1.dsc
+ d899fc0b412a1f994f973e491a8642247cf6887a516c7a3e3149b45095d87f69 8044431 fabric-manager-570_570.86.15.orig-amd64.tar.gz
+ 2820699340b81e8e733b68ca150405c8d5fc0aade597de5f6dbbac0caa3d7266 7308739 fabric-manager-570_570.86.15.orig-arm64.tar.gz
+ e85ac63cfe7f0d6c0d9db0debebcf16956ed50054a1c0c21048974794e721516 128 fabric-manager-570_570.86.15.orig.tar.gz
+ 66495fc1d6866319de5cdef5a1154ee4f743af38e3c16d7fba508829cda723bc 6848 fabric-manager-570_570.86.15-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha512:
+ 6c0bd3025c38385fb1a9447033f07779d104d724b5ef9fa14c8fc9f108846dcb7279b9a3dd6599b4dcf8c25a7376431436174ba744e6839f9df3a590d0bda92f 2977 fabric-manager-570_570.86.15-0ubuntu0.24.04.1.dsc
+ d0070fa52485d0e286e82064c77f4f7b3fd9e979afe4b8bc5bd853b6c4779f7b69f70d061c545eda112c8a2d332f2b09307d4bbe5dce8f228a060f5af5360d3c 8044431 fabric-manager-570_570.86.15.orig-amd64.tar.gz
+ 7b533b2e484950b16347b5fbeb86f699808fb5a938e33da261aecb9489a937e892f7b86df15aab36724e6e17da8fcc812de8f17ca406a6612661f3e9f30f6e93 7308739 fabric-manager-570_570.86.15.orig-arm64.tar.gz
+ 57d5528cab4488c62c82da2b3aa1bed1ad5f5b84db7bf60056fd1ec22e9dcec9620cd3dd262b75d22aca7b2744f36fe92c9f63c6b57aefb779ab02728db6df90 128 fabric-manager-570_570.86.15.orig.tar.gz
+ ec3ebca42f86862495d11c6dd5b151d4ca77a55745f72fe991a92275820ef0a6870d9719d5635ad1e9f3493c89024743e77b57152f6658bc3f4922357db0015f 6848 fabric-manager-570_570.86.15-0ubuntu0.24.04.1.debian.tar.xz
+Autobuild: yes
+
+Package: geoipupdate
+Format: 3.0 (quilt)
+Binary: geoipupdate
+Architecture: any
+Version: 6.1.0-1ubuntu0.2
+Section: multiverse/misc
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Original-Maintainer: Faidon Liambotis <paravoid@debian.org>
+Standards-Version: 4.6.2
+Build-Depends: debhelper-compat (= 13), dh-sequence-golang
+Build-Depends-Arch: golang-any, golang-github-cenkalti-backoff-dev, golang-github-gofrs-flock-dev, golang-github-pkg-errors-dev, golang-github-spf13-pflag-dev, golang-github-stretchr-testify-dev, golang-golang-x-sync-dev, pandoc <!nodoc>
+Testsuite: autopkgtest-pkg-go
+Homepage: https://dev.maxmind.com/geoip/updating-databases
+Vcs-Browser: https://salsa.debian.org/debian/geoipupdate
+Vcs-Git: https://salsa.debian.org/debian/geoipupdate.git
+Directory: pool/multiverse/g/geoipupdate
+Package-List:
+ geoipupdate deb contrib/net optional arch=any
+Files:
+ 744ba3c173ed40040322b4fd49da11a2 2327 geoipupdate_6.1.0-1ubuntu0.2.dsc
+ 4c79f5bcd6d5b77c06cf21fceb2904f1 47557 geoipupdate_6.1.0.orig.tar.gz
+ 7575e9bd17901594254f9e159185a6c5 6440 geoipupdate_6.1.0-1ubuntu0.2.debian.tar.xz
+Checksums-Sha1:
+ 5abea184377f5199e2927dd4992f7deb001b0135 2327 geoipupdate_6.1.0-1ubuntu0.2.dsc
+ 87e0f430e6fdf2009b89f5e3ea11f4048e2e9624 47557 geoipupdate_6.1.0.orig.tar.gz
+ 5eba78c506e9be0f6869d5ca17563d45c4408fda 6440 geoipupdate_6.1.0-1ubuntu0.2.debian.tar.xz
+Checksums-Sha256:
+ c9ead5c73e73f306b48e36b33cbf08ca47cd0f96e02a4aa32bdb8523aabdf033 2327 geoipupdate_6.1.0-1ubuntu0.2.dsc
+ 71a5b3125bb7d5f1b78382ec37a0d3e966caea3215689531a32cddc7e4437ca6 47557 geoipupdate_6.1.0.orig.tar.gz
+ 0c54b49cd31603898329b907b5113db3c6edaa4f2c60da66be4288866a18e5a8 6440 geoipupdate_6.1.0-1ubuntu0.2.debian.tar.xz
+Checksums-Sha512:
+ 00b70bab659d0d10cd89b2e6824f5f0e2e47e69c81e4d618b78776c77db2e95b1ef8a3eb681438176d9b95c6206782a4ff0880f3cf9c1fdaaa31aa1170367389 2327 geoipupdate_6.1.0-1ubuntu0.2.dsc
+ b20a3101fb055ed71fe999fe924b71f6d0eb76da8bc4444f7281a3deceac1ee7d1854f3d672b93edabf152cc69551933dd951419ab484259d47f56b243e568eb 47557 geoipupdate_6.1.0.orig.tar.gz
+ 8088051c0f6beef2bfe156c2ce3350fb8179d369a102f1a4122db03a8400b8d481eef9541d9a6ec084b613c677d13057bb21e0e0e492183c35a5588e6b665281 6440 geoipupdate_6.1.0-1ubuntu0.2.debian.tar.xz
+Go-Import-Path: github.com/maxmind/geoipupdate
+
+Package: libnvidia-nscq-470
+Format: 3.0 (quilt)
+Binary: libnvidia-nscq-470, libnvidia-nscq-460
+Architecture: amd64
+Version: 470.256.02-0ubuntu0.24.04.1
+Priority: optional
+Section: multiverse/libs
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Uploaders:  Alberto Milone <alberto.milone@canonical.com>,
+Standards-Version: 4.1.4
+Build-Depends: debhelper (>= 10)
+Vcs-Browser: https://github.com/tseliot/apt-packaging-libnvidia-nscq/tree/470
+Vcs-Git: git://github.com/tseliot/apt-packaging-libnvidia-nscq.git
+Directory: pool/multiverse/libn/libnvidia-nscq-470
+Package-List:
+ libnvidia-nscq-460 deb non-free/libs optional arch=amd64
+ libnvidia-nscq-470 deb non-free/libs optional arch=amd64
+Files:
+ 815d11d7ea0e3b2ad0bca5937f5a24ca 2521 libnvidia-nscq-470_470.256.02-0ubuntu0.24.04.1.dsc
+ 16debf8ac428188ed5ac3dd9372fddb9 283130 libnvidia-nscq-470_470.256.02.orig-amd64.tar.gz
+ 6f02eff838daebce46ade8de627b687e 130 libnvidia-nscq-470_470.256.02.orig.tar.gz
+ eddbdaaf639c81f0df18f343eb32ec15 6696 libnvidia-nscq-470_470.256.02-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha1:
+ 94020dea8791dbd6fb67379481103c3bd3bff2b6 2521 libnvidia-nscq-470_470.256.02-0ubuntu0.24.04.1.dsc
+ 1c78873da2288154add7fc70dad9b4577a68ad35 283130 libnvidia-nscq-470_470.256.02.orig-amd64.tar.gz
+ e50193c9b8c3219aa102699bd8379987cbd282cc 130 libnvidia-nscq-470_470.256.02.orig.tar.gz
+ a8cf4b1a6d3fd0493fd3dcaf202053dbc77eb650 6696 libnvidia-nscq-470_470.256.02-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha256:
+ 1016f1bbc58e84f0b0e268b42ed4d93d837ad780df05e3c669918b06664ddef1 2521 libnvidia-nscq-470_470.256.02-0ubuntu0.24.04.1.dsc
+ 0457090318d2e48b5d6205d3a0dd8b4bf2f0c84b738215031cab7503d0982206 283130 libnvidia-nscq-470_470.256.02.orig-amd64.tar.gz
+ 006fc653ff9c48f8ce1e948412e4b50a6483e04f5dbbfb38ec90034db88ca65d 130 libnvidia-nscq-470_470.256.02.orig.tar.gz
+ 43a809bb73ac3474dc6019f847a36f1340145e5b61f74c3d5a59ffa1d474bcea 6696 libnvidia-nscq-470_470.256.02-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha512:
+ 70bd11319739ffa4a035c4eee4893b5eafb2e10f4acca40fcf17b72a28da8552b85bfe93fc9c81d654001cf209e782aeeac5fb0671506b0b928bfc35efd64c56 2521 libnvidia-nscq-470_470.256.02-0ubuntu0.24.04.1.dsc
+ 457f05ab92b374a9f1520fe394788ef2e7c5cefe2128327eaccbe7f5cc782ed1d2256603ae68ce325aaf2bb8c08eda039db01e254d29b3f899143505ffa94a99 283130 libnvidia-nscq-470_470.256.02.orig-amd64.tar.gz
+ 2bc57ef3ba42dbb110e12a7fd38ae7bfa7ed4a996f4497e5ae43d67e110319dd43068f1a426ebc5a1aba9909ffcb86de1fb208b5168724418ac37cbd9b3c4317 130 libnvidia-nscq-470_470.256.02.orig.tar.gz
+ 273092fddf4f9bce12b6e109fae45d0a2372a3e1ba4bd386e2b4b5da09cdaffde887f1da7244f0121728b5303e1a4ce1abbb11a964ee34b39af0b808ef0329e5 6696 libnvidia-nscq-470_470.256.02-0ubuntu0.24.04.1.debian.tar.xz
+Autobuild: yes
+
+Package: libnvidia-nscq-535
+Format: 3.0 (quilt)
+Binary: libnvidia-nscq-535
+Architecture: amd64 arm64
+Version: 535.230.02-0ubuntu0.24.04.1
+Priority: optional
+Section: multiverse/libs
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Uploaders:  Kuba Pawlak <kuba.pawlak@canonical.com>,
+Standards-Version: 4.1.4
+Build-Depends: debhelper (>= 10)
+Vcs-Browser: https://github.com/canonical/apt-packaging-libnvidia-nscq/tree/535
+Vcs-Git: git://github.com/canonical/apt-packaging-libnvidia-nscq.git
+Directory: pool/multiverse/libn/libnvidia-nscq-535
+Package-List:
+ libnvidia-nscq-535 deb non-free/libs optional arch=amd64,arm64
+Files:
+ 0cdb0eff687a668877aeda31527c58c9 2760 libnvidia-nscq-535_535.230.02-0ubuntu0.24.04.1.dsc
+ 4211e85aa65577ce66c7dd6ceb174ac8 351220 libnvidia-nscq-535_535.230.02.orig-amd64.tar.gz
+ becb395392c4f4fbf34f4adbb941ea7a 317903 libnvidia-nscq-535_535.230.02.orig-arm64.tar.gz
+ bb641095ecbc6afd8fb415e8fbee3f56 128 libnvidia-nscq-535_535.230.02.orig.tar.gz
+ 0e2071e99755534dd8688c7699b76c1b 6708 libnvidia-nscq-535_535.230.02-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha1:
+ ccea6ada8c59c62dbde3ff7e8ac7570a3da9ccbd 2760 libnvidia-nscq-535_535.230.02-0ubuntu0.24.04.1.dsc
+ 989c3669e14fcc41764d172dbf8e608a93879982 351220 libnvidia-nscq-535_535.230.02.orig-amd64.tar.gz
+ 20308b503b7a887f67cf4da6d1a287d15875584e 317903 libnvidia-nscq-535_535.230.02.orig-arm64.tar.gz
+ 186e3763b58e2adac5fd10ff9dd9896c60dd434a 128 libnvidia-nscq-535_535.230.02.orig.tar.gz
+ 64b029b765404c6a726200c0c132a3327ab0e12e 6708 libnvidia-nscq-535_535.230.02-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha256:
+ c1bbf7260425fd2a1d775db4f10eb800ea3124ce725bb9614ac77e6b767b94e8 2760 libnvidia-nscq-535_535.230.02-0ubuntu0.24.04.1.dsc
+ 2d6363e8f7ac6d2b47ec0d5a899a7c518229f983cfb958da46cabcbf247c03cf 351220 libnvidia-nscq-535_535.230.02.orig-amd64.tar.gz
+ d9b39b356571cf40b5341ce088fec85e1720f8744cbd37074cc2945ddf67dcf6 317903 libnvidia-nscq-535_535.230.02.orig-arm64.tar.gz
+ 5bce80c49c27af5ca8711b2ea8cf188d4b4b5c6257b1f30460d891ae052e5ad3 128 libnvidia-nscq-535_535.230.02.orig.tar.gz
+ bdf23005a957292c1dff1ed7778e910b50a922d53b2eca61e1ad1515c10f48cd 6708 libnvidia-nscq-535_535.230.02-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha512:
+ 47a268b0ae770ebb8667049f69503a3719c82e68f95cd3b5101c175aa6bc84eb13e2742af93991817a3dda07f7e5c46fac802136983e6f390bae72163cc71464 2760 libnvidia-nscq-535_535.230.02-0ubuntu0.24.04.1.dsc
+ b87da1a76a544a7a92193f1de84c3bb2a2e7865413ac90858c5c8886b287c1c5caac6bf663815bfcc08da2fa09f0fc4f588163248577cd5e5cda5d366f753712 351220 libnvidia-nscq-535_535.230.02.orig-amd64.tar.gz
+ 856af433b7b5c4c1b74b91ca49f40763b62a53f4dcc1a5551b1a03d6dfa1816c7007a0e165b460e797cd1d88c6edffe7560c6f085be850e9cb2df19316c25743 317903 libnvidia-nscq-535_535.230.02.orig-arm64.tar.gz
+ 4c56ffc278dcfd2190f1a51ceface21e2d6ed7c64586e717a5cfab1e224d47e4aa4f123bf2e4af5664b02f6ff4248f44b2243705301f2e00f8bc62214274dbf5 128 libnvidia-nscq-535_535.230.02.orig.tar.gz
+ 5c4fb801e852f4af28b7e85e2ac65eb640cf8474e434d3ae8c55f3a65065127436cdc31799d6a71b3369c61f1985f3e3110afc64a6f84ff4a013330e6cded430 6708 libnvidia-nscq-535_535.230.02-0ubuntu0.24.04.1.debian.tar.xz
+Autobuild: yes
+
+Package: libnvidia-nscq-550
+Format: 3.0 (quilt)
+Binary: libnvidia-nscq-550
+Architecture: amd64 arm64
+Version: 550.144.03-0ubuntu0.24.04.1
+Priority: optional
+Section: multiverse/libs
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Uploaders:  Kuba Pawlak <kuba.pawlak@canonical.com>,
+Standards-Version: 4.1.4
+Build-Depends: debhelper (>= 10)
+Vcs-Browser: https://github.com/canonical/apt-packaging-libnvidia-nscq/tree/550
+Vcs-Git: git://github.com/canonical/apt-packaging-libnvidia-nscq.git
+Directory: pool/multiverse/libn/libnvidia-nscq-550
+Package-List:
+ libnvidia-nscq-550 deb non-free/libs optional arch=amd64,arm64
+Files:
+ e59ea333d6489d6bd9390ad2d32bb64b 2760 libnvidia-nscq-550_550.144.03-0ubuntu0.24.04.1.dsc
+ 05abeb775e8eb643f44ed7afd6ca3b30 357506 libnvidia-nscq-550_550.144.03.orig-amd64.tar.gz
+ 448bd7cab96ed9742c9d88fca5a100db 323116 libnvidia-nscq-550_550.144.03.orig-arm64.tar.gz
+ f311aa46136f93bfa137f74239e23831 128 libnvidia-nscq-550_550.144.03.orig.tar.gz
+ dc72239c542d1013fa2765e719ddaabe 6432 libnvidia-nscq-550_550.144.03-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha1:
+ bb42cf21b09bb927760fc50e0f3b2fcbc49cffc9 2760 libnvidia-nscq-550_550.144.03-0ubuntu0.24.04.1.dsc
+ 5898c2181f8e3b23db7d625918f1d328e22ddbfd 357506 libnvidia-nscq-550_550.144.03.orig-amd64.tar.gz
+ fb4452d548dcd1d90f92e5979345cfd0ed0bec1d 323116 libnvidia-nscq-550_550.144.03.orig-arm64.tar.gz
+ 9348fa47d276d103f3ab8bf4c790c69ef610afeb 128 libnvidia-nscq-550_550.144.03.orig.tar.gz
+ e7e76844a986706a570accd2989b58ddffac02a6 6432 libnvidia-nscq-550_550.144.03-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha256:
+ 2b9f703f5fa79e7930ec205d6719263403d227fac492b1f24327f13778258b98 2760 libnvidia-nscq-550_550.144.03-0ubuntu0.24.04.1.dsc
+ 19500b032e52bd77a8a252268f1b6dd4e1725a1afe81846e079ef89c5ec88f33 357506 libnvidia-nscq-550_550.144.03.orig-amd64.tar.gz
+ a11461ef5e68bcdba163ee2f8cd65d99bbdc7a46d440660d837907d1b80a03ce 323116 libnvidia-nscq-550_550.144.03.orig-arm64.tar.gz
+ 7b877e40d60c40a8e1064b8050b16a3950e06488d4a694b82cd32302c28f5e80 128 libnvidia-nscq-550_550.144.03.orig.tar.gz
+ 996e5746640d833c6c87e8eb2789862bf0eb1d3f79e6841bad87bbea1006c1a1 6432 libnvidia-nscq-550_550.144.03-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha512:
+ 3a3c33479b160a5ffa5c5924822a7f645eda6182f1ba9d4cd1abc7826e5141c68a111306033dc616ba17921f71fccf254034edbaf8000801b08ad1bd5b8db1a9 2760 libnvidia-nscq-550_550.144.03-0ubuntu0.24.04.1.dsc
+ 22ab3bb863e98c9dfb5e6694f809022d9d3dffe872c992a008b1a5c76c706eea921b5f2b43306729e9b05d8f2293822c5c9073af9454327a493155e3f15ba09f 357506 libnvidia-nscq-550_550.144.03.orig-amd64.tar.gz
+ 33fde16d5bc856b7464c1ca4617dcb4755af2e9bf23ed7f20a748190f59db97b364d4ab20ff68abe3f55bc4991df2424b7cd047493f1612d53e3042c50fb8e45 323116 libnvidia-nscq-550_550.144.03.orig-arm64.tar.gz
+ 565f58fd070c2073ea796e2f9016efdda00ca0e26528b9b085f4596ade11526b67b1c33937dfc363d23b8b1b990f298dc3fadda50c7daca8fcaea7726acfcfcc 128 libnvidia-nscq-550_550.144.03.orig.tar.gz
+ 99033cdbfc42318d56c438cd13040e6ce04f439cbeebeb00ae035647070c605dacfe644ac07ca2e8f2a929499409c809250fc2e0107c4abc1eb69325c4ed0708 6432 libnvidia-nscq-550_550.144.03-0ubuntu0.24.04.1.debian.tar.xz
+Autobuild: yes
+
+Package: libnvidia-nscq-570
+Format: 3.0 (quilt)
+Binary: libnvidia-nscq-570
+Architecture: amd64 arm64
+Version: 570.86.15-0ubuntu0.24.04.1
+Priority: optional
+Section: multiverse/libs
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Uploaders:  Kuba Pawlak <kuba.pawlak@canonical.com>,
+Standards-Version: 4.1.4
+Build-Depends: debhelper (>= 10)
+Vcs-Browser: https://github.com/canonical/apt-packaging-libnvidia-nscq/tree/570
+Vcs-Git: git://github.com/canonical/apt-packaging-libnvidia-nscq.git
+Directory: pool/multiverse/libn/libnvidia-nscq-570
+Package-List:
+ libnvidia-nscq-570 deb non-free/libs optional arch=amd64,arm64
+Files:
+ 7b6df0ac8f31867500517ef3d0f8c2d6 2747 libnvidia-nscq-570_570.86.15-0ubuntu0.24.04.1.dsc
+ 3395b5dbc56d02734f84157956e7cefe 357162 libnvidia-nscq-570_570.86.15.orig-amd64.tar.gz
+ fcc330717e98231678caea8a70c8f9e9 351253 libnvidia-nscq-570_570.86.15.orig-arm64.tar.gz
+ 1c5b15772c659ed0fe4efabea1a323d5 128 libnvidia-nscq-570_570.86.15.orig.tar.gz
+ 8a366f79e7dbe87412cbf45da2ad441d 6308 libnvidia-nscq-570_570.86.15-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha1:
+ 615ed391361e710b306d998ab96fd9022a7ed6dc 2747 libnvidia-nscq-570_570.86.15-0ubuntu0.24.04.1.dsc
+ 279c22c3b084ab467614b972603e48289492f29a 357162 libnvidia-nscq-570_570.86.15.orig-amd64.tar.gz
+ e6d326ce9789c4f1bc7d9e5f0a9ea2b91f9aa5aa 351253 libnvidia-nscq-570_570.86.15.orig-arm64.tar.gz
+ 12338f4bef676f79dca6de04486268d15835ea34 128 libnvidia-nscq-570_570.86.15.orig.tar.gz
+ 3fa2aa3a79c405a7cfc9a3c3f4885d8d41ebcddc 6308 libnvidia-nscq-570_570.86.15-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha256:
+ 8a10a0b530b4c54fdc1638bbbf1176856fcbf653aa5ff54a00f843e8cbfc5929 2747 libnvidia-nscq-570_570.86.15-0ubuntu0.24.04.1.dsc
+ 2867007129953b46833c28e650cca17f30b10a77c2d06b78d5466ae2eee3a47a 357162 libnvidia-nscq-570_570.86.15.orig-amd64.tar.gz
+ 6cbf20c9c51f11f454d2c81d6fee17a4c4d6446fc54722f98106eddae3066a2e 351253 libnvidia-nscq-570_570.86.15.orig-arm64.tar.gz
+ 6885b59e3e1c2a671c0b4ddd661e5b4d70174baa0891921778267a6977d7dd04 128 libnvidia-nscq-570_570.86.15.orig.tar.gz
+ 0ff32fb8a5955a859c952eb6e6bd51cd09865735c73906585ef915a1bb383667 6308 libnvidia-nscq-570_570.86.15-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha512:
+ 9ea457645d0de4026df87b627b395a5c0d649596663b4f0537eb23aaec86b0193ea77d715ce63ed2a3524fe0129de3a0eac0cb5d1516d97d046fc8428914a4d7 2747 libnvidia-nscq-570_570.86.15-0ubuntu0.24.04.1.dsc
+ 965090693bb7f53f64d5c3e05eff56100df2f0566cd3a2f348baf265100e66166e20ddda01f235bfabf98fed74e7986b5c3136f827ffc2ed41f2f3f94a0cadfa 357162 libnvidia-nscq-570_570.86.15.orig-amd64.tar.gz
+ 173e293ba9a87bc15eaa36ff2bb59283b21403357622fb967534675cb842bbe210a687f098dfa52c1ef48e6002f8db22afa9d9cbf71f0a8f460a5cbe53eb8821 351253 libnvidia-nscq-570_570.86.15.orig-arm64.tar.gz
+ baf8fa62e395db528faadb4c8ca4fd488e6e2971adcc3d318c5dab67edbc5aa0cdb3fbb13b03ebda1c9c2627f7b822ae88231350187581be7d2e1439f363598d 128 libnvidia-nscq-570_570.86.15.orig.tar.gz
+ 96597ca710340784bc6df0a5d3da788f1c260915fd328ce122e5e8b3bed3f53ae170efbafc46b9d50b16de1fa0c03297134b8a4d36932304b806059dd2d1ce83 6308 libnvidia-nscq-570_570.86.15-0ubuntu0.24.04.1.debian.tar.xz
+Autobuild: yes
+
+Package: nvidia-imex-550
+Format: 3.0 (quilt)
+Binary: nvidia-imex-550
+Architecture: amd64 arm64
+Version: 550.144.03-0ubuntu0.24.04.1
+Priority: optional
+Section: multiverse/libs
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Uploaders:  Kuba Pawlak <kuba.pawlak@canonical.com>,
+Standards-Version: 1.0.0
+Build-Depends: debhelper (>= 10)
+Vcs-Browser: https://github.com/canonical/apt-packaging-imex/tree/550
+Vcs-Git: git://github.com/canonical/apt-packaging-imex.git
+Directory: pool/multiverse/n/nvidia-imex-550
+Package-List:
+ nvidia-imex-550 deb non-free/libs optional arch=amd64,arm64
+Files:
+ 61f2f3119ad562b412cc10f738426b66 2701 nvidia-imex-550_550.144.03-0ubuntu0.24.04.1.dsc
+ c00b9ee82bbb873bbb285c5240339f1b 7303667 nvidia-imex-550_550.144.03.orig-amd64.tar.gz
+ 08f010fddc643eb22f1e67c2d4e2da4d 6503444 nvidia-imex-550_550.144.03.orig-arm64.tar.gz
+ ea188bb8cec7dd2c0e51b33bb50851d0 126 nvidia-imex-550_550.144.03.orig.tar.gz
+ 105462210940b5ea75bb72abbc2ec59d 6296 nvidia-imex-550_550.144.03-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha1:
+ 5ca38932eb09cc7076aba5272b73ad178c3cd25c 2701 nvidia-imex-550_550.144.03-0ubuntu0.24.04.1.dsc
+ d02078e3cd5722fecadcf8eea4c70a76bff1a70b 7303667 nvidia-imex-550_550.144.03.orig-amd64.tar.gz
+ 055dda5dd0704d0d810ea478dcfa45febcb32f4f 6503444 nvidia-imex-550_550.144.03.orig-arm64.tar.gz
+ 7c88cde8bffead076869821c9941697e7e0b6d47 126 nvidia-imex-550_550.144.03.orig.tar.gz
+ 89fc558fa198391839c2f97e814b603e7516c2e4 6296 nvidia-imex-550_550.144.03-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha256:
+ 7f383a644cb54e8f9679faa380e4943080ad5fb58993b47e7478558d87adfab7 2701 nvidia-imex-550_550.144.03-0ubuntu0.24.04.1.dsc
+ 5f551bc12aa953807196c41b3ab42e0caea98a5dca9e800b2d141ca9cd4f61c2 7303667 nvidia-imex-550_550.144.03.orig-amd64.tar.gz
+ dcb33e4713eddb8b71b53859151b208f1e025f816c104af8efe5e84abb7d2b5a 6503444 nvidia-imex-550_550.144.03.orig-arm64.tar.gz
+ f788ba2bab0970c0a0487adc21904fbd18f30cf6aa54adec8bdcc529123c0d80 126 nvidia-imex-550_550.144.03.orig.tar.gz
+ 9a1981a686552290c24482bf3656a210bc0b4eb23f6c4550ac5000c322d208f9 6296 nvidia-imex-550_550.144.03-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha512:
+ a76600e10b669d4c0b52a06a420fc503ffe6cfbe3dfee3a2b571acc6d0c87e29ac0637a7e0ef27a50a1e96dc70203b9be243b06e70a3b6aef30d229629a0ac48 2701 nvidia-imex-550_550.144.03-0ubuntu0.24.04.1.dsc
+ 67a1a3b1db77e21416346dab67689bd3e48376c078172e78d214afca6b2e70cd391f2a2c8c929f80b1b70f5694f2d3edfdfee60b7a661151cf7a75a46f1aafd8 7303667 nvidia-imex-550_550.144.03.orig-amd64.tar.gz
+ d991536206d6794afc063d197bc512d0cbeddf78237098ab71f28b0f655385487d582e3cf0d64fd31638236208221d7aef844a3fee6a4f996257db48609658ec 6503444 nvidia-imex-550_550.144.03.orig-arm64.tar.gz
+ 4f31a950276609676d8bd5281a4990b5f628dc8eea3e8603504730fc22ec514411858a89bcaf52686ed62a2a77725b8b24bddb2207bce7b75da01d9ef70ba35d 126 nvidia-imex-550_550.144.03.orig.tar.gz
+ a7ee5a3f60489798861cbc3e4df47c50c588d330b5f735ee76556503ded64848293000a3a88796fa542f6ff1e3d413ae82de1b32c6fd23f7b546fe6a927ebbf9 6296 nvidia-imex-550_550.144.03-0ubuntu0.24.04.1.debian.tar.xz
+Autobuild: yes
+
+Package: nvidia-imex-570
+Format: 3.0 (quilt)
+Binary: nvidia-imex-570
+Architecture: amd64 arm64
+Version: 570.86.15-0ubuntu0.24.04.1
+Priority: optional
+Section: multiverse/libs
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Uploaders:  Kuba Pawlak <kuba.pawlak@canonical.com>,
+Standards-Version: 1.0.0
+Build-Depends: debhelper (>= 10)
+Vcs-Browser: https://github.com/canonical/apt-packaging-imex/tree/550
+Vcs-Git: git://github.com/canonical/apt-packaging-imex.git
+Directory: pool/multiverse/n/nvidia-imex-570
+Package-List:
+ nvidia-imex-570 deb non-free/libs optional arch=amd64,arm64
+Files:
+ 2f0089633b851f03bf08e9cbd2cdb018 2688 nvidia-imex-570_570.86.15-0ubuntu0.24.04.1.dsc
+ e9d6aeac8d4b75ab50883e3807939853 9673153 nvidia-imex-570_570.86.15.orig-amd64.tar.gz
+ ec5b997af8ed2c2bf1b40cf00f5f8b1f 8773400 nvidia-imex-570_570.86.15.orig-arm64.tar.gz
+ 0beb2e1fbe6834ad4e801ac9f123c5d1 127 nvidia-imex-570_570.86.15.orig.tar.gz
+ fe076a1fe10a3d4cdca11aeeb7454498 6200 nvidia-imex-570_570.86.15-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha1:
+ 35b86c104ee903a2a7bf620587a044a13cbadad3 2688 nvidia-imex-570_570.86.15-0ubuntu0.24.04.1.dsc
+ 4db1b4936080d87f0298d6b27a842f5910bc40c1 9673153 nvidia-imex-570_570.86.15.orig-amd64.tar.gz
+ 68fb550f0025ee4c220385a6ecd1a683f46d6aa3 8773400 nvidia-imex-570_570.86.15.orig-arm64.tar.gz
+ 7df5ecbe16bbdc806c56161ae370e5fde58f065e 127 nvidia-imex-570_570.86.15.orig.tar.gz
+ 03f6f27eda5818860b5949582f97482ebc6056a6 6200 nvidia-imex-570_570.86.15-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha256:
+ 4e790bc39e217eaf5eb25742e2a42fc79e418312ebef774ced14eb819fe25481 2688 nvidia-imex-570_570.86.15-0ubuntu0.24.04.1.dsc
+ f71b14a55e0a59e1a068bd6f505fabe6bd17f9d1d92d5f16d57a9c9b88c9bb59 9673153 nvidia-imex-570_570.86.15.orig-amd64.tar.gz
+ af0d91b2bdd61df49a50d8f686095a2b2601d6ca782b159d40518cb73b15b579 8773400 nvidia-imex-570_570.86.15.orig-arm64.tar.gz
+ acf0b3dae712701731b0ba1cf6b8ca34b8199b47dde6de20cd1378bfa0caca77 127 nvidia-imex-570_570.86.15.orig.tar.gz
+ 3c898094894799443e79a89334b48608259ab1c1316c244e49c63d01d1d71181 6200 nvidia-imex-570_570.86.15-0ubuntu0.24.04.1.debian.tar.xz
+Checksums-Sha512:
+ ec255938dea1e62d4b88f6194c3f478059a30d9c4d9a681f4856baa8c19e61cf9a591680bd878b34220b8abe562a80b961d44dcd59a32b09aba9159721fa1554 2688 nvidia-imex-570_570.86.15-0ubuntu0.24.04.1.dsc
+ fb3daaee6ad73b1c56bdc4ac7b1e981a0a7103c82dc3fad0c0126ee80c541e36ecae82a6860f4653d7b51a8f56a600d2decc5f1bf72c8243692b0da99359fd44 9673153 nvidia-imex-570_570.86.15.orig-amd64.tar.gz
+ ef654ac9349ba90f7788716ff5320b65835353f15444f85d1cf63539a58e57d65899ef76256f6975ab445230a05d05eb22a5b826273a505b5890da2a943d63b6 8773400 nvidia-imex-570_570.86.15.orig-arm64.tar.gz
+ 47a90c159dcb6681b8d10fd637f7ca1c5016a0ec250241215cb4258cf7cc7db0bf4519ef3cd417bb3393df9b6c28aa3a621b53482592a1b1b42e0c2609eba5e0 127 nvidia-imex-570_570.86.15.orig.tar.gz
+ ce3d5fed6aa3bc0a4f88196e728f96d744ed400c5685d209a12c3e6017d88a63cf86485b69f3f1e46857f2218647ae6fa7f04dc2e628f2e47a1622fa9d365859 6200 nvidia-imex-570_570.86.15-0ubuntu0.24.04.1.debian.tar.xz
+Autobuild: yes
+

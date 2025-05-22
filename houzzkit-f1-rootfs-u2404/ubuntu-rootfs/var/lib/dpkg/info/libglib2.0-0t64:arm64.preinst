@@ -1,0 +1,48 @@
+#!/bin/sh
+# Copyright 2024 Simon McVittie
+# SPDX-License-Identifier: LGPL-2.1-or-later
+
+set -e
+
+# Clean up libglib2.0-0:*.postrm, so that when libglib2.0-0 is purged, it
+# will not delete non-dpkg-managed files that have been taken over by
+# libglib2.0-0t64, most problematically
+# /usr/share/glib-2.0/schemas/gschemas.compiled.
+# See https://bugs.debian.org/1065022, https://bugs.debian.org/1065170.
+# TODO: When, if ever, can we safely remove this?
+case "$1" in
+    (install|upgrade)
+        # Do this cleanup on upgrade from any version older than the one that
+        # introduced this change to experimental.
+        #
+        # We also need to do this cleanup on new installations of
+        # libglib2.0-0t64 (because any new installation might be replacing
+        # libglib2.0-0) so treat an empty version as being arbitrarily old.
+        if dpkg --compare-versions "${2:-}" lt "2.79.3-3"
+        then
+            # If there are several multiarch instances, they might have been
+            # removed but not purged, in which case purging them (perhaps
+            # much later, and perhaps without installing libglib2.0-0t64 of
+            # the corresponding architecture) would still remove
+            # /usr/share/glib-2.0/schemas/gschemas.compiled; so instead of
+            # only doing this cleanup for the current architecture, we attempt
+            # to clean up all multiarch instances the first time any single
+            # instance is installed or upgraded.
+            for arch in $(dpkg --print-architecture) $(dpkg --print-foreign-architectures)
+            do
+                if old_postrm=$(dpkg-query --control-path "libglib2.0-0:$arch" postrm 2>/dev/null) \
+                    && [ -n "$old_postrm" ] \
+                    && [ -e "$old_postrm" ]
+                then
+                    echo "libglib2.0-0t64.preinst: Removing $old_postrm to avoid" \
+                        "loss of /usr/share/glib-2.0/schemas/gschemas.compiled..."
+                    rm -f -v "$old_postrm"
+                fi
+            done
+        fi
+        ;;
+esac
+
+
+
+# vim:set sw=4 sts=4 et:

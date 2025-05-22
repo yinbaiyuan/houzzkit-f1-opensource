@@ -1,0 +1,6 @@
+5f79171322124bd75423a59985f15a3a  usr/lib/aarch64-linux-gnu/libieee1284.so.3.2.2
+259bce19dd797426553dc9f9533b2136  usr/share/doc/libieee1284-3t64/README
+008cc7c1a1232b55b01445475879a222  usr/share/doc/libieee1284-3t64/TODO
+6981c393430b15e2e829c200925141f5  usr/share/doc/libieee1284-3t64/changelog.Debian.gz
+00f439883a78d50e1af27787913ecd05  usr/share/doc/libieee1284-3t64/copyright
+a2cde234eac802db9f0d012b13d7fed8  usr/share/lintian/overrides/libieee1284-3t64

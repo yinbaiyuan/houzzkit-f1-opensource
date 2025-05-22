@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/lib
+/usr/lib/aarch64-linux-gnu
+/usr/lib/aarch64-linux-gnu/libmtp.so.9.4.0
+/usr/share
+/usr/share/doc
+/usr/share/doc/libmtp9t64
+/usr/share/doc/libmtp9t64/AUTHORS
+/usr/share/doc/libmtp9t64/README.gz
+/usr/share/doc/libmtp9t64/TODO.gz
+/usr/share/doc/libmtp9t64/changelog.Debian.gz
+/usr/share/doc/libmtp9t64/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libmtp9t64
+/usr/lib/aarch64-linux-gnu/libmtp.so.9

@@ -1,0 +1,6 @@
+/etc
+/etc/dhcp
+/etc/dhcp/dhclient-exit-hooks.d
+/etc/dhcp/dhclient-exit-hooks.d/timesyncd
+/etc/systemd
+/etc/systemd/timesyncd.conf

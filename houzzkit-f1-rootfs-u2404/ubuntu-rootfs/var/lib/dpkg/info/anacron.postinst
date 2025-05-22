@@ -1,0 +1,100 @@
+#!/bin/sh
+
+set -e
+
+# Workaround an issue when upgrading from anacron 2.3-33 (LP: #2006589)
+# (this comment is copy-pasted across preinst and postinst scripts)
+#
+# anacron 2.3-33 has a bug where its postrm script unconditionaly removes the
+# systemd service and timer files, thus disabling them; this issue only gets
+# triggered upon package removal or upgrade since upgrades call the postrm
+# script of the previous package version
+#
+# We work around this bug by backing up the corresponding files during our
+# preinst and restoring them in our postinst.
+
+SERVICE_TIMER_STATUS_DIR="/var/lib/dpkg/anacron-service-timer-status"
+
+restore_service_timer() {
+	local origin
+	local backup
+	local name
+
+	origin="$1"
+	backup="${SERVICE_TIMER_STATUS_DIR}/$2"
+
+	name="$(basename "${origin}")"
+
+	if [ -e "${backup}" ]; then
+		if ! [ -e "${origin}" ]; then
+			mv "${backup}" "${origin}"
+			echo "Warning: ${name} was probably disabled moments ago during the upgrade from anacron 2.3-33; re-enabling now (pointing to \`$(readlink "${origin}")'"
+		else
+			echo "Warning: found a backup for ${name} but a file exists at the original location; please check its status and configuration; backup is available at \`${backup}'"
+		fi
+	else
+		echo "Warning: no backup for ${name} at \`${backup}'; check its configuration"
+	fi
+}
+
+if [ "$1" = "configure" ] && [ "$2" = "2.3-33ubuntu1" ]; then
+	restore_service_timer '/etc/systemd/system/multi-user.target.wants/anacron.service' "anacron-service-backup"
+	restore_service_timer '/etc/systemd/system/timers.target.wants/anacron.timer' "anacron-timer-backup"
+	rmdir --ignore-fail-on-non-empty "${SERVICE_TIMER_STATUS_DIR}"
+fi
+
+# Automatically added by dh_installinit/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -x "/etc/init.d/anacron" ]; then
+		update-rc.d anacron defaults >/dev/null || exit 1
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	# The following line should be removed in trixie or trixie+1
+	deb-systemd-helper unmask 'anacron.service' >/dev/null || true
+
+	# was-enabled defaults to true, so new installations run enable.
+	if deb-systemd-helper --quiet was-enabled 'anacron.service'; then
+		# Enables the unit on first installation, creates new
+		# symlinks on upgrades if the unit file has changed.
+		deb-systemd-helper enable 'anacron.service' >/dev/null || true
+	else
+		# Update the statefile to add new symlinks (if any), which need to be
+		# cleaned up on purge. Also remove old symlinks.
+		deb-systemd-helper update-state 'anacron.service' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	# The following line should be removed in trixie or trixie+1
+	deb-systemd-helper unmask 'anacron.timer' >/dev/null || true
+
+	# was-enabled defaults to true, so new installations run enable.
+	if deb-systemd-helper --quiet was-enabled 'anacron.timer'; then
+		# Enables the unit on first installation, creates new
+		# symlinks on upgrades if the unit file has changed.
+		deb-systemd-helper enable 'anacron.timer' >/dev/null || true
+	else
+		# Update the statefile to add new symlinks (if any), which need to be
+		# cleaned up on purge. Also remove old symlinks.
+		deb-systemd-helper update-state 'anacron.timer' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -d /run/systemd/system ]; then
+		systemctl --system daemon-reload >/dev/null || true
+		if [ -n "$2" ]; then
+			_dh_action=restart
+		else
+			_dh_action=start
+		fi
+		deb-systemd-invoke $_dh_action 'anacron.service' 'anacron.timer' >/dev/null || true
+	fi
+fi
+# End automatically added section
+

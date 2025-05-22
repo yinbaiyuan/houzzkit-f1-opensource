@@ -1,0 +1,29 @@
+#!/bin/sh
+set -e
+
+if [ ! -d /etc/network ]; then
+  mkdir -p /etc/network
+fi
+
+if [ -f /etc/network/interfaces ] && ! grep -q '^[^#]' /etc/network/interfaces
+then
+  f=/etc/network/interfaces
+  if [ `md5sum < $f | cut -f1 -d ' '` = "4ed352919f69a77ad302ad1593204405" ]; then
+    if [ `wc -c < /etc/network/interfaces` -eq 2466 ]; then
+      echo -n "Removing old dummy /etc/network/interfaces: "
+      rm /etc/network/interfaces
+      echo "done."
+    fi
+  fi
+fi
+
+# Automatically added by dh_installdeb/13.13ubuntu1
+dpkg-maintscript-helper rm_conffile /etc/network/if-up.d/upstart 0.8.29\~ ifupdown -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/network/if-down.d/upstart 0.8.29\~ ifupdown -- "$@"
+# End automatically added section
+# Automatically added by dh_installinit/13.13ubuntu1
+if [ "$1" = "install" ] && [ -n "$2" ] && [ -e "/etc/init.d/networking" ] ; then
+	chmod +x "/etc/init.d/networking" >/dev/null || true
+fi
+# End automatically added section
+

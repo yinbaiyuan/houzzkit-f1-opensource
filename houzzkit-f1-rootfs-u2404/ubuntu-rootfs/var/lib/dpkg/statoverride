@@ -1,0 +1,5 @@
+root _chrony 640 /etc/chrony/chrony.keys
+root crontab 2755 /usr/bin/crontab
+_chrony _chrony 750 /var/lib/chrony
+root messagebus 4754 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
+_chrony _chrony 750 /var/log/chrony

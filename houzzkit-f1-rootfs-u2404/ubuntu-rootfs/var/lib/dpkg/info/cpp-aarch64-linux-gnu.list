@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/bin
+/usr/share
+/usr/share/doc
+/usr/share/doc/cpp-aarch64-linux-gnu
+/usr/share/doc/cpp-aarch64-linux-gnu/changelog.gz
+/usr/share/doc/cpp-aarch64-linux-gnu/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/cpp-aarch64-linux-gnu
+/usr/share/man
+/usr/share/man/man1
+/usr/bin/aarch64-linux-gnu-cpp
+/usr/share/man/man1/aarch64-linux-gnu-cpp.1.gz

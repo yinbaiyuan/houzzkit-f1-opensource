@@ -1,0 +1,103 @@
+#!/bin/sh
+
+set -e
+
+_systemctl() {
+    if [ -z "$DPKG_ROOT" ] && [ -d /run/systemd/system ]; then
+        systemctl "$@"
+    fi
+}
+
+_update_catalog() {
+    journalctl ${DPKG_ROOT:+--root="$DPKG_ROOT"} --update-catalog || true
+}
+
+_update_binfmt() {
+    _systemctl restart systemd-binfmt.service || true
+}
+
+# Update Message Catalogs database and binfmt registrations in response to dpkg triggers
+if [ "$1" = "triggered" ]; then
+    shift
+    for trigger in $@; do
+        case $trigger in
+            /usr/lib/systemd/catalog)
+                _update_catalog
+                ;;
+            /usr/lib/binfmt.d)
+                _update_binfmt
+                ;;
+        esac
+    done
+    exit 0
+fi
+
+# Enable getty, remote-fs.target and systemd-pstore by default on new installs
+if [ -z "$2" ]; then
+    systemctl ${DPKG_ROOT:+--root="$DPKG_ROOT"} enable getty@tty1.service || true
+    systemctl ${DPKG_ROOT:+--root="$DPKG_ROOT"} enable remote-fs.target || true
+    systemctl ${DPKG_ROOT:+--root="$DPKG_ROOT"} enable systemd-pstore.service || true
+fi
+
+# Create /etc/machine-id
+systemd-machine-id-setup ${DPKG_ROOT:+--root="$DPKG_ROOT"}
+
+# Enable persistent journal, in auto-mode, by default on new installs
+if [ -z "$2" ]; then
+    mkdir -p "$DPKG_ROOT/var/log/journal"
+fi
+
+# Initial update of the Message Catalogs database
+_update_catalog
+
+# Move the old locale file into /etc. Symlinks will be created by tmpfiles.d later
+if [ -f /etc/default/locale ] && [ ! -L /etc/default/locale ] && [ ! -f /etc/locale.conf ]; then
+    mv /etc/default/locale /etc/locale.conf
+fi
+
+# Process all tmpfiles that we ship, including any overrides in
+# runtime-dir/sysadmin-dir/other packages (e.g. rsyslog)
+#
+# Ignore if this fails, because e.g. %b will fail on WSL
+systemd-tmpfiles --create || :
+
+# Automatically added by dh_installsysusers/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+   systemd-sysusers ${DPKG_ROOT:+--root="$DPKG_ROOT"} basic.conf systemd-journal.conf systemd-network.conf
+fi
+# End automatically added section
+# Automatically added by dh_installtmpfiles/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -x "$(command -v systemd-tmpfiles)" ]; then
+		systemd-tmpfiles ${DPKG_ROOT:+--root="$DPKG_ROOT"} --create credstore.conf debian.conf home.conf journal-nocow.conf legacy.conf provision.conf systemd-network.conf systemd-nologin.conf systemd-pstore.conf systemd-tmp.conf systemd.conf tmp.conf var.conf x11.conf || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installdeb/13.14.1ubuntu5
+dpkg-maintscript-helper rm_conffile /etc/systemd/resolved.conf 251.3-2\~ -- "$@"
+# End automatically added section
+
+
+# skip daemon-reexec and try-restarts during shutdown to avoid hitting LP: #1803391
+if [ -n "$2" ] && [ "$(systemctl is-system-running)" != "stopping" ]; then
+    _systemctl daemon-reexec || true
+
+    # Restarting user managers this way was added in v250. Upgrades to Noble
+    # are supported from Mantic (systemd released as 253.5-1ubuntu6), and
+    # Jammy (systemd released as 249.11-0ubuntu3). Do not try to restart user
+    # managers on upgrades from Jammy, as it will end up killing the whole user
+    # session.
+    #
+    # LP: #2054761
+    if dpkg --compare-versions "$2" ge "253.5-1ubuntu6~"; then
+        # Re-exec user instances so that running user managers are updated too.
+        # SIGRTMIN+25 -> reexec. Note that this is asynchronous, but we can't use
+        # D-Bus as dbus-user-session is not guaranteed to be available.
+        _systemctl kill --kill-whom='main' --signal='SIGRTMIN+25' 'user@*.service' || true
+    fi
+
+    # do not restart logind
+    # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=919509
+    _systemctl try-restart systemd-networkd.service || true
+    _systemctl try-restart systemd-journald.service || true
+fi

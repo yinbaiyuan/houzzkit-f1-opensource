@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+#
+# Copyright (c) 2020 FriendlyElec Computer Tech. Co., Ltd.
+# (http://www.friendlyarm.com)
+
+[Match]
+OriginalName=*
+
+# Examples
+# KernelVersion=4.19.*
+
+[Link]
+MACAddressPolicy=persistent
+
+# Debugging NamePolicy= assignments
+# udevadm test-builtin net_id /sys/class/net/eth1
+

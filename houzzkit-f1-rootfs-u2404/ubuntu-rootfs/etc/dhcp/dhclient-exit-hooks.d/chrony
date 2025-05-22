@@ -1,0 +1,27 @@
+CHRONY_SOURCEDIR=/run/chrony-dhcp
+SERVERFILE=$CHRONY_SOURCEDIR/$interface.sources
+
+chrony_config() {
+    rm -f "$SERVERFILE"
+    mkdir -p "$CHRONY_SOURCEDIR"
+    for server in $new_ntp_servers; do
+        echo "server $server iburst" >> "$SERVERFILE"
+    done
+    /usr/bin/chronyc reload sources > /dev/null 2>&1 || :
+}
+
+chrony_restore() {
+    if [ -f "$SERVERFILE" ]; then
+        rm -f "$SERVERFILE"
+        /usr/bin/chronyc reload sources > /dev/null 2>&1 || :
+    fi
+}
+
+case $reason in
+    BOUND|RENEW|REBIND|REBOOT)
+        chrony_config
+        ;;
+    EXPIRE|FAIL|RELEASE|STOP)
+        chrony_restore
+        ;;
+esac

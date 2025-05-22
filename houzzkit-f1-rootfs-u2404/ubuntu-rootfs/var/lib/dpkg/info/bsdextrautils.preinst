@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+
+# for upgrades from bsdextrautils < 2.37.2-5
+update-alternatives --remove write /usr/bin/write.ul
+
+

@@ -1,0 +1,6 @@
+7149ecd679192123b8495af3b79d089e  usr/lib/aarch64-linux-gnu/security/pam_cap.so
+6d582de9fd11c6061f48921e73195b3c  usr/share/doc/libpam-cap/copyright
+3b051f383febdd6a8df6c4180e8e2934  usr/share/lintian/overrides/libpam-cap
+4625b9865234bdb41fe8ac78a0709904  usr/share/man/man5/capability.conf.5.gz
+c1410c73484804e517f0e3d1bf8cd707  usr/share/man/man8/pam_cap.8.gz
+597992b1cd66ad28fa4ab9664239a43d  usr/share/pam-configs/capability

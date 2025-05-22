@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/lib
+/usr/lib/aarch64-linux-gnu
+/usr/lib/aarch64-linux-gnu/libcdio.so.19.0.0
+/usr/share
+/usr/share/doc
+/usr/share/doc/libcdio19t64
+/usr/share/doc/libcdio19t64/changelog.Debian.gz
+/usr/share/doc/libcdio19t64/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libcdio19t64
+/usr/lib/aarch64-linux-gnu/libcdio.so.19

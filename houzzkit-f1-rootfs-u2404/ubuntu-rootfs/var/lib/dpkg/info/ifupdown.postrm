@@ -1,0 +1,60 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+  purge)
+    # Note: We don't remove /etc/network/interfaces
+    rm -f /etc/network/run/ifstate
+
+    if [ -L /etc/network/run ] ; then
+      rm -f /etc/network/run
+    elif [ -d /etc/network/run ] ; then
+      rmdir --ignore-fail-on-non-empty /etc/network/run
+    fi
+    ;;
+esac
+
+# Automatically added by dh_installinit/13.13ubuntu1
+if [ "$1" = "remove" ] && [ -x "/etc/init.d/networking" ] ; then
+	chmod -x "/etc/init.d/networking" >/dev/null || true
+fi
+if [ -z "${DPKG_ROOT:-}" ] && [ "$1" = "purge" ] ; then
+	update-rc.d networking remove >/dev/null
+fi
+# End automatically added section
+# Automatically added by dh_installdeb/13.13ubuntu1
+dpkg-maintscript-helper rm_conffile /etc/network/if-up.d/upstart 0.8.29\~ ifupdown -- "$@"
+dpkg-maintscript-helper rm_conffile /etc/network/if-down.d/upstart 0.8.29\~ ifupdown -- "$@"
+# End automatically added section
+# Automatically added by dh_installsystemd/13.13ubuntu1
+if [ "$1" = remove ] && [ -d /run/systemd/system ] ; then
+	systemctl --system daemon-reload >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.13ubuntu1
+if [ "$1" = "purge" ]; then
+	if [ -x "/usr/bin/deb-systemd-helper" ]; then
+		deb-systemd-helper purge 'ifupdown-wait-online.service' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.13ubuntu1
+if [ "$1" = remove ] && [ -d /run/systemd/system ] ; then
+	systemctl --system daemon-reload >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.13ubuntu1
+if [ "$1" = remove ] && [ -d /run/systemd/system ] ; then
+	systemctl --system daemon-reload >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.13ubuntu1
+if [ "$1" = "purge" ]; then
+	if [ -x "/usr/bin/deb-systemd-helper" ]; then
+		deb-systemd-helper purge 'networking.service' >/dev/null || true
+	fi
+fi
+# End automatically added section
+
+

@@ -1,0 +1,6 @@
+#
+# This file is not used if systemd is being used
+# you should run 'dpkg-reconfigure iperf3' instead of editing this file
+# set START_DAEMON="yes" to start iperf3 as a daemon
+#
+START_DAEMON="no"

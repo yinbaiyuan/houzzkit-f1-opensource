@@ -1,0 +1,38 @@
+#!/bin/bash
+
+### BEGIN INIT INFO
+# Provides:             brcm_patchram_plus
+# Required-Start:       $remote_fs $syslog
+# Required-Stop:        $remote_fs $syslog
+# Default-Start:        2 3 4 5
+# Default-Stop:
+# Short-Description:    brcm_patchram_plus
+### END INIT INFO
+
+case "$1" in
+    start|"")
+      if [ -d /sys/class/rfkill/rfkill0 -a -d /sys/module/bcmdhd ]; then
+        /usr/sbin/rfkill block 0 
+        /usr/sbin/rfkill unblock 0
+        /bin/chmod 0660 /sys/class/rfkill/rfkill0/state
+        /bin/chmod 0660 /sys/class/rfkill/rfkill0/type
+        /bin/chgrp dialout /sys/class/rfkill/rfkill0/state
+        /bin/chgrp dialout /sys/class/rfkill/rfkill0/type
+        MACADDRESS=`md5sum /sys/devices/platform/cpu/uuid | cut -b 1-12 | sed -r ':1;s/(.*[^:])([^:]{2})/\1:\2/;t1'`
+        echo $MACADDRESS > /tmp/brcm_mac.txt
+	SERIALPORT=ttySAC1
+	if [ -e /dev/ttyAMA1 ]; then
+		SERIALPORT=ttyAMA1
+	fi
+        /bin/brcm_patchram_plus -d --patchram /lib/firmware/ap6212/ --enable_hci --bd_addr $MACADDRESS --no2bytes --tosleep 5000 /dev/${SERIALPORT}
+      fi
+        ;;
+
+    stop)
+	kill `ps --no-headers -C brcm_patchram_plus -o pid`
+        ;;
+    *)
+        echo "Usage: brcm_patchram_plus start|stop" >&2
+        exit 3
+        ;;
+esac

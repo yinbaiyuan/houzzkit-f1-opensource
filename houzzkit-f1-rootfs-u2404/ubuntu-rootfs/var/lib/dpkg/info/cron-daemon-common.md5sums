@@ -1,0 +1,5 @@
+13ce14eee333c2ed40daeb1cc3180598  usr/lib/sysusers.d/cron-daemon-common.conf
+86e32573141964c50a1fc8d6164ef5c4  usr/lib/tmpfiles.d/cron-daemon-common.conf
+c3aaad583da1e33fd4f808b1d840f064  usr/share/doc/cron-daemon-common/changelog.Debian.gz
+a9ce7f7f33f910df58d78d12b6c28e4e  usr/share/doc/cron-daemon-common/copyright
+f2c45a9594a0f9900eed5973b305d966  usr/share/lintian/overrides/cron-daemon-common

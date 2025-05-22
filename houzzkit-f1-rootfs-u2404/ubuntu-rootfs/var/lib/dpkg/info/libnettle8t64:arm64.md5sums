@@ -1,0 +1,6 @@
+cb3dbd7449a90065413f6f79b8026941  usr/lib/aarch64-linux-gnu/libnettle.so.8.8
+7b60ab4ae784708ad6014c5276c13d95  usr/share/doc/libnettle8t64/NEWS.gz
+abff0ed9dfbabf2621a5f9f4534dbc4b  usr/share/doc/libnettle8t64/README
+268c2c0c2281ee4a7a7dd09c3d5f29c0  usr/share/doc/libnettle8t64/changelog.Debian.gz
+c63ab0b21dc8a83cbc4d602e8a29fa1d  usr/share/doc/libnettle8t64/copyright
+9968fe88effa29ff82f70510d2b89102  usr/share/lintian/overrides/libnettle8t64

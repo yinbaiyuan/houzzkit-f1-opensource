@@ -1,0 +1,42 @@
+abi <abi/4.0>,
+
+include <tunables/global>
+
+profile plasmashell /usr/bin/plasmashell {
+  include <abstractions/dbus-session>
+
+  capability,
+  userns,
+  network,
+  dbus,
+  mount,
+  umount,
+  remount,
+  signal,
+  mqueue,
+  unix,
+  ptrace,
+
+  /usr/lib/x86_64-linux-gnu/qt5/libexec/QtWebEngineProcess cx -> &plasmashell//QtWebEngineProcess,
+  /** pux,
+  /{,**} mrwlk,
+
+  profile QtWebEngineProcess {
+    capability,
+    userns,
+    network,
+    dbus,
+    mount,
+    umount,
+    remount,
+    signal,
+    mqueue,
+    unix,
+    ptrace,
+    /** pux,
+    /{,**} mrwlk,
+  }
+
+  # Site-specific additions and overrides.  See local/README for details.
+  include if exists <local/plasmashell>
+}

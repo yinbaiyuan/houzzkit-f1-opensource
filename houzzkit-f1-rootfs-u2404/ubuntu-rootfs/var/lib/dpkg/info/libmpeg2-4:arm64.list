@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/lib
+/usr/lib/aarch64-linux-gnu
+/usr/lib/aarch64-linux-gnu/libmpeg2.so.0.1.0
+/usr/lib/aarch64-linux-gnu/libmpeg2convert.so.0.0.0
+/usr/share
+/usr/share/doc
+/usr/share/doc/libmpeg2-4
+/usr/share/doc/libmpeg2-4/changelog.Debian.gz
+/usr/share/doc/libmpeg2-4/copyright
+/usr/share/lintian
+/usr/share/lintian/overrides
+/usr/share/lintian/overrides/libmpeg2-4
+/usr/lib/aarch64-linux-gnu/libmpeg2.so.0
+/usr/lib/aarch64-linux-gnu/libmpeg2convert.so.0

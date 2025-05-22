@@ -1,0 +1,27 @@
+#! /bin/sh
+set -e
+
+CONFAVAIL=/etc/fonts/conf.avail
+CONFDIR=/etc/fonts/conf.d
+
+wqy_conf="85-xfonts-wqy-1.conf"
+
+case "$1" in
+    purge)
+        rm $CONFDIR/$wqy_conf 2>/dev/null || true
+        rm $CONFAVAIL/$wqy_conf 2>/dev/null || true
+        ;;
+esac
+
+# Automatically added by dh_installxfonts/13.11.7ubuntu1
+if [ -x "`command -v update-fonts-dir`" ]; then
+	update-fonts-dir --x11r7-layout misc
+fi
+# End automatically added section
+# Automatically added by dh_installdebconf/13.11.7ubuntu1
+if [ "$1" = purge ] && [ -e /usr/share/debconf/confmodule ]; then
+	. /usr/share/debconf/confmodule
+	db_purge
+fi
+# End automatically added section
+

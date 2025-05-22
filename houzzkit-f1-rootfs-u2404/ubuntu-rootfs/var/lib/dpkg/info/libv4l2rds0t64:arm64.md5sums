@@ -1,0 +1,5 @@
+62d544c2af218c05e6f7229452a5f8be  usr/lib/aarch64-linux-gnu/libv4l2rds.so.0.0.0
+3a78e6ec316ed7fb0ff61b6f2d35b6e4  usr/share/doc/libv4l2rds0t64/changelog.Debian.gz
+59817f3da4d84d81697d33bcd40d3a9b  usr/share/doc/libv4l2rds0t64/changelog.gz
+1d5dfbb37776dcf8384f0140597d2528  usr/share/doc/libv4l2rds0t64/copyright
+57dabc37dc01d940f27315017e31ada1  usr/share/lintian/overrides/libv4l2rds0t64

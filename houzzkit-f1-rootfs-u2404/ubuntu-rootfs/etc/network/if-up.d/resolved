@@ -1,0 +1,131 @@
+#!/bin/sh
+#
+# Script fragment to make ifupdown supply DNS information to resolved
+#
+
+case "$ADDRFAM" in
+    inet|inet6) : ;;
+    *) exit 0 ;;
+esac
+
+if systemctl is-enabled systemd-resolved > /dev/null 2>&1; then
+    interface=$IFACE
+    if [ ! "$interface" ]; then
+        return
+    fi
+    # TODO handle lo interface settings
+    if [ "$interface" = "lo" ]; then
+        return
+    fi
+    ifindex=$(cat "/sys/class/net/$interface/ifindex")
+    if [ ! "$ifindex" ]; then
+        return
+    fi
+    mystatedir=/run/network
+    mkdir -p $mystatedir
+
+    statedir=/run/systemd/resolve/netif
+    mkdir -p $statedir
+    chown systemd-resolve:systemd-resolve $statedir
+
+    oldstate="$(mktemp)"
+    # ignore errors due to nonexistent file
+    md5sum "$mystatedir/isc-dhcp-v4-$interface" "$mystatedir/isc-dhcp-v6-$interface" "$mystatedir/ifupdown-inet-$interface" "$mystatedir/ifupdown-inet6-$interface" > "$oldstate" 2> /dev/null || true
+
+    NEW_DEFAULT_ROUTE=$IF_DNS_DEFAULT_ROUTE
+    NEW_DNS=$(echo $IF_DNS_NAMESERVERS $IF_DNS_NAMESERVER)
+    NEW_DOMAINS=$(echo $IF_DNS_DOMAIN $IF_DNS_SEARCH)
+    DNS=DNS
+    DOMAINS=DOMAINS
+    if [ "$ADDRFAM" = "inet6" ]; then
+        DNS=DNS6
+        DOMAINS=DOMAINS6
+    fi
+    if  [ -n "$NEW_DNS" ]; then
+        cat <<EOF >"$mystatedir/ifupdown-${ADDRFAM}-$interface"
+$DNS="$NEW_DNS"
+EOF
+        if  [ -n "$NEW_DOMAINS" ]; then
+            cat <<EOF >>"$mystatedir/ifupdown-${ADDRFAM}-$interface"
+$DOMAINS="$NEW_DOMAINS"
+EOF
+        fi
+    fi
+    case "$NEW_DEFAULT_ROUTE" in
+        1|yes|true|on) NEW_DEFAULT_ROUTE=yes ;;
+        0|no|false|off) NEW_DEFAULT_ROUTE=no ;;
+        *) NEW_DEFAULT_ROUTE= ;;
+    esac
+    if [ -n "$NEW_DEFAULT_ROUTE" ]; then
+        cat <<EOF >>"$mystatedir/ifupdown-${ADDRFAM}-$interface"
+DEFAULT_ROUTE="$NEW_DEFAULT_ROUTE"
+EOF
+    fi
+
+    newstate="$(mktemp)"
+    # ignore errors due to nonexistent file
+    md5sum "$mystatedir/isc-dhcp-v4-$interface" "$mystatedir/isc-dhcp-v6-$interface" "$mystatedir/ifupdown-inet-$interface" "$mystatedir/ifupdown-inet6-$interface" > "$newstate" 2> /dev/null || true
+    if ! cmp --silent "$oldstate" "$newstate" 2>/dev/null; then
+        unset DNS DNS6 DOMAINS DOMAINS6 DEFAULT_ROUTE
+        # v4 first
+        if [ -e "$mystatedir/isc-dhcp-v4-$interface" ]; then
+            . "$mystatedir/isc-dhcp-v4-$interface"
+        fi
+        # v4 manual config overrides
+        if [ -e "$mystatedir/ifupdown-inet-$interface" ]; then
+            . "$mystatedir/ifupdown-inet-$interface"
+        fi
+        # v6 preffered
+        if [ -e "$mystatedir/isc-dhcp-v6-$interface" ]; then
+            . "$mystatedir/isc-dhcp-v6-$interface"
+        fi
+        # v6 manual config overrides
+        if [ -e "$mystatedir/ifupdown-inet6-$interface" ]; then
+            . "$mystatedir/ifupdown-inet6-$interface"
+        fi
+        resolvectl_failed=
+        if [ "$DNS" ] || [ "$DNS6" ] ; then
+            cat <<EOF >"$statedir/$ifindex"
+# This is private data. Do not parse.
+LLMNR=yes
+MDNS=no
+SERVERS=$(echo $DNS6 $DNS)
+DOMAINS=$(echo $DOMAINS6 $DOMAINS)
+EOF
+            if [ -n "$DEFAULT_ROUTE" ]; then
+                cat <<EOF >>"$statedir/$ifindex"
+DEFAULT_ROUTE=$DEFAULT_ROUTE
+EOF
+            fi
+            chown systemd-resolve:systemd-resolve "$statedir/$ifindex"
+            # In addition to creating the state file (needed if we run before
+            # resolved is started), also feed the information directly to
+            # resolved.
+            if systemctl --quiet is-active systemd-resolved; then
+                resolvectl llmnr "$ifindex" yes || resolvectl_failed=$?
+                resolvectl mdns "$ifindex" no || resolvectl_failed=$?
+                if [ "$DOMAINS6" ] || [ "$DOMAINS" ]; then
+                    resolvectl domain "$ifindex" $DOMAINS6 $DOMAINS || resolvectl_failed=$?
+                else
+                    resolvectl domain "$ifindex" "" || resolvectl_failed=$?
+                fi
+                resolvectl dns "$ifindex" $DNS6 $DNS || resolvectl_failed=$?
+                if [ "$DEFAULT_ROUTE" ]; then
+                    resolvectl default-route "$ifindex" $DEFAULT_ROUTE || resolvectl_failed=$?
+                fi
+            fi
+        else
+            rm -f "$statedir/$ifindex"
+            if systemctl --quiet is-active systemd-resolved; then
+                resolvectl revert "$ifindex" || resolvectl_failed=$?
+            fi
+        fi
+
+        # resolved was running, but without dbus, it means state files
+        # will not be read & resolvectl commands failed, restart it
+        if [ "$resolvectl_failed" ]; then
+                systemctl try-restart systemd-resolved
+        fi
+    fi
+    rm -f "$oldstate" "$newstate"
+fi

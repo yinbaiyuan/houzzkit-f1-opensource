@@ -1,0 +1,5 @@
+libldb 2 libldb2 (>> 2:2.8.0+samba4.19.5+dfsg-4ubuntu9~)
+libldb-key-value-samba4 0 libldb2 (= 2:2.8.0+samba4.19.5+dfsg-4ubuntu9)
+libldb-mdb-int-samba4 0 libldb2 (= 2:2.8.0+samba4.19.5+dfsg-4ubuntu9)
+libldb-tdb-err-map-samba4 0 libldb2 (= 2:2.8.0+samba4.19.5+dfsg-4ubuntu9)
+libldb-tdb-int-samba4 0 libldb2 (= 2:2.8.0+samba4.19.5+dfsg-4ubuntu9)

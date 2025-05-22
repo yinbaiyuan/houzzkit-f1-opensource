@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+if [ "$(realpath /bin/gzip)" = /usr/bin/pigz ] ; then
+  echo "ERROR: /bin/gzip executable becomes unusable after removal of pigz!"
+  echo "See /usr/share/doc/pigz/README.Debian for details."
+  exit 1
+fi
+
+

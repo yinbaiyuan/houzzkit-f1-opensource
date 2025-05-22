@@ -1,0 +1,182 @@
+#!/bin/sh
+set -e
+
+. /usr/share/debconf/confmodule
+
+case "$1" in
+	configure)
+		if [ -z "$2" ]; then
+			# make sure the "docker" system group exists for "docker.socket" to apply it as the group on "docker.sock"
+			if ! getent group docker > /dev/null 2>&1; then
+				addgroup --system docker
+			fi
+		fi
+
+		if dpkg --compare-versions "$2" le-nl '24.0.7-0ubuntu4.1'; then
+		# A reboot is required to allow gracefully stopping containers (reload AppArmor profile) LP: #2065423
+			if [ -x /usr/share/update-notifier/notify-reboot-required ]; then
+				/usr/share/update-notifier/notify-reboot-required || true
+			fi
+		fi
+
+		# ZFS handling: create a dedicated ZFS docker dataset to handle all children containers in a single,
+		# persistent, place.
+		# Also check if zfs executable exists and if it is in $PATH.
+		# The zfs command is provided by zfs-fuse | zfsutils and they
+		# are runtime Suggested dependencies which means they are not
+		# necessarily available during configuration time (LP: #1910133).
+		if [ -x "$(command -v zfs)" ] && modinfo zfs >/dev/null 2>&1; then
+			# if there is no mountpoint /var/lib/docker:
+			# 1: create <currentpool>/var/lib/docker if doesn’t exist (zfs mount?)
+			# /var/lib with canmount off if doesn’t exist
+			# /var with canmount off if doesn’t exist
+			rpool="$(zfs mount | awk '$2=="/" {print $1}'|  cut -d/ -f1)"
+
+			if [ -n "$rpool" ]; then
+				dockermnt="$(findmnt -n -o SOURCE /var/lib/docker || true)"
+
+				# Create <currentpool>/var/lib/docker if doesn’t exist
+				if echo "$dockermnt" | grep -qE '^$|/ROOT/'; then
+					zfs create -o canmount=off "$rpool"/var 2>/dev/null || true
+					zfs create -o canmount=off "$rpool"/var/lib 2>/dev/null || true
+					if dpkg --compare-versions "$2" le-nl '19.03.8-0ubuntu2'; then
+						invoke-rc.d docker stop || true
+						mv /var/lib/docker /var/lib/docker.migrating
+					fi
+					zfs create "$rpool"/var/lib/docker 2>/dev/null || true
+					dockermnt="$rpool"/var/lib/docker
+				fi
+
+				if dpkg --compare-versions "$2" le-nl '19.03.8-0ubuntu2'; then
+					mv /var/lib/docker.migrating/* /var/lib/docker/
+					rmdir /var/lib/docker.migrating/
+					# Migrate datasets
+					for dataset in $(zfs list -H -t filesystem -o name,mountpoint,canmount -r "$rpool"/ROOT | grep -E "/var/lib/[0-9a-f]{64}(-init)?\slegacy\son" | cut -f1); do
+						dockerid=${dataset##*/}
+						zfs rename "$dataset" "$dockermnt/$dockerid" || true
+					done
+					# Purge their zsys history datasets
+					for dataset in $(zfs list -H -t snapshot -o name -r "$rpool"/var/lib/docker | grep "@autozsys_"); do
+						zfs destroy -R "$dataset" || true
+					done
+					invoke-rc.d docker start || true
+				fi
+			fi
+		fi
+
+		;;
+	abort-*)
+		# How'd we get here??
+		exit 1
+		;;
+	*)
+		;;
+esac
+
+# Restart Docker if it's running (thus this is an upgrade) and the user (via
+# debconf) tells us they're OK with that.
+#
+# The snippet below is supposed to be in a config maintscript but it is not
+# because of the following:
+#
+## When a package is installed in the system, dpkg-preconfigure (*not*
+## dpkg-reconfigure) is invoked.  If the package has debconf templates *and* a
+## .config file, then dpkg-preconfigure executes the .config script which
+## ultimately asks the debconf questions to the user.  Then, later in the
+## installation process, when the postinst script is executed, the config script
+## is once again invoked.  You might think "wait, won't that mean that the user
+## will get asked the same question(s) twice?!", and you would be right!  That's
+## one of the reasons why debconf keeps track of whether the questions have been
+## asked already (the "seen" flag in the database).
+##
+## docker.io manipulates this "seen" flag (see the "db_fset" call below) in
+## order to make sure that the user will always get asked the restart question
+## during package upgrades.  If we leave this code inside the postinst script
+## and get rid of the config script, then the question only gets asked once
+## because dpkg-preconfigure won't find a config script and won't invoke
+## debconf.  But if you move this code into a proper config script, the question
+## gets asked twice during upgrades/reinstalls.
+db_version 2.0
+db_fset docker.io/restart seen false
+if [ -n "$2" ] && [ "$1" = 'configure' ] && {
+        # either:
+        #   - we're doing "dpkg-reconfigure" (and thus need to "db_input" to make sure users can change their answer between installs/upgrades)
+        #   - we're doing install/upgrade and Docker is running (and thus it matters whether or not the user wants us to restart Docker for them)
+        [ -n "${DEBCONF_RECONFIGURE:-}" ] \
+        || invoke-rc.d --disclose-deny docker status > /dev/null 2>&1
+}; then
+        db_input high docker.io/restart || :
+        db_go || :
+        if [ -z "${DEBCONF_RECONFIGURE:-}" ]; then
+                # only perform the actual restart if we're doing install/upgrade (not during interactive "dpkg-reconfigure")
+                db_get docker.io/restart
+                if [ "$RET" = 'true' ]; then
+                        # Docker daemon appears to be running and should be restarted
+                        invoke-rc.d docker restart || :
+                fi
+        fi
+fi
+db_stop
+
+# Automatically added by dh_apparmor/4.0.1really4.0.1-0ubuntu0.24.04.3
+if [ "$1" = "configure" ]; then
+    APP_PROFILE="/etc/apparmor.d/docker.io"
+    if [ -f "$APP_PROFILE" ]; then
+        # Add the local/ include
+        LOCAL_APP_PROFILE="/etc/apparmor.d/local/docker.io"
+
+        test -e "$LOCAL_APP_PROFILE" || {
+            mkdir -p `dirname "$LOCAL_APP_PROFILE"`
+            install --mode 644 /dev/null "$LOCAL_APP_PROFILE"
+        }
+
+        # Reload the profile, including any abstraction updates
+        if aa-enabled --quiet 2>/dev/null; then
+            apparmor_parser -r -T -W "$APP_PROFILE" || true
+        fi
+    fi
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	# The following line should be removed in trixie or trixie+1
+	deb-systemd-helper unmask 'docker.service' >/dev/null || true
+
+	# was-enabled defaults to true, so new installations run enable.
+	if deb-systemd-helper --quiet was-enabled 'docker.service'; then
+		# Enables the unit on first installation, creates new
+		# symlinks on upgrades if the unit file has changed.
+		deb-systemd-helper enable 'docker.service' >/dev/null || true
+	else
+		# Update the statefile to add new symlinks (if any), which need to be
+		# cleaned up on purge. Also remove old symlinks.
+		deb-systemd-helper update-state 'docker.service' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.14.1ubuntu5
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	# The following line should be removed in trixie or trixie+1
+	deb-systemd-helper unmask 'docker.socket' >/dev/null || true
+
+	# was-enabled defaults to true, so new installations run enable.
+	if deb-systemd-helper --quiet was-enabled 'docker.socket'; then
+		# Enables the unit on first installation, creates new
+		# symlinks on upgrades if the unit file has changed.
+		deb-systemd-helper enable 'docker.socket' >/dev/null || true
+	else
+		# Update the statefile to add new symlinks (if any), which need to be
+		# cleaned up on purge. Also remove old symlinks.
+		deb-systemd-helper update-state 'docker.socket' >/dev/null || true
+	fi
+fi
+# End automatically added section
+
+
+# because we had to use "dh_installinit --no-start", we get to make sure the daemon is started on first install (and upgrades thereafter, if it isn't running)
+# (this is adapted from debhelper's "autoscripts/postinst-init")
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ]; then
+	if [ -z "${DEBCONF_RECONFIGURE:-}" ] && ! invoke-rc.d docker status > /dev/null 2>&1 ; then
+		invoke-rc.d docker start || :
+	fi
+fi
