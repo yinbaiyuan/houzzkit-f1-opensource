@@ -1,0 +1,5 @@
+[Unit]
+Description=Handle dynamically added tpm devices
+
+[Service]
+ExecStart=systemd-tmpfiles --create tpm-udev.conf

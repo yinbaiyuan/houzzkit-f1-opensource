@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: python-apt
+Version: 2.7.7+ubuntu4
+Summary: Python bindings for APT
+Author: APT Development Team
+Author-email: deity@lists.debian.org
+License: GNU GPL
+Platform: posix
+License-File: COPYING.GPL
+License-File: AUTHORS

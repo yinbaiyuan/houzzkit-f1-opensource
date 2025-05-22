@@ -1,0 +1,8 @@
+
+[security]
+
+[socks]
+PySocks!=1.5.7,>=1.5.6
+
+[use_chardet_on_py3]
+chardet<6,>=3.0.2

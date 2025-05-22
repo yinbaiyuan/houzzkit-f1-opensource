@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: ubuntu-pro-client
+Version: 8001
+Summary: Manage Ubuntu Pro support entitlements
+Home-page: https://ubuntu.com/support
+Author: Ubuntu Server Team
+Author-email: ubuntu-server@lists.ubuntu.com
+License: GPLv3
+Provides-Extra: test
+License-File: LICENSE.txt

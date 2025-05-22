@@ -1,0 +1,42 @@
+# APT News is hosted at https://motd.ubuntu.com/aptnews.json and can include
+# timely information related to apt updates available to your system.
+# This service runs in the background during an `apt update` to download the
+# latest news and set it to appear in the output of the next `apt upgrade`.
+# The script won't do anything if you've run: `pro config set apt_news=false`.
+# The script will limit network requests to at most once per 24 hours.
+# You can also host your own aptnews.json and configure your system to use it
+# with the command:
+# `pro config set apt_news_url=https://yourhostname/path/to/aptnews.json`
+
+[Unit]
+Description=Update APT News
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/lib/ubuntu-advantage/apt_news.py
+AppArmorProfile=-ubuntu_pro_apt_news
+CapabilityBoundingSet=~CAP_SYS_ADMIN
+CapabilityBoundingSet=~CAP_NET_ADMIN
+CapabilityBoundingSet=~CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=~CAP_SYS_PTRACE
+CapabilityBoundingSet=~CAP_NET_RAW
+PrivateTmp=true
+RestrictAddressFamilies=~AF_NETLINK
+RestrictAddressFamilies=~AF_PACKET
+# These may break some tests, and should be enabled carefully
+#NoNewPrivileges=true
+#PrivateDevices=true
+#ProtectControlGroups=true
+# ProtectHome=true seems to reliably break the GH integration test with a lunar lxd on jammy host
+#ProtectHome=true
+#ProtectKernelModules=true
+#ProtectKernelTunables=true
+#ProtectSystem=full
+#RestrictSUIDSGID=true
+# Unsupported in bionic
+# Suggestion from systemd.exec(5) manpage on SystemCallFilter
+#SystemCallFilter=@system-service
+#SystemCallFilter=~@mount
+#SystemCallErrorNumber=EPERM
+#ProtectClock=true
+#ProtectKernelLogs=true

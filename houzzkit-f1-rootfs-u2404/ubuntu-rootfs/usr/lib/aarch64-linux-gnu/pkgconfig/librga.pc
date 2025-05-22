@@ -1,0 +1,9 @@
+prefix=/usr
+includedir=${prefix}/include
+libdir=${prefix}/lib/aarch64-linux-gnu
+
+Name: librga
+Description: Userspace interface to Rockchip RGA 2D accelerator
+Version: 2.1.0
+Libs: -L${libdir} -lrga -pthread
+Cflags: -I${includedir} -pthread -I${includedir}/rga

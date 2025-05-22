@@ -1,0 +1,17 @@
+[Unit]
+Description=DNS SRV lookup of %I for chrony
+After=chrony.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/chrony/chrony-helper update-dnssrv-servers %I
+ProtectSystem=strict
+PrivateDevices=yes
+ProtectHome=yes
+ReadWritePaths=/run
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes

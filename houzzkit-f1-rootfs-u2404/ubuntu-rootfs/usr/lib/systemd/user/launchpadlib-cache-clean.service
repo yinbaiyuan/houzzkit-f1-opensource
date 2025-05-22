@@ -1,0 +1,7 @@
+[Unit]
+Description=Clean up old files in the Launchpadlib cache
+ConditionPathExists=%h/.launchpadlib/api.launchpad.net/cache
+
+[Service]
+Type=oneshot
+ExecStart=find %h/.launchpadlib/api.launchpad.net/cache -type f -mtime +30 -delete

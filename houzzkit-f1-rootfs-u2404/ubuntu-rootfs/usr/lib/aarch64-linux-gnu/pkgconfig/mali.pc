@@ -1,0 +1,10 @@
+prefix=/usr
+libdir=${prefix}/lib/aarch64-linux-gnu/mali
+includedir=${prefix}/include
+
+Name: mali
+Description: Mali GPU User-Space Binary Driver
+Version: 1.9.0
+Requires: libdrm, wayland-client, wayland-server
+Libs: -L${libdir} -lmali-hook -Wl,--whole-archive -lmali-hook-injector -Wl,--no-whole-archive -lmali
+Cflags: -I${includedir}

@@ -1,0 +1,9 @@
+[Unit]
+Description=Virtual filesystem service
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/libexec/gvfsd
+Type=dbus
+BusName=org.gtk.vfs.Daemon
+Slice=session.slice

@@ -1,0 +1,25 @@
+# The ESM apt cache will maintain information about what ESM updates are
+# available to a system. This information will be presented to users in the apt
+# output, or when running pro security-status. These caches are maintained
+# entirely outside the system apt configuration to avoid interference with user
+# definitions. This service updates those caches. This will only have effect
+# on releases where ESM is applicable, starting from Xenial: esm-apps for
+# every LTS, and esm-infra for systems in expanded support period after the LTS
+# expires.
+
+[Unit]
+Description=Update the local ESM caches
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/lib/ubuntu-advantage/esm_cache.py
+AppArmorProfile=-ubuntu_pro_esm_cache
+CapabilityBoundingSet=~CAP_SYS_ADMIN
+CapabilityBoundingSet=~CAP_NET_ADMIN
+CapabilityBoundingSet=~CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=~CAP_SYS_PTRACE
+CapabilityBoundingSet=~CAP_NET_RAW
+PrivateTmp=true
+RestrictAddressFamilies=~AF_NETLINK
+RestrictAddressFamilies=~AF_PACKET
+

@@ -1,0 +1,11 @@
+# This file intentionally contains no hwdb rules, and serves as documentation
+# for hwdb rules shipped with systemd-hwe-hwdb.
+#
+# The systemd-hwe-hwdb package contains hwdb rules for hardware enablement
+# (HWE) on Ubuntu, which are not (yet) present in systemd. The hwdb files
+# included in systemd-hwe-hwdb follow the convention of those shipped with
+# systemd. For example, HWE hwdb rules for keyboards (if any) are defined in
+# 90-keyboard-ubuntu.hwdb.
+#
+# If no additional hwdb rules are needed for a particular systemd release, this
+# may be the only file included in systemd-hwe-hwdb.

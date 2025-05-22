@@ -1,0 +1,3 @@
+# Dell Pro Rugged microphone mute
+evdev:name:Dell WMI hotkeys:dmi:bvn*:bvr*:bd*:svnDell*:pnDellProRugged*:*
+ KEYBOARD_KEY_100150=f20

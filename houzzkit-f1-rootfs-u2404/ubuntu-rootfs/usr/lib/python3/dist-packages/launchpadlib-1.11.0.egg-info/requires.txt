@@ -1,0 +1,24 @@
+httplib2
+lazr.restfulclient>=0.14.2
+lazr.uri
+six
+
+[:python_version < "3.8"]
+importlib-metadata
+
+[docs]
+Sphinx
+
+[keyring]
+keyring
+
+[test]
+coverage
+pytest
+
+[test:python_version < "3"]
+mock
+
+[testing]
+testresources
+wadllib

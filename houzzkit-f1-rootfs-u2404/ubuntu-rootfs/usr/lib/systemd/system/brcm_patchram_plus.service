@@ -1,0 +1,14 @@
+[Unit]
+Description=brcm_patchram_plus
+After=systemd-rfkill@rfkill0.service
+Before=bluetooth.service
+
+[Service]
+Type=oneshot
+ExecStart=/etc/init.d/brcm_patchram_plus start
+ExecStop=/etc/init.d/brcm_patchram_plus stop
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+Alias=brcm_patchram_plus.service

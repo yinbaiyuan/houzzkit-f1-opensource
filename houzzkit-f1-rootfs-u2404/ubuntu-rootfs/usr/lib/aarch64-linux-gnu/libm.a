@@ -1,0 +1,4 @@
+/* GNU ld script
+*/
+OUTPUT_FORMAT(elf64-littleaarch64)
+GROUP ( /usr/lib/aarch64-linux-gnu/libm-2.39.a /usr/lib/aarch64-linux-gnu/libmvec.a )

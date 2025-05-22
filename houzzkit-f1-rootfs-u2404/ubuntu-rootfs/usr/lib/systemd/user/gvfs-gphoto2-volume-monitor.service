@@ -1,0 +1,9 @@
+[Unit]
+Description=Virtual filesystem service - digital camera monitor
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/libexec/gvfs-gphoto2-volume-monitor
+Type=dbus
+BusName=org.gtk.vfs.GPhoto2VolumeMonitor
+Slice=session.slice

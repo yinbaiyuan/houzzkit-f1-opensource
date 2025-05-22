@@ -1,0 +1,11 @@
+prefix=/usr
+includedir=${prefix}/include
+libdir=${prefix}/lib/aarch64-linux-gnu
+
+Name: libv4lconvert
+Description: v4l format conversion library
+Version: 1.26.1
+Requires.private: libjpeg
+Libs: -L${libdir} -lv4lconvert
+Libs.private: -lm -lrt
+Cflags: -I${includedir}

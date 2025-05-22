@@ -1,0 +1,15 @@
+[Unit]
+Description=iperf3 server
+Documentation=man:iperf3(1)
+After=network.target auditd.service
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=15
+User=iperf3
+ExecStart=/usr/bin/iperf3 --server --interval 0
+SuccessExitStatus=1
+
+[Install]
+WantedBy=multi-user.target

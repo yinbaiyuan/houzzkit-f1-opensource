@@ -1,0 +1,9 @@
+[Unit]
+Description=Virtual filesystem service - Apple File Conduit monitor
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/libexec/gvfs-afc-volume-monitor
+Type=dbus
+BusName=org.gtk.vfs.AfcVolumeMonitor
+Slice=session.slice

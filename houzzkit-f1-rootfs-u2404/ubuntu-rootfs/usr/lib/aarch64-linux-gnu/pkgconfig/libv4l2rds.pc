@@ -1,0 +1,10 @@
+prefix=/usr
+includedir=${prefix}/include
+libdir=${prefix}/lib/aarch64-linux-gnu
+
+Name: libv4l2rds
+Description: v4l2 RDS decode library
+Version: 1.26.1
+Libs: -L${libdir} -lv4l2rds
+Libs.private: -pthread
+Cflags: -I${includedir}

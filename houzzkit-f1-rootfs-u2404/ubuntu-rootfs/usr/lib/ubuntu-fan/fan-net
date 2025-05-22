@@ -1,0 +1,44 @@
+#!/bin/sh -
+
+#
+# All interfaces managed by ifupdown get their Fan bridges configured by
+# the ifupdown hook, so here we only care about interfaces controlled by
+# systemd-networkd (FIXME: Networkmanager?)
+#
+networkd_interfaces() {
+	if [ "$(type networkctl 2>&1|grep 'not found')" != "" ]; then
+		return
+	fi
+	networkctl 2>/dev/null |
+		awk '$4=="routable" && $5=="configured"{print $2}'
+}
+networkd_cmd() {
+	local CMD="$1"
+	local IFACE
+
+	for IFACE in $(networkd_interfaces); do
+		fanctl net $CMD $IFACE
+	done
+}
+
+# See how we were called.
+case "$1" in
+    start)
+        networkd_cmd start
+    ;;
+
+    stop)
+        networkd_cmd stop
+    ;;
+
+    restart|reload|force-reload)
+        $0 stop
+        $0 start
+    ;;
+
+    *)
+        echo "Usage: $0 {start|stop|restart|reload|force-reload}"
+        exit 2
+esac
+
+exit $?

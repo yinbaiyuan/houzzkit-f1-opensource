@@ -1,0 +1,11 @@
+[Unit]
+Description=USB_ModeSwitch_%i
+Documentation=man:usb_modeswitch_dispatcher(1)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/usb_modeswitch_dispatcher --switch-mode %i
+# Testing
+#ExecStart=/bin/echo "usb_modeswitch.service: device name is %i"
+Environment="TMPDIR=/run"
+

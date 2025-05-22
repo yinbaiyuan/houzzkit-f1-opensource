@@ -1,0 +1,10 @@
+[Unit]
+Description=Trigger anacron every hour
+
+[Timer]
+OnCalendar=*-*-* 07..23:30
+RandomizedDelaySec=5m
+Persistent=true
+
+[Install]
+WantedBy=timers.target

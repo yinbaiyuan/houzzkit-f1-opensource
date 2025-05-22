@@ -1,0 +1,14 @@
+# See ua-timer.service for a description of why this exists.
+
+[Unit]
+Description=Ubuntu Pro Timer for running repeated jobs
+# Only run if attached
+ConditionPathExists=/var/lib/ubuntu-advantage/private/machine-token.json
+
+[Timer]
+OnUnitActiveSec=6h
+RandomizedDelaySec=1h
+OnStartupSec=1min
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,27 @@
+[Unit]
+Description=GnuPG cryptographic agent (ssh-agent emulation)
+Documentation=man:gpg-agent(1) man:ssh-add(1) man:ssh-agent(1) man:ssh(1)
+
+[Socket]
+ListenStream=%t/gnupg/S.gpg-agent.ssh
+
+# See the below link for why we need GSM_SKIP_SSH_AGENT_WORKAROUND:
+# https://git.gnome.org/browse/gnome-session/tree/gnome-session/main.c?h=3.24.0#n419
+# in order to avoid race condition this environment should be set before SSH_AUTH_SOCK
+ExecStartPre=systemctl --user set-environment GSM_SKIP_SSH_AGENT_WORKAROUND="true"
+
+# after creating and binding the service notify environment
+# no need to test config file because service directly pass fd overwritting the config file
+ExecStartPost=systemctl --user set-environment SSH_AUTH_SOCK="%t/gnupg/S.gpg-agent.ssh"
+
+# before unbinding stop to export that we listen to socket
+ExecStopPre=systemctl --user unset-environment SSH_AUTH_SOCK
+ExecStopPost=systemctl --user unset-environment GSM_SKIP_SSH_AGENT_WORKAROUND
+
+FileDescriptorName=ssh
+Service=gpg-agent.service
+SocketMode=0600
+DirectoryMode=0700
+
+[Install]
+WantedBy=sockets.target

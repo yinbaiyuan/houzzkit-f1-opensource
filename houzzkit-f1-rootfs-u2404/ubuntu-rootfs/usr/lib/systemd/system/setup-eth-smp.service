@@ -1,0 +1,13 @@
+[Unit]
+Description=Sets network devices IRQ and RPS 
+After=network-online.target NetworkManager.service
+BindsTo=sys-subsystem-net-devices-eth1.device
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/setup-net-smp.sh up
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
+Alias=setup-eth-smp.service

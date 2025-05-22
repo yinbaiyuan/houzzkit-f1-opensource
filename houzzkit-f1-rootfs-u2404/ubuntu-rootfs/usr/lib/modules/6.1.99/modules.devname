@@ -1,0 +1,5 @@
+# Device nodes to trigger on-demand module loading.
+cuse cuse c10:203
+tun net/tun c10:200
+hci_vhci vhci c10:137
+vhost_vsock vhost-vsock c10:241

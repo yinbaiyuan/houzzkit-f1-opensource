@@ -1,0 +1,26 @@
+[Unit]
+Description=Run anacron jobs
+After=time-sync.target
+# By default, anacron will not run when no AC power is connected to system.
+# If you are using systemd and want to run anacron even when running on
+# battery, you should create the following file with the specified content
+# and then call "systemctl daemon-reload":
+#    /etc/systemd/system/anacron.service.d/on-ac.conf:
+#        [Unit]
+#        ConditionACPower=
+# See /usr/share/doc/anacron/README.Debian for detailed information.
+ConditionACPower=true
+Documentation=man:anacron man:anacrontab
+
+[Service]
+EnvironmentFile=/etc/default/anacron
+ExecStart=/usr/sbin/anacron -d -q $ANACRON_ARGS
+IgnoreSIGPIPE=false
+KillMode=mixed
+TimeoutStopSec=infinity
+
+# Use SIGUSR1 to stop gracefully
+KillSignal=SIGUSR1
+
+[Install]
+WantedBy=multi-user.target

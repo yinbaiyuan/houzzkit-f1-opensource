@@ -1,0 +1,352 @@
+#!/bin/sh
+# ----------------------------------------------------------------------
+#    Copyright (c) 1999-2008 NOVELL (All rights reserved)
+#    Copyright (c) 2009-2018 Canonical Ltd. (All rights reserved)
+#
+#    This program is free software; you can redistribute it and/or
+#    modify it under the terms of version 2 of the GNU General Public
+#    License published by the Free Software Foundation.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program; if not, contact Novell, Inc.
+# ----------------------------------------------------------------------
+# rc.apparmor.functions by Steve Beattie
+#
+# NOTE: rc.apparmor initscripts that source this file need to implement
+# the following set of functions:
+#	aa_action
+#	aa_log_action_start
+#	aa_log_action_end
+#	aa_log_success_msg
+#	aa_log_warning_msg
+#	aa_log_failure_msg
+#	aa_log_skipped_msg
+#	aa_log_daemon_msg
+#	aa_log_end_msg
+
+# Some nice defines that we use
+
+PARSER=/sbin/apparmor_parser
+PARSER_OPTS=--write-cache
+# Suppress warnings when booting in quiet mode
+if [ "${QUIET:-no}" = yes ] || [ "${quiet:-n}" = y ]; then
+	PARSER_OPTS="$PARSER_OPTS --quiet"
+fi
+
+if [ -d /etc/apparmor.d ] ; then
+	PROFILE_DIRS=/etc/apparmor.d
+else
+	aa_log_warning_msg "Unable to find profiles directory, installation problem?"
+fi
+
+# Eg. snapd policy might need this on some systems if loading policy
+#     during early boot if not using the snapd unit file
+ADDITIONAL_PROFILE_DIR=
+if [ -n "$ADDITIONAL_PROFILE_DIR" ] && [ -d "$ADDITIONAL_PROFILE_DIR" ]; then
+	PROFILE_DIRS="$PROFILE_DIRS $ADDITIONAL_PROFILE_DIR"
+fi
+AA_STATUS=/usr/sbin/aa-status
+SECURITYFS=/sys/kernel/security
+SFS_MOUNTPOINT="${SECURITYFS}/apparmor"
+
+# keep exit status from parser during profile load.  0 is good, 1 is bad
+STATUS=0
+
+# Test if the apparmor "module" is present.
+is_apparmor_present() {
+	[ -d /sys/module/apparmor ]
+}
+
+# Checks to see if the current container is capable of having internal AppArmor
+# profiles that should be loaded. Callers of this function should have already
+# verified that they're running inside of a container environment with
+# something like `systemd-detect-virt --container`.
+#
+# The only known container environments capable of supporting internal policy
+# are LXD and LXC environments, and Windows Subsystem for Linux.
+#
+# Returns 0 if the container environment is capable of having its own internal
+# policy and non-zero otherwise.
+#
+# IMPORTANT: This function will return 0 in the case of a non-LXD/non-LXC
+# system container technology being nested inside of a LXD/LXC container that
+# utilized an AppArmor namespace and profile stacking. The reason 0 will be
+# returned is because .ns_stacked will be "yes" and .ns_name will still match
+# "lx[dc]-*" since the nested system container technology will not have set up
+# a new AppArmor profile namespace. This will result in the nested system
+# container's boot process to experience failed policy loads but the boot
+# process should continue without any loss of functionality. This is an
+# unsupported configuration that cannot be properly handled by this function.
+is_container_with_internal_policy() {
+	# this function is sometimes called independently of
+	# is_apparmor_loaded(), so also define this here.
+	local ns_stacked_path="${SFS_MOUNTPOINT}/.ns_stacked"
+	local ns_name_path="${SFS_MOUNTPOINT}/.ns_name"
+	local ns_stacked
+	local ns_name
+
+	# WSL needs to be detected explicitly
+	if [ -x /usr/bin/systemd-detect-virt ] && \
+	   [ "$(systemd-detect-virt --container)" = "wsl" ]; then
+		return 0
+	fi
+
+	if ! [ -f "$ns_stacked_path" ] || ! [ -f "$ns_name_path" ]; then
+		return 1
+	fi
+
+	read -r ns_stacked < "$ns_stacked_path"
+	if [ "$ns_stacked" != "yes" ]; then
+		return 1
+	fi
+
+	# LXD, Incus and LXC set up AppArmor namespaces starting with "lxd-",
+	# "incus-" and "lxc-", respectively. Return non-zero for all other
+	# namespace identifiers.
+	read -r ns_name < "$ns_name_path"
+	if [ "${ns_name#lxd-*}" = "$ns_name" ] && \
+	   [ "${ns_name#incus-*}" = "$ns_name" ] && \
+	   [ "${ns_name#lxc-*}" = "$ns_name" ]; then
+		return 1
+	fi
+
+	return 0
+}
+
+__parse_profiles_dir() {
+	local parser_cmd="$1"
+	local profile_dir="$2"
+	local status=0
+
+	if [ ! -d "$profile_dir" ]; then
+		aa_log_failure_msg "Profile directory not found: $profile_dir"
+		return 1
+	fi
+
+	if [ -z "$(ls "$profile_dir"/)" ]; then
+		aa_log_failure_msg "No profiles found in $profile_dir"
+		return 1
+	fi
+
+	# shellcheck disable=SC2086
+	if ! "$PARSER" $PARSER_OPTS "$parser_cmd" -- "$profile_dir"; then
+		status=1
+		aa_log_failure_msg "At least one profile failed to load"
+	fi
+	return "$status"
+}
+
+check_userns() {
+	userns_restricted=$(sysctl -e -n kernel.apparmor_restrict_unprivileged_userns)
+	unconfined_userns=$([ -f /sys/kernel/security/apparmor/features/policy/unconfined_restrictions/userns ] && cat /sys/kernel/security/apparmor/features/policy/unconfined_restrictions/userns || echo 0)
+	if [ -n "$userns_restricted" ] && [ "$userns_restricted" -eq 1 ]; then
+		if [ "$unconfined_userns" -eq 0 ]; then
+			# userns restrictions rely on unconfined userns to be supported
+			aa_action "disabling unprivileged userns restrictions since unconfined userns is not supported / enabled" \
+				  sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+		fi
+	fi
+}
+
+parse_profiles() {
+	check_userns
+
+	# get parser arg
+	case "$1" in
+		load)
+			PARSER_CMD="--add"
+			PARSER_MSG="Loading AppArmor profiles "
+			;;
+		reload)
+			PARSER_CMD="--replace"
+			PARSER_MSG="Reloading AppArmor profiles "
+			;;
+		*)
+			aa_log_failure_msg "required 'load' or 'reload'"
+			exit 1
+			;;
+	esac
+	aa_log_action_start "$PARSER_MSG"
+	# run the parser on all of the apparmor profiles
+	if [ ! -f "$PARSER" ]; then
+		aa_log_failure_msg "AppArmor parser not found"
+		exit 1
+	fi
+
+	for profile_dir in $PROFILE_DIRS; do
+		__parse_profiles_dir "$PARSER_CMD" "$profile_dir" || STATUS=$?
+	done
+
+	aa_log_action_end "$STATUS"
+	return "$STATUS"
+}
+
+is_apparmor_loaded() {
+	if ! is_securityfs_mounted ; then
+		mount_securityfs
+	fi
+
+	if [ -f "${SFS_MOUNTPOINT}/profiles" ]; then
+		return 0
+	fi
+
+	is_apparmor_present
+
+	return $?
+}
+
+is_securityfs_mounted() {
+	test -d "$SECURITYFS" -a -d /sys/fs/cgroup/systemd || grep -q securityfs /proc/filesystems && grep -q securityfs /proc/mounts
+	return $?
+}
+
+mount_securityfs() {
+	if grep -q securityfs /proc/filesystems ; then
+		aa_action "Mounting securityfs on $SECURITYFS" \
+				mount -t securityfs securityfs "$SECURITYFS"
+		return $?
+	fi
+	return 0
+}
+
+apparmor_start() {
+	aa_log_daemon_msg "Starting AppArmor"
+	if ! is_apparmor_present ; then
+		aa_log_failure_msg "Starting AppArmor - failed, To enable AppArmor, ensure your kernel is configured with CONFIG_SECURITY_APPARMOR=y then add 'security=apparmor apparmor=1' to the kernel command line"
+		aa_log_end_msg 1
+		return 1
+	elif ! is_apparmor_loaded ; then
+		aa_log_failure_msg "Starting AppArmor - AppArmor control files aren't available under /sys/kernel/security/, please make sure securityfs is mounted."
+		aa_log_end_msg 1
+		return 1
+	fi
+
+	if [ ! -w "$SFS_MOUNTPOINT/.load" ] ; then
+		aa_log_failure_msg "Loading AppArmor profiles - failed, Do you have the correct privileges?"
+		aa_log_end_msg 1
+		return 1
+	fi
+
+	# if there is anything in the profiles file don't load
+	if ! read -r _ < "$SFS_MOUNTPOINT/profiles"; then
+		parse_profiles load
+	else
+		aa_log_skipped_msg ": already loaded with profiles."
+		return 0
+	fi
+	aa_log_end_msg 0
+	return 0
+}
+
+remove_profiles() {
+
+	# removing profiles as we directly read from apparmorfs
+	# doesn't work, since we are removing entries which screws up
+	# our position.  Lets hope there are never enough profiles to
+	# overflow the variable
+	if ! is_apparmor_loaded ; then
+		aa_log_failure_msg "AppArmor module is not loaded"
+		return 1
+	fi
+
+	if [ ! -w "$SFS_MOUNTPOINT/.remove" ] ; then
+		aa_log_failure_msg "Root privileges not available"
+		return 1
+	fi
+
+	if [ ! -x "$PARSER" ] ; then
+		aa_log_failure_msg "Unable to execute AppArmor parser"
+		return 1
+	fi
+
+	retval=0
+	# We filter child profiles as removing the parent will remove
+	# the children
+	sed -e "s/ (\(enforce\|complain\))$//" "$SFS_MOUNTPOINT/profiles" | \
+	LC_COLLATE=C sort | grep -v // | {
+		while read -r profile ; do
+			printf "%s" "$profile" > "$SFS_MOUNTPOINT/.remove"
+			rc=$?
+			if [ "$rc" -ne 0 ] ; then
+				retval=$rc
+			fi
+		done
+		return "$retval"
+	}
+}
+
+apparmor_stop() {
+	aa_log_daemon_msg "Unloading AppArmor profiles"
+	remove_profiles
+	rc=$?
+	aa_log_end_msg "$rc"
+	return "$rc"
+}
+
+apparmor_kill() {
+	if ! is_apparmor_loaded ; then
+		aa_log_failure_msg "AppArmor module is not loaded"
+		return 1
+	fi
+
+	aa_log_failure_msg "apparmor_kill() is no longer supported because AppArmor can't be built as a module"
+	return 1
+}
+
+__apparmor_restart() {
+	if [ ! -w "$SFS_MOUNTPOINT/.load" ] ; then
+		aa_log_failure_msg "Loading AppArmor profiles - failed, Do you have the correct privileges?"
+		return 4
+	fi
+
+	aa_log_daemon_msg "Restarting AppArmor"
+
+	parse_profiles reload
+
+	rc=$?
+	aa_log_end_msg "$rc"
+	return "$rc"
+}
+
+apparmor_restart() {
+	if ! is_apparmor_loaded ; then
+		apparmor_start
+		rc=$?
+		return "$rc"
+	fi
+
+	__apparmor_restart
+	return $?
+}
+
+apparmor_try_restart() {
+	if ! is_apparmor_loaded ; then
+		return 0
+	fi
+
+	__apparmor_restart
+	return $?
+}
+
+apparmor_status () {
+	if test -x "$AA_STATUS" ; then
+		"$AA_STATUS" --verbose
+		return $?
+	fi
+	if ! is_apparmor_loaded ; then
+		echo "AppArmor is not loaded."
+		rc=1
+	else
+		echo "AppArmor is enabled."
+		rc=0
+	fi
+	echo "Install the apparmor-utils package to receive more detailed"
+	echo "status information here (or examine $SFS_MOUNTPOINT directly)."
+
+	return "$rc"
+}

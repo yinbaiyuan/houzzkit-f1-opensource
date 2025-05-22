@@ -1,0 +1,9 @@
+[Unit]
+Description=Clean up old files in the Launchpadlib cache
+
+[Timer]
+OnStartupSec=5min
+OnUnitActiveSec=1d
+
+[Install]
+WantedBy=timers.target

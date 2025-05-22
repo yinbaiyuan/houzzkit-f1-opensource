@@ -1,0 +1,9 @@
+[Unit]
+Description=Virtual filesystem metadata service
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/libexec/gvfsd-metadata
+Type=dbus
+BusName=org.gtk.vfs.Metadata
+Slice=session.slice

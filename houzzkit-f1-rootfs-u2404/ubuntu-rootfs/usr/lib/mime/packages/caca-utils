@@ -1,0 +1,45 @@
+image/gif; /usr/bin/cacaview %s; description=GIF Image; nametemplate=%s.gif; test=test -n "$DISPLAY"; priority=1
+image/gif; unset DISPLAY\; /usr/bin/cacaview %s; description=GIF Image; nametemplate=%s.gif; needsterminal; priority=1
+
+image/jpeg; /usr/bin/cacaview %s; description=JPEG Image; nametemplate=%s.jpg; test=test -n "$DISPLAY"; priority=1
+image/jpeg; unset DISPLAY\; /usr/bin/cacaview %s; description=JPEG Image; nametemplate=%s.jpg; needsterminal; priority=1
+
+image/png; /usr/bin/cacaview %s; description=PNG Image; nametemplate=%s.png; test=test -n "$DISPLAY"; priority=1
+image/png; unset DISPLAY\; /usr/bin/cacaview %s; description=PNG Image; nametemplate=%s.png; needsterminal; priority=1
+
+image/tiff; /usr/bin/cacaview %s; description=TIFF Image; nametemplate=%s.tiff; test=test -n "$DISPLAY"; priority=1
+image/tiff; unset DISPLAY\; /usr/bin/cacaview %s; description=TIFF Image; nametemplate=%s.tiff; needsterminal; priority=1
+
+image/bmp; /usr/bin/cacaview %s; description=BMP Image; nametemplate=%s.bmp; test=test -n "$DISPLAY"; priority=1
+image/bmp; unset DISPLAY\; /usr/bin/cacaview %s; description=BMP Image; nametemplate=%s.bmp; needsterminal; priority=1
+
+image/x-ms-bmp; /usr/bin/cacaview %s; description=BMP Image; nametemplate=%s.bmp; test=test -n "$DISPLAY"; priority=1
+image/x-ms-bmp; unset DISPLAY\; /usr/bin/cacaview %s; description=BMP Image; nametemplate=%s.bmp; needsterminal; priority=1
+
+image/x-cmu-raster; /usr/bin/cacaview %s; description=CMU-RasterFile Image; nametemplate=%s.ras; test=test -n "$DISPLAY"; priority=1
+image/x-cmu-raster; unset DISPLAY\; /usr/bin/cacaview %s; description=CMU-RasterFile Image; nametemplate=%s.ras; needsterminal; priority=1
+
+image/g3fax; /usr/bin/cacaview %s; description=G3-FAX Image; nametemplate=%s.g3; test=test -n "$DISPLAY"; priority=1
+image/g3fax; unset DISPLAY\; /usr/bin/cacaview %s; description=G3-FAX Image; nametemplate=%s.g3; needsterminal; priority=1
+
+image/targa; /usr/bin/cacaview %s; description=TARGA Image; nametemplate=%s.tga; test=test -n "$DISPLAY"; priority=1
+image/targa; unset DISPLAY\; /usr/bin/cacaview %s; description=TARGA Image; nametemplate=%s.tga; needsterminal; priority=1
+
+image/x-portable-bitmap; /usr/bin/cacaview %s; description=PBM Image; nametemplate=%s.pbm; test=test -n "$DISPLAY"; priority=1
+image/x-portable-bitmap; unset DISPLAY\; /usr/bin/cacaview %s; description=PBM Image; nametemplate=%s.pbm; needsterminal; priority=1
+
+image/x-portable-graymap; /usr/bin/cacaview %s; description=PGM Image; nametemplate=%s.pgm; test=test -n "$DISPLAY"; priority=1
+image/x-portable-graymap; unset DISPLAY\; /usr/bin/cacaview %s; description=PGM Image; nametemplate=%s.pgm; needsterminal; priority=1
+
+image/x-portable-anymap; /usr/bin/cacaview %s; description=PNM Image; nametemplate=%s.pnm; test=test -n "$DISPLAY"; priority=1
+image/x-portable-anymap; unset DISPLAY\; /usr/bin/cacaview %s; description=PNM Image; nametemplate=%s.pnm; needsterminal; priority=1
+
+image/x-portable-pixmap; /usr/bin/cacaview %s; description=PPM Image; nametemplate=%s.ppm; test=test -n "$DISPLAY"; priority=1
+image/x-portable-pixmap; unset DISPLAY\; /usr/bin/cacaview %s; description=PPM Image; nametemplate=%s.ppm; needsterminal; priority=1
+
+image/x-rgb; /usr/bin/cacaview %s; description=RGB Image; nametemplate=%s.rgb; test=test -n "$DISPLAY"; priority=1
+image/x-rgb; unset DISPLAY\; /usr/bin/cacaview %s; description=RGB Image; nametemplate=%s.rgb; needsterminal; priority=1
+
+image/x-xpixmap; /usr/bin/cacaview %s; description=XPM Image; nametemplate=%s.xpm; test=test -n "$DISPLAY"; priority=1
+image/x-xpixmap; unset DISPLAY\; /usr/bin/cacaview %s; description=XPM Image; nametemplate=%s.xpm; needsterminal; priority=1
+
