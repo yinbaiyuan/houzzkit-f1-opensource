@@ -1,0 +1,14 @@
+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+/*
+ * Copyright (c) 2020 Rockchip Electronics Co., Ltd.
+ *
+ */
+
+/dts-v1/;
+
+#include "rk3568-jl-rm01.dtsi"
+
+/ {
+    model = "RM01 HDMI (Linux)";
+    compatible = "rockchip,rk3568-rzw03", "rockchip,rk3568";
+};

@@ -1,0 +1,6 @@
+config RTL88x2CE
+	tristate "Realtek 88x2C PCIE WiFi"
+	depends on PCI
+	help
+	  Help message of RTL88x2CE
+
