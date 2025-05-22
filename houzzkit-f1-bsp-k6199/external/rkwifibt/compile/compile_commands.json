@@ -1,0 +1,38 @@
+[
+  {
+    "directory": "/mnt/wsl/work/linux_sdk_rk356x_firefly/external/rkwifibt/compile",
+    "command": "ccache cc -Ibrcm_patchram_plus1@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -MD -MQ 'brcm_patchram_plus1@exe/tools_brcm_tools_brcm_patchram_plus1.c.o' -MF 'brcm_patchram_plus1@exe/tools_brcm_tools_brcm_patchram_plus1.c.o.d' -o 'brcm_patchram_plus1@exe/tools_brcm_tools_brcm_patchram_plus1.c.o' -c ../tools/brcm_tools/brcm_patchram_plus1.c",
+    "file": "../tools/brcm_tools/brcm_patchram_plus1.c",
+    "output": "brcm_patchram_plus1@exe/tools_brcm_tools_brcm_patchram_plus1.c.o"
+  },
+  {
+    "directory": "/mnt/wsl/work/linux_sdk_rk356x_firefly/external/rkwifibt/compile",
+    "command": "ccache cc -Idhd_priv@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -MD -MQ 'dhd_priv@exe/tools_brcm_tools_dhd_priv.c.o' -MF 'dhd_priv@exe/tools_brcm_tools_dhd_priv.c.o.d' -o 'dhd_priv@exe/tools_brcm_tools_dhd_priv.c.o' -c ../tools/brcm_tools/dhd_priv.c",
+    "file": "../tools/brcm_tools/dhd_priv.c",
+    "output": "dhd_priv@exe/tools_brcm_tools_dhd_priv.c.o"
+  },
+  {
+    "directory": "/mnt/wsl/work/linux_sdk_rk356x_firefly/external/rkwifibt/compile",
+    "command": "ccache cc -Irtk_hciattach@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -MD -MQ 'rtk_hciattach@exe/tools_rtk_hciattach_hciattach_rtk.c.o' -MF 'rtk_hciattach@exe/tools_rtk_hciattach_hciattach_rtk.c.o.d' -o 'rtk_hciattach@exe/tools_rtk_hciattach_hciattach_rtk.c.o' -c ../tools/rtk_hciattach/hciattach_rtk.c",
+    "file": "../tools/rtk_hciattach/hciattach_rtk.c",
+    "output": "rtk_hciattach@exe/tools_rtk_hciattach_hciattach_rtk.c.o"
+  },
+  {
+    "directory": "/mnt/wsl/work/linux_sdk_rk356x_firefly/external/rkwifibt/compile",
+    "command": "ccache cc -Irtk_hciattach@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -MD -MQ 'rtk_hciattach@exe/tools_rtk_hciattach_hciattach.c.o' -MF 'rtk_hciattach@exe/tools_rtk_hciattach_hciattach.c.o.d' -o 'rtk_hciattach@exe/tools_rtk_hciattach_hciattach.c.o' -c ../tools/rtk_hciattach/hciattach.c",
+    "file": "../tools/rtk_hciattach/hciattach.c",
+    "output": "rtk_hciattach@exe/tools_rtk_hciattach_hciattach.c.o"
+  },
+  {
+    "directory": "/mnt/wsl/work/linux_sdk_rk356x_firefly/external/rkwifibt/compile",
+    "command": "ccache cc -Irtk_hciattach@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -MD -MQ 'rtk_hciattach@exe/tools_rtk_hciattach_hciattach_h4.c.o' -MF 'rtk_hciattach@exe/tools_rtk_hciattach_hciattach_h4.c.o.d' -o 'rtk_hciattach@exe/tools_rtk_hciattach_hciattach_h4.c.o' -c ../tools/rtk_hciattach/hciattach_h4.c",
+    "file": "../tools/rtk_hciattach/hciattach_h4.c",
+    "output": "rtk_hciattach@exe/tools_rtk_hciattach_hciattach_h4.c.o"
+  },
+  {
+    "directory": "/mnt/wsl/work/linux_sdk_rk356x_firefly/external/rkwifibt/compile",
+    "command": "ccache cc -Irtk_hciattach@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -g -MD -MQ 'rtk_hciattach@exe/tools_rtk_hciattach_rtb_fwc.c.o' -MF 'rtk_hciattach@exe/tools_rtk_hciattach_rtb_fwc.c.o.d' -o 'rtk_hciattach@exe/tools_rtk_hciattach_rtb_fwc.c.o' -c ../tools/rtk_hciattach/rtb_fwc.c",
+    "file": "../tools/rtk_hciattach/rtb_fwc.c",
+    "output": "rtk_hciattach@exe/tools_rtk_hciattach_rtb_fwc.c.o"
+  }
+]
