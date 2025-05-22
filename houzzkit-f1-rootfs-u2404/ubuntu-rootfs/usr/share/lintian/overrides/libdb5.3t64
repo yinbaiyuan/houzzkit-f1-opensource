@@ -1,0 +1,3 @@
+# historical reasons
+libdb5.3t64: package-name-doesnt-match-sonames libdb-5.3
+libdb5.3t64: package-name-doesnt-match-sonames libdb5.3

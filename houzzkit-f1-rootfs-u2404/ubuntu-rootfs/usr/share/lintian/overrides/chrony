@@ -1,0 +1,7 @@
+# The “chrony.keys” file must not be world readable as it could contain
+# symmetric keys used for NTP authentication.
+chrony: non-standard-file-perm 0640 != 0644 [usr/share/chrony/chrony.keys]
+
+# NetworkManager does not execute dispatcher scripts in /usr/libexec.
+chrony: executable-in-usr-lib [usr/lib/NetworkManager/dispatcher.d/20-chrony-dhcp]
+chrony: executable-in-usr-lib [usr/lib/NetworkManager/dispatcher.d/20-chrony-onoffline]

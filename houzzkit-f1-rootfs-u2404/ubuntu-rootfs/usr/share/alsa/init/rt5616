@@ -1,0 +1,30 @@
+# Configuration for rt5616 driver
+
+# playback
+CTL{reset}="mixer"
+CTL{name}="DAC MIXL INF1 Switch", CTL{value}="on"
+CTL{name}="DAC MIXR INF1 Switch", CTL{value}="on"
+CTL{name}="Stereo DAC MIXL DAC L1 Switch", CTL{value}="on"
+CTL{name}="Stereo DAC MIXR DAC R1 Switch", CTL{value}="on"
+
+CTL{name}="DAC1 Playback Volume", CTL{value}="159,159"
+CTL{name}="HP Playback Volume", CTL{value}="31,31"
+
+CTL{name}="OUT MIXL DAC L1 Switch", CTL{value}="on"
+CTL{name}="OUT MIXR DAC R1 Switch", CTL{value}="on"
+CTL{name}="HPO MIX DAC1 Switch", CTL{value}="off"
+CTL{name}="HPO MIX HPVOL Switch", CTL{value}="on"
+CTL{name}="HPVOL Playback Switch", CTL{value}="on,on"
+
+# record
+# CTL{name}="ADC Capture Switch", CTL{value}="on,on"
+CTL{name}="RECMIXL BST1 Switch", CTL{value}="on"
+CTL{name}="RECMIXR BST1 Switch", CTL{value}="on"
+CTL{name}="Stereo1 ADC MIXL ADC1 Switch", CTL{value}="on"
+CTL{name}="Stereo1 ADC MIXR ADC1 Switch", CTL{value}="on"
+
+CTL{name}="IN1 Boost Volume", CTL{value}="1"
+CTL{name}="ADC Boost Volume", CTL{value}="0,0"
+CTL{name}="ADC Capture Volume", CTL{value}="47,47"
+
+RESULT="true", EXIT="return"

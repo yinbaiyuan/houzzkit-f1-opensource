@@ -1,0 +1,29 @@
+Chrony for Debian
+-----------------
+
+ Notes about Debian-specific changes:
+
+ - Default chrony’s configuration files are located in the /etc/chrony directory.
+   It is filled by two important files:
+        → chrony.conf (configuration of the chronyd daemon, see man 5 chrony.conf
+          for further information)
+
+        → chrony.keys (lists keys used for NTP packets authentication, see
+          the “keyfile” directive in the chrony.conf(5) man page)
+
+ - We also provide /etc/ppp/ip-up.d/chrony and /etc/ppp/ip-down.d/chrony
+   to put chronyd online/offline depending on the PPP link status.
+
+ - Since version 1.31.1-1, we create the _chrony system user to which chronyd
+   will drop root privileges on initialisation. For users already allowing
+   chronyd to drop root privileges in favor of the user configured by the "user"
+   directive in chrony.conf, your configuration will remain unchanged and will
+   still work as it did. However, if you don’t want to deviate from Debian’s
+   default configuration, delete or comment out the "user" directive in
+   chrony.conf and recursively change the owner of the /var/lib/chrony and
+   /var/log/chrony directories. For example:
+
+        # sed -i 's/^user/#user/' /etc/chrony/chrony.conf
+        # chown -R _chrony:_chrony /var/l{ib,og}/chrony
+
+ -- Vincent Blut <vincent.debian@free.fr>  Fri, 01 Mar 2019 19:02:12 +0100

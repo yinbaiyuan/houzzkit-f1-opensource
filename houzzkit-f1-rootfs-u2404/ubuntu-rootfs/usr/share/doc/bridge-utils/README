@@ -1,0 +1,41 @@
+This utility is DEPRECATED. No new features will ever be added.
+Instead use the bridge command from the iproute2 package which
+supports more features.
+
+The code repository is:
+    git://git.kernel.org/pub/scm/linux/kernel/git/shemminger/bridge-utils.git
+
+The code supports:
+- Multiple bridge port groups (i.e. multiple independent
+  bridges in one machine).
+- Each bridge is seen as a logical device, which allows you to do
+  firewalling between port groups for example.
+- Everything is dynamic; bridges are created dynamically using the
+  userspace configuration tool, ports are added dynamically, etc.
+
+If you have any comments, questions or suggestions, please send email to
+the mailing list netdev@vger.kernel.org
+
+--------------------------
+
+Files in this package:
+
+AUTHORS		Authors of this package
+
+COPYING		The GNU General Public License.
+
+Makefile	Recursive Makefile.
+
+README		This file.
+
+brctl/		The userspace bridge configuration tool.
+
+bridge-utils.spec
+		A .spec file for Red Hat package building. "rpm -tb
+		<tar.gz file>" ought to give you a .RPM file.
+
+doc/		Some documentation files.
+
+libbridge/	The bridge configuration interface library.
+
+misc/		Miscellaneous utilities.

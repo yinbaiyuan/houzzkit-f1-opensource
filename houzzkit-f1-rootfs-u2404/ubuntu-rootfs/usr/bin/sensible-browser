@@ -1,0 +1,44 @@
+#!/bin/sh
+
+PATH="$PATH:/usr/share/sensible-utils/bin"
+# Prevent recursive loops, where these values are set to this script
+program="$(realpath "$(command -v "$0")")"
+
+Try()
+{
+    # global $candidate
+    [ -z "$candidate" ] && return
+    # Prevent recursive loops, where environment variables are set to this script
+    [ x$(realpath "$(command -v "$candidate" || true)" || true) = "x$program" ] && return
+    # interpret like environ (7) man page. Do not use eval in order to not leak variables
+    sh -c "$candidate \"\$@\"" EDITOR "$@"
+    ret=$?
+    # Operating system command not found
+    [ "$ret" -ne 126 ] && [ "$ret" -ne 127 ] && exit "$ret"
+}
+
+candidate="$BROWSER"
+Try "$@"
+
+if test -n "$DISPLAY"; then
+    if test -n "$GNOME_DESKTOP_SESSION_ID"; then
+        if test -x /usr/bin/gnome-www-browser; then
+            exec /usr/bin/gnome-www-browser "$@"
+        elif test -x /usr/bin/x-www-browser; then
+            exec /usr/bin/x-www-browser "$@"
+        elif test -x /usr/bin/gnome-terminal && test -x /usr/bin/www-browser; then
+            exec /usr/bin/gnome-terminal -x /usr/bin/www-browser "$@"
+        fi
+    fi
+    if test -x /usr/bin/x-www-browser; then
+        exec /usr/bin/x-www-browser "$@"
+    elif test -x /usr/bin/x-terminal-emulator && test -x /usr/bin/www-browser; then
+        exec /usr/bin/x-terminal-emulator -x /usr/bin/www-browser "$@"
+    fi
+elif test -x /usr/bin/www-browser; then
+    exec /usr/bin/www-browser "$@"
+fi
+
+echo "Couldn't find a suitable web browser!" >&2
+echo "Set the BROWSER environment variable to your desired browser." >&2
+exit 1

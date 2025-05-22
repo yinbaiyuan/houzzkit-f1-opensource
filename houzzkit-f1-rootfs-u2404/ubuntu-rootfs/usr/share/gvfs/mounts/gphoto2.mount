@@ -1,0 +1,4 @@
+[Mount]
+Type=gphoto2
+Exec=/usr/libexec/gvfsd-gphoto2
+AutoMount=false

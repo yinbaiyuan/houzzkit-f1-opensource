@@ -1,0 +1,27 @@
+/etc/shells micropolicy
+
+The expected audience of this is debian developers packaging programs
+meant to be used as login shells.
+
+/etc/shells is no longer a config file, but is maintained by the
+add-shell, remove-shell and update-shells programs.  So, if a
+package contains something that the maintainer thinks ought to be a
+valid login shell, it can have its shell included in two different way.
+
+By placing a fragment in /usr/share/debianutils/shells.d/<binarypackage>,
+it will invoke a file trigger on debian-utils and invoke update-shells,
+which will add and remove the contained shells from /etc/shells as
+needed.
+
+Alternatively, it's postinst should, (on initial install only, to allow a
+sysadmin to take it out again), run:
+
+/usr/sbin/add-shell /path/to/shell
+
+In the postrm, probably on remove, the package should call
+
+/usr/sbin/remove-shell /path/to/shell
+
+The latter method has the disadvantage of shells disappearing from /etc/shells
+when the relevant package is removed but not purged and then reinstalled. The
+fragment method does not suffer from this limitation.

@@ -1,0 +1,143 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"https://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+ <interface name="org.freedesktop.DBus.Peer">
+  <method name="Ping"/>
+  <method name="GetMachineId">
+   <arg type="s" name="machine_uuid" direction="out"/>
+  </method>
+ </interface>
+ <interface name="org.freedesktop.DBus.Introspectable">
+  <method name="Introspect">
+   <arg name="xml_data" type="s" direction="out"/>
+  </method>
+ </interface>
+ <interface name="org.freedesktop.DBus.Properties">
+  <method name="Get">
+   <arg name="interface_name" direction="in" type="s"/>
+   <arg name="property_name" direction="in" type="s"/>
+   <arg name="value" direction="out" type="v"/>
+  </method>
+  <method name="GetAll">
+   <arg name="interface_name" direction="in" type="s"/>
+   <arg name="props" direction="out" type="a{sv}"/>
+  </method>
+  <method name="Set">
+   <arg name="interface_name" direction="in" type="s"/>
+   <arg name="property_name" direction="in" type="s"/>
+   <arg name="value" direction="in" type="v"/>
+  </method>
+  <signal name="PropertiesChanged">
+   <arg type="s" name="interface_name"/>
+   <arg type="a{sv}" name="changed_properties"/>
+   <arg type="as" name="invalidated_properties"/>
+  </signal>
+ </interface>
+ <interface name="org.freedesktop.portable1.Image">
+  <property name="Name" type="s" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="Path" type="s" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="Type" type="s" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="ReadOnly" type="b" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="CreationTimestamp" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="ModificationTimestamp" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="Usage" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="Limit" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="UsageExclusive" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="LimitExclusive" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <method name="GetOSRelease">
+   <arg type="a{ss}" name="os_release" direction="out"/>
+  </method>
+  <method name="GetMetadata">
+   <arg type="as" name="matches" direction="in"/>
+   <arg type="s" name="image" direction="out"/>
+   <arg type="ay" name="os_release" direction="out"/>
+   <arg type="a{say}" name="units" direction="out"/>
+  </method>
+  <method name="GetMetadataWithExtensions">
+   <arg type="as" name="extensions" direction="in"/>
+   <arg type="as" name="matches" direction="in"/>
+   <arg type="t" name="flags" direction="in"/>
+   <arg type="s" name="image" direction="out"/>
+   <arg type="ay" name="os_release" direction="out"/>
+   <arg type="a{say}" name="extensions" direction="out"/>
+   <arg type="a{say}" name="units" direction="out"/>
+  </method>
+  <method name="GetState">
+   <arg type="s" name="state" direction="out"/>
+  </method>
+  <method name="GetStateWithExtensions">
+   <arg type="as" name="extensions" direction="in"/>
+   <arg type="t" name="flags" direction="in"/>
+   <arg type="s" name="state" direction="out"/>
+  </method>
+  <method name="Attach">
+   <arg type="as" name="matches" direction="in"/>
+   <arg type="s" name="profile" direction="in"/>
+   <arg type="b" name="runtime" direction="in"/>
+   <arg type="s" name="copy_mode" direction="in"/>
+   <arg type="a(sss)" name="changes" direction="out"/>
+  </method>
+  <method name="AttachWithExtensions">
+   <arg type="as" name="extensions" direction="in"/>
+   <arg type="as" name="matches" direction="in"/>
+   <arg type="s" name="profile" direction="in"/>
+   <arg type="s" name="copy_mode" direction="in"/>
+   <arg type="t" name="flags" direction="in"/>
+   <arg type="a(sss)" name="changes" direction="out"/>
+  </method>
+  <method name="Detach">
+   <arg type="b" name="runtime" direction="in"/>
+   <arg type="a(sss)" name="changes" direction="out"/>
+  </method>
+  <method name="DetachWithExtensions">
+   <arg type="as" name="extensions" direction="in"/>
+   <arg type="t" name="flags" direction="in"/>
+   <arg type="a(sss)" name="changes" direction="out"/>
+  </method>
+  <method name="Reattach">
+   <arg type="as" name="matches" direction="in"/>
+   <arg type="s" name="profile" direction="in"/>
+   <arg type="b" name="runtime" direction="in"/>
+   <arg type="s" name="copy_mode" direction="in"/>
+   <arg type="a(sss)" name="changes_removed" direction="out"/>
+   <arg type="a(sss)" name="changes_updated" direction="out"/>
+  </method>
+  <method name="ReattachWithExtensions">
+   <arg type="as" name="extensions" direction="in"/>
+   <arg type="as" name="matches" direction="in"/>
+   <arg type="s" name="profile" direction="in"/>
+   <arg type="s" name="copy_mode" direction="in"/>
+   <arg type="t" name="flags" direction="in"/>
+   <arg type="a(sss)" name="changes_removed" direction="out"/>
+   <arg type="a(sss)" name="changes_updated" direction="out"/>
+  </method>
+  <method name="Remove">
+  </method>
+  <method name="MarkReadOnly">
+   <arg type="b" name="read_only" direction="in"/>
+  </method>
+  <method name="SetLimit">
+   <arg type="t" name="limit" direction="in"/>
+  </method>
+ </interface>
+</node>

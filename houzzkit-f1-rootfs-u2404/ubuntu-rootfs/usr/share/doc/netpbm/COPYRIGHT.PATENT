@@ -1,0 +1,47 @@
+Netpbm consists of code contributed by many authors.  In most of the
+source code files, there is a copyright notice and license, telling
+you what you may or may not do with the code.  All authors have granted
+you the right to use and distribute their code without having to pay
+them, as long as you meet some simple requirements.
+
+Most of the components require you to include a copy of their
+copyright notices and warranty disclaimers in any copies or
+derivations you distribute.
+
+Another restriction that some of the software has is that in order to
+have permission to copy it (which includes writing anything derived
+from it), you must distribute source code for your copy or derivation
+and propagate the same restriction to people who would copy your
+derivation.  In other words, the price the author wants for the use of
+his proprietary work is your contribution to the free software cause.
+
+One component prohibits you from selling it or using it in a
+commercial way: hpcdtoppm.
+
+Some components are contributed to the public domain.  
+
+The copyrights on individual components of this package are detailed 
+at appropriate places within the package.  A slightly out of date
+summary of all the copyrights is in the file 'doc/copyright_summary'
+in the Netpbm source tree.
+
+Each component is a package of code and documentation; e.g. the 'pamcomp'
+program and the pamcomp user manual go together and are licensed to the public
+as a package.  The Netpbm manual is just a hyperlinked collection of such
+component manuals.  Parts of the manual that are not tied to a particular
+component of code and do not carry a copyright notice are in the public
+domain.
+
+As with most public open source software, no one really knows for sure
+where the code came from.  It is possible that a contributor copied it
+without license to do so.  That might mean any user of the code owes
+someone royalties.  The Netpbm maintainer in particular has received
+no warranties regarding any of the code in the package.  So consider
+all the above to be modified by "to the best of the Netpbm
+maintainer's knowledge."
+
+
+Netpbm may practice valid patents, which would mean that you owe someone
+royalties if you use the code.  This is a minuscule risk, though.
+What is known about patents related to Netpbm is in the file
+'doc/patent_summary' in the Netpbm source tree.

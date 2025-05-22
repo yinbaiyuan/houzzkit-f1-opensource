@@ -1,0 +1,30 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: UDisks2
+Source: https://github.com/storaged-project/udisks/releases
+
+Files: *
+Copyright: 2007-2011 David Zeuthen <zeuthen@gmail.com>
+           2011 Martin Pitt <martin.pitt@ubuntu.com>
+           2014-2020 Tomas Bzatek <tbzatek@redhat.com>
+           2015 Dominika Hodovska <dhodovsk@redhat.com>
+           2013 Marius Vollmer <marius.vollmer@redhat.com>
+           2019 Vojtech Trefny <vtrefny@redhat.com>
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ The full text of the GPL is distributed as in
+ /usr/share/common-licenses/GPL-2 on Debian systems.
+
+Files: udisks/*
+Copyright: 2011 David Zeuthen <zeuthen@gmail.com>
+License: LGPL-2+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Library General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License, or (at your option) any later version.
+ .
+ The full text of the LGPL is distributed as in
+ /usr/share/common-licenses/LGPL-2 on Debian systems.

@@ -1,0 +1,47 @@
+Docker on Debian
+================
+
+To enable docker memory limitation, the kernel needs to be loaded with
+boot parameters: cgroup_enable=memory swapaccount=1.
+
+This is because enabling memory cgroup support has some run-time overhead,
+and kernel maintainers don't want to slow down systems unnecessarily.
+
+http://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg764104.html
+https://github.com/docker/docker/issues/396
+
+To instruct the kernel to enable memory cgroup support, edit
+/etc/default/grub and extend GRUB_CMDLINE_LINUX_DEFAULT like:
+
+GRUB_CMDLINE_LINUX_DEFAULT="cgroup_enable=memory swapaccount=1"
+
+Then run update-grub, and reboot.
+
+
+It's worth pointing out that upstream maintains a "check-config.sh" script for
+verifying not only proper kernel configuration (which isn't terribly relevant in
+the Debian context), but also the host system configuration, especially and
+including whether a properly mounted cgroup hierarchy can be found.  If you're
+using cgroupfs-mount or systemd, chances are very high that you have one, but if
+not, you're likely to see strange behavior.
+
+In the docker.io package, one can find the "check-config.sh" script under
+"/usr/share/docker.io/contrib/check-config.sh", which when run (does NOT require
+root/sudo) will report on problems with your installation/configuration.
+
+
+As noted in the upstream documentation (https://docs.docker.io), Docker will
+allow non-root users in the "docker" group to access "docker.sock" and thus
+communicate with the daemon.  To add yourself to the "docker" group, use
+something like:
+
+adduser YOURUSER docker
+
+As also noted in the upstream documentation, the "docker" group (and any other
+means of accessing the Docker API) is root-equivalent.  If you don't trust a
+user with root on your box, you shouldn't trust them with Docker either.
+If you are interested in further information about the security aspects of
+Docker, please be sure to read the "Docker Security" article in the
+upstream documentation:
+
+    https://docs.docker.com/engine/security/security/

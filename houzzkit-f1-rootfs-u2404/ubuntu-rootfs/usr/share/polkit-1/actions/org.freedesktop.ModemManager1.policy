@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN" "http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd">
+<policyconfig>
+  <vendor>ModemManager</vendor>
+  <vendor_url>http://www.freedesktop.org/wiki/ModemManager</vendor_url>
+  <icon_name>ModemManager</icon_name>
+  <action id="org.freedesktop.ModemManager1.Control">
+    <description>Control the Modem Manager daemon</description>
+    <description xml:lang="zh_CN">控制调制解调器管理器守护进程</description>
+    <description xml:lang="uk">Керування фоновою службою Modem Manager</description>
+    <description xml:lang="tr">Modem Manager art alan hizmetini denetle</description>
+    <description xml:lang="sv">Kontrollera demonen för Modem Manager</description>
+    <description xml:lang="sk">Ovládanie služby správcu modemov</description>
+    <description xml:lang="ru">Настроить сервис Modem Manager</description>
+    <description xml:lang="pt_BR">Controlar o daemon do ModemManager</description>
+    <description xml:lang="pl">Sterowanie usługą ModemManager</description>
+    <description xml:lang="nl">De Modembeheer-daemon besturen</description>
+    <description xml:lang="lt">Valdyti modemo tvarkytuvės tarnybą</description>
+    <description xml:lang="ka">ModemManager-ის დემონის კონტროლი</description>
+    <description xml:lang="it">Controlla il demone di «Modem Manager»</description>
+    <description xml:lang="id">Mengendalikan daemon Manajer Modem</description>
+    <description xml:lang="hu">Modemkezelő démon vezérlése</description>
+    <description xml:lang="he">שליטה בסוכן מנהל המודמים</description>
+    <description xml:lang="gl">Controla o «daemon» do Modem Manager.</description>
+    <description xml:lang="fur">Controle il demoni di Modem Manager</description>
+    <description xml:lang="fr">Contrôle le service Modem Manager</description>
+    <description xml:lang="fi">Hallitse Modem Manager taustaprosessia</description>
+    <description xml:lang="de">Den Modem-Manager-Daemon steuern</description>
+    <description xml:lang="da">Styr Modem Manager-dæmonen</description>
+    <description xml:lang="ca">Controla el dimoni del Modem Manager</description>
+    <description xml:lang="cs">Ovládat démona pro správu modemů</description>
+    <message>System policy prevents controlling the Modem Manager.</message>
+    <message xml:lang="zh_CN">系统策略禁止控制调制解调器管理器。</message>
+    <message xml:lang="uk">Правила системи перешкоджають керування Modem Manager.</message>
+    <message xml:lang="tr">Sistem ilkesi Modem Manager'ı denetlemeyi engelliyor.</message>
+    <message xml:lang="sv">En systempolicy förhindrar kontroll av Modem Manager.</message>
+    <message xml:lang="sk">Politika systému zabraňuje ovládaniu správcu modemov.</message>
+    <message xml:lang="ru">Системная политика не позволяет управлять Modem Manager'ом.</message>
+    <message xml:lang="pt_BR">A política de sistema impede de controlar o ModemManager.</message>
+    <message xml:lang="pl">Ustawienia systemu uniemożliwiają sterowanie usługą ModemManager.</message>
+    <message xml:lang="nl">Systeembeleid verbiedt Modembeheer te besturen.</message>
+    <message xml:lang="lt">Sistemos politika neleidžia valdyti modemo tvarkytuvę.</message>
+    <message xml:lang="ka">სისტემის პოლიტიკა გიკრძალავთ ModemManager-ის კონტროლს.</message>
+    <message xml:lang="it">La politica di sistema impedisce il controllo di «Modem Manager»</message>
+    <message xml:lang="id">Kebijakan sistem mencegah pengendalian Manajer Modem.</message>
+    <message xml:lang="hu">A rendszer házirendje nem teszi lehetővé a Modemkezelő vezérlését.</message>
+    <message xml:lang="he">מדיניות מערכת מונעת שליטה במנהל המודמים.</message>
+    <message xml:lang="gl">A normativa do sistema prevén o control de Modem Manager.</message>
+    <message xml:lang="fur">La politiche dal sisteme e impedìs il control di Modem Manager.</message>
+    <message xml:lang="fr">La politique système empêche le contrôle de Modem Manager.</message>
+    <message xml:lang="fi">Järjestelmän sääntö estää Modem Managerin hallinta-asetusten muuttamisen.</message>
+    <message xml:lang="de">Die Systemrichtlinien verhindern die Steuerung von ModemManager.</message>
+    <message xml:lang="da">Systempolitikken forhindrer styring af Modem Manager.</message>
+    <message xml:lang="ca">La política del sistema impedeix controlar el Modem Manager.</message>
+    <message xml:lang="cs">Systémová zásada brání v ovládání Správy modemů.</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_admin</allow_active>
+    </defaults>
+  </action>
+  <action id="org.freedesktop.ModemManager1.Device.Control">
+    <description>Unlock and control a mobile broadband device</description>
+    <description xml:lang="zh_CN">解锁并控制移动宽带设备</description>
+    <description xml:lang="uk">Розблокувати пристрій мобільної широкосмугової мережі і керувати ним</description>
+    <description xml:lang="tr">Mobil geniş bant aygıtının kilidini aç ve denetle</description>
+    <description xml:lang="sv">Lås upp och kontrollera en mobil bredbandsenhet</description>
+    <description xml:lang="sk">Odomknutie a ovládanie mobilného širokopásmového zariadenia</description>
+    <description xml:lang="ru">Разблокировка и управление мобильным широкополосным устройством</description>
+    <description xml:lang="pt_BR">Desbloquear e controlar um dispositivo de banda larga móvel</description>
+    <description xml:lang="pl">Odblokowanie i sterowanie urządzeniem komórkowym</description>
+    <description xml:lang="nl">Een mobiele modem ontgrendelen en besturen</description>
+    <description xml:lang="lt">Atrakinti ir valdyti mobiliojo plačiajuosčio ryšio įrenginį</description>
+    <description xml:lang="ka">განბლოკეთ და აკონტროლეთ მობილური ფართოზოლოვანი მოწყობილობა</description>
+    <description xml:lang="it">Sblocca e controlla un dispositivo mobile a banda larga</description>
+    <description xml:lang="id">Buka kunci dan kendalikan suatu peranti data seluler</description>
+    <description xml:lang="hu">Mobil széles sávú készülék feloldása és vezérlése</description>
+    <description xml:lang="he">שחרור ושליטה במכשיר לרשת תקשורת סלולרית</description>
+    <description xml:lang="gl">Desbloquear e controlar un dispositivo de banda larga móvil</description>
+    <description xml:lang="fur">Sbloche e controle un dispositîf a bande largje mobile</description>
+    <description xml:lang="fr">Déverrouiller et contrôler un périphérique mobile à large bande</description>
+    <description xml:lang="fi">Avaa ja hallitse mobiilia laajakaistalaitetta</description>
+    <description xml:lang="de">Ein mobiles Breitbandgerät entsperren und steuern</description>
+    <description xml:lang="da">Lås op for og styr en mobilt bredbånd-enhed</description>
+    <description xml:lang="ca">Desbloqueja i controla un dispositiu de banda ampla mòbil</description>
+    <description xml:lang="cs">Odemykat a ovládat mobilní širokopásmové zařízení</description>
+    <message>System policy prevents unlocking or controlling the mobile broadband device.</message>
+    <message xml:lang="zh_CN">系统策略禁止解锁或控制移动宽带设备。</message>
+    <message xml:lang="uk">Правила системи забороняють розблокування і керування пристроями широкосмугових мобільних мереж.</message>
+    <message xml:lang="tr">Sistem ilkesi mobil geniş bant aygıtını denetlemeyi veya kilidini açmayı engelliyor.</message>
+    <message xml:lang="sv">En systempolicy hindrar upplåsning eller kontroll över den mobila bredbandsenheten.</message>
+    <message xml:lang="sk">Politika systému zabraňuje odomknutiu alebo ovládaniu mobilného širokopásmového zariadenia.</message>
+    <message xml:lang="ru">Системная политика предотвращает разблокировку или управление мобильным широкополосным устройством.</message>
+    <message xml:lang="pt_BR">A política de sistema impede de desbloquear ou controlar o dispositivo de banda larga móvel.</message>
+    <message xml:lang="pl">Ustawienia systemu uniemożliwiają odblokowanie lub sterowanie urządzeniem komórkowym.</message>
+    <message xml:lang="nl">Systeembeleid verbiedt het ontgrendelen of besturen van de mobiele modem.</message>
+    <message xml:lang="lt">Sistemos politika neleidžia atrakinti ir valdyti mobiliojo plačiajuosčio ryšio įrenginį.</message>
+    <message xml:lang="ka">სისტემის პოლიტიკა გიკრძალავთ მობილური ფართოზოლოვანი მოწყობილობის განბლოკვას და კონტროლს.</message>
+    <message xml:lang="it">La politica di sistema impedisce di sbloccare o controllare il dispositivo mobile a banda larga.</message>
+    <message xml:lang="id">Kebijakan sistem mencegah membuka kunci atau mengendalikan peranti data seluler.</message>
+    <message xml:lang="hu">A rendszer házirendje nem teszi lehetővé a mobil széles sávú készülék feloldását vagy vezérlését.</message>
+    <message xml:lang="he">מדיניות המערכת מונעת שחרור או שליטה בהתקן רשת התקשורת האלחוטית.</message>
+    <message xml:lang="gl">A normativa do sistema prevén desbloquear ou controlar un dispositivo de banda larga móvil.</message>
+    <message xml:lang="fur">La politiche dal sisteme e impedìs di sblocâ o controlâ il dispositîf a bande largje mobile.</message>
+    <message xml:lang="fr">La politique système empêche le verrouillage et le contrôle d’un périphérique mobile à large bande.</message>
+    <message xml:lang="fi">Järjestelmän sääntö estää avaamasta tai hallitsemasta mobiilia laajakaistalaitetta.</message>
+    <message xml:lang="de">Die Systemrichtlinien verhindern das Entsperren oder Steuern des mobilen Breitbandgerätes.</message>
+    <message xml:lang="da">Systempolitikken forhindrer oplåsning og styring af mobilt bredbånd-enheden.</message>
+    <message xml:lang="ca">La política del sistema impedeix desbloquejar o controlar el dispositiu de banda ampla mòbil.</message>
+    <message xml:lang="cs">Systémová zásada brání v odemknutí nebo v ovládání mobilního širokopásmového zařízení.</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>yes</allow_active>
+    </defaults>
+  </action>
+  <action id="org.freedesktop.ModemManager1.Contacts">
+    <description>Add, modify, and delete mobile broadband contacts</description>
+    <description xml:lang="zh_CN">添加、修改或删除移动宽带联系人</description>
+    <description xml:lang="uk">Додати, внести зміни і вилучити контакти пристрою мобільних широкосмугових мереж</description>
+    <description xml:lang="tr">Mobil geniş bant kişileri ekle, düzenle ve sil</description>
+    <description xml:lang="sv">Lägg till, ändra och ta bort mobila bredbandskontakter</description>
+    <description xml:lang="sk">Pridanie, úprava a odstránenie kontaktov mobilného širokopásmového zariadenia</description>
+    <description xml:lang="ru">Добавить, изменить и удалить мобильные широкополосные контакты</description>
+    <description xml:lang="pt_BR">Adicionar, modificar e excluir contatos de banda larga móvel</description>
+    <description xml:lang="pl">Dodawanie, modyfikowanie i usuwanie kontaktów urządzenia komórkowego</description>
+    <description xml:lang="nl">Mobiele contacten toevoegen, bewerken en verwijderen</description>
+    <description xml:lang="lt">Pridėti, modifikuoti bei ištrinti mobiliojo plačiajuosčio ryšio kontaktus</description>
+    <description xml:lang="ka">დაამატეთ, ჩაასწორეთ და წაშალეთ მობილური კონტაქტები</description>
+    <description xml:lang="it">Aggiunge, modifica ed elimina contatti mobili a banda larga</description>
+    <description xml:lang="id">Tambah, ubah, dan hapus kontak data seluler</description>
+    <description xml:lang="hu">Névjegyek hozzáadása, módosítása és eltávolítása</description>
+    <description xml:lang="he">ניתן להוסיף, לערוך ולמחוק אנשי קשר בהתקן רשת תקשורת אלחוטית</description>
+    <description xml:lang="gl">Engadir, modificar e eliminar os contactos de banda larga móvil.</description>
+    <description xml:lang="fur">Zonte, modifiche e elimine i contats de bande largje mobile</description>
+    <description xml:lang="fr">Ajouter, modifier et supprimer des contacts de connexions mobiles</description>
+    <description xml:lang="fi">Lisää, muuta ja poista mobiilin laajakaistan yhteystietoja</description>
+    <description xml:lang="de">Kontakte für mobiles Breitband hinzufügen, ändern und löschen</description>
+    <description xml:lang="da">Tilføj, rediger og slet mobilt bredbånd-kontakter</description>
+    <description xml:lang="ca">Afegeix, modifica o esborra contactes de mòbil</description>
+    <description xml:lang="cs">Přidávat, měnit a mazat kontakty v mobilním zařízení</description>
+    <message>System policy prevents adding, modifying, or deleting this device's contacts.</message>
+    <message xml:lang="zh_CN">系统策略禁止添加、修改或删除移动宽带联系人。</message>
+    <message xml:lang="uk">Правила системи перешкоджають додаванню, внесенню змін та вилученню записів контактів на цьому пристрої.</message>
+    <message xml:lang="tr">Sistem ilkesi bu aygıtın kişi eklemesini, düzenlemesini veya silmesini engelliyor.</message>
+    <message xml:lang="sv">En systempolicy förhindrar att lägga till, ändra och ta bort denna enhets kontakter.</message>
+    <message xml:lang="sk">Politika systému zabraňuje pridaniu, úprave, alebo odstráneniu kontaktov v tomto zariadení.</message>
+    <message xml:lang="ru">Системная политика запрещает добавление, изменение или удаление контактов этого устройства.</message>
+    <message xml:lang="pt_BR">A política de sistema impede de adicionar, modificar ou excluir os contatos deste dispositivo.</message>
+    <message xml:lang="pl">Ustawienia systemu uniemożliwiają dodawanie, modyfikowanie lub usuwanie kontaktów tego urządzenia.</message>
+    <message xml:lang="nl">Systeembeleid verbiedt het toevoegen, bewerken of verwijderen van de contacten op dit apparaat.</message>
+    <message xml:lang="lt">Sistemos politika neleidžia pridėti, modifikuoti ar ištrinti šio įrenginio kontaktus.</message>
+    <message xml:lang="ka">სისტემის პოლიტიკა გიკრძალავთ ამ მოწყობილობის კონტაქტებიდაამატოთ, ჩაასწოროთ ან წაშალოთ.</message>
+    <message xml:lang="it">La politica di sistema impedisce di aggiungere, modificare o eliminare i contatti di questo dispositivo.</message>
+    <message xml:lang="id">Kebijakan sistem mencegah menambah, mengubah, atau menghapus kontak-kontak peranti ini.</message>
+    <message xml:lang="hu">A rendszer házirendje nem teszi lehetővé ezen az eszközön a névjegyek hozzáadását, módosítását és eltávolítását.</message>
+    <message xml:lang="he">מדיניות המערכת מונעת הוספה, עריכה או מחיקה של אנשי הקשר במכשיר הזה.</message>
+    <message xml:lang="gl">A normativa do sistema prevén engadir, modificar ou eliminar os contactos deste dispositivo.</message>
+    <message xml:lang="fur">La politiche dal sisteme e impedìs di zontâ, modificâ o eliminâ i contats di chest dispositîf.</message>
+    <message xml:lang="fr">La politique système empêche l’ajout, la modification ou la suppression des contacts de cet appareil.</message>
+    <message xml:lang="fi">Järjestelmän sääntö estää lisäämästä, muuttamasta tai poistamasta tämän laitteen yhteystietoja.</message>
+    <message xml:lang="de">Die Systemrichtlinien verhindern das Hinzufügen, Ändern oder Löschen der Kontakte dieses Gerätes.</message>
+    <message xml:lang="da">Systempolitikken forhindrer tilføjelse, redigering eller sletning af enhedens kontakter.</message>
+    <message xml:lang="ca">La política del sistema impedeix afegir, modificar o suprimir els contactes d'aquest dispositiu.</message>
+    <message xml:lang="cs">Systémová zásada brání v přidání, změně nebo smazání kontaktů v tomto zařízení.</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>yes</allow_active>
+    </defaults>
+  </action>
+  <action id="org.freedesktop.ModemManager1.Messaging">
+    <description>Send, save, modify, and delete text messages</description>
+    <description xml:lang="zh_CN">发送、保存修改或删除文本消息</description>
+    <description xml:lang="uk">Надіслати, зберегти, внести зміни або вилучити текстові повідомлення</description>
+    <description xml:lang="tr">Metin ileti gönder, kaydet, düzenle ve sil</description>
+    <description xml:lang="sv">Skicka, spara, ändra och ta bort meddelanden</description>
+    <description xml:lang="sk">Odoslanie, uloženie, úprava a odstránenie textových správ</description>
+    <description xml:lang="ru">Отправить, сохранить, изменить и удалить текстовые сообщения</description>
+    <description xml:lang="pt_BR">Enviar, salvar, modificar e excluir mensagens de texto</description>
+    <description xml:lang="pl">Wysyłanie, zapisywanie, modyfikowanie i usuwanie wiadomości SMS</description>
+    <description xml:lang="nl">Berichten verzenden, opslaan, bewerken en verwijderen</description>
+    <description xml:lang="lt">Siųsti, įrašyti, modifikuoti bei ištrinti tekstines žinutes</description>
+    <description xml:lang="ka">გააგზავნეთ, შეინახეთ, ჩაასწორეთ და წაშალეთ ტექსტური შეტყობინებები</description>
+    <description xml:lang="it">Invia, salva, modifica ed elimina messaggi di testo</description>
+    <description xml:lang="id">Kirim, simpan, ubah, dan hapus pesan-pesan teks</description>
+    <description xml:lang="hu">Szöveges üzenetek küldése, mentése, módosítása és törlése</description>
+    <description xml:lang="he">שליחה, שמירה, עריכה ומחיקה של הודעות טקסט</description>
+    <description xml:lang="gl">Enviar, gardar, modificar e eliminar mensaxes de texto</description>
+    <description xml:lang="fur">Invie, salve, modifiche e elimine i messaçs di test</description>
+    <description xml:lang="fr">Envoyer, enregistrer, modifier et supprimer des messages textuels</description>
+    <description xml:lang="fi">Lähetä, talleta, muuta ja poista tekstiviestejä</description>
+    <description xml:lang="de">Textnachrichten senden, speichern, bearbeiten und löschen</description>
+    <description xml:lang="da">Send, gem, rediger og slet tekstbeskeder</description>
+    <description xml:lang="ca">Envia, desa, modifica i esborra missatges de text</description>
+    <description xml:lang="cs">Odesílat, ukládat, měnit a mazat textové zprávy</description>
+    <message>System policy prevents sending or manipulating this device's text messages.</message>
+    <message xml:lang="zh_CN">系统策略禁止发送或操作此设备的文本消息。</message>
+    <message xml:lang="uk">Правила системи забороняють надсилання або керування текстовими повідомленнями цього пристрою.</message>
+    <message xml:lang="tr">Sistem ilkesi bu aygıtın metin iletiler göndermesini veya işlemesini engelliyor.</message>
+    <message xml:lang="sv">En systempolicy förhindrar att skicka eller ändra denna enhets textmeddelanden.</message>
+    <message xml:lang="sk">Politika systému zabraňuje odoslaniu, alebo manipulácii textových správ v tomto zariadení.</message>
+    <message xml:lang="ru">Системная политика запрещает отправку или манипулирование текстовыми сообщениями этого устройства.</message>
+    <message xml:lang="pt_BR">A política de sistema impede de enviar ou manipular as mensagens de texto deste dispositivo.</message>
+    <message xml:lang="pl">Ustawienia systemu uniemożliwiają wysyłanie lub manipulowanie wiadomościami SMS tego urządzenia.</message>
+    <message xml:lang="nl">Systeembeleid verbiedt het verzenden of manipuleren van de berichten op dit apparaat.</message>
+    <message xml:lang="lt">Sistemos politika neleidžia siųsti ar valdyti šio įrenginio tekstines žinutes.</message>
+    <message xml:lang="ka">სისტემის პოლიტიკა გიკრძალავთ მოწყობილობის ტექსტური შეტყობინებების გაგზავნას და მანიპულაციას.</message>
+    <message xml:lang="it">La politica di sistema impedisce di inviare o manipolare i messaggi di testo di questo dispositivo.</message>
+    <message xml:lang="id">Kebijakan sistem mencegah pengiriman atau manipulasi pesan-pesan teks peranti ini.</message>
+    <message xml:lang="hu">A rendszer házirendje nem teszi lehetővé a szöveges üzenetek küldését vagy kezelését.</message>
+    <message xml:lang="he">מדיניות המערכת מונעת שליחה או עריכה של המסרונים בהתקן הזה.</message>
+    <message xml:lang="gl">A normativa do sistema prevén o envío e manipulación dos mensaxes de texto do dispositivo.</message>
+    <message xml:lang="fur">La politiche dal sisteme e impedìs di inviâ o manipolâ i messaçs di test di chest dispositîf.</message>
+    <message xml:lang="fr">La politique système empêche l’envoi ou la manipulation des messages textuels ce cet appareil.</message>
+    <message xml:lang="fi">Järjestelmän sääntö estää lähettämästä tai muokkaamasta tämän laitteen tekstiviestejä.</message>
+    <message xml:lang="de">Die Systemrichtlinien verhindern das Senden oder Bearbeiten der Textnachrichten dieses Gerätes.</message>
+    <message xml:lang="da">Systempolitikken forhindrer afsendelse eller manipulering af enhedens tekstbeskeder.</message>
+    <message xml:lang="ca">La política del sistema impedeix enviar o manipular els missatges de text d'aquest dispositiu.</message>
+    <message xml:lang="cs">Systémová zásada brání v odesílání nebo v manipulaci s textovými zprávami na tomto zařízení.</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>yes</allow_active>
+    </defaults>
+  </action>
+  <action id="org.freedesktop.ModemManager1.Voice">
+    <description>Accept incoming voice calls or start outgoing voice calls.</description>
+    <description xml:lang="zh_CN">接听传入的语音呼叫或者开始传出语音呼叫。</description>
+    <description xml:lang="uk">Приймати вхідні голосові виклики і розпочинати вихідні голосові виклики.</description>
+    <description xml:lang="tr">Gelen sesli çağrıları kabul et veya giden sesli çağrılar başlat.</description>
+    <description xml:lang="sv">Acceptera inkommande röstsamtal eller påbörja utgående röstsamtal.</description>
+    <description xml:lang="sk">Prijatie prichádzajúcich hovorov, alebo zahájenie odchádzajúcich hlasových hovorov.</description>
+    <description xml:lang="ru">Принимать входящие голосовые звонки или начать исходящие голосовые звонки.</description>
+    <description xml:lang="pt_BR">Aceitar chamadas de voz recebidas ou iniciar chamadas de voz de saída.</description>
+    <description xml:lang="pl">Przyjmowanie połączeń przychodzących lub dzwonienie</description>
+    <description xml:lang="nl">Inkomende audiogesprekken aanvaarden of uitgaande audiogesprekken starten.</description>
+    <description xml:lang="lt">Atsiliepti į gaunamus balso skambučius ar inicijuoti išsiunčiamuosius balso skambučius.</description>
+    <description xml:lang="ka">შემომავალი ხმოვანი ზარების მიღება ან გამავალი ზარის დაწყება.</description>
+    <description xml:lang="it">Accetta chiamate vocali in arrivo o avvia chiamate vocali.</description>
+    <description xml:lang="id">Terima panggilan suara masuk atau mulai pemanggilan suara keluar.</description>
+    <description xml:lang="hu">Bejövő hívások fogadása vagy kimenő hívások indítása.</description>
+    <description xml:lang="he">לקבל שיחות נכנסות או להוציא שיחות.</description>
+    <description xml:lang="gl">Aceptar chamadas de voz entrantes ou comezar chamadas de voz saíntes.</description>
+    <description xml:lang="fur">Acete lis clamadis vocâls in jentrade o tacâ clamadis vocâls in jessude.</description>
+    <description xml:lang="fr">Accepter des appels vocaux entrants ou initier des appels vocaux sortants.</description>
+    <description xml:lang="fi">Hyväksy tulevat puhelut tai aloita (ääni)puheluita.</description>
+    <description xml:lang="de">Eingehende Sprachanrufe annehmen oder ausgehende Sprachanrufe beginnen.</description>
+    <description xml:lang="da">Accepter indkommende stemmeopkald eller start udgående stemmeopkald.</description>
+    <description xml:lang="ca">Accepta trucades de veu entrants o n'inicia de sortints.</description>
+    <description xml:lang="cs">Přijímat příchozí hovory nebo začínat odchozí hovory</description>
+    <message>System policy prevents voice calls.</message>
+    <message xml:lang="zh_CN">系统策略禁止语音呼叫。</message>
+    <message xml:lang="uk">Правила системи перешкоджають голосовим викликам.</message>
+    <message xml:lang="tr">Sistem ilkesi sesli çağrıları engelliyor.</message>
+    <message xml:lang="sv">En systempolicy förhindrar röstsamtal.</message>
+    <message xml:lang="sk">Politika systému zabraňuje hlasovým hovorom.</message>
+    <message xml:lang="ru">Системная политика запрещает голосовые звонки.</message>
+    <message xml:lang="pt_BR">A política de sistema impede chamadas de voz.</message>
+    <message xml:lang="pl">Ustawienia systemu uniemożliwiają dzwonienie.</message>
+    <message xml:lang="nl">Systeembeleid verbiedt audiogesprekken.</message>
+    <message xml:lang="lt">Sistemos politika neleidžia balso skambučių.</message>
+    <message xml:lang="ka">სისტემური პოლიტიკა გიკრძალავთ ხმოვან ზარებს.</message>
+    <message xml:lang="it">La politica di sistema impedisce di effettuare chiamate vocali.</message>
+    <message xml:lang="id">Kebijakan sistem mencegah panggilan suara.</message>
+    <message xml:lang="hu">A rendszer házirendje nem teszi lehetővé a hívásokat.</message>
+    <message xml:lang="he">מדיניות המערכת מונעת שיחות קוליות.</message>
+    <message xml:lang="gl">A normativa do sistema prevén as chamadas de voz.</message>
+    <message xml:lang="fur">La politiche dal sisteme e impedìs lis clamadis vocâls.</message>
+    <message xml:lang="fr">La politique système empêche les appels vocaux.</message>
+    <message xml:lang="fi">Järjestelmän sääntö estää äänipuhelut.</message>
+    <message xml:lang="de">Die Systemrichtlinien verhindern Sprachanrufe.</message>
+    <message xml:lang="da">Systempolitikken forhindrer stemmeopkald.</message>
+    <message xml:lang="ca">La política del sistema impedeix les trucades de veu.</message>
+    <message xml:lang="cs">Systémová zásada brání v hlasových hovorech.</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>yes</allow_active>
+    </defaults>
+  </action>
+  <action id="org.freedesktop.ModemManager1.Time">
+    <description>Query network time and timezone information</description>
+    <description xml:lang="uk">Надсилання запиту щодо часу і часового поясу мережі</description>
+    <description xml:lang="tr">Ağ zaman ve saat dilimi bilgisini sorgula</description>
+    <description xml:lang="sv">Fråga efter nätverkstid och tidzonsinformation</description>
+    <description xml:lang="sk">Požadovanie informácií o sieťovom čase a časovej zóne</description>
+    <description xml:lang="ru">Запрос информации о времени и часовых поясах в сети</description>
+    <description xml:lang="pt_BR">Consultar informações de hora e fuso horário da rede</description>
+    <description xml:lang="pl">Odpytywanie informacji o czasie sieciowym i strefie czasowej</description>
+    <description xml:lang="nl">Netwerktijd en tijdszone-informatie ophalen</description>
+    <description xml:lang="ka">ქსელური დროისა და დროის სარტყლის გამოთხოვა</description>
+    <description xml:lang="it">Interroga le informazioni sull'ora di rete e sul fuso orario</description>
+    <description xml:lang="id">Tanyakan waktu jaringan dan informasi zona waktu</description>
+    <description xml:lang="hu">Hálózati idő és időzóna-információk lekérdezése</description>
+    <description xml:lang="he">לתשאל את פרטי השעה ואזור הזמן מהרשת</description>
+    <description xml:lang="gl">Consultar informacións de hora e fuso horario</description>
+    <description xml:lang="fi">Tarkista verkon aika ja aikavyöhyketiedot</description>
+    <description xml:lang="de">Netzwerkzeit und Zeitzonen-Information abfragen</description>
+    <description xml:lang="ca">Consulta informació del fus horari i l'hora de la xarxa</description>
+    <message>System policy prevents querying network time information.</message>
+    <message xml:lang="uk">Правила системи забороняють надсилання запитів щодо часу мережі.</message>
+    <message xml:lang="tr">Sistem ilkesi ağ zaman bilgisini sorgulamayı engelliyor.</message>
+    <message xml:lang="sv">En systempolicy förhindrar frågande av nätverkstidsinformation.</message>
+    <message xml:lang="sk">Politika systému zabraňuje požadovaniu informácií o sieťovom čase.</message>
+    <message xml:lang="ru">Системная политика запрещает запрашивать информацию о времени в сети.</message>
+    <message xml:lang="pt_BR">A política de sistema impede de consultar informações de horário da rede.</message>
+    <message xml:lang="pl">Ustawienia systemu uniemożliwiają odpytywanie informacji o czasie sieciowym.</message>
+    <message xml:lang="nl">Systeeminstellingen verbieden het ophalen van informatie over de netwerktijd.</message>
+    <message xml:lang="ka">სისტემური პოლიტიკა გიკრძალავთ ქსელური დროის ინფორმაციის გამოთხოვას.</message>
+    <message xml:lang="it">La politica di sistema impedisce di interrogare le informazioni sull'ora di rete</message>
+    <message xml:lang="id">Kebijakan sistem mencegah kuiri informasi waktu jaringan.</message>
+    <message xml:lang="hu">A rendszer házirendje nem teszi lehetővé a hálózati idő információinak lekérdezését.</message>
+    <message xml:lang="he">מדיניות מערכת מונעת תשאול פרטי זמן מהרשת.</message>
+    <message xml:lang="gl">A normativa do sistema prevén a consulta da información da hora da rede.</message>
+    <message xml:lang="fi">Järjestelmän sääntö estää tarkastamasta verkon aikaa ja aikavyöhyketietoja.</message>
+    <message xml:lang="de">Die Systemrichtlinien verhindern die Abfrage der Netzwerkzeit-Information.</message>
+    <message xml:lang="ca">La política del sistema impedeix consultar la informació de l'hora de la xarxa.</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>yes</allow_active>
+    </defaults>
+  </action>
+  <action id="org.freedesktop.ModemManager1.Location">
+    <description>Enable and view geographic location and positioning information</description>
+    <description xml:lang="zh_CN">启用和查看地理位置和定位信息</description>
+    <description xml:lang="uk">Увімкнути або переглянути дані щодо географічного розташування і позиціювання</description>
+    <description xml:lang="tr">Coğrafi konum ve konumlandırma bilgisini etkinleştir ve gör</description>
+    <description xml:lang="sv">Aktivera och visa geografisk plats samt positioneringsinformation</description>
+    <description xml:lang="sk">Povolenie a zobrazenie geografickej polohy a informácií o pozícii</description>
+    <description xml:lang="ru">Включить и просмотреть географическое местоположение и информацию о местоположении</description>
+    <description xml:lang="pt_BR">Habilitar e ver informações de posicionamento e localização geográfica</description>
+    <description xml:lang="pl">Włączanie i wyświetlanie informacji o położeniu geograficznym i pozycjonowaniu</description>
+    <description xml:lang="nl">Informatie over de geografische locatie en positiebepaling inschakelen en bekijken</description>
+    <description xml:lang="lt">Įjungti ir rodyti geografinės vietos bei pozicionavimo informaciją</description>
+    <description xml:lang="ka">ჩართეთ და ნახეთ გეოგრაფიული მდებარეობა</description>
+    <description xml:lang="it">Abilita e visualizza informazioni di geolocalizzazione e posizionamento</description>
+    <description xml:lang="id">Fungsikan dan tilik lokasi geografis dan informasi posisi</description>
+    <description xml:lang="hu">Földrajzi helyzetmeghatározás bekapcsolása és az információk megtekintése</description>
+    <description xml:lang="he">להפעיל ולהציג פרטי מיקום גאוגרפי</description>
+    <description xml:lang="gl">Activar e ver a información de localización xeográfica e posicionamento</description>
+    <description xml:lang="fur">Abilite e viôt la posizion gjeografiche e lis informazions su la posizion</description>
+    <description xml:lang="fr">Activer et voir les informations de position géographique</description>
+    <description xml:lang="fi">Salli ja katso sijainti- ja paikkatiedot</description>
+    <description xml:lang="de">Informationen zum geografischen Standort und zur Positionierung aktivieren und anzeigen</description>
+    <description xml:lang="da">Aktivér og vis information om geografisk placering og positition</description>
+    <description xml:lang="ca">Activa i mostra informació de posicionament i ubicació geogràfica</description>
+    <description xml:lang="cs">Povolovat sdělování a zobrazování geografické polohy a informací o pozici</description>
+    <message>System policy prevents enabling or viewing geographic location information.</message>
+    <message xml:lang="zh_CN">系统策略禁止启用和查看地理位置和定位信息。</message>
+    <message xml:lang="uk">Правила системи забороняють вмикання або перегляд даних щодо розташування.</message>
+    <message xml:lang="tr">Sistem ilkesi coğrafi konum bilgisini etkinleştirmeyi ve göstermeyi engelliyor.</message>
+    <message xml:lang="sv">En systempolicy förhindrar aktivering eller visning av geografisk platsinformation.</message>
+    <message xml:lang="sk">Politika systému zabraňuje povoleniu, alebo zobrazeniu informácií o geografickej polohe.</message>
+    <message xml:lang="ru">Системная политика запрещает включение или просмотр информации о географическом местоположении.</message>
+    <message xml:lang="pt_BR">A política de sistema impede de habilitar ou ver informações de localização geográfica.</message>
+    <message xml:lang="pl">Ustawienia systemu uniemożliwiają włączanie lub wyświetlanie informacji o położeniu geograficznym.</message>
+    <message xml:lang="nl">Systeembeleid verbiedt het inschakelen of bekijken van informatie over de geografische locatie.</message>
+    <message xml:lang="lt">Sistemos politika neleidžia įjungti ar rodyti geografinės vietos informaciją.</message>
+    <message xml:lang="ka">სისტემური პოლიტიკა გიკრძალავთ გეოგრაფიული მდებარეობის ჩართვასა და გამოყენებას.</message>
+    <message xml:lang="it">La politica di sistema impedisce di abilitare o visualizzare informazioni di geolocalizzazione.</message>
+    <message xml:lang="id">Kebijakan sistem mencegah memfungsikan atau menilik informasi lokasi geografis.</message>
+    <message xml:lang="hu">A rendszer házirendje nem teszi lehetővé a földrajzi helyzetmeghatározás bekapcsolását vagy az információk megtekintését.</message>
+    <message xml:lang="he">מדיניות מערכת מונעת הפעלה או הצגה של פרטי מיקום גאוגרפי.</message>
+    <message xml:lang="gl">A normativa do sistema prevén activar ou ver a información de localización xeográfica.</message>
+    <message xml:lang="fur">La politiche dal sisteme e impedìs di abilitâ o viodi lis informazions su la posizion gjeografiche.</message>
+    <message xml:lang="fr">La politique système empêche d’activer ou de voir les informations de position géographique.</message>
+    <message xml:lang="fi">Järjestelmän sääntö estää sallimasta tai katsomasta sijainti- ja paikkatietoja</message>
+    <message xml:lang="de">Die Systemrichtlinien verhindern das Aktivieren oder Anzeigen der Informationen zum geografischen Standort.</message>
+    <message xml:lang="da">Systempolitikken forhindrer aktivering og visning af information geografisk placering.</message>
+    <message xml:lang="ca">La política del sistema impedeix habilitar o visualitzar informació d'ubicació geogràfica.</message>
+    <message xml:lang="cs">Systémová zásada brání v povolení sdělování a v zobrazení informací o geografické poloze.</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>yes</allow_active>
+    </defaults>
+  </action>
+  <action id="org.freedesktop.ModemManager1.USSD">
+    <description>Query and utilize network information and services</description>
+    <description xml:lang="zh_CN">查询和利用网络信息和服务</description>
+    <description xml:lang="uk">Надіслати запит і використати дані щодо мережі і служби</description>
+    <description xml:lang="tr">Ağ bilgisi ve hizmetleri sorgula ve yararlan</description>
+    <description xml:lang="sv">Fråga efter och nyttja nätverksinformation och tjänster</description>
+    <description xml:lang="sk">Požadovanie a spracovanie sieťových informácií a služieb</description>
+    <description xml:lang="ru">Запрос, использование сетевой информации и услуг</description>
+    <description xml:lang="pt_BR">Consultar ou utilizar serviços e informações de rede.</description>
+    <description xml:lang="pl">Odpytywanie i używanie informacji i usług sieciowych</description>
+    <description xml:lang="nl">Netwerkinformatie en -diensten ophalen en gebruiken</description>
+    <description xml:lang="lt">Užklausti ir panaudoti tinklo informacija bei paslaugas</description>
+    <description xml:lang="ka">ქსელის ინფორმაციის და სერვისების მოთხოვა და გამოყენება</description>
+    <description xml:lang="it">Interroga e utilizza informazioni e servizi della rete</description>
+    <description xml:lang="id">Kuiri dan manfaatkan layanan dan informasi jaringan</description>
+    <description xml:lang="hu">Hálózati információk és szolgáltatások lekérdezése és használata</description>
+    <description xml:lang="he">תשאול ושימוש בשירותי ומידע על הרשת</description>
+    <description xml:lang="gl">Consultar e usar a información e servizos da ree</description>
+    <description xml:lang="fur">Interoghe e dopre lis informazions di rêt e i servizis</description>
+    <description xml:lang="fr">Interroger et utiliser les informations et services du réseau</description>
+    <description xml:lang="fi">Tarkista ja käytä verkon tietoja ja palveluita</description>
+    <description xml:lang="de">Netzwerkinformationen und -dienste abfragen und nutzen</description>
+    <description xml:lang="da">Forespørg og anvend netværksinformation og -tjenester</description>
+    <description xml:lang="ca">Consulta i fa ús d'informació i serveis de xarxa</description>
+    <description xml:lang="cs">Dotazovat se na informace o síti a na služby a využívat je</description>
+    <message>System policy prevents querying or utilizing network information and services.</message>
+    <message xml:lang="zh_CN">系统策略禁止查询和利用网络信息和服务。</message>
+    <message xml:lang="uk">Правила системи забороняють надсилання запитів і використання даних щодо мережі і служб.</message>
+    <message xml:lang="tr">Sistem ilkesi ağ bilgisini ve hizmetleri sorgulamayı veya yararlanmayı engelliyor.</message>
+    <message xml:lang="sv">En systempolicy förhindrar frågande och nyttjande av nätverksinformation och tjänster.</message>
+    <message xml:lang="sk">Politika systému zabraňuje požadovaniu, alebo spracovaniu sieťových informácií a službám.</message>
+    <message xml:lang="ru">Системная политика не позволяет запрашивать или использовать сетевую информацию и сервисы.</message>
+    <message xml:lang="pt_BR">A política de sistema impede de consultar ou utilizar serviços e informações de rede.</message>
+    <message xml:lang="pl">Ustawienia systemu uniemożliwiają odpytywanie lub używanie informacji i usług sieciowych.</message>
+    <message xml:lang="nl">Systeembeleid verbiedt het ophalen of gebruiken van netwerkinformatie en -diensten.</message>
+    <message xml:lang="lt">Sistemos politika neleidžia užklausti ar panaudoti tinklo informacija ir paslaugas.</message>
+    <message xml:lang="ka">სისტემური პოლიტიკა გიკრძალავთ სერვისების პოვნასა და გამოყენებას.</message>
+    <message xml:lang="it">La politica di sistema impedisce di interrogare o di utilizzare le informazioni e i servizi della rete.</message>
+    <message xml:lang="id">Kebijakan sistem mencegah kuiri atau pemanfaatan layanan dan informasi jaringan.</message>
+    <message xml:lang="hu">A rendszer házirendje nem teszi lehetővé a hálózati információk és szolgáltatások lekérdezését és használatát.</message>
+    <message xml:lang="he">מדיניות המערכת מונעת תשאול או שימוש במידע על הרשת או שירותים שלה.</message>
+    <message xml:lang="gl">A normativa do sistema prevén consultar ou usar a información e servizos da rede.</message>
+    <message xml:lang="fur">La politiche dal sisteme e impedìs la interogazion e la utilizazion di informazions di rêt e servizis.</message>
+    <message xml:lang="fr">La politique système empêche l’interrogation et l’utilisation des informations et des services du réseau.</message>
+    <message xml:lang="fi">Järjestelmän sääntö estää tarkistamasta tai käyttämästä verkon tietoja ja palveluita.</message>
+    <message xml:lang="de">Die Systemrichtlinien verhindern die Abfrage der Netzwerkinformationen und -dienste.</message>
+    <message xml:lang="da">Systempolitikken forhindrer forespørgsel eller anvendelse af netværksinformation og -tjenester.</message>
+    <message xml:lang="ca">La política del sistema impedeix consultar o utilitzar informació i serveis de xarxa.</message>
+    <message xml:lang="cs">Systémová zásada brání v dotazování na informace o síti a na služby, nebo brání v jejich využívání.</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>yes</allow_active>
+    </defaults>
+  </action>
+  <action id="org.freedesktop.ModemManager1.Firmware">
+    <description>Query and manage firmware on a mobile broadband device</description>
+    <description xml:lang="zh_CN">在移动宽带设备上查询和管理固件</description>
+    <description xml:lang="uk">Опитування та керування мікропрограмою на пристрої мобільної широкосмугової мережі</description>
+    <description xml:lang="tr">Mobil geniş bant aygıtındaki donanım yazılımını sorgula ve yönet</description>
+    <description xml:lang="sv">Fråga efter och hantera fast programvara för en mobil bredbandsenhet</description>
+    <description xml:lang="sk">Požadovanie a správa firmvéru mobilného širokopásmového zariadenia</description>
+    <description xml:lang="ru">Запрос и управление прошивкой на мобильном широкополосном устройстве</description>
+    <description xml:lang="pt_BR">Consultar e gerenciar firmware em um dispositivo de banda larga móvel</description>
+    <description xml:lang="pl">Odpytywanie i zarządzanie oprogramowaniem sprzętowym urządzenia komórkowego</description>
+    <description xml:lang="nl">Firmware op een mobiele modem ophalen en beheren</description>
+    <description xml:lang="lt">Užklausti ir tvarkyti programinę aparatinę įrangą mobiliojo plačiajuosčio ryšio įrenginyje</description>
+    <description xml:lang="ka">მობილურ მოწყობილობაზე მიკროკოდის გამოთხოვა და მართვა</description>
+    <description xml:lang="it">Interroga e gestisce il firmware su un dispositivo mobile a banda larga</description>
+    <description xml:lang="id">Kuiri dan kelola firmware pada suatu peranti data seluler</description>
+    <description xml:lang="hu">Firmware lekérdezése és kezelése a mobil széles sávú eszközön</description>
+    <description xml:lang="he">תשאול וניהול קושחה על התקן רשת תקשורת סלולרית</description>
+    <description xml:lang="gl">Consultar e xeraionar o firmware nun dispositivo de banda larga móvil</description>
+    <description xml:lang="fur">Interoghe e gjestìs il firmware suntun dispositîf a bande largje mobile</description>
+    <description xml:lang="fr">Interroger et gérer le matériel d’un périphérique mobile à large bande</description>
+    <description xml:lang="fi">Tarkista ja hallitse mobiilin laajakaistalaitteen laiteohjelmistoa</description>
+    <description xml:lang="de">Firmware auf mobilen Breitbandgeräten abfragen und verwalten</description>
+    <description xml:lang="da">Forespørg og håndter firmware på en mobilt bredbånd-enhed</description>
+    <description xml:lang="ca">Consulta i gestiona el microprogramari en un dispositiu de banda ampla mòbil</description>
+    <description xml:lang="cs">Dotazovat se na firmware a spravovat jej na mobilním širokopásmovém zařízení</description>
+    <message>System policy prevents querying or managing this device's firmware.</message>
+    <message xml:lang="zh_CN">系统策略禁止在移动宽带设备上查询和管理固件。</message>
+    <message xml:lang="uk">Правила системи перешкоджають опитуванню або керування мікропрограмою цього пристрою.</message>
+    <message xml:lang="tr">Sistem ilkesi bu aygıtın donanım yazılımını sorgulamayı veya yönetmeyi engelliyor.</message>
+    <message xml:lang="sv">En systempolicy förhindrar att fråga och hantera denna enhets fasta programvara.</message>
+    <message xml:lang="sk">Politika systému zabraňuje požadovaniu, alebo správe firmvéru tohto zariadenia.</message>
+    <message xml:lang="ru">Системная политика не позволяет запрашивать или управлять прошивкой этого устройства.</message>
+    <message xml:lang="pt_BR">A política de sistema impede de consultar ou gerenciar o firmware do dispositivo.</message>
+    <message xml:lang="pl">Ustawienia systemu uniemożliwiają odpytywanie lub zarządzanie oprogramowaniem sprzętowym tego urządzenia.</message>
+    <message xml:lang="nl">Systeembeleid verbiedt het ophalen of beheren van de firmware van dit apparaat.</message>
+    <message xml:lang="lt">Sistemos politika neleidžia užklausti ar tvarkyti šio įrenginio programinę aparatinę įrangą.</message>
+    <message xml:lang="ka">სისტემური პოლიტიკა გიკრძალავთ მოწყობილობის მიკროკოდის გამოთხოვას და მართვას.</message>
+    <message xml:lang="it">La politica di sistema impedisce di interrogare o gestire il firmware di questo dispositivo.</message>
+    <message xml:lang="id">Kebijakan sistem mencegah kuiri atau pengelolaan firmware peranti ini.</message>
+    <message xml:lang="hu">A rendszer lekérdezése és használata lehetővé a firmware lekérdezését és kezelését az eszközön.</message>
+    <message xml:lang="he">מדיניות המערכת מונעת תשאול או ניהול של קושחת ההתקן הזה.</message>
+    <message xml:lang="gl">A normativa do sistema prevén a consulta e xesión do firmware do dispositivo.</message>
+    <message xml:lang="fur">La politiche dal sisteme e impedìs di interogâ o gjestî il firmware di chest dispositîf.</message>
+    <message xml:lang="fr">La politique système empêche l’interrogation et la gestion du matériel de ce périphérique.</message>
+    <message xml:lang="fi">Järjestelmän sääntö estää tarkistamasta ja hallitsemasta tämän laitteen laiteohjelmistoa.</message>
+    <message xml:lang="de">Die Systemrichtlinien verhindern die Abfrage oder Verwaltung der Firmware dieses Gerätes.</message>
+    <message xml:lang="da">Systempolitikken forhindrer forespørgsel og håndtering af enhedens firmware.</message>
+    <message xml:lang="ca">La política del sistema impedeix consultar o gestionar el microprogramari d'aquest dispositiu.</message>
+    <message xml:lang="cs">Systémová zásada brání v dotázání na firmware nebo brání v jeho správě na tomto zařízení.</message>
+    <defaults>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_admin</allow_active>
+    </defaults>
+  </action>
+</policyconfig>

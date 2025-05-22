@@ -1,0 +1,32 @@
+[Icon Theme]
+Name=Yaru-viridian-dark
+Comment=A desktop adaptation of the Ubuntu mobile icons.
+Inherits=Yaru-viridian,Yaru-dark,Humanity,hicolor
+Example=folder
+Directories=16x16/panel,22x22/animations,22x22/panel,24x24/animations,24x24/panel
+
+[16x16/panel]
+Context=Status
+Size=16
+Type=Fixed
+
+[22x22/animations]
+Context=Animations
+Size=22
+Type=Fixed
+
+[22x22/panel]
+Context=Status
+Size=22
+Type=Fixed
+
+[24x24/animations]
+Context=Animations
+Size=24
+Type=Fixed
+
+[24x24/panel]
+Context=Status
+Size=24
+Type=Fixed
+

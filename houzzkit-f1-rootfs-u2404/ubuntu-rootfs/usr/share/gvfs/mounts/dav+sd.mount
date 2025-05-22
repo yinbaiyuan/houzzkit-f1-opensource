@@ -1,0 +1,4 @@
+[Mount]
+Type=dav+sd;davs+sd
+Exec=/usr/libexec/gvfsd-dav
+AutoMount=false

@@ -1,0 +1,5 @@
+[Mount]
+Type=computer
+Exec=/usr/libexec/gvfsd-computer
+AutoMount=true
+

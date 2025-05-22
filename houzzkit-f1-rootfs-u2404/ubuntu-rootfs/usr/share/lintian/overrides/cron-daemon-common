@@ -1,0 +1,8 @@
+# hidden .placeholder files are never ever intended to be run by anacron
+
+cron-daemon-common: missing-systemd-timer-for-cron-script [etc/cron.d/.placeholder]
+cron-daemon-common: missing-systemd-timer-for-cron-script [etc/cron.hourly/.placeholder]
+cron-daemon-common: missing-systemd-timer-for-cron-script [etc/cron.daily/.placeholder]
+cron-daemon-common: missing-systemd-timer-for-cron-script [etc/cron.weekly/.placeholder]
+cron-daemon-common: missing-systemd-timer-for-cron-script [etc/cron.monthly/.placeholder]
+cron-daemon-common: missing-systemd-timer-for-cron-script [etc/cron.yearly/.placeholder]

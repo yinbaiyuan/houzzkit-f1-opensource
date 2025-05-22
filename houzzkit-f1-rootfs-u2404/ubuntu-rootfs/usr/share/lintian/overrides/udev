@@ -1,0 +1,7 @@
+# Our units without [Install] are either event driven or statically enabled
+udev: systemd-service-file-missing-install-key
+# Lintian is really bad at associating manpages
+udev: spare-manual-page
+udev: maintainer-script-calls-systemctl
+# variable name, not a typo
+udev: spelling-error-in-binary ressize resize [usr/bin/udevadm]

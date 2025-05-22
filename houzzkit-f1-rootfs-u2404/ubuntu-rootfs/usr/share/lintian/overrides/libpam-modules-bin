@@ -1,0 +1,4 @@
+# yes, we know it's sgid, that's the whole point...
+libpam-modules-bin: setgid-binary *usr/sbin/unix_chkpwd* 2755 root/shadow
+libpam-modules-bin: setgid-binary *usr/sbin/pam_extrausers_chkpwd* 2755 root/shadow
+libpam-modules-bin: elevated-privileges 2755 root/shadow [usr/sbin/unix_chkpwd]

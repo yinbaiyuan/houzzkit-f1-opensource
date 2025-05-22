@@ -1,0 +1,30 @@
+ModemManager
+============
+
+
+Important notice
+----------------
+
+If you are using a mobile device with integrated WWAN module, a manual
+configuration step is needed after installing or upgrading modemmanager,
+otherwise the module might NOT be useable anymore.
+
+Unfortunately, the logged error message will be slightly misleading.
+So, if you see a message like
+
+ <warn>  [modem0] couldn't enable interface: 'Invalid transition'
+
+in your system logs or ModemManager keeps enabling and disabling the
+module every second, you are probably affected by this change:
+
+Starting with release 1.18.4, ModemManager does no longer enable the
+automatic FCC unlock for certain types of modems by default.
+
+		THIS MAY BREAK EXISTING SETUPS
+
+You can restore the old behaviour AT YOUR OWN RISK by creating symlinks
+in /etc/ModemManager/fcc-unlock.d:
+
+ sudo ln -sft /etc/ModemManager/fcc-unlock.d /usr/share/ModemManager/fcc-unlock.available.d/*
+
+See https://modemmanager.org/docs/modemmanager/fcc-unlock/ for details.

@@ -1,0 +1,2 @@
+# /var/adm/ only described as alternate path
+manpages-dev: FSSTND-dir-in-manual-page /var/adm/ [usr/share/man/man3/getlogin.3.gz:133]

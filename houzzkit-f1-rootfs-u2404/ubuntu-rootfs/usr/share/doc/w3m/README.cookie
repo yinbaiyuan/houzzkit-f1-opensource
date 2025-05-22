@@ -1,0 +1,59 @@
+cookie support of w3m
+
+
+                                                         (2000/11/07)  K. Okada
+                                                        okabek@guitar.ocn.ne.jp
+
+ * Support of version 0 (http://www.netscape.com/newsref/std/cookie_spec.html)
+   and version 1 (http://www.ics.uci.edu/pub/ietf/http/rfc2109.txt,
+   http://www.ics.uci.edu/pub/ietf/http/draft-ietf-http-state-man-mec-12.txt)
+   cookie.
+   
+ * Cookie support is enabled by default in the configure script. If the
+    configure script will not run, check that the USE_COOKIE macro is
+    defined in config.h
+    If you want to disable cookie support, run the configure script with
+    --disable-cookie option.
+   
+ * You can choose whether or not to use cookies from the Option Setting Panel
+    (normally bound to 'o') or -cookie and -no-cookie option.
+   
+ * You can disable cookies on the Option Setting Panel. When you do this,
+    all new cookies will be rejected, however, cookies which were accepted
+    before cookies were disabled will continue to be used.
+   
+ * You can see the list of accepted cookies with C-k. In this panel, you
+    can choose to use each cookie or not.
+   
+ * You can specify domains from which to accept or not accept cookies
+    on the Option Setting Panel. Domains are specified in the following format:
+   
+      domain-list = domains
+                  | ""
+      domains     = domain
+                  | domain + "," + domains
+      domain      = "." + domain-name      ; match with domain name
+                  | host-domain-name       ; match with HDN
+                  | ".local"               ; match with all HDN except which include  "."
+                  | "."                    ; match with all
+
+                              (HDN: host domain name)
+
+For the following example, if the cookies for selected domain (.xxx.or.jp)
+will be accepted then the settings would look like the following:
+┌────────────────────────────────────┐
+|Cookie Settings                     |
+|                                    |
+|Use Cookies            (*)ON ( )OFF |
+|Accept Cookies         (*)ON ( )OFF |
+|Use Problematic Cookies [discard]   |
+|Reject Cookie Domain [.          ]  |
+|Accept Cookie Domain [.xxx.or.jp ]  |
+|                         [OK]       |
+└────────────────────────────────────┘
+
+ * If the number of "." in domain name is fewer than 2, it is
+    assumed as invalid cookie (cf. RFC 2109 4.3.2), however, you can
+    use cookie_avoid_wrong_number_of_dots to avoid this
+    restriction. You can set this in "Domains to avoid [wrong number
+    of dots]" on the Option Setting Panel.

@@ -1,0 +1,14 @@
+# "Optio" is a camera model
+libgphoto2-6t64: spelling-error-in-binary Optio Option [usr/lib/*/libgphoto2/*/sierra.so]
+
+# "Lumix WiH" appears in the .text section as a specialization of
+# strcpy(id->text, "Lumix Wifi") using immediate values.  The letter
+# "H" is part of the next machine instruction, "ifi\0" follows shortly.
+libgphoto2-6t64: spelling-error-in-binary WiH With [usr/lib/*/libgphoto2/*/lumix.so]
+
+# begin-remove-after: released:forky
+# protective diversion for upgrades of files moved from / to /usr
+libgphoto2-6t64: diversion-for-unknown-file lib/udev/hwdb.d/20-libgphoto2-6t64.hwdb [preinst:*]
+libgphoto2-6t64: diversion-for-unknown-file lib/udev/rules.d/60-libgphoto2-6t64.rules [preinst:*]
+# end-remove-after
+libgphoto2-6t64: package-name-doesnt-match-sonames libgphoto2-6

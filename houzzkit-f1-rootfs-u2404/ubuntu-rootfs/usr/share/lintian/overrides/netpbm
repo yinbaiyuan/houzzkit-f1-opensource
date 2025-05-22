@@ -1,0 +1,5 @@
+# rgb.txt is not really documentation
+netpbm: package-contains-documentation-outside-usr-share-doc [usr/share/netpbm/rgb.txt]
+# Pentax Optio
+netpbm: spelling-error-in-binary Optio Option [usr/bin/cameratopam]
+netpbm: spelling-in-override-comment spelling-error-in-binary Optio Option [usr/share/lintian/overrides/netpbm:3]

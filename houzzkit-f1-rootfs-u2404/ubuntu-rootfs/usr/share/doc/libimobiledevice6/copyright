@@ -1,0 +1,231 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: libimobiledevice
+Source: http://www.libimobiledevice.org/
+
+Files: *
+Copyright: © 2008-2019 libimobiledevice contributors
+License: LGPL-2.1+
+Comment: A full contributor list can be found in the AUTHORS file
+
+Files: include/libimobiledevice/mobileactivation.h
+ include/libimobiledevice/preboard.h
+ src/device_link_service.c
+ src/device_link_service.h
+ src/file_relay.c
+ src/file_relay.h
+ src/house_arrest.c
+ src/house_arrest.h
+ src/misagent.c
+ src/misagent.h
+ src/mobile_image_mounter.c
+ src/mobile_image_mounter.h
+ src/mobileactivation.c
+ src/mobileactivation.h
+ src/mobilebackup2.c
+ src/mobilebackup2.h
+ src/notification_proxy.c
+ src/notification_proxy.h
+ src/preboard.c
+ src/preboard.h
+ src/property_list_service.h
+ src/sbservices.c
+ src/sbservices.h
+ src/screenshotr.c
+ src/screenshotr.h
+ src/service.h
+ tools/idevicename.c
+ tools/ideviceprovision.c
+Copyright: 2009, Nikias Bassen
+  2010, Nikias Bassen
+  2010-2019, Nikias Bassen
+  2012, Nikias Bassen
+  2012-2016, Nikias Bassen
+  2013, Nikias Bassen
+  2014, Nikias Bassen
+  2016, Nikias Bassen
+  2016-2017, Nikias Bassen
+  2019, Nikias Bassen
+License: LGPL-2.1+
+
+Files: include/libimobiledevice/debugserver.h
+ include/libimobiledevice/diagnostics_relay.h
+ include/libimobiledevice/heartbeat.h
+ include/libimobiledevice/service.h
+ include/libimobiledevice/syslog_relay.h
+ src/debugserver.c
+ src/debugserver.h
+ src/diagnostics_relay.c
+ src/diagnostics_relay.h
+ src/heartbeat.c
+ src/heartbeat.h
+ src/syslog_relay.c
+ src/syslog_relay.h
+ tools/idevicedate.c
+ tools/idevicedebug.c
+ tools/idevicedebugserverproxy.c
+ tools/idevicediagnostics.c
+ tools/ideviceenterrecovery.c
+ tools/ideviceinfo.c
+ tools/idevicenotificationproxy.c
+ tools/idevicesyslog.c
+Copyright: 2009, Martin Szulecki
+  2009-2015, Martin Szulecki
+  2011, Martin Szulecki
+  2012, Martin Szulecki
+  2012-2014, Martin Szulecki
+  2013, Martin Szulecki
+  2013-2014, Martin Szulecki
+  2014, Martin Szulecki
+  2014-2015, Martin Szulecki
+License: LGPL-2.1+
+
+Files: common/thread.c
+ common/thread.h
+ include/libimobiledevice/afc.h
+ include/libimobiledevice/house_arrest.h
+ include/libimobiledevice/misagent.h
+ include/libimobiledevice/mobile_image_mounter.h
+ include/libimobiledevice/mobilebackup.h
+ include/libimobiledevice/mobilebackup2.h
+ include/libimobiledevice/notification_proxy.h
+ include/libimobiledevice/property_list_service.h
+ include/libimobiledevice/sbservices.h
+ include/libimobiledevice/screenshotr.h
+ src/installation_proxy.c
+ src/installation_proxy.h
+ src/mobilebackup.c
+ src/mobilebackup.h
+ tools/idevicebackup.c
+ tools/idevicebackup2.c
+ tools/idevicepair.c
+Copyright: 2009, Martin Szulecki
+  2009-2010, Martin Szulecki
+  2009-2010, Nikias Bassen
+  2009-2014, Martin Szulecki
+  2010, Nikias Bassen
+  2010-2013, Nikias Bassen
+  2010-2014, Martin Szulecki
+  2010-2014, Nikias Bassen
+  2010-2015, Martin Szulecki
+  2010-2019, Nikias Bassen
+  2011-2014, Martin Szulecki
+  2012, Martin Szulecki
+  2012, Nikias Bassen
+  2012-2019, Nikias Bassen
+  2013-2014, Martin Szulecki
+  2014, Martin Szulecki
+License: LGPL-2.1+
+
+Files: tools/idevice_id.c
+ tools/ideviceimagemounter.c
+ tools/idevicescreenshot.c
+Copyright: 2010, Nikias Bassen <nikias@gmx.li>
+License: LGPL-2.1+
+
+Files: src/mobilesync.c
+ src/mobilesync.h
+Copyright: 2009, Jonathan Beck
+  2010, Bryan Forbes
+License: LGPL-2.1+
+
+Files: common/utils.c
+ common/utils.h
+Copyright: 2013, Federico Mena Quintero
+License: LGPL-2.1+
+
+Files: common/debug.c
+ common/debug.h
+Copyright: 2008, Jonathan Beck
+  2010, Martin S.
+License: LGPL-2.1+
+
+Files: common/userpref.c
+ common/userpref.h
+Copyright: 2008, Jonathan Beck
+  2013-2014, Martin Szulecki
+License: LGPL-2.1+
+
+Files: src/restore.c
+ src/restore.h
+Copyright: 2010, Joshua Hill.
+License: LGPL-2.1+
+
+Files: src/afc.c
+ src/idevice.c
+Copyright: 2008, Zach C.
+  2009-2014, Nikias Bassen.
+  2009-2019, Nikias Bassen.
+  2014, Martin Szulecki
+License: LGPL-2.1+
+
+Files: src/afc.h
+ src/lockdown.h
+Copyright: 2008, Zach C.
+  2014, Martin Szulecki
+License: LGPL-2.1+
+
+Files: common/socket.c
+ common/socket.h
+Copyright: 2012, Martin Szulecki <m.szulecki@libimobiledevice.org>
+  2012, Nikias Bassen <nikias@gmx.li>
+  2012-2018, Nikias Bassen <nikias@gmx.li>
+License: LGPL-2.1+
+
+Files: src/property_list_service.c
+ src/service.c
+Copyright: 2010, Nikias Bassen.
+  2013, Nikias Bassen.
+License: LGPL-2.1+
+
+Files: src/webinspector.c
+ src/webinspector.h
+Copyright: 2013, Yury Melnichek
+License: LGPL-2.1+
+
+Files: m4/ax_python_devel.m4
+Copyright: 2009, Alan W. Irwin
+  2009, Andrew Collier
+  2009, Horst Knorr <hk_classes@knoda.org>
+  2009, Matteo Settenvini <matteo@member.fsf.org>
+  2009, Rafael Laboissiere <rafael@laboissiere.net>
+  2009, Sebastian Huber <sebastian-huber@web.de>
+  2013, Daniel Mullner <muellner@math.stanford.edu>
+License: GPL-3+
+
+Files: m4/ax_pthread.m4
+Copyright: 2008, Steven G. Johnson <stevenj@alum.mit.edu>
+  2011, Daniel Richard G. <skunk@iSKUNK.ORG>
+License: GPL-3+
+
+Files: debian/*
+Copyright: © 2008 Bradley Smith <brad@brad-smith.co.uk>
+           © 2014 Chow Loong Jin <hyperair@debian.org>
+License: GPL-3+
+
+License: LGPL-2.1+
+ This package is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ On Debian GNU/Linux systems, the complete text of the GNU Lesser General
+ Public License can be found in `/usr/share/common-licenses/LGPL-2.1'.
+
+License: GPL-3+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ can be found in `/usr/share/common-licenses/GPL-3'.

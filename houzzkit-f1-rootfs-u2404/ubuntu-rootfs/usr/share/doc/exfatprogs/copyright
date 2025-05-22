@@ -1,0 +1,40 @@
+This work was packaged for Debian by:
+    Sven Hoexter <sven@stormbind.net> on Sat, 04 Jul 2020 19:06:23 +0200
+
+It was downloaded from:
+   https://github.com/exfatprogs/exfatprogs/releases
+
+Upstream Author:
+    Namjae Jeon <linkinjeon@kernel.org>
+    Hyunchul Lee <hyc.lee@gmail.com>
+
+Copyright:
+    Copyright (C) 2019, 2021 Namjae Jeon <linkinjeon@kernel.org>
+    Copyright (C) 2020 Hyunchul Lee <hyc.lee@gmail.com>
+    Copyright (C) 2020 The Android Open Source Project
+    Copyright (C) 1989-2018 Free Software Foundation, Inc.
+
+License:
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 2 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License along
+   with this program; if not, write to the Free Software Foundation, Inc.,
+   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+   On any Debian system, you can find the complete text of the GNU GPL
+   (GNU General Public License) in the file "/usr/share/common-licenses/GPL-2".
+
+
+The Debian packaging is:
+   Copyright (C) Sven Hoexter <sven@stormbind.net>
+
+and is licensed under the GPL version 2 or later,
+see "/usr/share/common-licenses/GPL-2".

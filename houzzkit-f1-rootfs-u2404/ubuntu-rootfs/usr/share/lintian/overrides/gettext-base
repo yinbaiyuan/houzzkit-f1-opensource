@@ -1,0 +1,8 @@
+# This is a shell function library, not a program to be run directly.
+# It has to be installed in $PATH so ". gettext.sh" will find it.
+# The shell functions are documented in the gettext Info documentation.
+gettext-base: no-manual-page [usr/bin/gettext.sh]
+
+# This is a shell function library, not a program to be run directly.
+# The name /usr/bin/gettext is already taken by gettext(1).
+gettext-base: script-with-language-extension [usr/bin/gettext.sh]

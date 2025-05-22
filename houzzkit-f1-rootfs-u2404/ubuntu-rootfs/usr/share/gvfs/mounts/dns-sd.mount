@@ -1,0 +1,5 @@
+[Mount]
+Type=dns-sd
+Exec=/usr/libexec/gvfsd-dnssd
+AutoMount=true
+DBusName=org.gtk.vfs.mountpoint_dnssd

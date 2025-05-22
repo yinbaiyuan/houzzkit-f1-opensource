@@ -1,0 +1,4 @@
+# Ignoring until after the release of bookworm to avoid problems with
+# partial upgrades on non-default init systems.  See
+# https://lists.debian.org/debian-devel/2023/01/msg00158.html and thread.
+openssh-server: depends-on-obsolete-package Depends: lsb-base

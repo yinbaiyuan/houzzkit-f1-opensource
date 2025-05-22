@@ -1,0 +1,23 @@
+#!/bin/sh
+
+cat <<EOF 1>&2
+You are running a program named 'hpcdtoppm' that stands in for the real
+program by that name.
+
+The real 'hpcdtoppm' is a program that converts an image from Photo CD format
+to PPM format.  The program you are running now just issues the message you
+are reading.
+
+Instructions for getting the 'hpcdtoppm' source code and building it into
+Netpbm are in the file converter/ppm/hpcdtoppm/README in the distributed
+Netpbm source tree.
+
+The point of this is that this stand-in 'hpcdtoppm' is distributed with Netpbm
+on Sourceforge.  'hpcdtoppm' does not meet the requirements to be distributed
+on Sourceforge because a copyright holder does not permit people to sell
+copies.  At one time, the real 'hpcdtoppm' was distributed with Netpbm on
+Sourceforge by mistake.
+
+EOF
+
+exit 1

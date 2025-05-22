@@ -1,0 +1,16 @@
+#!/bin/sh
+# update-gsfontmap
+# Copyright 2010 Kenshi Muto <kmuto@debian.org>
+# License: GPL
+
+CIDFMAP=/var/lib/ghostscript/fonts/cidfmap
+FONTMAP=/var/lib/ghostscript/fonts/Fontmap
+CIDFDIR=/etc/ghostscript/cidfmap.d/
+FONTMDIR=/etc/ghostscript/fontmap.d/
+
+cat "$CIDFDIR"/*.conf  > "$CIDFMAP" 2>/dev/null
+cat "$FONTMDIR"/*.conf > "$FONTMAP" 2>/dev/null
+
+chmod 644 "$CIDFMAP" "$FONTMAP"
+
+exit 0

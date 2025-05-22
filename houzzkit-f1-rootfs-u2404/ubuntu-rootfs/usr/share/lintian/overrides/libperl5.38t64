@@ -1,0 +1,8 @@
+# Install for edge cases and not considered as applications
+application-in-library-section libs usr/bin/cpan5.32-x86_64-linux-gnu usr/bin/perl5.32-x86_64-linux-gnu
+# Documentation describes files in this directory
+package-contains-documentation-outside-usr-share-doc usr/lib/x86_64-linux-gnu/perl/debian-config-data-5.32.0/README
+# There is logic in the unicode handling code which deals with this typo
+spelling-error-in-binary usr/lib/x86_64-linux-gnu/libperl.so.5.32.0 Inseperable Inseparable
+# 64-bit time_t, to drop on next upstream bump
+libperl5.38t64: package-name-doesnt-match-sonames libperl5.38

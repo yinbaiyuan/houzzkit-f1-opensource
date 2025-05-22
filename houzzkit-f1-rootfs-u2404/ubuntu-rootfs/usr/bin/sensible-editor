@@ -1,0 +1,65 @@
+#!/bin/sh
+# Copyright 2007 Jari Aalto;
+# Copyright 2019-2022 Bastien Roucariès
+# Copyright 2022 Richard Lewis
+# Released under GNU GPL v2 or any later version
+PATH="$PATH:/usr/share/sensible-utils/bin"
+
+program="$(realpath "$(command -v "$0")")"
+
+Try()
+{
+    $candidate "$@"
+    ret=$?
+    [ "$ret" -ne 126 ] && [ "$ret" -ne 127 ] && exit "$ret"
+}
+
+TryEnv()
+{
+    # global $candidate
+    [ -z "$candidate" ] && return
+    # Prevent recursive loops, where environment variables are set to this script
+    [ x$(realpath "$(command -v "$candidate" || true)" || true) = x"$program" ] && return
+    # interpret like environ (7) man page. Do not use eval in order to not leak variables
+    sh -c "$candidate \"\$@\"" EDITOR "$@"
+    ret=$?
+    # Operating system command not found
+    [ "$ret" -ne 126 ] && [ "$ret" -ne 127 ] && exit "$ret"
+}
+
+
+# work around for #991982
+nano ()
+{
+    if [ -z "$TERM" ]; then
+	return 126
+    else
+	command nano "$@"
+    fi
+}
+
+for candidate in "$VISUAL" "$EDITOR" "$SENSIBLE_EDITOR" "$SELECTED_EDITOR"; do
+    TryEnv "$@"
+done
+
+# fix #987675
+if [ -n "$HOME" ]; then
+    if [ -r ~/.selected_editor ]; then
+	. ~/.selected_editor 2>/dev/null
+    elif [ -z "$EDITOR" ] && [ -z "$SELECTED_EDITOR" ] && [ -t 0 ]; then
+	select-editor && . ~/.selected_editor 2>/dev/null
+    fi
+fi
+
+for candidate in "$EDITOR" "$SELECTED_EDITOR"; do
+    TryEnv "$@"
+done
+
+for candidate in editor nano nano-tiny vi; do
+    Try "$@"
+done
+
+echo "Couldn't find an editor!" 1>&2
+echo 'Set the $EDITOR environment variable to your desired editor.' 1>&2
+exit 1
+

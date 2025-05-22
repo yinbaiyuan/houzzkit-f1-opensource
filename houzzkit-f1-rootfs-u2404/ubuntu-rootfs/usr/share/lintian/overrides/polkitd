@@ -1,0 +1,13 @@
+# Called conditionally, only if systemd-sysusers not present
+maintainer-script-needs-depends-on-adduser adduser * [postinst:*]
+
+# Arguably this should be in section 7, but it's useful information
+# and section 8 doesn't seem inappropriate
+spare-manual-page [usr/share/man/man8/polkit.8.gz]
+
+# The executable is in libexecdir rather than /usr/sbin, but it's still
+# useful and valid documentation
+spare-manual-page [usr/share/man/man8/polkitd.8.gz]
+
+# Intentionally started on-demand rather than during boot
+systemd-service-file-missing-install-key [usr/lib/systemd/system/polkit.service]

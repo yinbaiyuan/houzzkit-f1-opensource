@@ -1,0 +1,58 @@
+bridge-utils for Debian
+-----------------------
+
+From ifupdown 0.6.0 we have a really configurable /etc/network/interfaces so
+from now on one can configure almost anything he wants of the bridge using
+the Debian standard way of configuring an interface, that is, if you have
+ifupdown installed. To be able to do that we are providing a couple of links
+to /usr/share/bridge-utils/ifupdown.sh, one from /etc/network/if-pre-up.d
+and another from /etc/network/if-post-down.d.
+
+Configuration for bridges is much easier this way. Check the manpage for
+bridge-utils-interfaces(5) to learn how to configure a bridge the easy way
+using these scripts for ifupdown.
+
+If you are configuring the bridges this way you mustn't include the
+interfaces you use as bridge ports on your /etc/network/interfaces
+configuration, bridge-utils will take care of configuring the ports for you
+if needed, bridge-utils won't touch the ports config at all if not needed,
+if you need to set something up do it using a pre-up option on the bridge
+interface definition.
+
+One exception for the setup of the interfaces you'll use as ports are, for
+example, hotplug wifi devices where you want to run hostapd on them. If you
+want to use hotplug devices, please always set BRIDGE_HOTPLUG to yes on
+/etc/default/bridge-utils, and if you need to run any commands like hostapd
+on the interface, always do it using a "inet manual" config. See the
+examples for hostapd usage.
+
+Check also the examples if you are planning to hibernate or suspend your
+machine as this usually breaks the bridge if the power management utilities
+aren't ready to cope with us. I have added examples for hibernate and
+pm-utils, plus a systemd service that uses the proposed pm-utils scripts to
+do its job, if you have other examples or suggestions or need any, contact
+me.
+
+NetworkManager and other similar network configuration tools can mess with
+the interfaces, each tool has its way to avoid this, usually on a conf file
+or similar, with default NetworkManager setup we can do it from the
+interfaces file by defining the interfaces we don't want it to use, I have
+added an example for this.
+
+Using a bridge over bonding interfaces can be difficult, the tested bonding
+setups are over active-backup, balance-tlb and 802.3ad bonds. Using other
+modes of bonding and a bridge over them will probably not work.
+
+Since version 1.6-1 we allow the user to specify the MTU of the bridge and
+try to set that MTU to the ports of the bridge so that every port has the
+same MTU.  In current kernels the MTU of the bridge is dynamically adjusted
+to be the lower of the MTUs of its ports.  The bridge itself won't fragment
+any packets anyway, packets bigger than the MTU of the bridge will be
+dropped.
+
+Since version 1.6-6 we support multiple stanzas of the interface usefull,
+for example, to describe the IPv4 and IPv6 addresses of an interface. The
+only requirement for this is that all of them need to have bridge_ports
+specified.
+
+ -- Santiago Garcia Mantinan <manty@debian.org>  Sun, 21 Feb 2021 22:26:39 +0100

@@ -1,0 +1,357 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: tnftp
+Upstream-Contact: Luke Mewburn <lukem@netbsd.org>
+Source: ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
+
+Files: *
+Copyright:
+    1985,1989,1993,1994 The Regents of the University of California.
+    1997-2023 The NetBSD Foundation, Inc.
+    1997,1998 WIDE Project.
+    1999-2023 Luke Mewburn.
+License: BSD-4-Clause
+
+Files: debian/*
+Copyright:
+    1999-2002,2004 Takuo KITAME <kitame@debian.org>
+    2006 Luk Claes <luk@debian.org>
+    2007 Bastian Venthur <venthur@debian.org>
+    2008 Tobias Toedter <toddy@debian.org>
+    2020-2023 xiao sheng wen <atzlinux@sina.com>
+License: GPL-2+
+
+Files: buildaux/ar-lib
+ buildaux/compile
+ buildaux/depcomp
+ buildaux/missing
+Copyright: 1996-2018, Free Software Foundation, Inc.
+License: GPL-2+ with Autoconf-data exception
+
+Files: buildaux/ltoptions.m4
+ buildaux/ltsugar.m4
+ buildaux/lt~obsolete.m4
+Copyright: 2004-2015, Free Software
+License: FSFULLR
+
+Files: buildaux/config.guess
+ buildaux/config.sub
+Copyright: 1992-2018, Free Software Foundation, Inc.
+License: GPL-3+ with Autoconf-data exception
+
+Files: buildaux/libtool.m4
+Copyright: 1996-2001, 2003-2015, Free Software Foundation, Inc.
+License: GPL-2+ with libtool exception
+
+Files: buildaux/install-sh
+Copyright: 1994, X Consortium
+License: Expat
+
+Files: buildaux/ax_check_openssl.m4
+Copyright: 2009-2010, Dustin J. Mitchell <dustin@zmanda.com>
+  2009-2010, Zmanda Inc. <http://www.zmanda.com/>
+License: FSFAP
+
+Files: buildaux/ltversion.m4
+Copyright: 2004, 2011-2015, Free Software Foundation, Inc.
+License: FSFULLR
+
+Files: buildaux/ltmain.sh
+Copyright: 1996-2015, Free Software Foundation, Inc.
+License: GPL-2+ with libtool exception
+
+Files: libnetbsd/ftpglob.h
+ libnetbsd/ftpvis.h
+ libnetbsd/glob.c
+ libnetbsd/mkstemp.c
+ libnetbsd/strdup.c
+ libnetbsd/strsep.c
+ libnetbsd/strtoll.c
+ libnetbsd/strunvis.c
+Copyright: 1987-1993, The Regents of the University of California.
+License: BSD-3-clause
+
+Files: libnetbsd/dirname.c
+ libnetbsd/fgetln.c
+ libnetbsd/setprogname.c
+ libnetbsd/sl_init.c
+ libnetbsd/strptime.c
+ libnetbsd/usleep.c
+ libnetbsd/utimes.c
+Copyright: 1994-2004, The NetBSD Foundation, Inc.
+License: BSD-2-clause
+
+Files: libnetbsd/err.c
+ libnetbsd/fseeko.c
+Copyright: 1997-2020, Luke Mewburn <lukem@NetBSD.org>.
+License: BSD-2-clause
+
+Files: libnetbsd/getaddrinfo.c
+ libnetbsd/getnameinfo.c
+Copyright: 1995-1997, and 1998 WIDE Project.
+License: BSD-3-clause
+
+Files: libnetbsd/inet_ntop.c
+ libnetbsd/inet_pton.c
+Copyright:
+  1996-1999, Internet Software Consortium.
+  2004, Internet Systems Consortium, Inc. ("ISC")
+License: ISC
+
+Files: libnetbsd/strlcat.c
+ libnetbsd/strlcpy.c
+Copyright: 1998, Todd C. Miller <Todd.Miller@courtesan.com>
+License: ISC
+
+Files: libnetbsd/vasprintf.c
+Copyright: 2007, Joerg Sonnenberger <joerg@NetBSD.org>.
+License: BSD-2-clause
+
+Files: libnetbsd/strvis.c
+Copyright: 1989, 1993, The Regents of the University of California.
+License: BSD-3-clause
+
+Files: libnetbsd/snprintf.c
+Copyright: Patrick Powell 1995
+License: Unlicense
+
+License: Unlicense
+ Copyright Patrick Powell 1995
+ This code is based on code written by Patrick Powell (papowell@astart.com)
+ It may be used for any purpose as long as this notice remains intact
+ on all source code distributions
+
+Files: src/cmds.c
+ src/cmdtab.c
+ src/extern.h
+ src/ftp.1
+ src/ftp.c
+ src/ftp_var.h
+ src/main.c
+ src/util.c
+Copyright:
+  1996-2021, The NetBSD Foundation, Inc.
+License: BSD-3-clause
+
+Files: src/complete.c
+ src/fetch.c
+ src/progressbar.c
+ src/progressbar.h
+ src/ssl.h
+ src/version.h
+Copyright: 1996-2021, The NetBSD Foundation, Inc.
+License: BSD-2-clause
+
+Files: src/domacro.c
+ src/ruserpass.c
+ src/ssl.c
+Copyright: 1985, 1993-1994, The Regents of the University of California.
+  1998-2004, Dag-Erling Coïdan Smørgrav
+  2008, 2010, Joerg Sonnenberger <joerg@NetBSD.org>
+  2015, Thomas Klausner <wiz@NetBSD.org>
+License: BSD-3-clause
+
+License: BSD-4-Clause
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions
+    are met:
+    1. Redistributions of source code must retain the above copyright
+       notice, this list of conditions and the following disclaimer.
+    2. Redistributions in binary form must reproduce the above copyright
+       notice, this list of conditions and the following disclaimer in the
+       documentation and/or other materials provided with the distribution.
+ .
+    THIS SOFTWARE IS PROVIDED BY THE NETBSD FOUNDATION, INC. AND CONTRIBUTORS
+    ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+    TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+    PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE FOUNDATION OR CONTRIBUTORS
+    BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+    INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+    CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+    POSSIBILITY OF SUCH DAMAGE.
+ .
+ This product includes software developed by the NetBSD Foundation, Inc.
+ and its contributors. For a complete list of contributors see
+ /usr/share/doc/tnftp/THANKS.
+ .
+ This product includes software developed by the University of California,
+ Berkeley and its contributors. Those contributors include:
+ - Christos Zoulas of Cornell University.
+ - Guido van Rossum.
+ .
+ This product includes software developed by Christos Zoulas.
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful
+ but WITHOUT ANY WARRANTY; without even the implied warranty o
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License with
+ the Debian GNU/Linux distribution in file /usr/share/common-licenses/GPL-2;
+ if not, write to the Free Software Foundation, Inc., 51 Franklin St,
+ Fifth Floor, Boston, MA 02110-1301, USA.
+
+License: ISC
+ Permission to use, copy, modify, and distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND ISC DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS.  IN NO EVENT SHALL ISC BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
+ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+License: BSD-3-Clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 3. Neither the name of the University nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ SUCH DAMAGE.
+
+License: BSD-2-Clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the
+    distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE
+ COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
+ AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ SUCH DAMAGE.
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
+ “Software”), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included
+ in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+License: FSFAP
+ Copying and distribution of this file, with or without modification, are
+ permitted in any medium without royalty provided the copyright notice
+ and this notice are preserved. This file is offered as-is, without any
+ warranty.
+
+License: FSFULLR
+ This file is free software; the Free Software Foundation
+ gives unlimited permission to copy and/or distribute it,
+ with or without modifications, as long as this notice is preserved.
+
+License: GPL-2+ with Autoconf-data exception
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2, or (at your option)
+ any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ .
+ As a special exception to the GNU General Public License, if you
+ distribute this file as part of a program that contains a
+ configuration script generated by Autoconf, you may include it under
+ the same distribution terms that you use for the rest of that program.
+
+License: GPL-3+ with Autoconf-data exception
+ This file is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, see <https://www.gnu.org/licenses/>.
+ .
+ As a special exception to the GNU General Public License, if you
+ distribute this file as part of a program that contains a
+ configuration script generated by Autoconf, you may include it under
+ the same distribution terms that you use for the rest of that
+ program.  This Exception is an additional permission under section 7
+ of the GNU General Public License, version 3 ("GPLv3").
+
+License: GPL-2+ with libtool exception
+ Copyright (C) 1996-2015 Free Software Foundation, Inc.
+ This is free software; see the source for copying conditions.  There is NO
+ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ .
+ GNU Libtool is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ As a special exception to the GNU General Public License,
+ if you distribute this file as part of a program or library that
+ is built using GNU Libtool, you may include this file under the
+ same distribution terms that you use for the rest of that program.
+ .
+ GNU Libtool is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.

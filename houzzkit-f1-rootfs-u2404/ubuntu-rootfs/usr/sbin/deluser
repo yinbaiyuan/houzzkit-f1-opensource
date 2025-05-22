@@ -1,0 +1,568 @@
+#! /usr/bin/perl
+
+
+# Copyright (C) 2000-2003 Roland Bauerschmidt <rb@debian.org>
+#               2005-2023 Marc Haber <mh+debian-packages@zugschlus.de>
+#               2021-2022 Jason Franklin <jason@oneway.dev>
+#               2022 Matt Barry <matt@hazelmollusk.org>
+#               2016 Afif Elghraoui <afif@debian.org>
+#               2005-2009 Joerg Hoh <joerg@joerghoh.de>
+#               2006-2011 Stephen Gran <sgran@debian.org>
+#
+# Based on the Debian "adduser" utility developed by:
+#   Guy Maor <maor@debian.org>
+#   Ted Hajek <tedhajek@boombox.micro.umn.edu>
+#   Ian A. Murdock <imurdock@gnu.ai.mit.edu>
+#
+# License: GPL-2+
+
+use 5.32.0;
+use strict;
+use warnings;
+
+use Getopt::Long;
+
+use Debian::AdduserCommon 3.136;
+use Debian::AdduserLogging 3.136;
+use Debian::AdduserRetvalues 3.136;
+BEGIN {
+    if ( Debian::AdduserCommon->VERSION != version->declare('3.136') ||
+         Debian::AdduserLogging->VERSION != version->declare('3.136') ||
+         Debian::AdduserRetvalues->VERSION != version->declare('3.136') ) {
+           die "wrong module version in adduser, check your packaging or path";
+    }
+}
+
+my $version = "3.137ubuntu1";
+
+my $install_more_packages;
+
+BEGIN {
+    local $ENV{PERL_DL_NONLAZY}=1;
+    # we need to disable perlcritic here since this construct
+    # needs experession form eval, see perl cookbook 12.2.3
+    eval "use File::Find;"; ## no critic
+    if ($@) {
+      $install_more_packages = 1;
+    }
+    #no warnings "File::Find";
+    eval "use File::Temp;"; ## no critic
+    if ($@) {
+      $install_more_packages = 1;
+    }
+}
+
+
+BEGIN {
+    # we need to disable perlcritic here since this construct
+    # needs experession form eval, see perl cookbook 12.2.3
+    ## no critic
+    eval "
+        require POSIX;
+        import POSIX qw(setlocale);
+    ";
+    ## use critic
+    if ($@) {
+        *setlocale = sub { return 1 };
+    } else {
+        setlocale(&POSIX::LC_MESSAGES, "");
+    }
+}
+
+my $action = $0 =~ /delgroup$/ ? "delgroup" : "deluser";
+our $verbose = 1;
+our $stderrmsglevel = "warn";
+our $stdoutmsglevel = "info";
+our $logmsglevel = "info";
+my %pconfig = ();
+my %config = ();
+my @configfiles;
+my @defaults;
+my $no_preserve_root;
+
+
+unless ( 
+    GetOptions (
+        'quiet|q' => sub {$verbose = 0; },
+        'debug' => sub {$verbose = 2; },
+        'verbose' => sub {$verbose = 2; },
+        'stdoutmsglevel=s' => \$stdoutmsglevel,
+        'stderrmsglevel=s' => \$stderrmsglevel,
+        'logmsglevel=s' => \$logmsglevel,
+        'version|v' => sub { &version(); exit 0; },
+        'help|h' => sub { &usage(); exit 0;},
+        'group' => sub { $action = 'delgroup';},
+        'conf|c=s' => \@configfiles,
+        'system' => \$pconfig{'system'},
+        'only-if-empty' => \$pconfig{'only_if_empty'},
+        'remove-home' => \$pconfig{'remove_home'},
+        'remove-all-files' => \$pconfig{'remove_all_files'},
+        'backup' => \$pconfig{'backup'},
+        'backup-to=s' => \$pconfig{'backup_to'},
+        'backup-suffix=s' => \$pconfig{'backup_suffix'},
+        'no-preserve-root' => \$no_preserve_root
+    )
+) {
+    &usage;
+    exit 1;
+}
+
+# everyone can issue "--help" and "--version", but only root can go on
+if( $> != 0) {
+   log_fatal( mtx("Only root may remove a user or group from the system.") );
+   exit( RET_ROOT_NEEDED );
+}
+
+if (!@configfiles) {
+    @defaults = ("/etc/adduser.conf", "/etc/deluser.conf");
+} else {
+    @defaults = (@configfiles);
+}
+
+# explicitly set PATH, because super (1) cleans up the path and makes deluser unusable;
+# this is also a good idea for sudo (which doesn't clean up)
+$ENV{"PATH"}="/bin:/usr/bin:/sbin:/usr/sbin";
+
+my @names = ();
+my ($user,$group);
+
+if( $verbose == 0 ) {
+    set_msglevel( $stderrmsglevel, "warn", $logmsglevel );
+} elsif( $verbose == 1 ) {
+    set_msglevel( $stderrmsglevel, "info", $logmsglevel );
+} elsif( $verbose == 2 ) {
+    set_msglevel( $stderrmsglevel, "debug", $logmsglevel );
+} else {
+    set_msglevel( $stderrmsglevel, $stdoutmsglevel, $logmsglevel );
+}
+
+######################
+# handling of @names #
+######################
+
+while (defined(my $arg = shift(@ARGV))) {
+  if (defined($names[0]) && $arg =~ /^--/) {
+        log_fatal( mtx("No options allowed after names.") );
+        exit( RET_INVALID_CALL );
+    } else {                    # it's a username
+        push (@names, $arg);
+    }
+}
+
+if(@names == 0) {
+    if($action eq "delgroup") {
+        print (gtx("Enter a group name to remove: "));
+    } else {
+        print (gtx("Enter a user name to remove: "));
+    }
+    chomp(my $answer=<STDIN>);
+    push(@names, $answer);
+}
+
+if (length($names[0]) == 0 || @names > 2) {
+    log_fatal( mtx("Only one or two names allowed.") );
+    exit( RET_INVALID_CALL );
+}
+
+if(@names == 2) {      # must be deluserfromgroup
+    $action = "deluserfromgroup";
+    $user = shift(@names);
+    $group = shift(@names);
+} else {
+    if($action eq "delgroup") {
+        $group = shift(@names);
+    } else {
+        $user = shift(@names);
+    }
+}
+
+undef(@names);
+
+$ENV{"VERBOSE"} = $verbose;
+$ENV{"DEBUG"}   = $verbose;
+
+##########################################################
+# (1) preseed the config
+# (2) read the default /etc/adduser.conf configuration.
+# (3) read the default /etc/deluser.conf configuration.
+# (4) process commmand line settings
+# last match wins
+##########################################################
+
+preseed_config (\@defaults,\%config);
+
+foreach(keys(%pconfig)) {
+    $config{$_} = $pconfig{$_} if ($pconfig{$_});
+}
+
+if (($config{remove_home} || $config{remove_all_files} || $config{backup}) && ($install_more_packages)) {
+    log_fatal( mtx("In order to use the --remove-home, --remove-all-files, and --backup features, you need to install the `perl' package. To accomplish that, run apt-get install perl.") );
+    exit( RET_MORE_PACKAGES );
+}
+
+
+my ($pw_uid, $pw_gid, $pw_homedir, $gr_gid, $maingroup);
+
+if(defined($user)) {
+    my @passwd = getpwnam($user);
+    $pw_uid = $passwd[2];
+    $pw_gid = $passwd[3];
+    $pw_homedir = $passwd[7];
+
+    $maingroup = $pw_gid ? getgrgid($pw_gid) : "";
+}
+if(defined($group)) {
+    #($gr_name,$gr_passwd,$gr_gid,$gr_members) = getgrnam($group);
+    my @group = getgrnam($group);
+    $gr_gid = $group[2];
+}
+
+# arguments are processed:
+#
+#  $action = "deluser"
+#     $user          name of the user to remove
+#
+#  $action = "delgroup"
+#     $group         name of the group to remove
+#
+#  $action = "deluserfromgroup"
+#     $user          the user to be remove
+#     $group         the group to remove him/her from
+
+
+if($action eq "deluser") {
+    my($dummy1,$dummy2,$uid);
+
+    # Don't allow a non-system user to be deleted when --system is given
+    # Also, "user does not exist" is only a warning with --system, but an
+    # error without --system.
+    if( $config{"system"} ) {
+        if( ($dummy1,$dummy2,$uid) = getpwnam($user) ) {
+            if ( ($uid < $config{"first_system_uid"} ||
+                $uid > $config{"last_system_uid" } ) ) {
+                log_warn( mtx("The user `%s' is not a system user. Exiting."), $user);
+                exit( RET_WRONG_OBJECT_PROPERTIES );
+            }
+        } else {
+            log_info( mtx("The user `%s' does not exist, but --system was given. Exiting."), $user);
+            exit( RET_OK );
+        }
+    }
+
+    unless(exist_user($user)) {
+        log_fatal( mtx("The user `%s' does not exist."), $user );
+        exit( RET_OBJECT_DOES_NOT_EXIST );
+    }
+
+    # Warn in any case if you want to remove the root account
+    if ((defined($pw_uid)) && ($pw_uid == 0) && (!defined($no_preserve_root)))  {
+        log_fatal( mtx("WARNING: You are just about to delete the root account (uid 0). Usually this is never required as it may render the whole system unusable. If you really want this, call deluser with parameter --no-preserve-root. Stopping now without having performed any action") );
+        exit( RET_DONT_REMOVE_ROOT );
+    }
+
+    # consistency check
+    # if --backup-to is specified, --backup should be set too
+    if ($pconfig{"backup_to"}) {
+        $config{"backup"} = 1;
+    }
+
+    if($config{"remove_home"} || $config{"remove_all_files"}) {
+        log_info( mtx("Looking for files to backup/remove ...") );
+        my @mountpoints;
+        my $exclude_fstypes = $config{"exclude_fstypes"};
+        my $mount;
+        if( !open($mount, q{<}, '/proc/mounts') ) {
+            log_fatal( mtx("failed to open /proc/mounts: %s") , $! );
+            exit( RET_FILE_ERROR );
+        }
+        while (<$mount>) {
+          my @temparray = split;
+          my ($fstype, $fname) = ($temparray[2], $temparray[1]);
+
+          next if $fname eq '/';
+          next if $fname eq '/home';
+
+          push @mountpoints,$fname if ($fstype =~ /$exclude_fstypes/);
+        }
+        if( !close($mount) ) {
+            log_fatal( mtx("failed to close /proc/mounts: %s"), $!);
+            exit( RET_FILE_ERROR );
+        }
+        my(@files,@dirs);
+        if($config{"remove_home"}) {
+            # collect all files in user home
+            sub home_match {
+                push(@files, $File::Find::name)
+                    if(-f $File::Find::name || -l $File::Find::name);
+                push(@dirs, $File::Find::name)
+                    if(-d $File::Find::name);
+            } # sub home_match
+
+            # collect ecryptfs config files not stored in $HOME
+            sub ecryptfs_match {
+                if ( $File::Find::name !~ m[^/var/lib/ecryptfs/\Q$user] &&  $File::Find::name !~ m[^/home/\.ecryptfs/\Q$user]) {
+                    $File::Find::prune=1;
+                    return;
+                }
+                push(@files, $File::Find::name)
+                    if(-f $File::Find::name || -l $File::Find::name);
+                push(@dirs, $File::Find::name)
+                    if(-d $File::Find::name);
+            } # sub ecryptfs_match
+
+            File::Find::find({wanted => \&home_match, untaint => 1, no_chdir => 1}, $pw_homedir)
+                if(-d "$pw_homedir");
+            if(-d "/var/lib/ecryptfs/$user") {
+                File::Find::find({wanted => \&ecryptfs_match, untaint => 1, no_chdir => 1}, "/var/lib/ecryptfs/$user");
+            } elsif (-d "/home/.ecryptfs/$user") {
+                File::Find::find({wanted => \&ecryptfs_match, untaint => 1, no_chdir => 1}, "/home/.ecryptfs/$user");
+            }
+            push(@files, "/var/mail/$user")
+                if(-e "/var/mail/$user");
+        }
+
+        if ($config{"remove_all_files"}) {
+            # collect all files on system belonging to that user
+            sub find_match {
+                my ($dev,$ino,$mode,$nlink,$uid,$gid) = lstat;
+                foreach my $mount (@mountpoints) {
+                    if( $File::Find::name eq $mount ) {
+                        log_info( mtx("Not backing up/removing `%s', it is a mount point."), $File::Find::name );
+                        $File::Find::prune=1;
+                        return;
+                    }
+                }
+                foreach my $re ( split ' ', $config{"no_del_paths"} ) {
+                    if( $File::Find::name =~ qr/$re/ ) {
+                      log_info( mtx("Not backing up/removing `%s', it matches %s."), $File::Find::name, $re);
+                      $File::Find::prune=1;
+                      return;
+                    }
+                }
+                (defined($uid) && ($uid == $pw_uid)) &&
+                    (
+                        (-f $File::Find::name && push(@files, $File::Find::name)) ||
+                        (-l $File::Find::name && push(@files, $File::Find::name)) ||
+                        (-d $File::Find::name && push(@dirs, $File::Find::name)) ||
+                        (-S $File::Find::name && push(@files, $File::Find::name)) ||
+                        (-p $File::Find::name && push(@files, $File::Find::name))
+                    );
+                if ( -b $File::Find::name || -c $File::Find::name ) {
+                    log_warn( mtx("Cannot handle special file %s"), $File::Find::name );
+                }
+            } # sub find_match
+
+            File::Find::find({wanted => \&find_match, untaint => 1, no_chdir => 1}, '/');
+        }
+
+        if($config{"backup"}) {
+            log_info( mtx("Backing up files to be removed to %s ..."), $config{"backup_to"} );
+            my $filesfile = new File::Temp(TEMPLATE=>"deluser.XXXXX", DIR=>"/tmp");
+            my $filesfilename = $filesfile->filename;
+            my $backup_name = $config{"backup_to"} . "/$user.tar";
+            print $filesfile join("\n", map { s/^\///r } @files);
+
+            $filesfile->close();
+            my $tar = &which('tar');
+            &check_backup_suffix();
+            $backup_name .= $config{'backup_suffix'};
+            log_debug( "backup_name = %s", $backup_name );
+            &systemcall($tar, "--directory", "/", "--auto-compress", "-cf", $backup_name, "--files-from", $filesfilename);
+            chmod 0600, $backup_name;
+            my $rootid = 0;
+            chown $rootid, $rootid, $backup_name;
+            unlink($filesfilename);
+        }
+
+        if(@files || @dirs) {
+            log_info( mtx("Removing files ...") );
+            unlink(@files) if(@files);
+            foreach(reverse(sort(@dirs))) {
+                rmdir unless /^$config{dhome}$/ || /^\/$/;
+            }
+        }
+    }
+
+    if (-x '/usr/bin/crontab') {
+        log_info( mtx("Removing crontab ...") );
+
+        if (&systemcall_silent('/usr/bin/crontab', '-u', $user, '-l') == 0) {
+            &systemcall_or_warn('/usr/bin/crontab', '-u', $user, '-r');
+        }
+    } else {
+        log_warn( mtx("`%s' not executed. Skipping crontab removal. Package `cron' required."),
+            '/usr/bin/crontab' );
+    }
+
+    log_info( mtx("Removing user `%s' ..."), $user);
+    acquire_lock();
+    &systemcall('/usr/sbin/userdel', $user);
+    release_lock();
+
+    &systemcall('/usr/local/sbin/deluser.local', $user, $pw_uid,
+        $pw_gid, $pw_homedir) if (-x "/usr/local/sbin/deluser.local");
+
+    exit( RET_OK );
+}
+
+
+if ($action eq 'delgroup') {
+    unless (exist_group($group)) {
+        if( $config{'system'} ) {
+            log_info( mtx("The group `%s' does not exist."), $group);
+            exit( RET_OK );
+        } else {
+            log_warn( mtx("The group `%s' does not exist."), $group);
+            exit( RET_OBJECT_DOES_NOT_EXIST );
+        }
+    }
+
+    my($dummy,$gid,$members);
+    unless( (($dummy, $dummy, $gid, $members ) = getgrnam($group)) ) {
+        log_fatal( mtx("getgrnam `%s' failed: %s. This shouldn't happen."), $group, $! );
+        exit( RET_SYSTEM_ERROR );
+    }
+    if( $config{"system"} &&
+        ($gid < $config{"first_system_gid"} ||
+         $gid > $config{"last_system_gid" } )) {
+        log_fatal( mtx("The group `%s' is not a system group. Exiting."), $group );
+        exit( RET_WRONG_OBJECT_PROPERTIES );
+    }
+    if( $config{"only_if_empty"} && $members ne "") {
+        log_fatal( mtx("The group `%s' is not empty!"), $group );
+        exit( RET_GROUP_NOT_EMPTY );
+    }
+
+    # groupdel will error out if there are users left that
+    # have $group as primary group. We are not checking this
+    # ourself since this would mean enumerating all users.
+    log_info( mtx("Removing group `%s' ..."), $group );
+    my $groupdel = &which('groupdel');
+    acquire_lock();
+    &systemcall($groupdel,$group);
+    release_lock();
+    exit 0;
+}
+
+
+if($action eq 'deluserfromgroup')
+{
+    unless(exist_user($user)) {
+        log_fatal( mtx("The user `%s' does not exist.\n"), $user );
+        exit( RET_OBJECT_DOES_NOT_EXIST );
+    }
+    unless(exist_group($group)) {
+        log_fatal( mtx("The group `%s' does not exist.\n"), $group );
+        exit( RET_OBJECT_DOES_NOT_EXIST );
+    }
+    if($maingroup eq $group) {
+        log_fatal( mtx("You may not remove the user from their primary group.") );
+        exit( RET_NO_PRIMARY_GROUP );
+    }
+
+    my $is_member;
+    my @members;
+
+    foreach my $member (get_group_members($group)) {
+
+        if ($member eq $user) {
+            $is_member = 1;
+            next;
+        }
+
+        push @members, $member;
+    }
+
+    unless($is_member) {
+        log_fatal( mtx("The user `%s' is not a member of group `%s'."), $user, $group );
+        exit( RET_USER_NOT_IN_GROUP );
+    }
+
+    log_info( mtx("Removing user `%s' from group `%s' ..."), $user, $group );
+
+    acquire_lock();
+    &systemcall('/usr/bin/gpasswd', '-M', join(',', @members), $group);
+    release_lock();
+}
+
+
+######
+
+sub version {
+    printf( gtx("deluser version %s\n\n"), $version);
+    print( gtx("Removes users and groups from the system.
+
+For detailed copyright information, please refer to
+/usr/share/doc/adduser/copyright.
+\n") );
+
+    print( gtx("This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or (at
+your option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License, /usr/share/common-licenses/GPL, for more details.
+") );
+}
+
+sub usage {
+    printf( gtx(
+"deluser [--system] [--remove-home] [--remove-all-files] [--backup]
+        [--backup-to dir] [--backup-suffix str] [--conf file]
+        [--quiet] [--verbose] [--debug] user
+
+  remove a normal user from the system
+
+deluser --group [--system] [--only-if-empty] [--conf file] [--quiet]
+        [--verbose] [--debug] group
+delgroup [--system] [--only-if-empty] [--conf file] [--quiet]
+         [--verbose] [--debug] group
+  remove a group from the system
+
+deluser [--conf file] [--quiet] [--verbose] [--debug] user group
+  remove the user from a group\n") );
+}
+
+sub exist_user {
+    my $exist_user = shift;
+    return(defined getpwnam($exist_user));
+}
+
+sub exist_group {
+    my $exist_group = shift;
+    return(defined getgrnam($exist_group));
+}
+
+sub check_backup_suffix {
+    my $tar = &which('tar');
+    my $suffix = $config{'backup_suffix'} || 'gz';
+    if ($suffix !~ /^\./) {
+        $suffix = ".$suffix";
+    }
+    my $filename = '/tmp/deluser-check.tar';
+    my $testfile = 'usr/sbin/deluser';
+    &systemcall_silent_error($tar, '--auto-compress', '--directory', '/', '-cf', $filename.$suffix, $testfile);
+
+    if ($?) {
+        # compressor recognized, not available
+        log_warn( mtx("Backup suffix %s unavailable, using gzip."), $suffix );
+        $suffix = '.gz';
+    } else {
+        # no error, check if compressed
+        &systemcall_silent($tar, '--directory', '/', '-cf', $filename, $testfile);
+
+        my @zstat = stat($filename.$suffix);
+        my @ustat = stat($filename);
+        unlink($filename, $filename.$suffix);
+        if ($zstat[7] == $ustat[7]) {
+            log_warn( mtx("Backup suffix %s unavailable, using gzip."), $suffix );
+            $suffix = '.gz';
+        }
+    }
+    $config{'backup_suffix'} = $suffix;
+}
+
+# vim: tabstop=4 shiftwidth=4 expandtab

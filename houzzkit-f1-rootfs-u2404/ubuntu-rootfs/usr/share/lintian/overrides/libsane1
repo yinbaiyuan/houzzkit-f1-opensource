@@ -1,0 +1,6 @@
+# begin-remove-after: released:trixie
+# protective diversion for upgrades of files moved from / to /usr
+libsane1: diversion-for-unknown-file lib/udev/hwdb.d/20-sane.hwdb [preinst:*]
+libsane1: diversion-for-unknown-file lib/udev/rules.d/60-libsane1.rules [preinst:*]
+libsane1: diversion-for-unknown-file lib/udev/rules.d/99-libsane1.rules [preinst:*]
+# end-remove-after

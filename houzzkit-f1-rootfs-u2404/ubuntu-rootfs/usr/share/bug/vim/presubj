@@ -1,0 +1,6 @@
+Before filing a bug, please ensure that your configuration is not the cause of
+the bug.  At the very least, this can help narrow down exactly where the bug
+exists or what option is causing the behavior.
+
+Start Vim with the "--clean" option and provide specific steps on reproducing
+the bug from there.

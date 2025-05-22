@@ -1,0 +1,5 @@
+# libicu74 installs multiple shared libraries, none of which is
+# actually called libicu.so.74, but all of which are libicu*.so.74 .
+libicu74: package-name-doesnt-match-sonames libicudata74 libicui18n74 libicuio74 libicutest74 libicutu74 libicuuc74
+# contains data only
+libicu74: shared-library-lacks-prerequisites [usr/lib/*/libicudata.so.*.?]

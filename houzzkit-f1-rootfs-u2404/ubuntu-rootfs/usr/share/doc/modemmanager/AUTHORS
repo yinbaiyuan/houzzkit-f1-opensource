@@ -1,0 +1,252 @@
+
+Current maintainers:
+  Dan Williams       <dcbw@redhat.com>
+  Aleksander Morgado <aleksander@aleksander.es>
+
+Previous maintainers:
+  Tambet Ingo        <tambet@gmail.com>
+
+Other contributors:
+  Ben Chan
+  Daniele Palmas
+  Carlo Lobrano
+  Nathan Williams
+  Lubomir Rintel
+  Dylan Van Assche
+  Andrew Lassalle
+  Sven Schwermer
+  Michal Mazur
+  Iñigo Martínez
+  Eric Caruso
+  Teijo Kinnunen
+  Giacinto Cifelli
+  Torgny Johansson
+  Akash Aggarwal
+  Prakash Pabba
+  Marco Bascetta
+  Pavan Holla
+  Riccardo Vangelisti
+  Alexander Sack
+  Frederic Martinsons
+  Guido Günther
+  Joel Selvaraj
+  Loic Poulain
+  Stephan Gerhold
+  Yegor Yefremov
+  Eric Shienbrood
+  Freedom Liu
+  Som_SP
+  Bjørn Mork
+  Elly Jones
+  som
+  Bob Ham
+  Ivan Mikhanchuk
+  Maxim Anisimov
+  David McCullough
+  Nagi Marupaka
+  Prathmesh Prabhu
+  Thieu Le
+  Thomas Tuttle
+  Jack Song
+  Torsten Hilbrich
+  Marius B. Kotsbak
+  Michael Biebl
+  Paul Bartell
+  Alexey Orishko
+  Alfonso Sánchez-Beato
+  Amol Lad
+  Andrey Skvortsov
+  Christian Persch
+  Louis-Alexis Eyraud
+  QuectelDuke
+  Thomas Sailer
+  okaestne
+  Colin Walters
+  Franko Fang
+  Jakub Sitnicki
+  Jason Glasgow
+  Jeroen Elebaut
+  Matthew Starr
+  Pablo Barciela
+  Reinhard Speyerer
+  Yunlian Jiang
+  ZhangMingjie
+  lvmaorui
+  ori inbar
+  Christian Taedcke
+  Clayton Craft
+  David Rochberg
+  Fanice.luo
+  Jiří Klimeš
+  Krzysztof Drobinski
+  Madhav
+  Martyn Russell
+  Thomas Haller
+  Tomas Jura
+  Ulrich Mohr
+  Alexander Dahl
+  Alexander Yashin
+  Alyssa Ross
+  Arnaud Ferraris
+  Benoît Monin
+  Colin Helliwell
+  David Leonard
+  Evangelos Ribeiro Tzaras
+  Fanice Luo
+  Graham Inggs
+  Heiko Thiery
+  Javier Viguera
+  Jessy Diamond Exum
+  Justin Standring
+  Konrad Zapałowicz
+  Lionel Landwerlin
+  Maksim Salau
+  Martin Pitt
+  Matthew Stanger
+  Milo Casagrande
+  Nick Stevens
+  Norbert Frese
+  NorwayFun
+  Piotr Drąg
+  Teemu Ikonen
+  Thomas Bechtold
+  Vincent Palatin
+  Yuri Chornoivan
+  diekleinekuh
+  Adrian Bunk
+  Adrien Plazas
+  Alexander Couzens
+  Amit Mendapara
+  Anders Jonsson
+  Andika Triwidada
+  Andrew Bird
+  Angus Ainslie
+  Anton Blanchard
+  ArenM
+  Arnd Hannemann
+  Arto Jantunen
+  Arun Raghavan
+  Balázs Úr
+  Baruch Siach
+  Beniamino Galvani
+  Benjamin Tissoires
+  Brendan Peter
+  Brian Norris
+  Brian, Sam
+  Bruce A. Johnson
+  Bryan Duff
+  Claude Paroz
+  Dan Carpenter
+  Daniele
+  David (Pololu)
+  David Castellanos
+  David Herrmann
+  David Härdeman
+  David Khouya
+  Dmitry Ivanyushin
+  Dmitry Skorykh
+  Dušan Kazik
+  Enrico Mioso
+  Eugene Crosser
+  Evan Nemerson
+  Fabrice Bellet
+  Fabrice Fontaine
+  Fangxiaozhi (Franko)
+  Felipe Borges
+  Felix Janda
+  Florence Chan
+  Florian Eckert
+  Fran Dieguez
+  Gerald Richter
+  Greg Suarez
+  Iain Lane
+  Jakob Hauser
+  Jarvis-Jiang-G
+  Jason Simmons
+  Jens Seidel
+  Johny Mattsson
+  Jordi Mas
+  Julian Oes
+  Jun Woo Lee
+  Jürgen Benvenuti
+  Khem Raj
+  Kirill Buksha
+  Kristian Sloth Lauszus
+  Krzysztof Kotlenga
+  Lech Perczak
+  LiuQiFeng
+  Luis A. Lozano
+  Lukas Senger
+  Lukas Voegl
+  M. I. Spozta
+  Marc Murphy
+  Marcus Folkesson
+  Mario Blättermann
+  Mario Limonciello
+  Mark-Jablonsky
+  Matthew Via
+  Michael Farrell
+  Michał Sroczyński
+  Mingjie Zhang
+  Mohammed Sadiq
+  Moo
+  Murithi Borona
+  Nathan Follens
+  Nathan J. Williams
+  Nicholas Smith
+  Noel J. Bergman
+  Oliver Kästner
+  Oskar Enoksson
+  Piotr Figiel
+  Quentin.Li
+  Rafael Fontenelle
+  Roshan Pius
+  Rukun Mao
+  Sabri Unal
+  Sam Spilsbury
+  Sebastian Krzyszkowiak
+  Shawn Guo
+  Simon Deziel
+  SunXinzhao
+  Sławomir Bocheński
+  Tabor Kelly
+  Theodore A. Roth
+  Thilo-Alexander Ginkel
+  Thomas Dendale
+  Thomas Grenman
+  Thomas Voß
+  Timo Jyrinki
+  Ting-Yuan Huang
+  Tom Bechtold
+  Tom Goetz
+  Tom Wimmenhove
+  Tore Anderson
+  Tyler
+  Ujjwal Pande
+  Ulrich Ölmann
+  Undef
+  Valentin Blot
+  Ville Skyttä
+  Vincent Untz
+  Vitaly Gimly
+  Walter Hagstrom
+  Xeonacid
+  Xiao Liyun
+  Yaron Shahrabani
+  Zrshuo Zhang
+  amol.lad
+  carlyin
+  dchard
+  emintufan
+  goapunk
+  guihkx
+  kuonirat
+  mozzwald
+  mstanger
+  poma
+  root
+  scootergrisen
+  wi24rd
+  wicadmin
+  yparitcher
+  Артемий Судаков

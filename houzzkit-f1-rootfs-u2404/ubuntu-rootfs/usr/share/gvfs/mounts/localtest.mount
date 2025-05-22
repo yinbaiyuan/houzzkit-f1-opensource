@@ -1,0 +1,4 @@
+[Mount]
+Type=localtest
+Exec=/usr/libexec/gvfsd-localtest
+AutoMount=false

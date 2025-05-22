@@ -1,0 +1,758 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: netpbm
+Source: http://netpbm.svn.code.sourceforge.net/p/netpbm/code/release_number/
+
+Files: *
+Copyright:  1988-2021 Jef Poskanzer
+License: MIT
+
+Files: userguide/*
+Source: https://svn.code.sf.net/p/netpbm/code/userguide/
+Copyright:  1988-2023 Jef Poskanzer
+License: MIT
+
+Files: debian/*
+Copyright: 2001-2003 Steve McIntyre <stevem@chiark.greenend.org.uk>
+           2003-2011 Andreas Barth <aba@not.so.argh.org>
+           2022 Andreas Tille <tille@debian.org>
+           2022-2023 Andreas Metzler <ametzler@debian.org>
+License: MIT
+
+Files: analyzer/pammosaicknit.c
+       editor/specialty/pampaintspill.c
+       editor/pamrecolor.c
+       editor/pamsistoaglyph.c
+Copyright: 2010-2021 Scott Pakin <scott+pbm@pakin.org>
+License: GPL-3+
+
+Files: analyzer/pamsharpmap.c
+       analyzer/pamsharpness.c
+Copyright: 2002, 2003 B.W. van Schooten
+           2004 Bryan Henderson
+License: Artistic
+
+Files: analyzer/pamslice.c
+Copyright: 2000 Jos Dingjan <jos@tuatha.org>
+License: GPL-2+
+
+Files: analyzer/pgmminkowski.c
+       analyzer/pbmminkowski.c
+Copyright: 2000 Luuk van Dijk/Mind over Matter
+           1989 Jef Poskanzer
+License: MIT
+
+Files: analyzer/pgmtexture.c
+Copyright: 1991 Texas Agricultural Experiment Station, James Darrell McCauley,
+                J. Michael Carstensen
+License: MIT
+Comment: THE TEXAS AGRICULTURAL EXPERIMENT STATION (TAES) AND THE TEXAS A&M
+ UNIVERSITY SYSTEM (TAMUS) MAKE NO EXPRESS OR IMPLIED WARRANTIES
+ (INCLUDING BY WAY OF EXAMPLE, MERCHANTABILITY) WITH RESPECT TO ANY
+ ITEM, AND SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL
+ OR CONSEQUENTAL DAMAGES ARISING OUT OF THE POSSESSION OR USE OF
+ ANY SUCH ITEM. LICENSEE AND/OR USER AGREES TO INDEMNIFY AND HOLD
+ TAES AND TAMUS HARMLESS FROM ANY CLAIMS ARISING OUT OF THE USE OR
+ POSSESSION OF SUCH ITEMS.
+
+Files: analyzer/pnmpsnr.c
+Copyright: 1994-2000 Ullrich Hafner <hafner@bigfoot.de>
+License: MIT
+
+Files: analyzer/pnmhistmap.c
+Copyright: 1993 Wilson H. Bent, Jr (whb@usc.edu)
+           2004 john h. dubois
+License: MIT
+
+Files: buildtools/install.sh
+Copyright: 1991 by the Massachusetts Institute of Technology
+License: MIT
+
+Files: buildtools/stamp-date
+Copyright: 1993 by Oliver Trepte
+License: MIT
+
+Files: converter/other/avstopam.c
+Copyright: 2010 Scott Pakin <scott+pbm@pakin.org>
+License: MIT
+
+Files: converter/other/bmptopnm.c converter/bmp.h
+Copyright: 1992 by David W. Sanderson.
+License: MIT
+
+Files: converter/other/cameratopam/*
+Copyright: 1997-2005 Dave Coffin <dcoffin@cybercom.net>
+License: GPL-2+
+
+Files: converter/other/gemtopnm.c
+Copyright: 1988 Diomidis D. Spinellis.
+License: MIT
+
+Files: converter/other/giftopnm.c
+Copyright: 1990, 1991, 1993 David Koblas <koblas@netcom.com>
+License: MIT
+
+Files: converter/other/infotopam.c
+Copyright: 2004 Richard Griswold <griswold@acm.org>
+License: MIT
+
+Files: converter/other/ipdb.*
+Copyright: 1997 Eric A. Howe
+License: GPL-2+
+
+Files: converter/other/jpeg2000/*
+Copyright: 1999-2000, Image Power, Inc. and the University of British Columbia
+           2001-2002 Michael David Adams
+License: JASPER
+
+Files:converter/other/pamtoavs.c
+Copyright: 2010 Scott Pakin <scott+pbm@pakin.org>
+License: GPL-3+
+
+Files: converter/other/pamtodjvurle.c
+       converter/other/pamtooctaveimg.c
+       converter/pbm/pbmtodjvurle.c
+       editor/pamhomography.c
+       editor/pammixmulti.c
+       generator/pamstereogram.c
+Copyright: 2004,2020 Scott Pakin <scott+pbm@pakin.org>
+License: MIT
+
+Files: converter/other/pnmtorle.c
+       converter/other/rletopnm.c
+       editor/ppmfade
+       editor/specialty/ppmntsc.c
+Copyright: 1994 Wes Barris (wes@msc.edu), Minnesota Supercomputer Center, Inc.
+           2000 by Bryan Henderson
+           2022 by Akira F Urushibata
+License: University
+
+Files: editor/pnmstitch.c
+Copyright: 2002 Mark Salyzyn
+License: AS_IS
+ Redistribution and use in source form, with or without modification, are
+ permitted provided that redistributions of source code must retain the
+ above copyright notice, this list of conditions and the following
+ disclaimer.
+ .
+ This software is provided `as is' by Mark Salyzyn and any express or implied
+ warranties, including, but not limited to, the implied warranties of
+ merchantability and fitness for a particular purpose, are disclaimed. In no
+ event shall Mark Salyzyn be liable for any direct, indirect, incidental,
+ special, exemplary or consequential damages (including, but not limited to,
+ procurement of substitute goods or services; loss of use, data, or profits;
+ or business interruptions) however caused and on any theory of liability,
+ whether in contract, strict liability, or tort (including negligence or
+ otherwise) arising in any way out of the use of this software, even if
+ advised of the possibility of such damage.
+ .
+ Any restrictions or encumberances added to this source code or derivatives,
+ is prohibited.
+
+Files: editor/pamaddnoise.c
+       editor/pgmmedian.c
+Copyright: 1995 by Mike Burns (burns@cac.psu.edu)
+           2005 by Bryan Henderson
+License: AS_IS_MB
+
+Files: editor/pamhue.c
+       editor/pambrighten.c
+Copyright: 1989 by Jef Poskanzer.
+           1990 by Brian Moffet.
+           2019 by Willem van Schaik (willem@schaik.com)
+License: Public_Domain
+ Permission to use, copy, modify, and distribute this software and its
+ documentation for any purpose and without fee is hereby granted, provided
+ that the above copyright notice appear in all copies and that both that
+ copyright notice and this permission notice appear in supporting
+ documentation.  This software is provided "as is" without express or
+ implied warranty.
+
+Files: editor/pnmconvol.c
+       editor/pnmsmooth.c
+Copyright: 1994, 1995 by Mike Burns (burns@chem.psu.edu)
+           1989, 1991 by Jef Poskanzer
+License: AS_IS_MB
+
+Files: other/pamx/*
+Copyright: 1989, 1990, 1991 Jim Frost
+License: MIT
+
+Files: other/pnmcolormap.c
+Copyright: 1989, 1991 Jef Poskanzer.
+           2001 Bryan Henderson.
+License: MIT
+
+Files: other/pambayer.c
+Copyright: Alexandre Becoulet <diaxen@free.fr>
+License: GPL-2+
+
+Files: lib/util/*
+Copyright: 1988-2021 Jef Poskanzer
+License: Artistic
+
+Files: lib/util/bitio.*
+Copyright: 1992 by David W. Sanderson
+License: MIT
+
+Files: lib/util/runlength.c
+Copyright: 2015 by Akira Urushibata <afu@wta.att.ne.jp>
+License: MIT
+
+Files: lib/util/randmersenne.c
+Copyright: 1997 - 2002, Makoto Matsumoto and Takuji Nishimura,
+License: BSD-3-clause
+
+Files: lib/util/nstring.c
+Copyright: 1999-2002 Martinec
+License: GPL-2+
+
+Files: lib/libpbmfontdump.c
+       lib/libpbmfont2.c
+Copyright: 1991 by Jef Poskanzer
+           1993 by George Phillips.
+License: MIT
+
+Files: lib/libpamd.c
+       lib/libppmd.c
+Copyright: 1989, 1991 Jef Poskanzer.
+           1994 John Walker, kelvin@fourmilab.ch
+License: MIT
+
+Files: lib/libppmcmap.c
+Copyright: 1989, 1991 by Jef Poskanzer.
+           1994 Ingo Wilken <Ingo.Wilken@informatik.uni-oldenburg.de>
+License: MIT
+
+Files: urt/*
+Copyright: 1990-1992 University of Michigan
+           1988 Curtin University of Technology
+           1987 University of Utah
+           1985 Spencer W. Thomas
+License: University
+
+Files: urt/rle.h
+       urt/Runput.c
+Copyright: 1984 Todd W. Fuqua
+License: University
+
+Files: urt/vaxshort.c
+Copyright: Michael John Muuss
+License: Public_Domain
+
+Files: converter/pbm/pbmtoppa/pbmtoppa.c
+Copyright: 1998 Tim Norman
+License: GPL-2
+
+Files: generator/pbmpage.c
+Copyright: 1998 Tim Norman
+ 2000 Bryan Henderson
+License: GPL-2
+
+Files: converter/pbm/pbmtoppa/ppapbm.h
+ converter/pbm/pbmtoppa/pbm.c
+ converter/pbm/pbmtoppa/ppa.c
+ converter/pbm/pbmtoppa/ppa.h
+ converter/pbm/pbmtoppa/cutswath.c
+Copyright: 1998 Tim Norman
+ 1998  Jim Peterson <jspeter@birch.ee.vt.edu
+License: MIT
+
+Files: converter/other/jpegtopnm.c converter/other/pnmtojpeg.c
+Copyright: 1991-1998, Thomas G. Lane
+ 2000 Bryan Henderson
+License: IJG
+
+Files: converter/ppm/ppmtompeg/mfwddct.c
+ converter/ppm/ppmtompeg/jrevdct.c
+Copyright: 1991-1998, Thomas G. Lane
+License: IJG
+
+Files: analyzer/pamsumm.c analyzer/pamtable.c converter/other/pamtoxvmini.c
+Copyright: Bryan Henderson
+License: Public_Domain
+
+Files: analyzer/pamtilt.c
+Copyright: 2005 Bryan Henderson
+ 2005 Gregg Townsend
+License: Public_Domain
+
+Files: buildtools/mkinstalldirs
+Copyright: 1993 Noah Friedman <friedman@prep.ai.mit.edu>
+License: Public_Domain
+
+Files: converter/other/exif.c
+Copyright: 1999 Matthaias Wandel
+ 2001, 2003 Bryan Henderson
+License: Public_Domain
+
+Files: converter/other/pamtompfont.c converter/other/pamtopfm.c
+ converter/other/pamtopnm.c
+Copyright: 2000, 2004, 2008 Bryan Henderson
+License: Public_Domain
+
+Files: converter/other/pamtopam.c
+Copyright: 2007 Paul Bolle
+License: Public_Domain
+
+Files: converter/other/pamtopdbimg.c
+Copyright: 1997 Eric A. Howe
+License: GPL-2+
+
+Files: converter/other/fiasco/*
+Copyright: 1994-2000 Ullrich Hafner
+License: GPL-2+
+Comment:
+ FIASCO is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the
+ Free Software Foundation; either version 2 of the License, or (at your
+ option) any later version.
+
+Files: converter/other/fiasco/getopt.c converter/other/fiasco/getopt.h
+ converter/other/fiasco/getopt1.c
+Copyright: 1987, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97
+   Free Software Foundation, Inc.
+License: GPL-2+
+
+Files: converter/other/jbig/*
+Copyright: 1995-2008 Dr. Marcus Kuhn <mgk25@cl.cam.ac.uk>
+ Bryan Henderson
+License: GPL-2+
+
+Files: converter/other/jbig/libjbig/*
+Copyright: 1995-2014 -- Markus Kuhn
+License: GPL-2+
+
+Files: converter/other/pamtofits.c
+Copyright: 1989 by Wilson H. Bent
+  1992 Alberto Accomazzi
+License: MIT
+
+Files: converter/other/pamtopng.c
+Copyright: Jef Poskanzer
+ Bryan Henderson
+ 1995-1998 by Alexander Lehmann <alex@hal.rhein-main.de>
+   and Willem van Schaik <willem@schaik.com>
+ 1999,2001 by Greg Roelofs <newt@pobox.com>
+ 2015 by Willem van Schaik <willem@schaik.com>
+License: MIT
+
+Files: converter/other/pamtosrf.c
+Copyright: 2011 by Mike Frysinger <vapier@gentoo.org>
+License: MIT
+
+Files: converter/other/pamtosvg/*
+Copyright: 2000, 2001, 2002 Martin Weber
+License: GPL-2+
+
+Files: converter/other/pamtosvg/curve.c
+Copyright: 1992 Free Software Foundation, Inc.
+License: GPL-2+
+
+Files: converter/other/pamtosvg/thin-image.h
+Copyright: 2001, 2002 Martin Weber
+License: LGPL-2.1+
+
+Files: converter/other/pamtotga.c
+Copyright: 1989, 1991 by Mark Shand and Jef Poskanzer
+License: MIT
+
+Files: converter/other/pamtotiff.c
+Copyright: 1990 by Sun Microsystems, Inc.
+ Jef Poskanzer
+License: MIT-like-Open-Group-variant
+ Permission to use, copy, modify, and distribute this software and its
+ documentation for any purpose and without fee is hereby granted,
+ provided that the above copyright notice appear in all copies and that
+ both that copyright notice and this permission notice appear in
+ supporting documentation.
+ .
+ This file is provided AS IS with no warranties of any kind.  The author
+ shall have no liability with respect to the infringement of copyrights,
+ trade secrets or any patents by this file or any part thereof.  In no
+ event will the author be liable for any lost revenue or profits or
+ other special, indirect and consequential damages.
+
+Files: converter/other/pamtouil.c
+Copyright: 2002 Bryan Henderson
+ Jef Poskanzer
+ 1990 Mark W. Sniti
+License: AS_IS_MB
+
+Files: converter/other/pbmtopgm.c converter/ppm/ppmtopjxl.c
+Copyright: 1990 Angus Duggan <ajcd@dcs.ed.ac.uk>
+ Tomas Rokicki
+License: MIT
+
+Files: converter/pbm/pktopbm.c
+Copyright: 1990 Angus Duggan <ajcd@dcs.ed.ac.uk>
+ Tomas Rokicki
+ 1998 jcn <janneke@gnu.org>
+License: MIT
+
+Files: converter/pbm/pbmtopk.c editor/pnmpad.c
+ editor/pbmpscale.c
+Copyright: 1990 Angus Duggan <ajcd@dcs.ed.ac.uk>
+License: MIT
+
+Files: lib/util/shhopt*
+Copyright: Sverre H. Huseby <sverrehu@online.no>
+ Bryan Henderson
+License: Artistic-1.0
+ http://www.opensource.org/licenses/artistic-license.html
+ The Artistic License
+ .
+ Preamble
+ .
+ The intent of this document is to state the conditions under which a
+ Package may be copied, such that the Copyright Holder maintains some
+ semblance of artistic control over the development of the package, while
+ giving the users of the package the right to use and distribute the Package
+ in a more-or-less customary fashion, plus the right to make reasonable
+ modifications.
+ .
+ Definitions:
+ .
+     "Package" refers to the collection of files distributed by the
+ Copyright Holder, and derivatives of that collection of files created
+ through textual modification.  "Standard Version" refers to such a Package
+ if it has not been modified, or has been modified in accordance with the
+ wishes of the Copyright Holder.  "Copyright Holder" is whoever is named in
+ the copyright or copyrights for the package.  "You" is you, if you're
+ thinking about copying or distributing this Package.  "Reasonable copying
+ fee" is whatever you can justify on the basis of media cost, duplication
+ charges, time of people involved, and so on. (You will not be required to
+ justify it to the Copyright Holder, but only to the computing community at
+ large as a market that must bear the fee.) "Freely Available" means that no
+ fee is charged for the item itself, though there may be fees involved in
+ handling the item. It also means that recipients of the item may
+ redistribute it under the same conditions they received it.
+ .
+ 1. You may make and give away verbatim copies of the source form of the
+ Standard Version of this Package without restriction, provided that you
+ duplicate all of the original copyright notices and associated disclaimers.
+ .
+ 2. You may apply bug fixes, portability fixes and other modifications
+ derived from the Public Domain or from the Copyright Holder. A Package
+ modified in such a way shall still be considered the Standard Version.
+ .
+ 3. You may otherwise modify your copy of this Package in any way, provided
+ that you insert a prominent notice in each changed file stating how and
+ when you changed that file, and provided that you do at least ONE of the
+ following:
+ .
+     a) place your modifications in the Public Domain or otherwise make them
+ Freely Available, such as by posting said modifications to Usenet or an
+ equivalent medium, or placing the modifications on a major archive site
+ such as ftp.uu.net, or by allowing the Copyright Holder to include your
+ modifications in the Standard Version of the Package.
+ .
+     b) use the modified Package only within your corporation or
+ organization.
+ .
+     c) rename any non-standard executables so the names do not conflict
+ with standard executables, which must also be provided, and provide a
+ separate manual page for each non-standard executable that clearly
+ documents how it differs from the Standard Version.
+ .
+     d) make other distribution arrangements with the Copyright Holder.
+ .
+ 4. You may distribute the programs of this Package in object code or
+ executable form, provided that you do at least ONE of the following:
+ .
+     a) distribute a Standard Version of the executables and library files,
+ together with instructions (in the manual page or equivalent) on where to
+ get the Standard Version.
+ .
+     b) accompany the distribution with the machine-readable source of the
+ Package with your modifications.
+ .
+     c) accompany any non-standard executables with their corresponding
+ Standard Version executables, giving the non-standard executables
+ non-standard names, and clearly documenting the differences in manual pages
+ (or equivalent), together with instructions on where to get the Standard
+ Version.
+ .
+     d) make other distribution arrangements with the Copyright Holder.
+ .
+ 5. You may charge a reasonable copying fee for any distribution of this
+ Package. You may charge any fee you choose for support of this Package. You
+ may not charge a fee for this Package itself. However, you may distribute
+ this Package in aggregate with other (possibly commercial) programs as part
+ of a larger (possibly commercial) software distribution provided that you
+ do not advertise this Package as a product of your own.
+ .
+ 6. The scripts and library files supplied as input to or produced as output
+ from the programs of this Package do not automatically fall under the
+ copyright of this Package, but belong to whomever generated them, and may
+ be sold commercially, and may be aggregated with this Package.
+ .
+ 7. C or perl subroutines supplied by you and linked into this Package shall
+ not be considered part of this Package.
+ .
+ 8. The name of the Copyright Holder may not be used to endorse or promote
+ products derived from this software without specific prior written
+ permission.
+ .
+ 9. THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
+ WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ .
+ The End
+
+License: MIT
+ Permission to use, copy, modify, and distribute this software and its
+ documentation for any purpose and without fee is hereby granted, provided
+ that the above copyright notice appear in all copies and that both that
+ copyright notice and this permission notice appear in supporting
+ documentation.  This software is provided "as is" without express or
+ implied warranty.
+
+License: Artistic
+ This software is distributed under the Perl Artistic License.
+ No warranty.
+ .
+ On Debian systems you can find the Artistic license under
+ /usr/share/common-licenses/Artistic
+
+License: GPL-3+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or (at
+ your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ On Debian systems you can find the full text of the GNU General Public
+ License version 3 at /usr/share/common-licenses/GPL-3.
+
+License: GPL-2+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 2 of the License, or (at
+ your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ On Debian systems you can find the full text of the GNU General Public
+ License version 2 at /usr/share/common-licenses/GPL-2.
+
+License: GPL-2
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation version 2.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ On Debian systems you can find the full text of the GNU General Public
+ License version 2 at /usr/share/common-licenses/GPL-2.
+
+License: BSD-3-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+  1. Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+ .
+  2. Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+ .
+  3. The names of its contributors may not be used to endorse or promote
+     products derived from this software without specific prior written
+     permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT
+ OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: JASPER
+ Permission is hereby granted, free of charge, to any person (the "User")
+ obtaining a copy of this software and associated documentation, to deal
+ in the JasPer Software without restriction, including without limitation
+ the right to use, copy, modify, merge, publish, distribute, sublicense,
+ and/or sell copies of the JasPer Software (in source and binary forms),
+ and to permit persons to whom the JasPer Software is furnished to do so,
+ provided further that the License Conditions below are met.
+ .
+ License Conditions
+ ******************
+ .
+ A. Redistributions of source code must retain the above copyright notice,
+    and this list of conditions, and the following disclaimer.
+ .
+ B. Redistributions in binary form must reproduce the above copyright
+    notice, and this list of conditions, and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+ .
+ C. Neither the name of Image Power, Inc. nor any other contributor
+    (including, but not limited to, the University of British Columbia and
+    Michael David Adams) may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+ .
+ D. User agrees that it shall not commence any action against Image Power,
+   Inc., the University of British Columbia, Michael David Adams, or any
+   other contributors (collectively "Licensors") for infringement of any
+   intellectual property rights ("IPR") held by the User in respect of any
+   technology that User owns or has a right to license or sublicense and
+   which is an element required in order to claim compliance with ISO/IEC
+   15444-1 (i.e., JPEG-2000 Part 1).  "IPR" means all intellectual property
+   rights worldwide arising under statutory or common law, and whether
+   or not perfected, including, without limitation, all (i) patents and
+   patent applications owned or licensable by User; (ii) rights associated
+   with works of authorship including copyrights, copyright applications,
+   copyright registrations, mask work rights, mask work applications,
+   mask work registrations; (iii) rights relating to the protection of
+   trade secrets and confidential information; (iv) any right analogous
+   to those set forth in subsections (i), (ii), or (iii) and any other
+   proprietary rights relating to intangible property (other than trademark,
+   trade dress, or service mark rights); and (v) divisions, continuations,
+   renewals, reissues and extensions of the foregoing (as and to the extent
+   applicable) now existing, hereafter filed, issued or acquired.
+ .
+ E. If User commences an infringement action against any Licensor(s) then
+    such Licensor(s) shall have the right to terminate User's license and
+    all sublicenses that have been granted hereunder by User to other parties.
+ .
+ F. This software is for use only in hardware or software products that
+    are compliant with ISO/IEC 15444-1 (i.e., JPEG-2000 Part 1).  No license
+    or right to this Software is granted for products that do not comply
+    with ISO/IEC 15444-1.  The JPEG-2000 Part 1 standard can be purchased
+    from the ISO.
+ .
+ THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE.
+ NO USE OF THE JASPER SOFTWARE IS AUTHORIZED HEREUNDER EXCEPT UNDER
+ THIS DISCLAIMER.  THE JASPER SOFTWARE IS PROVIDED BY THE LICENSORS AND
+ CONTRIBUTORS UNDER THIS LICENSE ON AN ``AS-IS'' BASIS, WITHOUT WARRANTY
+ OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION,
+ WARRANTIES THAT THE JASPER SOFTWARE IS FREE OF DEFECTS, IS MERCHANTABLE,
+ IS FIT FOR A PARTICULAR PURPOSE OR IS NON-INFRINGING.  THOSE INTENDING
+ TO USE THE JASPER SOFTWARE OR MODIFICATIONS THEREOF FOR USE IN HARDWARE
+ OR SOFTWARE PRODUCTS ARE ADVISED THAT THEIR USE MAY INFRINGE EXISTING
+ PATENTS, COPYRIGHTS, TRADEMARKS, OR OTHER INTELLECTUAL PROPERTY RIGHTS.
+ THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE JASPER SOFTWARE
+ IS WITH THE USER.  SHOULD ANY PART OF THE JASPER SOFTWARE PROVE DEFECTIVE
+ IN ANY RESPECT, THE USER (AND NOT THE INITIAL DEVELOPERS, THE UNIVERSITY
+ OF BRITISH COLUMBIA, IMAGE POWER, INC., MICHAEL DAVID ADAMS, OR ANY
+ OTHER CONTRIBUTOR) SHALL ASSUME THE COST OF ANY NECESSARY SERVICING,
+ REPAIR OR CORRECTION.  UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY,
+ WHETHER TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE
+ INITIAL DEVELOPER, THE UNIVERSITY OF BRITISH COLUMBIA, IMAGE POWER, INC.,
+ MICHAEL DAVID ADAMS, ANY OTHER CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE
+ JASPER SOFTWARE, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO
+ THE USER OR ANY OTHER PERSON FOR ANY INDIRECT, SPECIAL, INCIDENTAL, OR
+ CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION,
+ DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR
+ MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES, EVEN IF
+ SUCH PARTY HAD BEEN INFORMED, OR OUGHT TO HAVE KNOWN, OF THE POSSIBILITY
+ OF SUCH DAMAGES.  THE JASPER SOFTWARE AND UNDERLYING TECHNOLOGY ARE NOT
+ FAULT-TOLERANT AND ARE NOT DESIGNED, MANUFACTURED OR INTENDED FOR USE OR
+ RESALE AS ON-LINE CONTROL EQUIPMENT IN HAZARDOUS ENVIRONMENTS REQUIRING
+ FAIL-SAFE PERFORMANCE, SUCH AS IN THE OPERATION OF NUCLEAR FACILITIES,
+ AIRCRAFT NAVIGATION OR COMMUNICATION SYSTEMS, AIR TRAFFIC CONTROL, DIRECT
+ LIFE SUPPORT MACHINES, OR WEAPONS SYSTEMS, IN WHICH THE FAILURE OF THE
+ JASPER SOFTWARE OR UNDERLYING TECHNOLOGY OR PRODUCT COULD LEAD DIRECTLY
+ TO DEATH, PERSONAL INJURY, OR SEVERE PHYSICAL OR ENVIRONMENTAL DAMAGE
+ ("HIGH RISK ACTIVITIES").  LICENSOR SPECIFICALLY DISCLAIMS ANY EXPRESS
+ OR IMPLIED WARRANTY OF FITNESS FOR HIGH RISK ACTIVITIES.  USER WILL NOT
+ KNOWINGLY USE, DISTRIBUTE OR RESELL THE JASPER SOFTWARE OR UNDERLYING
+ TECHNOLOGY OR PRODUCTS FOR HIGH RISK ACTIVITIES AND WILL ENSURE THAT ITS
+ CUSTOMERS AND END-USERS OF ITS PRODUCTS ARE PROVIDED WITH A COPY OF THE
+ NOTICE SPECIFIED IN THIS SECTION.
+
+License: AS_IS_MB
+ Permission to use, copy, modify, and distribute this software and its
+ documentation for any purpose and without fee is hereby granted, provided
+ that the above copyright notice appear in all copies and that both that
+ copyright notice and this permission notice appear in supporting
+ documentation.  This software is provided "as is" without express or
+ implied warranty.
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public License
+ as published by the Free Software Foundation; either version 2.1 of
+ the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this library; if not, write to the Free Software Foundation,
+ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ .
+ On Debian systems you can find the full text of the GNU Lesser General
+ Public License version 2.1 at /usr/share/common-licenses/LGPL-2..
+
+
+License: University
+ This software is copyrighted as noted below.  It may be freely copied,
+ modified, and redistributed, provided that the copyright notice is
+ preserved on all copies.
+ .
+ There is no warranty or other guarantee of fitness for this software,
+ it is provided solely "as is".  Bug reports or fixes may be sent
+ to the author, who may or may not act on them as he desires.
+ .
+ You may not include this software in a program or other software product
+ without supplying the source, or without informing the end-user that the
+ source is available for no extra charge.
+ .
+ If you modify this software, you should include a notice giving the
+ name of the person performing the modification, the date of modification,
+ and the reason for such modification.
+
+License: Public_Domain
+ Permission to use, copy, modify, and distribute this software and its
+ documentation for any purpose and without fee is hereby granted, provided
+ that the above copyright notice appear in all copies and that both that
+ copyright notice and this permission notice appear in supporting
+ documentation.  This software is provided "as is" without express or
+ implied warranty.
+
+License: IJG
+ Permission is hereby granted to use, copy, modify, and distribute this
+ software (or portions thereof) for any purpose, without fee, subject to these
+ conditions:
+ (1) If any part of the source code for this software is distributed, then this
+ README file must be included, with this copyright and no-warranty notice
+ unaltered; and any additions, deletions, or changes to the original files
+ must be clearly indicated in accompanying documentation.
+ (2) If only executable code is distributed, then the accompanying
+ documentation must state that "this software is based in part on the work of
+ the Independent JPEG Group".
+ (3) Permission for use of this software is granted only if the user accepts
+ full responsibility for any undesirable consequences; the authors accept
+ NO LIABILITY for damages of any kind.
+ .
+ These conditions apply to any software derived from or based on the IJG code,
+ not just to the unmodified library.  If you use our work, you ought to
+ acknowledge us.
+ .
+ Permission is NOT granted for the use of any IJG author's name or company name
+ in advertising or publicity relating to this software or products derived from
+ it.  This software may be referred to only as "the Independent JPEG Group's
+ software".
+ .
+ We specifically permit and encourage the use of this software as the basis of
+ commercial products, provided that all warranty or liability claims are
+ assumed by the product vendor.

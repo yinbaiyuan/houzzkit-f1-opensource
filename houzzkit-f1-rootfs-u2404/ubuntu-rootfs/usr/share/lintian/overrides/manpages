@@ -1,0 +1,2 @@
+# /var/catman/ only described as alternate path
+manpages: FSSTND-dir-in-manual-page /var/catman/ [usr/share/man/man7/hier.7.gz:508]

@@ -1,0 +1,26 @@
+pigz for Debian
+---------------
+
+This is the pigz utility packaged for Debian. All relevant information can be
+found in the manpage pigz(1).
+
+pigz is supposed to be a replacement of gzip - however, the default
+installation is not replacing gzip binary due to various concerns, like
+differences in the output data, differences in program/help output, basic risk
+considerations (/bin/gzip is an essential executable), and the fact that it's
+installed in /usr spaces which might be not located within / filesystem space.
+
+If the mentioned concerns don't scare you or are not relevant, it's possible to
+make it a system-wide default setting by running the following commands as
+root.  It's also advisable to make sure that pigz is not accidentally
+uninstalled during administrative work since the usual safety mechanisms won't
+be triggered here.
+
+dpkg-divert --local --add --rename --divert /bin/gzip.gzip /bin/gzip 
+ln -s /usr/bin/pigz /bin/gzip
+
+This can be reverted later using:
+
+rm /bin/gzip
+dpkg-divert --remove --rename --divert /bin/gzip.gzip /bin/gzip
+

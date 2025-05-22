@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD polkit Policy Configuration 1.0//EN" "http://www.freedesktop.org/software/polkit/policyconfig-1.dtd">
+<!-- Policy definitions for core polkit actions. Copyright (c) 2008-2012 Red Hat, Inc. -->
+<policyconfig>
+  <vendor>The polkit project</vendor>
+  <vendor_url>http://www.freedesktop.org/wiki/Software/polkit/</vendor_url>
+  <action id="org.freedesktop.policykit.exec">
+    <description>Run a program as another user</description>
+    <description xml:lang="zh_TW">以其他使用者身份執行程式</description>
+    <description xml:lang="zh_CN">作为另一个用户运行程序</description>
+    <description xml:lang="uk">Виконання програми від імені іншого користувача</description>
+    <description xml:lang="tr">Bir programı başka bir kullanıcı olarak çalıştırın</description>
+    <description xml:lang="sv">Kör ett program som en annan användare</description>
+    <description xml:lang="sk">Spustenie programu ako iný používateľ</description>
+    <description xml:lang="ru">Запуск программы от имени другого пользователя</description>
+    <description xml:lang="ro">Rulează un program ca alt utilizator</description>
+    <description xml:lang="pt_BR">Executa um programa como outro usuário</description>
+    <description xml:lang="pt">Executa um programa como outro utilizador</description>
+    <description xml:lang="pl">Uruchomienie programu jako inny użytkownik</description>
+    <description xml:lang="nn">Køyr program som ein annan brukar</description>
+    <description xml:lang="nl">Voer een programma uit als een andere gebruiker</description>
+    <description xml:lang="ka">პროგრამის სხვა სახელით გაშვება</description>
+    <description xml:lang="it">Lancia un programma come un altro utente</description>
+    <description xml:lang="id">Jalankan program sebagai pengguna lain</description>
+    <description xml:lang="hu">Program futtatása másik felhasználóként</description>
+    <description xml:lang="hr">Pokreni programe kao drugi korisnik</description>
+    <description xml:lang="de">Ein Programm als ein anderer Benutzer ausführen</description>
+    <description xml:lang="da">Kør et program som en anden bruger</description>
+    <description xml:lang="cs">Spustit program jako jiný uživatel</description>
+    <message>Authentication is required to run a program as another user</message>
+    <message xml:lang="zh_TW">必須先核對身份才能以其他使用者執行程式</message>
+    <message xml:lang="zh_CN">需要验证：作为另一个用户运行程序</message>
+    <message xml:lang="uk">Для виконання програми від імені іншого користувача слід пройти розпізнавання</message>
+    <message xml:lang="tr">Bir programı başka bir kullanıcı olarak çalıştırmak için kimlik doğrulama gerekir</message>
+    <message xml:lang="sv">Autentisering krävs för att köra ett program som en annan användare</message>
+    <message xml:lang="sk">Na spustenie programu ako iný používateľ sa vyžaduje overenie totožnosti</message>
+    <message xml:lang="ru">Требуется аутентификация для запуска программы от имени другого пользователя</message>
+    <message xml:lang="ro">Este necesară autentificarea pentru a rula un program ca alt utilizator</message>
+    <message xml:lang="pt_BR">A autenticação é necessária para executar um programa como outro usuário</message>
+    <message xml:lang="pt">A autenticação é necessária para executar um programa como outro utilizador</message>
+    <message xml:lang="pl">Wymagane jest uwierzytelnienie, aby uruchomić program jako inny użytkownik</message>
+    <message xml:lang="nn">Krev autentisering for å køyra program som ein annan brukar</message>
+    <message xml:lang="nl">Authenticatie is vereist om een programma als een andere gebruiker uit te voeren</message>
+    <message xml:lang="ka">პროგრამის სხვა სახელით გაშვებას ავთენტიკაცია სჭირდება</message>
+    <message xml:lang="it">È richiesto autenticarsi per lanciare un programma come un altro utente</message>
+    <message xml:lang="id">Otentikasi diperlukan untuk menjalankan program sebagai pengguna lain</message>
+    <message xml:lang="hu">Hitelesítés szükséges a program futtatásához másik felhasználóként</message>
+    <message xml:lang="hr">Potrebna je ovjera za pokretanje programa kao drugog korisnika</message>
+    <message xml:lang="de">Legitimierung ist erforderlich, um ein Programm als ein anderer Benutzer auszuführen</message>
+    <message xml:lang="da">Der kræves autentifikation for at køre et program som en anden bruger</message>
+    <message xml:lang="cs">Pro spuštění programu pod jiným uživatelem je vyžadováno ověření</message>
+    <defaults>
+      <allow_any>auth_admin</allow_any>
+      <allow_inactive>auth_admin</allow_inactive>
+      <allow_active>auth_admin</allow_active>
+    </defaults>
+  </action>
+</policyconfig>

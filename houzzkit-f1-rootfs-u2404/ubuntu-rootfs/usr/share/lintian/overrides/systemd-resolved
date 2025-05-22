@@ -1,0 +1,2 @@
+# Lintian is really bad at associating manpages
+systemd-resolved: spare-manual-page

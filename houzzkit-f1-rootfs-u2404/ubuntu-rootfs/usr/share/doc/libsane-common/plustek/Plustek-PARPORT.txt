@@ -1,0 +1,10 @@
+Plustek-PARPRORT.txt (2004-03-28) Gerhard Jäger <gerhard@gjaeger.de>
+====================================================================
+
+Beginning with SANE-1.0.13, there's a backend called plustek_pp.
+This is for controlling Plustek parallel-port scanner and compatible
+devices. For a full listing, see plustek_pp.desc.
+
+This code formerly was available for creating the Linux kernel module
+pt_drv. This is no longer be necessary. You should be able to use
+the backend out of the box.

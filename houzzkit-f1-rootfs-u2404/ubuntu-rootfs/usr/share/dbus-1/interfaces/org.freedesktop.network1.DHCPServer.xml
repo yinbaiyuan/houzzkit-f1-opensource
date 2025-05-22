@@ -1,0 +1,102 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"https://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+ <interface name="org.freedesktop.DBus.Peer">
+  <method name="Ping"/>
+  <method name="GetMachineId">
+   <arg type="s" name="machine_uuid" direction="out"/>
+  </method>
+ </interface>
+ <interface name="org.freedesktop.DBus.Introspectable">
+  <method name="Introspect">
+   <arg name="xml_data" type="s" direction="out"/>
+  </method>
+ </interface>
+ <interface name="org.freedesktop.DBus.Properties">
+  <method name="Get">
+   <arg name="interface_name" direction="in" type="s"/>
+   <arg name="property_name" direction="in" type="s"/>
+   <arg name="value" direction="out" type="v"/>
+  </method>
+  <method name="GetAll">
+   <arg name="interface_name" direction="in" type="s"/>
+   <arg name="props" direction="out" type="a{sv}"/>
+  </method>
+  <method name="Set">
+   <arg name="interface_name" direction="in" type="s"/>
+   <arg name="property_name" direction="in" type="s"/>
+   <arg name="value" direction="in" type="v"/>
+  </method>
+  <signal name="PropertiesChanged">
+   <arg type="s" name="interface_name"/>
+   <arg type="a{sv}" name="changed_properties"/>
+   <arg type="as" name="invalidated_properties"/>
+  </signal>
+ </interface>
+ <interface name="org.freedesktop.network1.Link">
+  <property name="OperationalState" type="s" access="read">
+  </property>
+  <property name="CarrierState" type="s" access="read">
+  </property>
+  <property name="AddressState" type="s" access="read">
+  </property>
+  <property name="IPv4AddressState" type="s" access="read">
+  </property>
+  <property name="IPv6AddressState" type="s" access="read">
+  </property>
+  <property name="OnlineState" type="s" access="read">
+  </property>
+  <property name="AdministrativeState" type="s" access="read">
+  </property>
+  <property name="BitRates" type="(tt)" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <method name="SetNTP">
+   <arg type="as" name="servers" direction="in"/>
+  </method>
+  <method name="SetDNS">
+   <arg type="a(iay)" name="addresses" direction="in"/>
+  </method>
+  <method name="SetDNSEx">
+   <arg type="a(iayqs)" name="addresses" direction="in"/>
+  </method>
+  <method name="SetDomains">
+   <arg type="a(sb)" name="domains" direction="in"/>
+  </method>
+  <method name="SetDefaultRoute">
+   <arg type="b" name="enable" direction="in"/>
+  </method>
+  <method name="SetLLMNR">
+   <arg type="s" name="mode" direction="in"/>
+  </method>
+  <method name="SetMulticastDNS">
+   <arg type="s" name="mode" direction="in"/>
+  </method>
+  <method name="SetDNSOverTLS">
+   <arg type="s" name="mode" direction="in"/>
+  </method>
+  <method name="SetDNSSEC">
+   <arg type="s" name="mode" direction="in"/>
+  </method>
+  <method name="SetDNSSECNegativeTrustAnchors">
+   <arg type="as" name="names" direction="in"/>
+  </method>
+  <method name="RevertNTP">
+  </method>
+  <method name="RevertDNS">
+  </method>
+  <method name="Renew">
+  </method>
+  <method name="ForceRenew">
+  </method>
+  <method name="Reconfigure">
+  </method>
+  <method name="Describe">
+   <arg type="s" name="json" direction="out"/>
+  </method>
+ </interface>
+ <interface name="org.freedesktop.network1.DHCPServer">
+  <property name="Leases" type="a(uayayayayt)" access="read">
+  </property>
+ </interface>
+</node>

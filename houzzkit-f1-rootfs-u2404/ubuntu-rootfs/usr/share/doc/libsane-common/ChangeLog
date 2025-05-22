@@ -1,0 +1,4 @@
+This file is automatically created at build time using the git commit
+messages and included in our source tarballs.  When you see this text
+you're using a `git checkout` and should use the `git log` command to
+see what has changed.

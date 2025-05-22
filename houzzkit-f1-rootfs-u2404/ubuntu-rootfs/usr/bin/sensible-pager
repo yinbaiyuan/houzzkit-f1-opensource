@@ -1,0 +1,28 @@
+#!/bin/sh
+# Copyright 2007 Jari Aalto; Released under GNU GPL v2 or any later version
+PATH="$PATH:/usr/share/sensible-utils/bin"
+
+# Prevent recursive loops, where these values are set to this script
+program="$(realpath "$(command -v "$0")")"
+
+TryEnv()
+{
+    # global $candidate
+    [ -z "$candidate" ] && return
+    # Prevent recursive loops, where environment variables are set to this script
+    [ x$(realpath "$(command -v "$candidate" || true)" || true) = x"$program" ] && return
+    # interpret like environ (7) man page. Do not use eval in order to not leak variables
+    sh -c "$candidate \"\$@\"" PAGER "$@"
+    ret=$?
+    # Operating system command not found
+    [ "$ret" -ne 126 ] && [ "$ret" -ne 127 ] && exit "$ret"
+}
+
+for candidate in "$PAGER" "$SENSIBLE_PAGER" pager more; do
+    TryEnv "$@"
+done
+
+
+echo "Couldn't find a pager!" 1>&2
+echo 'Set the $PAGER environment variable to your desired pager.'
+exit 1

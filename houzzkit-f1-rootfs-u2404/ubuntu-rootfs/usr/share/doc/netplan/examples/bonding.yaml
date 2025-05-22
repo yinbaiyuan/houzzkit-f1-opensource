@@ -1,0 +1,16 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp3s0: {}
+    enp4s0: {}
+  bonds:
+    bond0:
+      dhcp4: yes
+      interfaces:
+        - enp3s0
+        - enp4s0
+      parameters:
+        mode: active-backup
+        primary: enp3s0
+        mii-monitor-interval: 100

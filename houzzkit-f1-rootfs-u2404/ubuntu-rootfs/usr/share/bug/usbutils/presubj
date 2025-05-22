@@ -1,0 +1,6 @@
+USB ID's database
+=================
+usbutils now use the udev's hardware database to associate a full
+human-readable name to the vendor ID and the product ID. If your device
+is not or wrongly recognized by lsusb, please fill a bug against the
+udev package and not against usbutils nor usb.ids.

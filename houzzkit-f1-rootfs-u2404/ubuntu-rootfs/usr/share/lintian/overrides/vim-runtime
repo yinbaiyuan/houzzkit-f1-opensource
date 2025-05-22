@@ -1,0 +1,9 @@
+# These are intentionally in non-UTF-8 encodings
+national-encoding [usr/share/vim/vim*/keymap/*]
+national-encoding [usr/share/vim/vim*/lang/*]
+national-encoding [usr/share/vim/vim*/tutor/*]
+
+# This is Vim's builtin help
+package-contains-documentation-outside-usr-share-doc [usr/share/vim/vim*/doc/*]
+
+repeated-path-segment dvorak [usr/share/vim/vim*/pack/dist/opt/dvorak/dvorak/]

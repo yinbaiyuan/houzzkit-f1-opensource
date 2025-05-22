@@ -1,0 +1,14 @@
+[Unit]
+Description=bridge sleep hook
+Before=sleep.target
+StopWhenUnneeded=yes
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=-/etc/pm/sleep.d/bridge suspend
+ExecStop=-/etc/pm/sleep.d/bridge resume
+ExecStartPost=/bin/sleep 1
+
+[Install]
+WantedBy=sleep.target

@@ -1,0 +1,56 @@
+Vim for Debian
+---------------
+
+1. The current Debian Vim scripts policy can be found in the vim-doc package
+   under /usr/share/doc/vim and <https://vim-team.pages.debian.net/vim/>.
+
+2. Before reporting bugs, check if the bug also exists if you run vim
+   with "vim --clean". If not, make sure that the "bug" is not
+   a result of a setting in your ~/.vimrc before reporting it.
+
+defaults.vim
+------------
+
+Vim provides $VIMRUNTIME/defaults.vim to improve the default Vim experience for
+a user with no vimrc file.  It enables commonly useful functionality that
+wasn't historically enabled by default, like syntax highlighting and filetype
+plugins.
+
+However, the defaults.vim script is ONLY loaded when a user does NOT have their
+own vimrc file.  If you create a vimrc file and want to build on top of
+defaults.vim, add these lines to the top of your vimrc file:
+
+  unlet! g:skip_defaults_vim
+  source $VIMRUNTIME/defaults.vim
+
+When defaults.vim is loaded implicitly for a user, that happens _after_ the
+system vimrc file has been loaded.  Therefore, defaults.vim will override
+settings in the system vimrc. To change that, one can either
+
+a) Explicitly load defaults.vim in the system vimrc, as described above, and
+   then define your customizations
+b) Explicitly opt out of defaults.vim by adding the line below to
+   the system vimrc
+
+  let g:skip_defaults_vim = 1
+
+Modeline support disabled by default
+------------------------------------
+
+Modelines have historically been a source of security/resource vulnerabilities
+and are therefore disabled by default in $VIMRUNTIME/debian.vim.
+
+You can enable them in ~/.vimrc or /etc/vim/vimrc with "set modeline".
+
+In order to mimic Vim's default setting (modelines disabled when root, enabled
+otherwise), you may instead want to use the following snippet:
+
+  if $USER != 'root'
+    set modeline
+  else
+    set nomodeline
+  endif
+
+The securemodelines script from vim.org (and in the vim-scripts package) may
+also be of interest as it provides a way to whitelist exactly which options
+may be set from a modeline.

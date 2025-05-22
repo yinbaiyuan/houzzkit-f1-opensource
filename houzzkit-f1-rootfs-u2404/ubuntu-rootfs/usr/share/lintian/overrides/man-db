@@ -1,0 +1,3 @@
+# This is a private library, so it's OK for it to contain error-reporting
+# utility functions that call exit.
+man-db: exit-in-shared-library [usr/lib/man-db/libman-*.so]

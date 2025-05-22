@@ -1,0 +1,45 @@
+# Purpose
+
+This package contains some data needed by recursive DNS resolvers to use
+the global DNS infrastructure:
+- root.hints: the IP addresses of the root name servers
+- root.key: the root zone DNSSEC trust anchor(s) as DNSKEY records
+- root.ds: the root zone DNSSEC trust anchor(s) as DS records
+
+# Freshness
+
+While this data should be kept current, and this package will do so on
+supported Debian releases, it is usually not critical if it is not.
+
+Resolvers continuously refresh the root name servers list, ensuring
+functionality as long as some IPs in root.hints remain valid. Given that
+these IPs change rarely, the possibility of all becoming outdated is not
+a major concern.
+As long a resolver was initially installed when one of the trust anchors
+in this package was valid, it can securely fetch future trust anchors
+using the RFC 5011 mechanism.
+
+# Upgrades
+
+The package will be backported as needed to supported Debian releases
+and becomes automatically available with other system updates.
+
+The current binary package can also be manually installed on unsupported
+Debian releases, since it does not depend on any other package.
+
+# The source package
+
+The dns-root-data source package contains:
+- the root zone DNSSEC trust anchors (root-anchors.xml), downloaded from
+  https://data.iana.org/root-anchors/ and verified using an ICANN public
+  key (icannbundle.pem)
+- the root hints file (root.hints), downloaded from
+  https://www.iana.org/domains/root/files and verified using a Verisign
+  public key (registry-admin.key)
+
+When the binary package is built, these files are verified again and
+then the DS and DNSKEY resource records for the root zone Key Signing
+Key are extracted from root-anchors.xml.
+
+The data in the source package can be updated by the maintainer by using
+the get_orig_source target of debian/rules.

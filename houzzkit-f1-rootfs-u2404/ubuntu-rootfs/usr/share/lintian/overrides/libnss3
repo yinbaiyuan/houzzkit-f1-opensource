@@ -1,0 +1,23 @@
+# ABI compatibility is ensured upstream, and the SO version, if it needed
+# a change at any time, would be a change in the library name. There is
+# no reason to make compatibility more difficult with other distros and
+# upstream binary releases.
+libnss3: shared-library-lacks-version usr/lib/*/libnss3.so libnss3.so
+libnss3: shared-library-lacks-version usr/lib/*/libssl3.so libssl3.so
+libnss3: shared-library-lacks-version usr/lib/*/libnssutil3.so libnssutil3.so
+libnss3: shared-library-lacks-version usr/lib/*/libsmime3.so libsmime3.so
+libnss3: shared-library-lacks-version usr/lib/*/libfreebl3.so libfreebl3.so
+libnss3: shared-library-lacks-version usr/lib/*/libfreeblpriv3.so libfreeblpriv3.so
+libnss3: shared-library-lacks-version usr/lib/*/libsoftokn3.so libsoftokn3.so
+libnss3: shared-library-lacks-version usr/lib/*/libnssdbm3.so libnssdbm3.so
+libnss3: shared-library-lacks-version usr/lib/*/libnssckbi.so libnssckbi.so
+libnss3: lacks-unversioned-link-to-shared-library usr/lib/*/libnss3.so usr/lib/*/libnss3.so
+libnss3: lacks-unversioned-link-to-shared-library usr/lib/*/libssl3.so usr/lib/*/libssl3.so
+libnss3: lacks-unversioned-link-to-shared-library usr/lib/*/libnssutil3.so usr/lib/*/libnssutil3.so
+libnss3: lacks-unversioned-link-to-shared-library usr/lib/*/libsmime3.so usr/lib/*/libsmime3.so
+libnss3: lacks-unversioned-link-to-shared-library usr/lib/*/libfreebl3.so usr/lib/*/libfreebl3.so
+libnss3: lacks-unversioned-link-to-shared-library usr/lib/*/libfreeblpriv3.so usr/lib/*/libfreeblpriv3.so
+libnss3: lacks-unversioned-link-to-shared-library usr/lib/*/libsoftokn3.so usr/lib/*/libsoftokn3.so
+libnss3: lacks-unversioned-link-to-shared-library usr/lib/*/libnssdbm3.so usr/lib/*/libnssdbm3.so
+libnss3: lacks-unversioned-link-to-shared-library usr/lib/*/libnssckbi.so usr/lib/*/libnssckbi.so
+

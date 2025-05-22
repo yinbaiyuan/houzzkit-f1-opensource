@@ -1,0 +1,33 @@
+# Configuration for tlv320aic3204 driver
+
+CTL{reset}="mixer"
+
+# ---------------------------------------------------------
+# playback
+
+CTL{name}="HP DAC Playback Switch", CTL{value}="on,on"
+CTL{name}="HPL Output Mixer L_DAC Switch", CTL{value}="on"
+CTL{name}="HPR Output Mixer R_DAC Switch", CTL{value}="on"
+
+# dB gain:  0dB, 0.5dB/step
+CTL{name}="PCM Playback Volume", CTL{value}="127,127"
+
+# dB gain:  5dB, 1.0dB/step
+CTL{name}="HP Driver Gain Volume", CTL{value}="11,11"
+
+# ---------------------------------------------------------
+# capture
+
+CTL{name}="Mic PGA Switch", CTL{value}="on,on"
+CTL{name}="IN1_R to Left Mixer Positive Resistor", CTL{value}="1"
+CTL{name}="IN1_R to Right Mixer Positive Resistor", CTL{value}="1"
+CTL{name}="ADCFGA Left Mute Switch", CTL{value}="off"
+CTL{name}="ADCFGA Right Mute Switch", CTL{value}="off"
+
+# dB gain:  8dB, 0.5dB/step
+CTL{name}="ADC Level Volume", CTL{value}="40,40"
+
+# dB gain: 26dB, 0.5dB/ste
+CTL{name}="PGA Level Volume", CTL{value}="52,52"
+
+RESULT="true", EXIT="return"

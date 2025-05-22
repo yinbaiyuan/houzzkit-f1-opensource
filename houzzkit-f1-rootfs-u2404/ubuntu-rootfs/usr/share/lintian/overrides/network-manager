@@ -1,0 +1,2 @@
+# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=996270
+network-manager: custom-library-search-path RUNPATH /usr/lib/*/NetworkManager/*

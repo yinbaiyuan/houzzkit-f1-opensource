@@ -1,0 +1,60 @@
+Chrony in Containers
+--------------------
+
+Currently in 99.9+% of the cases syncing the local clock in a container
+is wrong. Most of the time it will be unable to do so, because it is lacking
+CAP_SYS_TIME. Or worse, if the CAP_SYS_TIME privilege is granted, multiple
+containers could fight over the system's time, because the Linux kernel does
+not provide time namespaces (yet).
+
+There are two things a user installing chrony usually wants:
+1. synchronize my time (NTP client)
+2. serve NTP (NTP server)
+
+In a container the first makes (usually) no sense, so by default we enable -x
+there (as it would only crash otherwise).
+This will disable the control of the system clock.
+See `man chronyd` for more details on the -x option.
+
+Formerly, the check for Condition=CAP_SYS_TIME in the systemd service avoided
+the crash of the NTP client portion, but that means the server use case will
+not work by default in containers. It is still not recommended to use a
+container as an NTP server, but if the host clock is synchronised via NTP,
+adding the -x option to chronyd instances running in containers will allow
+them to function as NTP servers which do not adjust the system clock.
+The Condition=CAP_SYS_TIME check was a silent, no-log-entry stealing away
+leaving users often unclear what happened - especially if they were more after
+the NTP server than the NTP client.
+
+One could argue that someone who installs chrony expects the system time to be
+synchronised, so it should fail if it is not able to do so.  On the other hand
+it could be argued that someone who installs chrony expects time to be served
+over the network via NTP.
+We can't know which expectation is applicable, so we assume that time should
+be synchronised unless chronyd is running in a container (or is without
+CAP_SYS_TIME in any other environment).
+
+To make things worse recent container implementations will offer CAP_SYS_TIME
+to the container. Since from the container's point of view, this capability is
+available for the container's user namespace. Just later on adjtimex and similar
+are actually evaluated against the host kernel where they will fail. Due to
+that without further precaution running chrony in Ubuntu in the future will
+likely have the service start (as Condition=CAP_SYS_TIME will be true) but
+then immediately fail.
+This will depend on the environment e.g. versions and types of containers and
+thereby feel just 'unreliable' from users point of view.
+Furthermore it will affect upgrades as the service has to be restarted for a
+package upgrade to be considered complete.
+
+Due to all of that Ubuntu decided (LP: #1589780) to default to -x (do not
+set the system clock) in containers.
+
+If one really wants to (try to) sync time in a container or CAP_SYS_TIME-less
+environment set SYNC_IN_CONTAINER="yes" in /etc/default/chrony to disable
+this special handling.
+
+It is important to mention that as soon as upstream provides a way to provide
+a default config working in those cases Ubuntu intends to use that and drop
+the current workaround.
+
+ -- Christian Ehrhardt <christian.ehrhardt@canonical.com>  Fri, 16 Mar 2018 12:25:44 +0100

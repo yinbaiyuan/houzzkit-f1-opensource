@@ -1,0 +1,9 @@
+certifi is patched to return the location of Debian-provided CA
+certificates.
+
+Certificates provided by upstream are still available for manual use
+at the following location:
+
+  /usr/lib/python2.7/dist-packages/certifi/cacert.pem
+
+ -- Sebastien Delafond <seb@debian.org>, Sun,  4 Oct 2015 10:38:44 +0200

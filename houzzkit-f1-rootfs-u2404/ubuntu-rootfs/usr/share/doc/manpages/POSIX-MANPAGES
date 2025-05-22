@@ -1,0 +1,21 @@
+As of version 1.65 of man-pages, the upstream project this package is
+based on, manual pages from the POSIX standard are included.  The
+man-pages project is permitted to distribute them and Andries Brouwer
+assumes that re-distribution by vendors is permitted as well.
+
+However, modification is definitively not allowed, hence this great
+contribution by The Institute of Electrical and Electronics Engineers
+and The Open Group (see <http://linuxpr.com/releases/6599.html>)
+rendered the entire man-pages package non-free.
+
+As of 1.66-1 release of the Debian package, the Debian maintainer
+decided to strip non-free POSIX manual pages from manpages tarball.
+In this way, this package continued to live in the main archive.
+
+Francesco Paolo Lovergine <frankie@debian.org> has packaged the
+non-free POSIX manpages as manpages-posix which are distributed by the
+Debian project in the non-free archive.
+
+Since 3.00 release (November'06), those POSIX manpages were
+removed by upstream and allocated in a separated tarball. Therefore it
+was no longer necessary to strip them.

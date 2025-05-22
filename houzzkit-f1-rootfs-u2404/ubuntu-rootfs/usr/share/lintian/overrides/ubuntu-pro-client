@@ -1,0 +1,5 @@
+# We have made the decision of delivering those files
+ubuntu-pro-client: package-installs-apt-preferences
+
+# This is intentional
+ubuntu-pro-client: uses-dpkg-database-directly [usr/lib/ubuntu-advantage/apt-esm-json-hook]

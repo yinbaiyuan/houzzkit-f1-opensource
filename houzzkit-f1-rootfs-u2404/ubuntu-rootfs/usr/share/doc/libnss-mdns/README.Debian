@@ -1,0 +1,59 @@
+Default configuration for /etc/nsswitch.conf
+--------------------------------------------
+
+On first installation of libnss-mdns, /etc/nsswitch.conf is modified
+for the upstream-recommended configuration, which usually looks like:
+
+    hosts:          files mdns4_minimal [NOTFOUND=return] dns
+
+If you also have systemd's libnss-resolve enabled, mDNS resolution will
+be configured to occur before that (higher priority):
+
+    hosts:          files mdns4_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] dns
+
+If any of the strings 'mdns', 'mdns_minimal', 'mdns4', 'mdns4_minimal',
+'mdns6' or 'mdns6_minimal' appear on the hosts line, your
+/etc/nsswitch.conf file will not be modified.
+
+
+Enabling IPv6 name resolution
+-----------------------------
+
+Sites where IPv6 is extensively used might prefer to replace mdns4_minimal
+with mdns_minimal, like this:
+
+    hosts:          files mdns_minimal [NOTFOUND=return] dns
+
+This works well for modern software that uses getaddrinfo() with address
+family AF_UNSPEC. However, some programs implement IPv6 support by
+making an IPv6-only name resolution attempt (with AF_INET6), then falling
+back to IPv4-only (AF_INET) if that fails. Failed mDNS name resolution
+attempts take several seconds, so this configuration will make those
+programs slow when contacting IPv4-only hosts in the .local zone. See
+<https://github.com/lathiat/nss-mdns/issues/62> for more information.
+
+
+Falling back to mDNS for names outside .local
+---------------------------------------------
+
+In versions older than 0.10-4 we used this configuration:
+
+    hosts:          files mdns4_minimal [NOTFOUND=return] dns mdns4
+
+This looks in mDNS whenever a non-link-local address does not have a PTR
+(reverse DNS) record in DNS. If the host with that address is local
+and available in mDNS, this means it becomes reverse-resolvable, but if
+the host with that address is not local, it causes a 5 second delay,
+so this is no longer enabled by default. If a local administrator wishes
+to reinstate mdns4, they can do so.
+
+
+Sites with a .local DNS zone
+----------------------------
+
+Making nss-mdns authoritative for .local breaks resolution
+on networks where .local is a real domain name. To work
+around this, nss-mdns implements the heuristic described in
+<https://support.apple.com/en-us/HT201275>: it looks up the SOA record
+for the .local zone, and disables itself automatically if that record
+is found.

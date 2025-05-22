@@ -1,0 +1,45 @@
+pre_form: Feature to pre-fill form parameters when opening a specific site.
+
+It is convenient for sites that you visit often, but it may introduce
+some security issues.  Be careful when using this feature, especially `submit'
+params described below.
+
+Default configuration file for pre_form is ~/.w3m/pre_form.
+
+The syntax of entries in the configuration file is as follows:
+
+url       <url>|/<re-url>/
+form      [<name>] <action>
+text      <name>  <value>
+file      <name>  <value>
+password  <name>  <value>
+checkbox  <name>  <value>  [<checked>]
+radio     <name>  <value>
+section   <name>  <value>
+submit   [<name> [<value>]]
+image    [<name> [<value>]]
+textarea  <name>
+<value>
+   :
+/textarea
+
+If <action> is set, a form which has matched <action> attributes
+will be configured by this pre_form.
+
+A line beginning with text, file, passwd, select, textarea means that
+it will set value to <value> in input, select or textarea element which 
+name  attribute matches with <name>.
+
+A line beginning with checkbox, radio means that it will check
+input element which name and value attribute matches with <name> and <value>
+respectively.  If <checked> is 0, no, or off, the checkbox will be unchecked.
+
+A line beginning with submit or image means that it will submit input
+element whose name attribute matches with <name> (and value attribute
+matches with <value>), or submit on the last <input type=submit> element if no
+<name> was specified.
+
+You quote \, ' (single-quote) or " (double quote) as you do in shell.
+
+
+

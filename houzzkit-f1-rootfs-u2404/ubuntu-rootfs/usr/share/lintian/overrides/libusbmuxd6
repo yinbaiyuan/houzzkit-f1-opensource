@@ -1,0 +1,2 @@
+# Keep the former name for now since it's compatible and with ship symlinks
+libusbmuxd6: package-name-doesnt-match-sonames libusbmuxd-2.0-6

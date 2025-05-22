@@ -1,0 +1,12 @@
+# intentional
+libpython3.12-minimal binary: python3-script-but-no-python3-dep
+
+# no, it's not unusual
+libpython3.12-minimal binary: unusual-interpreter
+
+# lintian omission, multiarch string is encoded in the filename
+libpython3.12-minimal binary: arch-dependent-file-not-in-arch-specific-directory
+
+# yes, some extensions don't have references to any external lib
+libpython3.12-minimal binary: shared-lib-without-dependency-information
+libpython3.12-minimal binary: library-not-linked-against-libc

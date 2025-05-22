@@ -1,0 +1,2 @@
+# intentionally statically-enabled
+dbus: systemd-service-file-missing-install-key [usr/lib/systemd/system/dbus.service]

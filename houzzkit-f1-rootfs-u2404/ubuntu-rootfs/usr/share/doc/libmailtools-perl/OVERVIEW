@@ -1,0 +1,55 @@
+Mail::Address
+
+    "Mail::Address" extracts and manipulates email addresses from a message
+    header. It cannot be used to extract addresses from some random text.
+    You can use this module to create RFC822 compliant fields.
+
+Mail::Cap
+
+    Parse mailcap files as specified in "RFC 1524 --A User Agent
+    Configuration Mechanism For Multimedia Mail Format Information>. In the
+    description below $type refers to the MIME type as specified in the
+    "Content-Type" header of mail or HTTP messages. Examples of types are:
+
+Mail::Field
+
+    "Mail::Field" creates and manipulates fields in MIME headers, collected
+    within a Mail::Header object. Different field types have their own
+    sub-class (extension), defining additional useful accessors to the field
+    content.
+
+Mail::Filter
+
+    "Mail::Filter" provides an interface to filtering Email through multiple
+    subroutines.
+
+Mail::Header
+
+    Read, write, create, and manipulate MIME headers, the leading part of
+    each modern e-mail message, but also used in other protocols like HTTP.
+    The fields are kept in Mail::Field objects.
+
+Mail::Internet
+
+    This package implements reading, creating, manipulating, and writing
+    email messages. Sometimes, the implementation tries to be too smart, but
+    in the general case it works as expected.
+
+Mail::Mailer
+
+    Sends mail using any of the built-in methods. As TYPE argument to new(),
+    you can specify any of
+
+Mail::Send
+
+    Mail::Send creates e-mail messages without using the Mail::Header
+    knowledge, which means that all escaping and folding must be done by
+    you! Also: do not forget to escape leading dots. Simplicity has its
+    price.
+
+Mail::Util
+
+    This package provides several mail related utility functions. Any
+    function required must by explicitly listed on the use line to be
+    exported into the calling package.
+

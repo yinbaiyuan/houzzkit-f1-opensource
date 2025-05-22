@@ -1,0 +1,2 @@
+mount: elevated-privileges 4755 root/root [usr/bin/mount]
+mount: elevated-privileges 4755 root/root [usr/bin/umount]

@@ -1,0 +1,4 @@
+libpython3.12t64 binary: package-name-doesnt-match-sonames
+
+# pyexpat.c contains expat error messages that lintian mis-attributes to embedding
+libpython3.12t64 binary: embedded-library

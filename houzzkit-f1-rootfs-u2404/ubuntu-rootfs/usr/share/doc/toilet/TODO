@@ -1,0 +1,10 @@
+
+FIGlet features that we are still missing:
+ - vertical smushing
+ - word wrapping
+ - control files
+ - justification
+ - -p/-n newline handling
+ - -m layoutmode
+ - RL support
+

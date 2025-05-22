@@ -1,0 +1,3 @@
+* Package myst-nb to build the python-markdown-it-py-doc package.
+* Package linkify and activate the tests that depends on linkify 
+  (see #997970).

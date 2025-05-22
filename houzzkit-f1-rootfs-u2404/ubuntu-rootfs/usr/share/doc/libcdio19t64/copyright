@@ -1,0 +1,103 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Contact: https://savannah.gnu.org/mail/?group=libcdio
+Upstream-Name: libcdio
+Source: http://git.savannah.gnu.org/cgit/libcdio.git
+
+Files: *
+Copyright: 1985, 1987-2013 Free Software Foundation, Inc.
+           1992-1993 Eric Youngdale
+           1993 Yggdrasil Computing, Incorporated
+           1996-1998 Gerd Knorr <kraxel@bytesex.org>
+           1996-1998 Heiko Eißfeldt <heiko@escape.colossus.de>
+           1998-2001 VideoLAN
+           1999-2000 J. Schilling
+           2000-2001, 2003-2005, 2008, 2011 Herbert Valerio Riedel
+           2001 Sven Ottemann <ac-logic@freenet.de>
+           2001-2002 Ben Fennema <bfennema@falcon.csc.calpoly.edu>
+           2001-2002 Scott Long <scottl@freebsd.org>
+           2002-2013 Rocky Bernstein <rocky@gnu.org>
+           2003 Svend Sanjay Sorensen <ssorensen@fastmail.fm>
+           2003 Matthias Drochner
+           2006, 2008 Burkhard Plaum <plaum@ipf.uni-stuttgart.de>
+           2008 Robert W. Fuller <hydrologiccycle@gmail.com>
+           2009-2011 Thomas Schmitt <scdbackup@gmx.net>
+           2009 KO Myung-Hun <komh@chollian.net>
+           2010-2011 Diego 'Flameeyes' Pettenò
+           2012-2013 Pete Batard <pete@akeo.ie>
+License: GPL-3
+
+Files: m4/*
+Copyright: 2004-2005, 2007, 2009, 2011-2015 Free Software Foundation, Inc.
+           1996 Gordon Matzigkeit
+           2002 Bruno Haible
+           2004 Scott James Remnant <scott@netsplit.com>
+           2004 Gary V. Vaughan
+License: GPL-2+ with autoconf-macro exception
+
+Files: debian/*
+Copyright: 2005-2020 Nicolas Boullis <nboullis@debian.org>.
+           2017-2020 Gabriel F. T. Gomes <gabriel@inconstante.net.br>
+           2020 Vasyl Gello <vasek.gello@gmail.com>
+Comment:
+ It was downloaded from ftp://ftp.gnu.org/gnu/libcdio/
+ .
+ Upstream Authors: Rocky Bernstein <rocky@panix.com>
+                   Herbert Valerio Riedel <hvr@gnu.org>
+License: GPL-3 and GFDL-1.2
+
+License: GPL-3
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU General Public
+ License can be found in /usr/share/common-licenses/GPL-3
+
+License: GPL-2+ with autoconf-macro exception
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2, or (at your option)
+ any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ 02110-1301, USA.
+ .
+ As a special exception, the copyright owners of the
+ macro gives unlimited permission to copy, distribute and modify the
+ configure scripts that are the output of Autoconf when processing the
+ Macro. You need not follow the terms of the GNU General Public
+ License when using or distributing such scripts, even though portions
+ of the text of the Macro appear in them. The GNU General Public
+ License (GPL) does govern all other use of the material that
+ constitutes the Autoconf Macro.
+ .
+ This special exception to the GPL applies to versions of the
+ Autoconf Macro released by this project. When you make and
+ distribute a modified version of the Autoconf Macro, you may extend
+ this special exception to the GPL to apply to your modified version as
+ well.
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL-2'.
+
+License: GFDL-1.2
+ 2003-2008, 2010, 2012-2013 Rocky Bernstein and Herbert Valerio Riedel.
+ .
+ On Debian systems, the complete text of the GNU Free Documentation
+ License can be found in /usr/share/common-licenses/GFDL-1.2

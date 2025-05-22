@@ -1,0 +1,61 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: wqy-bitmapfont-bdf
+Source: http://sourceforge.net/projects/wqy/files/wqy-bitmapfont/
+Comment: This package was debianized by Carlos Z.F. Liu <carlosliu@users.sourceforge.net> on Sun, 26 Jun 2005 23:04:11 +1200.
+
+Files: *
+Copyright: Copyright (C) 2004-2007, WenQuanYi's Board of Trustees and Qianqian Fang
+License: GPL-2-with-font-embedding-exception
+
+Files: debian/*
+Copyright: Anthony Fok <foka@debian.org>
+           Cai Qian <caiqian@debian.org>
+           Carlos Z.F. Liu <carlosliu@users.sourceforge.net>
+           ChangZhuo Chen (陳昌倬) <czchen@gmail.com>
+           Christian Perrier <bubulle@debian.org>
+           Deng Xiyue <manphiz@gmail.com>
+           Hideki Yamane <henrich@debian.org>
+License: GPL-2
+
+License: GPL-2-with-font-embedding-exception
+ ** GPL v2.0 license with font embedding exception:
+ .
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; version 2 dated June 1991.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this package; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+ .
+ As a special exception, if you create a document which uses this
+ font, and embed this font or unaltered portions of this font into
+ the document, this font does not by itself cause the resulting
+ document to be covered by the GNU General Public License.  This
+ exception does not however invalidate any other reasons why the
+ document might be covered by the GNU General Public License.  If you
+ modify this font, you may extend this exception to your version of
+ the font, but you are not obligated to do so.  If you do not wish to
+ do so, delete this exception statement from your version.
+ .
+ On Debian systems, the complete text of version 2 of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL-2'.
+
+License: GPL-2
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License version 2 as published by
+ the Free Software Foundation.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+

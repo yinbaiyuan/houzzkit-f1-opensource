@@ -1,0 +1,3 @@
+libldb2: shared-library-lacks-prerequisites */samba/lib*.so.0*
+libldb2: repeated-path-segment ldb */ldb/modules/ldb/*
+libldb2: package-contains-empty-directory */ldb/modules/ldb/*

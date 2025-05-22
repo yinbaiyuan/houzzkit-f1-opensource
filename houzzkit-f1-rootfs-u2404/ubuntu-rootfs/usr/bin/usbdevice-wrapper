@@ -1,0 +1,53 @@
+#!/bin/bash
+
+V=0
+debug_echo() {
+    if [ $V -eq 1 ]; then
+        echo $@
+    fi
+}
+
+MODEL=$(tr -d '\0' < /proc/device-tree/board/model)
+BOARD=$(echo "${MODEL// /-}" | awk '{print tolower($0)}')
+MACHINE=$(tr -d '\0' < /proc/device-tree/board/machine)
+debug_echo "model:${MODEL}"
+debug_echo "board:${BOARD}"
+debug_echo "machine:${MACHINE}"
+FILE=
+case ${MACHINE} in
+NANOPI6)
+    # rk3588 kernel5.10/kernel6.1
+    FILE=$(readlink -f /sys/kernel/debug/usb/fc000000.*/mode)
+    ;;
+NANOPI5)
+    # rk3568 kernel5.10/kernel6.1
+    FILE=$(readlink -f /sys/kernel/debug/usb/fcc00000.*/mode)
+    ;;
+NANOPI4)
+	# rk3399 kernel4.19
+    FILE=/sys/kernel/debug/fe800000.dwc3/mode
+	;;
+NANOPI3)
+	# rk3328 kernel4.19
+    FILE=
+    ;;
+*)
+    debug_echo "unknow module"
+    ;;
+esac
+
+if [ -f "${FILE}" ]; then
+    MODE="$(cat ${FILE})"
+    debug_echo "mode: $MODE"
+    if [ "$MODE" = "host" ]; then
+        debug_echo "switch usb to device."
+        echo device > ${FILE}
+        sleep 1
+        NEWMODE="$(cat ${FILE})"
+        debug_echo "new mode: $NEWMODE"
+    else
+        debug_echo "do nothing."
+    fi
+fi
+
+usbdevice $@

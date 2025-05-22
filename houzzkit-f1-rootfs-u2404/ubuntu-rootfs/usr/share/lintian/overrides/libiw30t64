@@ -1,0 +1,5 @@
+libiw30t64: package-name-doesnt-match-sonames libiw30
+# begin-remove-after: released:trixie
+# DEP17 protective diversion
+diversion-for-unknown-file lib/x86_64-linux-gnu/libiw.so.30 [preinst:*]
+# end-remove-after

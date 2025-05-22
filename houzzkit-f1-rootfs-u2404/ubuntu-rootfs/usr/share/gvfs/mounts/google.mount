@@ -1,0 +1,4 @@
+[Mount]
+Type=google-drive
+Exec=/usr/libexec/gvfsd-google
+AutoMount=false

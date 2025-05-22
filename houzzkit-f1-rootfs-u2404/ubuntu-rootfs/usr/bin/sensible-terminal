@@ -1,0 +1,42 @@
+#!/bin/sh
+# Copyright 2007 Jari Aalto;
+# Copyright 2019-2022 Bastien Roucariès
+PATH="$PATH:/usr/share/sensible-utils/bin"
+
+program="$(realpath "$(command -v "$0")")"
+
+TryEnv()
+{
+    # global $candidate
+    [ -z "$candidate" ] && return
+    # Prevent recursive loops, where environment variables are set to this script
+    [ x$(realpath "$(command -v "$candidate" || true)" || true) = x"$program" ] && return
+    # interpret like environ (7) man page. Do not use eval in order to not leak variables
+    sh -c "$candidate \"\$@\"" TERMINAL_EMULATOR "$@"
+    ret=$?
+    # Operating system command not found
+    [ "$ret" -ne 126 ] && [ "$ret" -ne 127 ] && exit "$ret"
+}
+
+TryCmd()
+{
+    [ -n "$(command -v $candidate)" ] && TryEnv "$@"
+}
+
+for candidate in "$TERMINAL_EMULATOR" "$SENSIBLE_TERMINAL_EMULATOR"; do
+    TryEnv "$@"
+done
+
+if [ -n "$XDG_CURRENT_DESKTOP" ]; then
+    candidate="sensible-terminal-$(echo "$XDG_CURRENT_DESKTOP" | tr '[:upper:]' '[:lower:]')"
+    TryCmd "$@"
+fi
+
+candidate=x-terminal-emulator
+TryCmd "$@"
+
+echo "Couldn't find a terminal emulator!" 1>&2
+echo 'Set the $TERMINAL_EMULATOR environment variable to your desired terminal emulator.' 1>&2
+exit 1
+
+

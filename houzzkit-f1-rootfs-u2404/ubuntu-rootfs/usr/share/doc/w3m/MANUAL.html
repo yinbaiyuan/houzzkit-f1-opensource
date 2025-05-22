@@ -1,0 +1,2450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+  <title>w3m manual</title>
+    <style>
+      span.mono {
+        font-family:mono;
+      }
+    </style>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  </head>
+  <body>
+   <!--
+insertions tagged with "mh 2016-03-29" and "mh 2016-06-11" come from the latest version of manual page w3m (1) 
+   -->
+   
+   <h1>w3m MANUAL</h1>
+  <div align="right">
+   Akinori Ito<br>
+   aito@fw.ipsj.or.jp
+  </div>
+  <h2>Index</h2>
+  <ul>
+   <li>
+    <a href="#Introduction">
+     Introduction
+    </a>
+   </li>
+   <li>
+    <a href="#Options">
+     Options
+    </a>
+   </li>
+   <li>
+    <a href="#Color">
+     Document Colors
+    </a>
+   </li>
+   <li>
+    <a href="#Functions">
+     Functions and Key bindings
+    </a>
+   </li>
+<!-- mh 2016-06-13 obsolete
+   <li>
+    <a href="#Key:lynx">
+     Lynx-like key bindings
+    </a>
+   </li>
+-->
+   <li>
+    <a href="#Mouse">
+     Mouse Operation
+    </a>
+   </li>
+<!-- mh 2016-06-13 obsolete
+   <li>
+    <a href="#Key:custom">
+     Key customization
+    </a>
+   </li>
+   -->
+   <li>
+    <a href="#LocalCGI">
+     Local CGI scripts
+    </a>
+   </li>
+  </ul>
+  <hr>
+  <h2 id="Introduction">
+   Introduction
+  </h2>
+  <p>
+   w3m is a pager/text-based WWW browser. You can browse local
+   documents and/or documents on the WWW using a terminal emulator.
+  </p>
+  <hr>
+  <h2 id="Options">
+   Options
+  </h2>
+  <p>
+   Command line usage is
+  </p>
+<!-- mh 2016-08-06 invocation adapted to w3m(1). w3m accepts several options and several targets -->
+<pre>
+  w3m [option]... [file|URL]...
+</pre>
+  <p>
+   If you specify filenames/URLs on the command line, these documents
+   are displayed. If you specify nothing, w3m will read a document
+   from standard input and display it. If it doesn't find a document
+   there either then normally w3m will terminate.
+  </p>
+  <p>
+   You can change how w3m behaves by providing it with options, either
+   via the command line or through the configuration file. The user
+   config file is located at $W3M_DIR/config (~/.w3m/config by default).
+  </p>
+  <p>
+   Options include:
+  </p>
+  <dl>
+<h3>General options</h3>
+    <dt>
+    -B
+   </dt>
+   <dd>
+    <p>
+    <!-- mh 2016-03-29-->
+     with no other target defined, use the bookmark page for startup
+    </p>
+   </dd>
+   <dt>
+    -H
+   </dt>
+   <dd>
+    <p>
+    use high-intensity colors
+    </p>
+   </dd>
+   <dt>
+    -M
+   </dt>
+   <dd>
+    <p>
+    <!-- mh 2016-03-29-->
+    monochrome display
+    </p>
+   </dd>
+   <dt>
+    -no-mouse
+   </dt>
+   <dd>
+    <p>
+     deactivate mouse support.
+    </p>
+   </dd>
+   <dt>
+    -num
+   </dt>
+   <dd>
+    <p>
+      <!-- mh 2016-03-29-->
+      display each line's number
+
+    </p>
+   </dd>
+<!-- mh 2016-08-06 commented out. As implementation is not verified.
+   <dt>
+    -ppc <i>num</i>
+   </dt>
+   <dd>
+    <p>
+    width of <i>num</i> pixels per character. Range of 4.0 to 32.0,
+    default 8.0. Larger values will make tables
+    narrower. (Implementation not verified)
+    </p>
+   </dd>
+-->
+   <dt>
+    -v
+   </dt>
+   <dd>
+    <p>
+    <!-- mh 2016-03-29-->
+      with no other target defined, welcome users with a built-in page
+    </p>
+   </dd>
+   <dt>
+    -W
+   </dt>
+   <dd>
+    <p>
+      <!-- mh 2016-03-29-->
+      toggle wrapping mode in searches
+    </p>
+   </dd>
+   <dt>
+    -X
+   </dt>
+   <dd>
+    <p>
+     upon exit, do not reinitialize the terminal.
+    </p>
+   </dd>
+   <dt>
+    +<i>num</i>
+   </dt>
+   <dd>
+     <p><!--mh 2016-06-11 -->
+       go to line <i>num</i>; only effective for numbers larger
+       than the number of lines in the terminal
+    </p>
+   </dd>
+<h3>Browser options</h3>
+   <dt>
+    -cols <i>num</i>
+   </dt>
+   <dd>
+    <p>
+      <!-- mh 2016-06-11 -->
+      with stdout as destination; HTML is rendered to lines of <i>num</i>
+      characters
+    </p>
+   </dd>
+   <dt>
+    -cookie
+   </dt>
+   <dd>
+    <p>
+      <!-- mh 2016-03-29-->
+      use stored cookies and accept new ones
+    </p>
+   </dd>
+   <dt>
+    -no-cookie
+   </dt>
+   <dd>
+    <p>
+     <!-- mh 2016-03-29-->
+     neither use stored cookies nor accept new ones
+
+    </p>
+   </dd>
+   <dt>
+    -F
+   </dt>
+   <dd>
+    <p>
+      <!-- mh 2016-03-29-->
+      render frames
+    </p>
+   </dd>
+   <dt>
+    -no-graph
+   </dt>
+   <dd>
+    <p>
+      <!-- mh 2016-03-29-->
+      do not use graphic characters for drawing HTML table and frame
+      borders
+    </p>
+   </dd>
+   <dt>
+    -header <i>string</i>
+   </dt>
+   <dd>
+    <p>
+      <!-- mh 2016-03-29-->
+      append <i>string</i> to the HTTP(S) request. Expected to match
+      the header syntax <span class="mono">"Variable: Value"</span>
+    </p>
+   </dd>
+   <dt>
+    -m
+   </dt>
+   <dd>
+    <p>
+     display document using <q>Internet message mode</q>. With this
+     option, w3m determines document type from header information.
+     This is useful when reading e-mail or Usenet news posts.
+<!-- mh 2016-03-29
+Render the body of Usenet messages according to the header <q>Content-type</q>
+-->
+    </p>
+   </dd>
+   <dt>
+    -no-proxy
+   </dt>
+   <dd>
+    <p>
+      <!-- mh 2016-06-11-->
+      do not use proxy
+   </p>
+   </dd>
+   <dt>
+    -post <i>file</i>
+   </dt>
+   <dd>
+    <p><!--funktionierend 2016-06-28T08:22>-->
+      use POST method to upload data defined in <i>file</i>. The
+      syntax to be used is <span class="mono">"var1=value1[&amp;var2=value2]…"</span>
+    </p>
+   </dd>
+<h3>Text pager options</h3>
+   <dt>
+    -l <i>num</i>
+   </dt>
+   <dd>
+    <p>
+      <!-- mh2016-06-11-->
+      number of lines preserved internally when receiving plain text
+      from stdin (default 10,000)
+    </p>
+   </dd>
+   <dt>
+    -r
+   </dt>
+   <dd>
+    <p>
+      <!-- mh 2016-03-29 -->
+      use caret notation to display special escape characters (such as
+      ANSI escapes or nroff-style backspaces for bold and underlined
+      characters) instead of processing them
+    </p>
+   </dd>
+   <dt>
+    -s
+   </dt>
+   <dd>
+    <p>
+      <!-- mh 2016-03-29-->
+      squeeze multiple blank lines into one
+    </p>
+   </dd>
+  
+  <dt>
+    <!--mh 2016-03-29 --> -t <i>num</i>
+   </dt>
+   <dd>
+    <p>
+      <!--mh 2016-03-29--> set tab width to <i>num</i> columns. No effect on stdout
+    </p>
+   </dd>
+<h3>Data type/encoding options</h3>
+   <dt>
+    -I <i>charset</i>
+   </dt>
+   <dd>
+    <p>
+      <!-- mh 2016-03-29-->
+      user defined character encoding of input data
+    </p>
+   </dd>
+   <dt>
+    -O <i>charset</i>
+   </dt>
+   <dd>
+    <p>
+      <!-- mh 2016-03-29 -->
+      user defined character encoding of output data
+    </p>
+   </dd>
+   <dt>
+    -T <i>type</i>
+   </dt>
+   <dd>
+     <p>
+       <!-- mh 2016-06-11-->
+      explicit characterization of input data by MIME type. Without
+     this option, document type is determined from the extension of a
+     file. If the determination fails, the document is regarded as
+     text/plain. For example:
+     </p>
+    <p>
+     Read HTML document from standard input and display it
+    </p>
+<pre>
+   cat example.html | w3m -T text/html
+</pre>
+   <p>
+    Display HTML source
+   </p>
+<pre>
+   w3m -T text/plain example.html
+</pre>
+   </dd>
+<h3>Options for data output, followed by immediate exit</h3>
+   <dt>
+    -dump
+   </dt>
+   <dd>
+     <p>
+      read document specified by URL and dump page rendered as text
+      into standard output.
+      <!-- mh 2016-03-29 -->
+      Is set implicitly when output is directed
+      to a file or pipe. A width of 80 columns is used unless option
+      -cols sets another value.
+      </p>
+   </dd>
+   <dt>
+    -dump_source
+   </dt>
+   <dd>
+    <p>
+      <!-- mh 2016-03-29-->
+      dump the page's source code into stdout
+    </p>
+   </dd>
+   <dt>
+    -dump_head
+   </dt>
+   <dd>
+    <p>
+      <!-- mh 2016-03-29-->
+      dump response of a HEAD request for a URL into stdout
+    </p>
+   </dd>
+   <dt>
+    -dump_both
+   </dt>
+   <dd>
+    <p>
+      <!-- mh 2016-03-29-->
+      dump HEAD, and source code for a URL into stdout
+
+    </p>
+   </dd>
+   <dt>
+    -dump_extra
+   </dt>
+   <dd>
+    <p>
+      <!-- mh 2016-03-29-->
+     dump HEAD, source code, and extra information for a URL into
+     stdout
+    </p>
+   </dd>
+
+<h3>Options for overriding default settings and resources</h3>
+   
+   <dt>
+    -bookmark <i>file</i>
+   </dt>
+   <dd>
+    <p>
+    <!-- mh 2016-03-29-->
+     use <i>file</i> instead of the default bookmark.html file
+    </p>
+   </dd>
+   <dt>
+    -config <i>file</i>
+   </dt>
+   <dd>
+    <p>
+      <!--mh 2016-06-11-->      
+      use <i>file</i> instead of the default configuration file
+    </p>
+   </dd>
+   <dt>
+    -o <i>option</i>=<i>value</i>
+   </dt>
+   <dd>
+    <p>
+     <!-- mh 2016-03-29-->
+      modify one configuration item with an explicitly given value; without <i>option=value</i>, equivalent to <i>-show-option</i>
+    </p>
+   </dd>
+  </dl>
+  <hr>
+  <h2 id="Color">
+   Document Colors
+  </h2>
+  <p>
+   Hyperlinks and images are displayed as follows.
+  </p>
+  <div align="center">
+   <table border="1">
+    <tr>
+     <th>
+     </th>
+     <th>
+      Color mode
+     </th>
+     <th>
+      Monochrome mode
+     </th>
+    </tr>
+    <tr>
+     <td>
+      Hyperlinks
+     </td>
+     <td>
+      blue
+     </td>
+     <td>
+      underline
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Inline images
+     </td>
+     <td>
+      green
+     </td>
+     <td>
+      reverse
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Form input
+     </td>
+     <td>
+      red
+     </td>
+     <td>
+      reverse
+     </td>
+    </tr>
+   </table>
+  </div>
+  <p>
+   These colors can be customized using the options setting command
+   <i>o</i>.
+  </p>
+  <hr>
+  <h2 id="Functions">
+   Functions and Key bindings
+  </h2>
+  
+  <p>
+   After invocation, you can control w3m by typing in functions by name
+   or with keystroke combinations bound to a function. There are
+   default key bindings.
+<!-- mh 2016-06-13 obsolete
+   If you prefer using Lynx-like
+   key bindings, make w3m start with the respective keymap file keymap.lynx. (see w3m (1)).-->
+  </p>
+<!--
+  <h2 id="Key:custom">
+   Key customization
+  </h2>
+-->
+  <p>
+   You can customize the key bindings (except those for menu
+   operations and line-editing) in a ~/.w3m/keymap file. For example,
+  </p>
+
+<pre>
+   keymap C-o NEXT_PAGE
+</pre>
+
+  <p>
+   binds the command <span class="mono">NEXT_PAGE</span> (normally bound to SPC and C-v)
+   to control-o. See <a href="README.func">README.func</a> for a list
+   of available functions. Original and Lynx-like keymap definitions
+   are provided as examples:   <a href="keymap.default">keymap.default</a>
+   and <a href="keymap.lynx">keymap.lynx</a>.
+  </p>
+
+   <p>
+   Throughout, the <i>C-</i> and <i>M-</i> notations indicate the
+   modifiers <i>control</i> and <i>meta</i>. The <i>ALT</i>-key
+   replaces the latter whereas pressing the <i>ESC</i>-key toggles
+   between <i>meta</i>-modified and simple keystrokes. The minus
+   indicates pressing the keys simultaneously wheras a space
+   represents that one key is pressed after the other, i.e. <i>2 M</i>
+   simply means <i>2</i> followed by <i>M</i>.
+  </p>
+
+
+  <table border="1"  width="100%">
+    <colgroup>
+      <col width="20%">
+      <col width="20%">
+      <col width="20%">
+      <col width="40%">
+    </colgroup>
+    <tr>
+      <th rowspan="2">
+	Function
+     </th>
+    <th colspan="2">Key binding
+    </th>
+    <th rowspan="2">
+      Description
+    </th>
+   </tr>
+    <tr>
+    <th>
+     Default
+    </th>
+    <th>
+     Lynx-like
+    </th>
+   </tr>
+    <tr>
+      <td colspan="4">
+      <h3>In-page navigation</h3>
+</td>
+    </tr>
+    <tr>
+     <td>
+       NEXT_PAGE
+     </td>
+    <td>
+     SPC, C-v, +, PGDN
+    </td>
+    <td>
+     SPC, C-v, +
+    </td>
+    <td>
+     Scroll one page downwards
+    </td>
+   </tr>
+   <tr>
+     <td>
+       PREVIOUS_PAGE
+     </td>
+    <td>
+     b, M-v, -, PGUP
+    </td>
+    <td>
+     b, M-v, -
+    </td>
+    <td>
+     Scroll one page upwards
+    </td>
+   </tr>
+   <tr>
+     <td>
+       MOVE_RIGHT
+     </td>
+    <td>
+     l, C-f, RIGHT
+    </td>
+    <td>
+     l
+    </td>
+    <td>
+     Move cursor right (with a half-screen shift at the screen edge)
+    </td>
+   </tr>
+   <tr>
+     <td>
+       MOVE_LEFT
+     </td>
+    <td>
+     h, C-b, LEFT
+    </td>
+    <td>
+     h
+    </td>
+    <td>
+     Move cursor left (with a half-screen shift at the screen edge)
+    </td>
+   </tr>
+   <tr>
+     <td>
+       MOVE_DOWN
+     </td>
+    <td>
+     j, C-n, DOWN
+    </td>
+    <td>
+     j
+    </td>
+    <td>
+     Move cursor down (with a one-line scroll at the screen edge)
+    </td>
+   </tr>
+   <tr>
+     <td>
+       MOVE_UP
+     </td>
+    <td>
+     k, C-p, UP
+    </td>
+    <td>
+     k
+    </td>
+    <td>
+     Move cursor up (with a one-line scroll at the screen edge)
+    </td>
+   </tr>
+   <tr>
+     <td>
+       UP
+     </td>
+    <td>
+     J
+    </td>
+    <td>
+     J
+    </td>
+    <td>
+     Scroll the screen up one line
+    </td>
+   </tr>
+   <tr>
+     <td>
+       DOWN
+     </td>
+    <td>
+     K
+    </td>
+    <td>
+     K
+    </td>
+    <td>
+     Scroll the screen down one line
+    </td>
+   </tr>
+   <tr>
+     <td>
+       LINE_BEGIN
+     </td>
+    <td>
+     ^, C-a
+    </td>
+    <td>
+     ^
+    </td>
+    <td>
+     Go to the beginning of the line
+    </td>
+   </tr>
+   <tr>
+     <td>
+       LINE_END
+     </td>
+    <td>
+     $, C-e
+    </td>
+    <td>
+     $
+    </td>
+    <td>
+     Go to the end of the line
+    </td>
+   </tr>
+   <tr>
+     <td>
+       NEXT_WORD
+     </td>
+    <td>
+     w
+    </td>
+    <td>
+     w
+    </td>
+    <td>
+     Move to the next word
+    </td>
+   </tr>
+   <tr>
+     <td>
+       PREVIOUS_WORD
+     </td>
+    <td>
+     W
+    </td>
+    <td>
+     W
+    </td>
+    <td>
+     Move to the previous word
+    </td>
+   </tr>
+   <tr>
+     <td>
+       SHIFT_RIGHT
+     </td>
+    <td>
+     >
+    </td>
+    <td>
+     >
+    </td>
+    <td>
+     Shift screen right
+    </td>
+   </tr>
+   <tr>
+     <td>
+       SHIFT_LEFT
+     </td>
+    <td>
+     <
+    </td>
+    <td>
+     <
+    </td>
+    <td>
+     Shift screen left
+    </td>
+   </tr>
+   <tr>
+     <td>
+       RIGHT
+     </td>
+    <td>
+     .
+    </td>
+    <td>
+     .
+    </td>
+    <td>
+     Shift screen one column right
+    </td>
+   </tr>
+   <tr>
+     <td>
+       LEFT
+     </td>
+    <td>
+     ,
+    </td>
+    <td>
+     ,
+    </td>
+    <td>
+     Shift screen one column left
+    </td>
+   </tr>
+   <tr>
+     <td>
+       BEGIN
+     </td>
+    <td>
+     g, M-<, HOME
+    </td>
+    <td>
+     C-a, M-<
+    </td>
+    <td>
+     Go to the first line
+    </td>
+   </tr>
+   <tr>
+     <td>
+       END
+     </td>
+    <td>
+     G, M->, END
+    </td>
+    <td>
+     C-e, M->
+    </td>
+    <td>
+     Go to the last line
+    </td>
+   </tr>
+   <tr>
+     <td>
+       GOTO_LINE
+     </td>
+    <td>
+     M-g
+    </td>
+    <td>
+     G
+    </td>
+    <td>
+     Go to the specified line
+    </td>
+   </tr>
+   <tr>
+     <td>
+       LINE_INFO
+     </td>
+    <td>
+     C-g
+    </td>
+    <td>
+     C-g
+    </td>
+    <td>
+     Display current position in document
+    </td>
+   </tr>
+   <tr>
+     <td>
+       CENTER_H
+     </td>
+    <td>
+     Z
+    </td>
+<!--Correction by mh 2014-04-06 
+Description for keybinding of z and Z had been mingled
+-->
+    <td>
+     Z
+    </td>
+    <td>
+     Center screen right and left of the cursor column
+    </td>
+   </tr>
+   <tr>
+     <td>
+       CENTER_V
+     </td>
+    <td>
+     z
+    </td>
+    <td>
+     z
+    </td>
+    <td>
+     Center screen above and below the cursor line
+    </td>
+   </tr>
+   <tr>
+     <td>
+       NEXT_LINK
+     </td>
+    <td>
+     TAB
+    </td>
+    <td>
+     TAB, C-n, DOWN
+    </td>
+    <td>
+     Move to the next hyperlink
+    </td>
+   </tr>
+   <tr>
+     <td>
+       PREVIOUS_LINK
+     </td>
+    <td>
+     M-TAB, C-u 
+    </td>
+    <td>
+     M-TAB, C-u, C-p, UP
+    </td>
+    <td>
+     Move to the previous hyperlink
+    </td>
+<!-- Annotion mh 2016-04-06
+Keybinding description for C-g had been moved as it did not fit to "Hyperlink operation" and position in the default and lynx-like series differed 
+  -->
+   </tr>
+   <tr>
+     <td>
+       LINK_BEGIN
+     </td>
+    <td>
+     [
+    </td>
+    <td>
+     [
+    </td>
+    <td>
+     Move to the first hyperlink
+    </td>
+   </tr>
+   <tr>
+     <td>
+       LINK_END
+     </td>
+    <td>
+     ]
+    </td>
+    <td>
+     ]
+    </td>
+    <td>
+     Move to the last hyperlink
+    </td>
+   </tr>
+<tr>
+<td>MOVE_LIST_MENU</td>
+<td>M-m</td>
+<td>M-m</td>
+<td>Pop up menu to navigate between hyperlinks</td>
+</tr>
+<!--  </table>-->
+    <tr>
+      <td colspan="4">
+	<h3>Hyperlink Operations</h3>
+      </td>
+    </tr>
+<!--  <table>-->
+   <tr>
+     <td>
+       GOTO_LINK
+     </td>
+    <td>
+     C-j, C-m, RET
+    </td>
+    <td width="100">
+     C-f, C-j, C-m, RET, RIGHT
+    </td>
+    <td>
+     Follow current hyperlink in a new buffer
+    </td>
+   </tr>
+<tr>
+<td>LIST_MENU</td>
+<td>M-l</td>
+<td>M-l</td>
+<td>Pop up hyperlink menu and select one to be followed</td>
+</tr>
+   <tr>
+     <td>
+       SAVE_LINK
+     </td>
+    <td>
+     a, M-RET
+    </td>
+    <td>
+     d, M-RET
+    </td>
+    <td>
+     Save the hyperlink target
+    </td>
+   </tr>
+   <tr>
+     <td>
+       PEEK_LINK
+     </td>
+    <td>
+     u
+    </td>
+    <td>
+     u
+    </td>
+    <td>
+     Show target address
+    </td>
+   </tr>
+   <tr>
+     <td>
+       PEEK_IMG
+     </td>
+    <td>
+     i
+    </td>
+    <td>
+     i
+    </td>
+    <td>
+     Show image address
+    </td>
+   </tr>
+   <tr>
+     <td>
+       VIEW_IMAGE
+     </td>
+    <td>
+     I
+    </td>
+    <td>
+     I
+    </td>
+    <td>
+     Display image in viewer
+    </td>
+   </tr>
+   <tr>
+     <td>
+       SAVE_IMAGE
+     </td>
+    <td>
+     M-I
+    </td>
+    <td>
+     M-I
+    </td>
+    <td>
+     Save inline image
+    </td>
+   </tr>
+<tr>
+<td>MARK_WORD</td>
+<td>;</td>
+<td>;</td>
+<td>Turn current word into hyperlink</td>
+</tr>
+   <tr>
+     <td>
+       MARK_URL
+     </td>
+    <td>
+     :
+    </td>
+    <td>
+     :
+    </td>
+    <td>
+     Turn URL-like strings into hyperlinks
+    </td>
+   </tr>
+   <tr>
+     <td>
+       MARK_MID
+     </td>
+    <td>
+     M-:
+    </td>
+    <td>
+     M-:
+    </td>
+    <td>
+<!-- changed due to mail dated Mon, 04 Apr 2016 00:47:09 +0900 (JST)
+from Tatsuya Kinoshita --> 
+     Turn Message-ID-like strings into hyperlinks
+    </td>
+   </tr>
+   <tr>
+     <td>
+       PEEK
+     </td>
+    <td>
+     c
+    </td>
+    <td>
+     c
+    </td>
+    <td>
+     Show current address
+    </td>
+   </tr>
+   <tr>
+     <td>
+       INFO
+     </td>
+    <td>
+     =
+    </td>
+    <td>
+     =
+    </td>
+    <td>
+      Display information about the current document
+    </td>
+   </tr>
+   <tr>
+     <td>
+       HISTORY
+     </td>
+    <td>
+     C-h
+    </td>
+    <td>
+     C-h
+    </td>
+    <td>
+     Show browsing history
+    </td>
+   </tr>
+   <tr>
+     <td>
+       EXTERN
+     </td>
+    <td>
+     M
+    </td>
+    <td>
+     M
+    </td>
+    <td>
+     Browse current document using external browser (prefix 2, 3, ...,
+     or 9 to invoke alternate configured browsers, e.g. 3 M)
+    </td>
+   </tr>
+   <tr>
+     <td>
+       EXTERN_LINK
+     </td>
+    <td>
+     M-M
+    </td>
+    <td>
+     M-M
+    </td>
+    <td>
+     Browse link using external browser (prefixed as above, e.g.
+     3 M-M)
+    </td>
+   </tr>
+<!--  </table>-->
+    <tr>
+      <td colspan="4">
+	<h3>Bookmark management</h3>
+      </td>
+    </tr>
+<!--  <table>-->
+    <tr>
+      <td>
+	BOOKMARK
+      </td>
+    <td>
+     M-b
+    </td>
+    <td>
+     v, M-b
+    </td>
+    <td>
+     View bookmarks
+    </td>
+   </tr>
+   <tr>
+      <td>
+	ADD_BOOKMARK
+      </td>
+    <td>
+     M-a
+    </td>
+    <td>
+     a, M-a
+    </td>
+    <td>
+     Add current page to bookmarks
+    </td>
+   </tr>
+<!--  </table>-->
+    <tr>
+      <td colspan="4">
+	<h3>File/Stream Operations</h3>
+      </td>
+    </tr>
+<!--  <table>-->
+      <tr>
+	<td>
+	  GOTO
+     </td>
+    <td>
+     U
+    </td>
+    <td>
+     g, U
+    </td>
+    <td>
+     Open specified document in a new buffer
+    </td>
+   </tr>
+<tr>
+<td>GOTO_RELATIVE</td>
+<td>M-u</td>
+<td>M-u</td>
+<td>Open relative address in a new buffer</td>
+</tr>
+      <tr>
+     <td>
+       LOAD
+     </td>
+    <td>
+     V
+    </td>
+    <td>
+     V
+    </td>
+    <td>
+     Open local file in a new buffer
+    </td>
+   </tr>
+      <tr>
+     <td>
+       READ_SHELL
+     </td>
+    <td>
+     @
+    </td>
+    <td>
+     @
+    </td>
+    <td>
+      <!--Execute shell command and view output-->
+      <!--mh 2016-06-13 No difference to PIPE_SHELL could be discerned--> 
+      Execute shell command and display output in a new buffer
+    </td>
+   </tr>
+      <tr>
+     <td>
+       PIPE_SHELL
+     </td>
+    <td>
+     #
+    </td>
+    <td>
+     #
+    </td>
+    <td>
+      <!--Execute shell command and browse output-->
+      <!--mh 2016-06-13 No difference to READ_SHELL could be discerned--> 
+      Execute shell command and display output in a new buffer
+    </td>
+   </tr>
+<!--  </table>-->
+    <tr>
+      <td colspan="4">
+	<h3>Content Operations</h3>
+      </td>
+    </tr>
+<!--  <table>-->
+      <tr>
+     <td>
+       VIEW <!-- is an alias to SOURCE -->
+     </td>
+    <td>
+     v
+    </td>
+    <td>
+     \
+    </td>
+    <td>
+     Toggle between source code and rendered view of the document
+    </td>
+   </tr>
+<tr>
+<td>LIST</td>
+<td>L</td>
+<td>L</td>
+<td>List link elements, hyperlinks and images</td>
+</tr>
+      <tr>
+     <td>
+       FRAME
+     </td>
+    <td>
+     F
+    </td>
+    <td>
+     F
+    </td>
+    <td>
+     Toggle rendering HTML frames
+    </td>
+   </tr>
+      <tr>
+     <td>
+       REDRAW
+     </td>
+    <td>
+     C-l
+    </td>
+    <td>
+     C-l, C-w
+    </td>
+    <td>
+     Draw the screen anew
+    </td>
+   </tr>
+      <tr>
+     <td>
+       RELOAD
+     </td>
+    <td>
+     R
+    </td>
+    <td>
+     R, C-r
+    </td>
+    <td>
+     Load current document anew
+    </td>
+   </tr>
+      <tr>
+     <td>
+       EDIT
+     </td>
+    <td>
+     E
+    </td>
+    <td>
+     E
+    </td>
+    <td>
+     Edit local source
+    </td>
+   </tr>
+      <tr>
+     <td>
+       EDIT_SCREEN
+     </td>
+    <td>
+     M-e
+    </td>
+    <td>
+     M-e
+    </td>
+    <td>
+     Edit rendered copy of document
+    </td>
+   </tr>
+<tr>
+<td>PIPE_BUF</td>
+<td>|</td>
+<td>|</td>
+<td>Pipe current buffer through a shell command and display output</td>
+</tr>
+      <tr>
+     <td>
+       DOWNLOAD <!-- is an alias to SAVE -->
+     </td>
+    <td>
+     M-s
+    </td>
+    <td>
+     M-s
+    </td>
+    <td>
+     Save document source
+    </td>
+   </tr>
+      <tr>
+     <td>
+       SAVE_SCREEN
+     </td>
+    <td>
+     S
+    </td>
+    <td>
+     S, p
+    </td>
+    <td>
+     Save rendered document
+    </td>
+   </tr>
+<!--  </table>-->
+    <tr>
+      <td colspan="4">
+	<h3>Buffer/Tab Navigation</h3>
+      </td>
+    </tr>
+<!--  <table>-->
+      <tr>
+     <td>
+       BACK
+     </td>
+    <td>
+     B
+    </td>
+     <td>
+     B, C-b, LEFT
+    </td>
+    <td>
+     Close current buffer and return to the one below in stack
+    </td>
+   </tr>
+      <tr>
+     <td>
+       GOTO_HOME
+     </td>
+    <td>
+     C-_
+    </td>
+     <td>
+    </td>
+    <td>
+     Return to the homepage (specified HTTP_HOME or WWW_HOME variable)
+    </td>
+   </tr>
+      <tr>
+     <td>
+       SELECT_MENU
+     </td>
+    <td>
+     s
+    </td>
+    <td>
+     s, C-h
+    </td>
+    <td>
+     Pop up buffer-stack menu
+    </td>
+   </tr>
+      <tr>
+     <td>
+       TAB_MENU
+     </td>
+    <td>
+     M-t
+    </td>
+    <td>
+     M-t
+    </td>
+    <td>
+     Pop up tab selection menu
+    </td>
+   </tr>
+      <tr>
+     <td>
+       NEW_TAB
+     </td>
+    <td>
+     T
+    </td>
+    <td>
+     T
+    </td>
+    <td>
+     Open a new tab (with current document)
+    </td>
+   </tr>
+      <tr>
+     <td>
+       TAB_LINK
+     </td>
+    <td>
+     C-t
+    </td>
+    <td>
+     C-t
+    </td>
+    <td>
+     Follow current hyperlink in a new tab
+    </td>
+   </tr>
+      <tr>
+     <td>
+       NEXT_TAB
+     </td>
+    <td>
+     }
+    </td>
+    <td>
+     }
+    </td>
+    <td>
+     Switch to the next tab
+    </td>
+   </tr>
+      <tr>
+     <td>
+       PREV_TAB
+     </td>
+    <td>
+     {
+    </td>
+    <td>
+     {
+    </td>
+    <td>
+     Switch to the previous tab
+    </td>
+   </tr>
+      <tr>
+     <td>
+       CLOSE_TAB
+     </td>
+    <td>
+     C-q
+    </td>
+    <td>
+     C-q
+    </td>
+    <td>
+     Close the current tab
+    </td>
+   </tr>
+<!--  </table>-->
+    <tr>
+      <td colspan="4">
+	<h3>Searches</h3>
+      </td>
+    </tr>
+<!--  <table>-->
+      <tr>
+     <td>
+       SEARCH
+     </td>
+    <td>
+     /
+    </td>
+    <td>
+     /, C-s
+    </td>
+    <td>
+     Search forward
+    </td>
+   </tr>
+      <tr>
+     <td>
+       SEARCH_BACK
+     </td>
+    <td>
+     ?
+    </td>
+     <td>
+     </td>
+    <td>
+     Search backward
+    </td>
+   </tr>
+      <tr>
+     <td>
+       ISEARCH
+     </td>
+    <td>
+     C-s
+    </td>
+     <td>
+     </td>
+    <td>
+     Incremental search forward
+    </td>
+   </tr>
+      <tr>
+     <td>
+       ISEARCH_BACK
+     </td>
+    <td>
+     C-r
+    </td>
+     <td>
+     </td>
+    <td>
+     Incremental search backward
+    </td>
+   </tr>
+      <tr>
+     <td>
+       SEARCH_NEXT
+     </td>
+    <td>
+     n
+    </td>
+    <td>
+     n
+    </td>
+    <td>
+     Continue search forward
+    </td>
+   </tr>
+      <tr>
+     <td>
+       SEARCH_PREV
+     </td>
+    <td>
+     N
+    </td>
+     <td>
+     </td>
+    <td>
+     Continue search backward
+    </td>
+   </tr>
+      <tr>
+     <td>
+       WRAP_TOGGLE
+     </td>
+    <td>
+     C-w
+    </td>
+    <td>
+     w
+    </td>
+    <td>
+     Toggle wrapping mode in searches
+    </td>
+   </tr>
+<!--  </table>-->
+    <tr>
+      <td colspan="4">
+	<h3>Mark Management</h3>
+      </td>
+    </tr>
+<!--  <table>-->
+      <tr>
+     <td>
+       MARK
+     </td>
+    <td>
+     C-SPC
+    </td>
+    <td>
+     C-SPC
+    </td>
+    <td>
+     Set/unset mark
+    </td>
+   </tr>
+      <tr>
+     <td>
+       PREV_MARK
+     </td>
+    <td>
+     M-p
+    </td>
+    <td>
+     P
+    </td>
+    <td>
+     Go to the previous mark
+    </td>
+   </tr>
+      <tr>
+     <td>
+       NEXT_MARK
+     </td>
+    <td>
+     M-n
+    </td>
+    <td>
+     N
+    </td>
+    <td>
+     Go to the next mark
+    </td>
+   </tr>
+      <tr>
+     <td>
+       REG_MARK
+     </td>
+    <td>
+     "
+    </td>
+    <td>
+     "
+    </td>
+    <td>
+     Mark all occurrences of a pattern
+    </td>
+   </tr>
+<!--  </table>-->
+    <tr>
+      <td colspan="4">
+	<h3>Miscellaneous</h3>
+      </td>
+    </tr>
+<!--  <table>-->
+      <tr>
+     <td>
+       COMMAND
+     </td>
+    <td>
+     M-c
+    </td>
+    <td>
+     M-c
+    </td>
+    <td>
+     Invoke one or more semicolon-separated w3m functions
+    </td>
+   </tr>
+<!--
+TODO: Where does this key binding M-Fn come from. I do not find a Fn-key on my keyboard. I do not know how to type in the keystroke combinations listed in keymap.default which are
+keymap  M-[E    MENU
+keymap  M-[L    MENU
+keymap  M-[2~   MENU
+keymap  M-[28~  MENU
+<tr>
+<td>MENU</td>
+<Td>M-Fn</Td>
+<td></td>
+<td>Pop up menu</td>
+</tr>
+-->
+      <tr>
+     <td>
+       HELP
+     </td>
+    <td>
+     H
+    </td>
+    <td>
+     H, ?
+    </td>
+    <td>
+     Show help panel
+    </td>
+   </tr>
+      <tr>
+     <td>
+       OPTIONS
+     </td>
+    <td>
+     o
+    </td>
+    <td>
+     o
+    </td>
+    <td>
+     Display options setting panel
+    </td>
+   </tr>
+<tr>
+<td>SET_OPTION</td>
+<td>M-o</td>
+<td>M-o</td>
+<td>Set option</td>
+</tr>
+<tr>
+<td>DEFINE_KEY</td>
+<td>M-k</td>
+<td>M-k</td>
+<td>Define a binding between a key stroke combination and a command</td>
+</tr>
+<tr>
+<td>MOUSE_TOGGLE</td>
+<td>m</td>
+<td>m</td>
+<td>Toggle mouse support</td>
+</tr>
+<tr>
+<td>DOWNLOAD_LIST</td>
+<td>D</td>
+<td>D</td>
+<td>Display downloads panel</td>
+</tr>
+      <tr>
+     <td>
+       COOKIE
+     </td>
+    <td>
+     C-k
+    </td>
+    <td>
+     C-k
+    </td>
+    <td>
+     Show cookie jar
+    </td>
+   </tr>
+<!-- 
+mh 2016-06-12 Interrupt is an alias to SUSPEND, no need to mention it here
+   <tr>
+     <td>
+       INTERRUPT
+     </td>
+    <td>
+     C-c
+    </td>
+    <td>
+     C-c
+    </td>
+    <td>
+     Interrupt
+    </td>
+   </tr>
+-->
+<tr>
+<td>UNDO</td>
+<td>(</td>
+<td>(</td>
+<td>Cancel the last cursor movement</td>
+</tr>
+<tr>
+<td>REDO</td>
+<td>)</td>
+<td>)</td>
+<td>Cancel the last undo</td>
+</tr>
+      <tr>
+     <td>
+       EXEC_SHELL <!-- is an alias of SHELL -->
+     </td>
+    <td>
+     !
+    </td>
+    <td>
+     !
+    </td>
+    <td>
+     Execute shell command
+    </td>
+   </tr>
+<tr>
+<td>DICT_WORD</td>
+<td>M-w</td>
+<td>M-w</td>
+<td>Execute dictionary command (see <a href="README.dict">README.dict</a>)</td>
+</tr>
+<tr>
+<td>DICT_WORD_AT</td>
+<td>M-W</td>
+<td>M-W</td>
+<td>Execute dictionary command for word at cursor</td>
+</tr>
+<tr>
+<td>VERSION</td>
+<td>r</td>
+<td>r</td>
+<td>Display the version of w3m</td>
+</tr>
+      <tr>
+     <td>
+       SUSPEND
+     </td>
+    <td>
+     C-z
+    </td>
+    <td>
+     C-z
+    </td>
+    <td>
+      Suspend w3m to background. (To be withdrawn with shell
+      command <span class="mono">fg</span>.)
+    </td>
+   </tr>
+      <tr>
+     <td>
+       QUIT
+     </td>
+    <td>
+     q
+    </td>
+    <td>
+     q
+    </td>
+    <td>
+     Quit with confirmation request
+    </td>
+   </tr>
+      <tr>
+     <td>
+       EXIT
+     </td>
+    <td>
+     Q
+    </td>
+    <td>
+     Q
+    </td>
+    <td>
+     Quit without confirmation
+    </td>
+   </tr>
+  </table>
+
+   <p>
+   There are the following operational modes with built-in key
+   bindings for relevant functions. These bindings are not subject to
+   the DEFINE_KEY function or entries in the file keymap.
+   </p>
+   
+  <table border="1" width="100%">
+    <colgroup>
+      <col width="20%">
+      <col width="40%">
+      <col width="40%">
+    </colgroup>
+    <tr>
+      <th>
+	Function<br>(internal name)
+     </th>
+    <th>Key binding
+    </th>
+    <th>
+      Description
+    </th>
+   </tr>
+    <tr>
+      <td colspan="3">
+	<h3>Menu Selection Mode</h3>
+      </td>
+    </tr>
+      <tr>
+     <td>
+     BUF:NEXT</td>
+    <td>
+     j, C-n, DOWN
+    </td>
+    <td>
+     Next item
+    </td>
+   </tr>
+      <tr>
+     <td>BUF:PREV
+     </td>
+    <td>
+     k, C-p, UP
+    </td>
+    <td>
+     Previous item
+    </td>
+   </tr>
+      <tr>
+     <td>
+     BUF:DELETE</td>
+    <td>
+     D
+    </td>
+    <td>
+     Delete item
+    </td>
+   </tr>
+      <tr>
+     <td>
+       BUF:GO
+     </td>
+    <td>
+     SPC, RET, RIGHT
+    </td>
+    <td>
+     Select item
+    </td>
+   </tr>
+<!--  </table>-->
+    <tr>
+      <td colspan="3">
+	<h3>Popup Menu Mode</h3>
+      </td>
+    </tr>
+<!--  <table>-->
+      <tr>
+     <td>
+MENU:SELECT
+     </td>
+    <td>
+    SPC, RET, RIGHT</td>
+    <td>
+      Select
+    </td>
+   </tr>
+      <tr>
+     <td>
+MENU:CLOSE
+     </td>
+      <td>C-c
+    </td>
+    <td>
+      Close menu
+    </td>
+   </tr>
+      <tr>
+     <td>
+MENU:CANCEL
+     </td>
+      <td>
+    LEFT, BKSPC, C-h</td>
+    <td>
+      One selection step backward
+    </td>
+   </tr>
+      <tr>
+     <td>
+MENU:DOWN
+     </td>
+      <td>j, C-n, DOWN
+    </td>
+    <td>
+      Move to the next item
+    </td>
+   </tr>
+      <tr>
+     <td>
+MENU:UP
+     </td>
+      <td>
+    k, C-p, UP</td>
+    <td>
+      Move to the previous item
+    </td>
+   </tr>
+      <tr>
+     <td>
+MENU:LINE_UP
+     </td>
+      <td>K
+    </td>
+    <td>
+      Scroll up one item
+    </td>
+   </tr>
+      <tr>
+     <td>
+MENU:LINE_DOWN
+     </td>
+      <td>J
+    </td>
+    <td>
+      Scroll down one item
+    </td>
+   </tr>
+      <tr>
+     <td>
+MENU:TOP
+     </td>
+      <td>C-a
+    </td>
+    <td>
+      Move to the first item
+    </td>
+   </tr>
+      <tr>
+     <td>
+MENU:LAST
+     </td>
+      <td>C-e
+    </td>
+    <td>
+      Move to the final item
+    </td>
+   </tr>
+      <tr>
+     <td>
+MENU:NEXT
+     </td>
+      <td>C-v, C-f
+    </td>
+    <td>Go to the next page
+    </td>
+   </tr>
+      <tr>
+     <td>
+MENU:PREV
+     </td>
+      <td>ESC v, C-b
+    </td>
+    <td>
+      Go to the previous page
+    </td>
+   </tr>
+      <tr>
+     <td>
+MENU:SEARCH_FORE
+     </td>
+      <td>C-s, /
+    </td>
+    <td>
+      Search forward
+    </td>
+   </tr>
+      <tr>
+     <td>
+MENU:SEARCH_BACK
+     </td>
+      <td>
+    C-r, ?</td>
+    <td>
+      Search backward
+    </td>
+      </tr>
+      <tr>
+	<td>
+MENU:SEARCH_NEXT
+	</td>
+	<td>
+	n</td>
+	<td>
+	Search for the next match</td>
+      </tr>
+      <tr>
+	<td>
+MENU:SEARCH_PREV
+	</td>
+	<td>
+	N</td>
+	<td>
+	Search for the previous match</td>
+      </tr>
+<!--mh 2016-06-12 Pressing C-z in menu mode (with menu active) has the same effect as in normal operation of w3m: Browser gets in the background
+       <tr>
+	<td>
+MENU:SUSPEND
+	</td>
+	<td>
+	C-z</td>
+	<td>
+	Suspend</td>
+      </tr>
+-->
+<!--  </table>-->
+    <tr>
+      <td colspan="3">
+	<h3>Line-editing Mode</h3>
+      </td>
+    </tr>
+<!--  <table>-->
+      <tr>
+     <td>
+       LINEEDIT:FORWARD
+     </td>
+    <td width="100">
+     C-f, RIGHT
+    </td>
+    <td>
+     Move cursor forward
+    </td>
+   </tr>
+      <tr>
+     <td>
+LINEEDIT:BACK
+     </td>
+    <td>
+     C-b, LEFT
+    </td>
+    <td>
+     Move cursor backward
+    </td>
+   </tr>
+      <tr>
+     <td>
+LINEEDIT:BS
+     </td>
+    <td>
+     C-h, BKSPC
+    </td>
+    <td>
+     Delete previous character
+    </td>
+   </tr>
+      <tr>
+     <td>
+LINEEDIT:DEL
+     </td>
+    <td>
+     C-d
+    </td>
+    <td>
+     Delete current character
+    </td>
+   </tr>
+      <tr>
+     <td>
+LINEEDIT:KILL_AFTER
+     </td>
+    <td>
+     C-k
+    </td>
+    <td>
+     Delete everything after cursor
+    </td>
+   </tr>
+      <tr>
+     <td>
+LINEEDIT:KILL_BEFORE
+     </td>
+    <td>
+     C-u
+    </td>
+    <td>
+     Delete everything before cursor
+    </td>
+   </tr>
+      <tr>
+     <td>
+LINEEDIT:TOP
+     </td>
+    <td>
+     C-a
+    </td>
+    <td>
+     Move to the beginning of the line
+    </td>
+   </tr>
+      <tr>
+     <td>
+LINEEDIT:BOTTOM
+     </td>
+    <td>
+     C-e
+    </td>
+    <td>
+     Move to the end of the line
+    </td>
+   </tr>
+      <tr>
+     <td>
+LINEEDIT:PREV
+     </td>
+    <td>
+     C-p, UP
+    </td>
+    <td>
+      Fetch the previous string from the history list
+    </td>
+   </tr>
+      <tr>
+     <td>
+LINEEDIT:NEXT
+     </td>
+    <td>
+     C-n, DOWN
+    </td>
+    <td>
+     Fetch the next string from the history list
+    </td>
+   </tr>
+      <tr>
+     <td>
+LINEEDIT:COMPLETE
+     </td>
+    <td>
+     TAB, SPC
+    </td>
+    <td>
+     Try to complete filename
+    </td>
+   </tr>
+      <tr>
+     <td>
+LINEEDIT:EDITOR
+     </td>
+    <td>
+     C-o
+    </td>
+    <td>
+     Edit with external editor
+    </td>
+   </tr>
+      <tr>
+     <td>
+LINEEDIT:ACCEPT
+     </td>
+    <td>
+     RET
+    </td>
+    <td>
+     Accept input line
+    </td>
+   </tr>
+  </table>
+<!-- mh 2016-06-12 As it suffices to use the provided keymap file for Lynx-like keybindings and this file is listed in section FILES of man w3m (1), the following hint for getting w3m with Lynx-like key bindings has been deleted.
+   <p>
+   If w3m was compiled with <q>Lynx-like key bindings</q>, you can use
+   the following key bindings.
+  </p>
+-->
+<!-- mh 2016-06-12 Remark is obsolete as the two sets key binding are presented along within tables 
+  <hr>
+  <h2 id="Key:lynx">
+   <p>
+   The Lynx-like configuration leaves keymappings unchanged in the
+   menu-selection and line-editing modes.
+  </p>
+ </h2>
+-->
+  <hr>
+  <h2 id="Mouse">
+   Mouse Operation
+  </h2>
+  <p>
+   If w3m is compiled with mouse support and you are invoking w3m
+   either from a console with GPM or from an X terminal emulator, you
+   can use the mouse for navigation (in the case of rxvt, you need to
+   set the TERM environment variable to <q>xterm</q> or <q>kterm</q>).
+  </p>
+   <p>An introduction to configure mouse actions is provided
+     with <a href="README.mouse">README.mouse</a>.
+   </p>
+  <table border="1">
+    <colgroup>
+      <col width="20%">
+      <col width="80%">
+    </colgroup>
+    <tr>
+      <th>Operation
+      </th>
+      <th>Description
+      </th>
+    </tr>   
+    <tr>
+    <td>
+     left click
+    </td>
+    <td>
+<b>First:</b><br>
+Moves the cursor to the place indicated by the mouse pointer.<br>
+<b>Then:</b><br>
+Follows a hyperlink the cursor is currently located and the mouse points to.
+    </td>
+   </tr>
+   <tr>
+    <td>
+     middle click
+    </td>
+    <td>
+     Back to the previous buffer.
+    </td>
+   </tr>
+   <tr>
+    <td>
+     right click
+    </td>
+    <td>
+     Open pop-up menu. You can choose an item by clicking it.
+    </td>
+   </tr>
+   <tr>
+    <td>
+     left drag
+    </td>
+    <td>
+     Scroll document. The default behavior is to grab the document
+     and drag it. You can reverse the behavior (grab the window and
+     drag it) with the options setting panel.
+    </td>
+   </tr>
+  </table>
+  <hr>
+  <h2 id="LocalCGI">
+   Local CGI scripts
+  </h2>
+  <p>
+   You can run CGI scripts using w3m, without any HTTP server.
+   This means that w3m behaves like an HTTP server and runs the CGI
+   script, then reads the output of the script and displays it. For
+   example, the bookmark registration system and default directory
+   browser are realized as local CGI scripts. Moreover, such scripts
+   allow w3m to be used as a form interface to acquire all kinds of
+   data.
+  </p>
+  <p>
+   For security reason, CGI scripts invoked by w3m must be in one of
+   the following directories:
+  </p>
+  <ul>
+   <li>
+    The directory where w3m-related files are stored (typically
+    /usr/local/lib/w3m). This directory can be referenced as $LIB.
+   </li>
+   <li>
+    The /cgi-bin/ directory. You can map /cgi-bin/ to any directory you
+    like in the options setting panel (the <q>Directory corresponds to
+    /cgi-bin</q> field). You can specify multiple paths separated by
+    <q>:</q>, like /usr/local/cgi-bin:/home/aito/cgi-bin. It is not
+   recommended to include the current directory to this path.  To use
+   a /cgi-bin/ directory, you must use a file:/cgi-bin URL as follows:
+    </li>
+<pre>
+ w3m -o cgi_bin=/path/to/cgi-bin file:/cgi-bin/script.cgi
+</pre>
+  </ul>
+  <p>
+    The CGI script can use the special header
+    <span class="mono">w3m-control:</span> to
+   control w3m. This field can take any function (see
+   <a href="README.func">README.func</a>), and the specified function
+   is invoked after the document is displayed. For example, the CGI
+   output
+  </p>
+<pre>
+Content-Type: text/plain
+W3m-control: BACK
+</pre>
+  <p>
+   will display a blank page and delete that buffer immediately.
+   This is useful when you don't want to display any page after
+   the script is invoked. The next example
+  </p>
+<pre>
+Content-Type: text/plain
+W3m-control: DELETE_PREVBUF
+contents.....
+</pre>
+  <p>
+   will override the current buffer.
+  </p>
+  <p>
+    Each header <span class="mono">w3m-control:</span> can
+    contain only one function, but you can
+    include more than one <span class="mono">w3m-control:</span>
+    line in the HTTP header.
+   In addition, you can specify an argument to the GOTO function:
+  </p>
+<pre>
+Content-Type: text/plain
+W3m-control: GOTO http://www.example.org/
+</pre>
+   <p>
+    This example works exactly the same way as the Location header:
+   </p>
+<pre>
+Content-Type: text/plain
+Location: http://www.example.org/
+</pre>
+  <p>
+   Note that this header has no effect when the CGI script is invoked
+   through an HTTP server.
+  </p>
+ </body>
+</html>

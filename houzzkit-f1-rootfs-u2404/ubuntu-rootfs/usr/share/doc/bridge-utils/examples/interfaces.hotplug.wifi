@@ -1,0 +1,29 @@
+# This is an example to be used when the wifi interface is not available
+# at boot, like a hotplug USB dongle or similar.
+# If the device is available at boot, the hostapd.service can setup
+# the interface without needing this.
+# The hostapd.conf usually specifies bridge=br0 on this kind of setup.
+# Remember to set BRIDGE_HOTPLUG=yes at /etc/default/bridge-utils
+# In this setup the all would match typical ethernet cards and then
+# we specify the wifi we want hotplugged.
+# The second stanza of br0 is just for setting up the ipv6 parameters
+# we don't specify bridge_ports there, we have specified it in the first
+# stanza, but we set it to none to let bridge-utils know it is a bridge.
+
+auto br0
+iface br0 inet static
+        address 192.168.2.250
+        netmask 255.255.255.0
+        bridge_ports all wlxMAC1
+        bridge_stp off
+        bridge_fd 2
+        bridge_hw wlxMAC1
+iface br0 inet6 static
+        bridge_ports none
+        address 2001:XXXX:XXXX::1
+        netmask 64
+        privext 2
+
+allow-hotplug wlxMAC1
+iface wlxMAC1 inet manual
+        hostapd -i wlxMAC1 /etc/hostapd/hostapd-wifiX.conf

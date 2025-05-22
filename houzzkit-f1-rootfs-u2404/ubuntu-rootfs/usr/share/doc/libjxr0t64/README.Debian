@@ -1,0 +1,21 @@
+Upstream ships a Makefile based build system
+
+Since upstream agree on having an ABI maintained:
+
+https://jxrlib.codeplex.com/discussions/440294
+
+I switched to a CMake based build system since it is much easier to handle
+VERSION/SOVERSION. The build system has been proposed upstream for ease of
+maintenance.
+
+--
+
+You can find a test suite at http://www.itu.int/rec/T-REC-T.834
+
+The conformance suite contains a bunch of .jxr files that you can decode with
+the DPK’s JXRDecApp, WIC on Windows 7 or 8, and the JPEG XR reference software
+itself.  The resulting images should be identical for all three, with a couple
+of caveats:  the DPK doesn’t support the “advanced pixel formats” (YCC or
+CMYKDIRECT), nor does it support chroma centering (for YUV 420 and 422).
+
+ -- Mathieu Malaterre <malat@debian.org>  Wed, 17 Apr 2013 16:08:34 +0200

@@ -1,0 +1,38 @@
+# This is to be used with the hibernate package, it should be copied to
+# /etc/hibernate/scriptlets.d/bridge
+# To enable it add RecoverBridge to the network section of
+# /etc/hibernate/common.conf
+
+AddConfigHandler BridgeOptions
+
+BridgeSuspend() {
+    for i in `/sbin/brctl show|sed -n "s/^[^ ]*\t\([^\t]*\)/\1/p"`
+    do
+      ip link set dev $i down
+    done
+    return 0
+}
+
+BridgeResume() {
+    for i in `/sbin/brctl show|sed -n "s/^[^ ]*\t\([^\t]*\)/\1/p"`
+    do
+      ip link set dev $i up
+    done
+    return 0
+}
+
+BridgeOptions() {
+    case $1 in
+        recoverbridge)
+            ;;
+        *)
+            return 1
+    esac
+
+    if [ -z "$BRIDGE_HOOKED" ] ; then
+        AddSuspendHook 65 BridgeSuspend
+        AddResumeHook 65 BridgeResume
+        BRIDGE_HOOKED=1
+    fi
+    return 0
+}

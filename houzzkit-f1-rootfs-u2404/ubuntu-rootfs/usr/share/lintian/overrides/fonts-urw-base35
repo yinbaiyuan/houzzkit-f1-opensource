@@ -1,0 +1,3 @@
+# "startlock get exec" is not from Adobe book but from afdko t1write_hintothers.h which is Apache-2.0
+# See https://bugs.debian.org/1029555
+fonts-urw-base35: license-problem-font-adobe-copyrighted-fragment-no-credit [usr/share/fonts/X11/Type1/*.pfb]

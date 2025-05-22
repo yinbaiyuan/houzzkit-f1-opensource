@@ -1,0 +1,100 @@
+#!/bin/sh
+#
+# ppmmargin - add a margin to a PNM image
+#
+# Copyright (C) 1991 by Jef Poskanzer.
+#
+# Permission to use, copy, modify, and distribute this software and its
+# documentation for any purpose and without fee is hereby granted, provided
+# that the above copyright notice appear in all copies and that both that
+# copyright notice and this permission notice appear in supporting
+# documentation.  This software is provided "as is" without express or
+# implied warranty.
+
+color="-gofigure"
+plainopt=""
+
+# Parse args.
+while true ; do
+    case "$1" in
+        -version|--version )
+        pnmpad --version; exit $?;
+        ;;
+        -p|-pl|-pla|-plai|-plain )
+        plainopt="-plain"
+        shift
+        ;;
+        -w|-wh|-whi|-whit|-white )
+        color="-white"
+        shift
+        ;;
+        -b|-bl|-bla|-blac|-black )
+        color="-black"
+        shift
+        ;;
+        -c|-co|-col|-colo|-color )
+        shift
+        if [ ! ${1-""} ] ; then
+            echo "usage: $0 [-white|-black|-color <colorspec>] <size> [pnmfile]" 1>&2
+            exit 1
+        fi
+        color="$1"
+        shift
+        ;;
+        -* )
+        echo "usage: $0 [-white|-black|-color <colorspec>] <size> [pnmfile]" 1>&2
+        exit 1
+        ;;
+        * )
+        break
+        ;;
+    esac
+done
+
+if [ ! ${1-""} ] ; then
+    echo "usage: $0 [-white|-black|-color <colorspec>] <size> [pnmfile]" 1>&2
+    exit 1
+fi
+size="$1"
+shift
+
+case $size in
+    ''|*[!0-9]*)
+        echo "Size argument '$size' is not a whole number"
+        exit 1
+        ;;
+esac
+
+if [ ${2-""} ] ; then
+    echo "usage: $0 [-white|-black|-color <colorspec>] <size> [pnmfile]" 1>&2
+    exit 1
+fi
+
+# TODO: This code does not consider the case when the input file is specified
+# and there is also input coming in from a pipe.
+
+if [ $size -eq 0 ] ; then
+    # Zero margin; just copy input to output
+    pamtopnm $plainopt $@;
+else
+    # If -white or -black, write output with pnmpad and exit.
+    # Otherwise construct spacer files.
+
+    case "$color" in
+        -gofigure )
+        pnmpad $plainopt -detect-background \
+            -left=$size -right=$size -top=$size -bottom=$size $@
+        exit
+        ;;
+        -white | -black )
+        pnmpad $plainopt $color \
+            -left=$size -right=$size -top=$size -bottom=$size $@
+        exit
+        ;;
+        * )
+        pnmpad $plainopt -color $color \
+            -left=$size -right=$size -top=$size -bottom=$size $@
+        exit
+        ;;
+    esac
+fi

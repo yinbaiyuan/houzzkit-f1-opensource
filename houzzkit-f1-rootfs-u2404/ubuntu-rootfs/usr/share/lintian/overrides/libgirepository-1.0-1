@@ -1,0 +1,4 @@
+# This does exist, but it's in gobject-introspection, which
+# libgirepository-1.0-dev depends on, as part of a workaround for
+# https://github.com/mesonbuild/meson/issues/12680
+libgirepository-1.0-1: lacks-unversioned-link-to-shared-library example: usr/lib/*/libgirepository-1.0.so [usr/lib/*/libgirepository-1.0.so.1.*]

@@ -1,0 +1,150 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"https://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+ <interface name="org.freedesktop.DBus.Peer">
+  <method name="Ping"/>
+  <method name="GetMachineId">
+   <arg type="s" name="machine_uuid" direction="out"/>
+  </method>
+ </interface>
+ <interface name="org.freedesktop.DBus.Introspectable">
+  <method name="Introspect">
+   <arg name="xml_data" type="s" direction="out"/>
+  </method>
+ </interface>
+ <interface name="org.freedesktop.DBus.Properties">
+  <method name="Get">
+   <arg name="interface_name" direction="in" type="s"/>
+   <arg name="property_name" direction="in" type="s"/>
+   <arg name="value" direction="out" type="v"/>
+  </method>
+  <method name="GetAll">
+   <arg name="interface_name" direction="in" type="s"/>
+   <arg name="props" direction="out" type="a{sv}"/>
+  </method>
+  <method name="Set">
+   <arg name="interface_name" direction="in" type="s"/>
+   <arg name="property_name" direction="in" type="s"/>
+   <arg name="value" direction="in" type="v"/>
+  </method>
+  <signal name="PropertiesChanged">
+   <arg type="s" name="interface_name"/>
+   <arg type="a{sv}" name="changed_properties"/>
+   <arg type="as" name="invalidated_properties"/>
+  </signal>
+ </interface>
+ <interface name="org.freedesktop.portable1.Manager">
+  <property name="PoolPath" type="s" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="PoolUsage" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="PoolLimit" type="t" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <property name="Profiles" type="as" access="read">
+   <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="false"/>
+  </property>
+  <method name="GetImage">
+   <arg type="s" name="image" direction="in"/>
+   <arg type="o" name="object" direction="out"/>
+  </method>
+  <method name="ListImages">
+   <arg type="a(ssbtttso)" name="images" direction="out"/>
+  </method>
+  <method name="GetImageOSRelease">
+   <arg type="s" name="image" direction="in"/>
+   <arg type="a{ss}" name="os_release" direction="out"/>
+  </method>
+  <method name="GetImageMetadata">
+   <arg type="s" name="image" direction="in"/>
+   <arg type="as" name="matches" direction="in"/>
+   <arg type="s" name="image" direction="out"/>
+   <arg type="ay" name="os_release" direction="out"/>
+   <arg type="a{say}" name="units" direction="out"/>
+  </method>
+  <method name="GetImageMetadataWithExtensions">
+   <arg type="s" name="image" direction="in"/>
+   <arg type="as" name="extensions" direction="in"/>
+   <arg type="as" name="matches" direction="in"/>
+   <arg type="t" name="flags" direction="in"/>
+   <arg type="s" name="image" direction="out"/>
+   <arg type="ay" name="os_release" direction="out"/>
+   <arg type="a{say}" name="extensions" direction="out"/>
+   <arg type="a{say}" name="units" direction="out"/>
+  </method>
+  <method name="GetImageState">
+   <arg type="s" name="image" direction="in"/>
+   <arg type="s" name="state" direction="out"/>
+  </method>
+  <method name="GetImageStateWithExtensions">
+   <arg type="s" name="image" direction="in"/>
+   <arg type="as" name="extensions" direction="in"/>
+   <arg type="t" name="flags" direction="in"/>
+   <arg type="s" name="state" direction="out"/>
+  </method>
+  <method name="AttachImage">
+   <arg type="s" name="image" direction="in"/>
+   <arg type="as" name="matches" direction="in"/>
+   <arg type="s" name="profile" direction="in"/>
+   <arg type="b" name="runtime" direction="in"/>
+   <arg type="s" name="copy_mode" direction="in"/>
+   <arg type="a(sss)" name="changes" direction="out"/>
+  </method>
+  <method name="AttachImageWithExtensions">
+   <arg type="s" name="image" direction="in"/>
+   <arg type="as" name="extensions" direction="in"/>
+   <arg type="as" name="matches" direction="in"/>
+   <arg type="s" name="profile" direction="in"/>
+   <arg type="s" name="copy_mode" direction="in"/>
+   <arg type="t" name="flags" direction="in"/>
+   <arg type="a(sss)" name="changes" direction="out"/>
+  </method>
+  <method name="DetachImage">
+   <arg type="s" name="image" direction="in"/>
+   <arg type="b" name="runtime" direction="in"/>
+   <arg type="a(sss)" name="changes" direction="out"/>
+  </method>
+  <method name="DetachImageWithExtensions">
+   <arg type="s" name="image" direction="in"/>
+   <arg type="as" name="extensions" direction="in"/>
+   <arg type="t" name="flags" direction="in"/>
+   <arg type="a(sss)" name="changes" direction="out"/>
+  </method>
+  <method name="ReattachImage">
+   <arg type="s" name="image" direction="in"/>
+   <arg type="as" name="matches" direction="in"/>
+   <arg type="s" name="profile" direction="in"/>
+   <arg type="b" name="runtime" direction="in"/>
+   <arg type="s" name="copy_mode" direction="in"/>
+   <arg type="a(sss)" name="changes_removed" direction="out"/>
+   <arg type="a(sss)" name="changes_updated" direction="out"/>
+  </method>
+  <method name="ReattachImageWithExtensions">
+   <arg type="s" name="image" direction="in"/>
+   <arg type="as" name="extensions" direction="in"/>
+   <arg type="as" name="matches" direction="in"/>
+   <arg type="s" name="profile" direction="in"/>
+   <arg type="s" name="copy_mode" direction="in"/>
+   <arg type="t" name="flags" direction="in"/>
+   <arg type="a(sss)" name="changes_removed" direction="out"/>
+   <arg type="a(sss)" name="changes_updated" direction="out"/>
+  </method>
+  <method name="RemoveImage">
+   <arg type="s" name="image" direction="in"/>
+  </method>
+  <method name="MarkImageReadOnly">
+   <arg type="s" name="image" direction="in"/>
+   <arg type="b" name="read_only" direction="in"/>
+  </method>
+  <method name="SetImageLimit">
+   <arg type="s" name="image" direction="in"/>
+   <arg type="t" name="limit" direction="in"/>
+  </method>
+  <method name="SetPoolLimit">
+   <arg type="t" name="limit" direction="in"/>
+  </method>
+ </interface>
+ <node name="image"/>
+</node>

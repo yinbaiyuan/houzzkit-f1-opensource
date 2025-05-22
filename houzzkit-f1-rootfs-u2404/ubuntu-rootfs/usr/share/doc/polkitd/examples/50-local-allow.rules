@@ -1,0 +1,24 @@
+// Sample polkit rules to allow root-equivalent users (sudo group members)
+// to restart apt-cacher-ng without using sudo or authentication,
+// similar in principle to the sudoers rule
+//
+//     %sudo ALL=(root) NOPASSWD: /bin/systemctl restart apt-cacher-ng.service
+//
+// but without needing to prefix the systemctl command with sudo.
+//
+// To use this file, copy it into /etc/polkit-1/rules.d/
+
+polkit.addRule(function(action, subject) {
+    if (
+        subject.isInGroup("sudo")
+        && action.id === "org.freedesktop.systemd1.manage-units"
+        && action.lookup("unit") === "apt-cacher-ng.service"
+        && action.lookup("verb") === "restart"
+    ) {
+        return polkit.Result.YES;
+    }
+
+    return polkit.Result.NOT_HANDLED;
+});
+
+// vim:set ft=javascript:

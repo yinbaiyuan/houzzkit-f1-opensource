@@ -1,0 +1,8 @@
+# Provided by vim (virtual) packages
+vim-common binary: desktop-command-not-in-package vim [usr/share/applications/vim.desktop]
+
+# Provided by vim (virtual) packages
+vim-common binary: spare-manual-page
+
+# This is Vim's builtin help
+package-contains-documentation-outside-usr-share-doc [usr/share/vim/vim*/doc/*]

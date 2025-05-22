@@ -1,0 +1,3 @@
+# The SSE, 3DNowExt, 3DNow, and MMX decoders use non-pic assembly code.
+libmpg123-0t64 [i386]: specific-address-in-shared-library
+libmpg123-0t64: package-name-doesnt-match-sonames libmpg123-0

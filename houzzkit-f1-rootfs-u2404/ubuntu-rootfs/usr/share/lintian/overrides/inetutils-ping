@@ -1,0 +1,2 @@
+inetutils-ping: elevated-privileges 4755 root/root [usr/bin/ping]
+inetutils-ping: elevated-privileges 4755 root/root [usr/bin/ping6]

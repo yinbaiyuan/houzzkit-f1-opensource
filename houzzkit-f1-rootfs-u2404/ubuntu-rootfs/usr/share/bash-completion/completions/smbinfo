@@ -1,0 +1,44 @@
+# bash completion for smbinfo  -*- shell-script -*-
+smb_info()
+{
+	local cur prev OPTS
+	COMPREPLY=()
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	OPTS="fileaccessinfo
+	      filealigninfo
+	      fileallinfo
+	      filebasicinfo
+	      fileeainfo
+	      filefsfullsizeinfo
+	      fileinternalinfo
+	      filemodeinfo
+	      filepositioninfo
+	      filestandardinfo
+	      fsctl-getobjid
+	      getcompression
+	      setcompression
+	      list-snapshots
+	      quota
+	      secdesc"
+	case $prev in
+		'-v'|'-h')
+			return 0
+			;;
+		'fileaccessinfo'|'filealigninfo'|'fileallinfo'|'filebasicinfo'|'fileeainfo'|'filefsfullsizeinfo'|\
+		'fileinternalinfo'|'filemodeinfo'|'filepositioninfo'|'filestandardinfo'|'fsctl-getobjid'|\
+		'getcompression'|'setcompression'|'list-snapshots'|'quota'|'secdesc')
+			local IFS=$'\n'
+			compopt -o filenames
+			COMPREPLY=( $(compgen -f -o dirnames -- ${cur:-""}) )
+			return 0
+			;;
+		'-V'|*'smbinfo')
+			COMPREPLY=( $(compgen -W "${OPTS[*]}" -- $cur) )
+			return 0
+			;;
+	esac
+
+	return 0
+}
+complete -F smb_info smbinfo

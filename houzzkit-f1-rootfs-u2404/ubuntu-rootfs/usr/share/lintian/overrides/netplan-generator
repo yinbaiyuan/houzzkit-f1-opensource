@@ -1,0 +1,5 @@
+# begin-remove-after: released:forky
+# DEP17P7 mitigation
+# https://subdivi.de/~helmut/dep17.html M8 and https://bugs.debian.org/1060661
+netplan-generator: diversion-for-unknown-file lib/systemd/system-generators/netplan [*]
+# end-remove-after

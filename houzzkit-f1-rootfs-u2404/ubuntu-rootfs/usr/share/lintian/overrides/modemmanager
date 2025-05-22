@@ -1,0 +1,7 @@
+# ModemManager ships many plugins as .so files. These are not proper shared
+# libraries though, and therefore don't need to include information about
+# other libraries against which they would be linked.
+modemmanager: library-not-linked-against-libc [usr/lib/*/ModemManager/*]
+# We ship an empty /usr/lib/ARCH/ModemManager/connection.d/ folder so users
+# have it readily available if needed
+modemmanager: package-contains-empty-directory [usr/lib/*/ModemManager/connection.d/]

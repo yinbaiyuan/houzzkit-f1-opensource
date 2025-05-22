@@ -1,0 +1,5 @@
+python3.12-minimal binary: command-with-path-in-maintainer-script
+python3.12-minimal binary: unknown-field
+
+# pyexpat.c contains expat error messages that lintian mis-attributes to embedding
+python3.12-minimal binary: embedded-library

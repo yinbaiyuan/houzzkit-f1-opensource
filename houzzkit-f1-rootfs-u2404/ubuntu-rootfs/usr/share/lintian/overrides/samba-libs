@@ -1,0 +1,18 @@
+# the samba-libs package contains a number of libraries
+# it doesn't make sense to have them in separate packages, as this would
+# result in circular dependencies
+samba-libs: package-name-doesnt-match-sonames *
+# Embedded Heimdal is patched
+samba-libs: embedded-library *heimdal*
+# False positives, see #896012
+samba-libs: library-not-linked-against-libc *
+samba-libs: shared-library-lacks-prerequisites */libdcerpc-samr.so.*
+# unofficial APIs
+samba-libs: shared-library-symbols-not-tracked *
+# deliberate, a synonym for misspelled parameter
+samba-libs: spelling-error-in-binary prefered preferred */libsamba-hostconfig.so.*
+# simple libs:
+samba-libs: hardening-no-fortify-functions */samba/libauth-samba4.so.*
+samba-libs: hardening-no-fortify-functions */samba/libcli-ldap-samba4.so.*
+samba-libs: hardening-no-fortify-functions */samba/libsmb-transport-samba4.so.*
+samba-libs: hardening-no-fortify-functions */samba/libsys-rw-samba4.so.*

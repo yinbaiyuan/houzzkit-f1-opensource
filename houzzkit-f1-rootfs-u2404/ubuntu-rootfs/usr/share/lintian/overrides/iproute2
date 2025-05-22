@@ -1,0 +1,15 @@
+# False positives
+iproute2: spelling-error-in-binary iif if [bin/ip]
+iproute2: spelling-error-in-binary iif if [sbin/tc]
+iproute2: spelling-error-in-copyright Taht That
+iproute2: typo-in-manual-page Taht That [usr/share/man/man8/tc-codel.8.gz:120]
+iproute2: typo-in-manual-page iif if [usr/share/man/man8/ip-mroute.8.gz:14]
+iproute2: typo-in-manual-page iif if [usr/share/man/man8/ip-mroute.8.gz:41]
+iproute2: typo-in-manual-page iif if [usr/share/man/man8/ip-route.8.gz:1247]
+iproute2: typo-in-manual-page iif if [usr/share/man/man8/ip-route.8.gz:1293]
+iproute2: typo-in-manual-page iif if [usr/share/man/man8/ip-route.8.gz:1300]
+iproute2: typo-in-manual-page iif if [usr/share/man/man8/ip-route.8.gz:33]
+iproute2: typo-in-manual-page iif if [usr/share/man/man8/ip-rule.8.gz:219]
+iproute2: typo-in-manual-page iif if [usr/share/man/man8/ip-rule.8.gz:41]
+iproute2: typo-in-manual-page iif if [usr/share/man/man8/tc-flow.8.gz:191]
+iproute2: typo-in-manual-page iif if [usr/share/man/man8/tc-flow.8.gz:55]

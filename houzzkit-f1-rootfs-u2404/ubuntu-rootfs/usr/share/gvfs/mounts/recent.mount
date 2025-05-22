@@ -1,0 +1,5 @@
+[Mount]
+Type=recent
+Exec=/usr/libexec/gvfsd-recent
+AutoMount=true
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+  <id>org.gphoto.libgphoto2</id>
+  <metadata_license>MIT</metadata_license>
+  <name>libgphoto2</name>
+  <summary>gphoto2 digital camera library</summary>
+  <description>
+    <p>
+    The gphoto2 library can be used by applications to access various
+    digital camera models, via standard protocols such as USB Mass Storage
+    and PTP, or vendor-specific protocols.
+    </p>
+  </description>
+  <provides>
+    <modalias>usb:v1908p1320d*</modalias>
+    <modalias>usb:v1908p1320d*</modalias>
+    <modalias>usb:v1908p0102d*</modalias>
+    <modalias>usb:v1908p3335d*</modalias>
+    <modalias>usb:v04B0p0116d*</modalias>
+    <modalias>usb:v04B0p0108d*</modalias>
+    <modalias>usb:v04B0p0110d*</modalias>
+    <modalias>usb:v04B0p010Ed*</modalias>
+    <modalias>usb:v04B0p0104d*</modalias>
+    <modalias>usb:v04B0p0401d*</modalias>
+    <modalias>usb:v07B4p0105d*</modalias>
+    <modalias>usb:v07B4p0109d*</modalias>
+    <modalias>usb:v25FBp0130d*</modalias>
+    <modalias>usb:v25FBp0164d*</modalias>
+    <modalias>usb:v25FBp0132d*</modalias>
+    <modalias>usb:v25FBp017Ad*</modalias>
+    <modalias>usb:v25FBp0160d*</modalias>
+    <modalias>usb:v25FBp0102d*</modalias>
+    <modalias>usb:v25FBp0148d*</modalias>
+    <modalias>usb:v25FBp014Ad*</modalias>
+    <modalias>usb:v25FBp017Cd*</modalias>
+    <modalias>usb:v0A17p0070d*</modalias>
+    <modalias>usb:v0A17p00A1d*</modalias>
+    <modalias>usb:v0A17p006Ed*</modalias>
+    <modalias>usb:v0A17p0093d*</modalias>
+    <modalias>usb:v0A17p0091d*</modalias>
+    <modalias>usb:v0A17p0009d*</modalias>
+    <modalias>usb:v0A17p0007d*</modalias>
+    <modalias>usb:v1403p0001d*</modalias>
+    <modalias>usb:v0168p3011d*</modalias>
+  </provides>
+</component>

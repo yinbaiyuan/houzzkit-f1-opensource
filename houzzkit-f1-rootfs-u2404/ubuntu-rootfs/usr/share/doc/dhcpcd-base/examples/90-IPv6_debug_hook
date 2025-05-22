@@ -1,0 +1,8 @@
+# 90_IPv6_debug_hook
+case "$reason" in
+	*6)
+	if command -v logger >/dev/null 2>&1; then
+		logger -p daemon.info -t "dhcpcd" "Info: Logged IPv6 event $reason $new_delegated_dhcp6_prefix"
+	fi
+	;;
+esac

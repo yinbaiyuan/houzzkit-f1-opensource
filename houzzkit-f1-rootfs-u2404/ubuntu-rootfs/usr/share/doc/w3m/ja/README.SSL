@@ -1,0 +1,52 @@
+SSL サポートについて
+
+                                                         (2000/11/07)  岡部克也
+                                                        okabek@guitar.ocn.ne.jp
+                                                         (2001/12/27)  鵜飼文敏
+                                                              ukai@debian.or.jp
+
+ ・ OpenSSL ライブラリを通じて, SSL をサポートしています.
+    あらかじめインストールしておいてください.
+   
+ ・ OpenSSL ライブラリがインストールされていれば configure スクリプト実行時に自
+    動的に検出されて利用可能となります.
+    もしうまく動かないときは, config.h をチェックしてみてください. SSL を利用す
+    るためには, config.h で, USE_SSL マクロが定義されている必要があります.
+    さらに, SSL 認証サポートを利用する場合は, USE_SSL_VERIFY マクロもチェックし
+    てみてください.
+    コンパイルでエラーが出る場合は, リンカフラグに `-lssl -lcrypto', コンパイラ
+    フラグに '-I(SSLeay/OpenSSL のヘッダがあるディレクトリ)' があるか確認してく
+    ださい.
+   
+    SSL サポートが有効になっているかどうかは, Option Setting Panel に「SSLの設
+    定」が含まれているかどうかで確認できます.
+   
+ ・ SSL に関して以下の設定が可能になってます:
+
+    ssl_forbid_method
+        使わないSSLメソッドのリスト(2: SSLv2, 3: SSLv3, t: TLSv1.0,
+        5: TLSv1.1, 6: TLSv1.2, 7: TLSv1.3)
+        (デフォルトは2, 3, t, 5).
+    ssl_min_version
+        最小のSSLバージョン, OpenSSL 1.1以上で有効(all, TLSv1.0, TLSv1.1,
+        TLSv1.2, TLSv1.3のいずれか) (デフォルトは未設定).
+    ssl_cipher
+        TLSv1.2以下用のSSL暗号(例: DEFAULT:@SECLEVEL=2) (デフォルトは
+        OpenSSL 1.1以上なら未設定, それ以外ならDEFAULT:!LOW:!RC4:!EXP).
+    ssl_verify_server ON/OFF
+        SSLのサーバ認証を行う(デフォルトはON).
+    ssl_cert_file ファイル名
+        SSLのクライアント用PEM形式証明書ファイル(デフォルトは未設定).
+    ssl_key_file ファイル名
+        SSLのクライアント用PEM形式秘密鍵ファイル(デフォルトは未設定).
+    ssl_ca_path ディレクトリ名
+        SSLの認証局のPEM形式証明書群のあるディレクトリへのパス
+        (デフォルトは未設定).
+    ssl_ca_file ファイル名
+        SSLの認証局のPEM形式証明書群のファイル(デフォルトは未設定,
+        configure時に自動検出可).
+    ssl_ca_default ON/OFF
+        SSLの認証局のPEM形式証明書群のために標準の場所を使う(デフォルトはON).
+
+ ・ EGD (Entropy Gathering Daemon) が利用できる環境でこれを使いたい場合は,
+    USE_EGD マクロをチェックしてみてください.

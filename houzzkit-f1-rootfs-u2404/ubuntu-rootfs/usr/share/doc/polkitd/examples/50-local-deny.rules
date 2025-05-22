@@ -1,0 +1,28 @@
+// Sample polkit rules to prevent prompting for certain polkit actions
+// when invoked by a guest user that is not intended to elevate privileges.
+//
+// (For example, these rules are useful to avoid unwanted prompts for a
+// guest user who will run Steam.)
+//
+// To use this file, copy it into /etc/polkit-1/rules.d/
+
+polkit.addRule(function(action, subject) {
+    if (subject.user !== "guest") {
+        // Continue to the next rules file for users other than guest
+        return polkit.Result.NOT_HANDLED;
+    }
+
+    if (action.id === "org.freedesktop.NetworkManager.settings.modify.system") {
+        // Don't allow reconfiguring NetworkManager
+        return polkit.Result.NO;
+    }
+
+    if (action.id.indexOf("org.freedesktop.packagekit.") === 0) {
+        // Don't allow anything involving PackageKit
+        return polkit.Result.NO;
+    }
+
+    return polkit.Result.NOT_HANDLED;
+});
+
+// vim:set ft=javascript:

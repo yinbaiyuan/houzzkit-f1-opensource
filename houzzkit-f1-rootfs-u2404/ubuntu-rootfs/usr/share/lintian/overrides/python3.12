@@ -1,0 +1,14 @@
+# yes, we have to
+python3.12 binary: depends-on-python-minimal
+
+python3.12 binary: desktop-command-not-in-package
+python3.12 binary: menu-command-not-in-package
+python3.12 binary: unusual-interpreter
+python3.12 binary: python3-script-but-no-python3-dep
+
+# no, not useless
+python3.12 binary: manpage-has-useless-whatis-entry
+
+python3.12 binary: command-with-path-in-maintainer-script
+
+python3.12 binary: python3-script-but-no-python3-dep [usr/bin/pygettext3.12]

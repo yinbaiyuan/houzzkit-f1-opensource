@@ -1,0 +1,1133 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: sane-backends
+Upstream-Contact: <sane-devel@alioth-lists.debian.net>
+Source: https://gitlab.com/sane-project/backends/-/archive/master/
+
+Files: *
+Copyright: 1997-2014 Andreas Beck
+           1997-2014 David Mosberger
+License: GPL-2+ with sane exception
+
+Files: debian/*
+Copyright: 1997-2002 Kevin Dalley <kevind@rahul.net>
+           2002-2011 Julien BLACHE <jblache@debian.org>
+           2002-2006 Aurélien Jarno <aurel32@debian.org>
+           2013      Mark Buda <hermit@acm.org>
+           2018      Laurent Bigonville <bigon@debian.org>
+           2019      John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>
+           2014-2023 Jörg Frings-Fürst <debian@jff.email>
+License: GPL-2+ with sane exception
+
+Files: backend/abaton.*
+Copyright: 1998-1998 David Huggins-Daines
+License: GPL-2+ with sane exception
+
+Files: backend/agfafocus.*
+Copyright: 1997      Ingo Schneider
+           1998      Karl Anders Øygard
+License: GPL-2+
+
+Files: backend/apple.*
+Copyright: 1998      Milon Firikis
+License: GPL-2+ with sane exception
+
+Files: backend/artec.*
+       backend/qcam.*
+       backend/dll.*
+       include/sane/sanei_scsi.h
+       include/sane/sanei_wire.h
+       sanei/sanei_DomainOS.c
+       sanei/sanei_codec_ascii.c
+       sanei/sanei_codec_bin.c
+       sanei/sanei_config2.c
+       sanei/sanei_net.c
+       sanei/sanei_wire.c
+Copyright: 1996-1997 David Mosberger-Tang
+License: GPL-2+ with sane exception
+
+Files: backend/artec_eplus48u.*
+Copyright: 2002      Michael Herder <crapsite@gmx.net>
+License: GPL-2+ with sane exception
+
+Files: backend/as6e.*
+Copyright: 2000      Eugene S. Weiss
+License: GPL-2+ with sane exception
+
+Files: backend/avision.*
+Copyright: 1999-2015 Rene Rebe <rene@exactcode.de>
+           1999-2001 Meino Christian Cramer <mccramer@s.netic.de>
+           2002      Jose Paulo Moitinho de Almeida <moitinho@civil.ist.utl.pt>
+           2010-2011 Mike Kelly <mike@piratehaven.org>
+License: GPL-2+ with sane exception
+
+Files: backend/bh.*
+Copyright: 1999-2000 Tom Martone
+License: GPL-2+ with sane exception
+
+Files: backend/canon-scsi.c
+       backend/canon.*
+Copyright: 1997      BYTEC GmbH Germany
+License: GPL-2+ with sane exception
+
+Files: backend/canon_lide70*
+Copyright: 2019-2021 Juergen Ernst and pimvantend
+License: GPL-2+ with sane exception
+
+Files: backend/canon630u.c
+Copyright: 2002      Nathan Rutman <nathan@gordian.com>
+           2001      Marcio Luis Teixeira
+           1996-1997 Andreas Beck
+           2000-2001 Michael Herder <crapsite@gmx.net>
+           2001      Henning Meier-Geinitz <henning@meier-geinitz.de>
+License: GPL-2+ with sane exception
+
+Files: backend/canon_dr.*
+       backend/cardscan.*
+       include/sane/sanei_magic.h
+       sanei/sanei_magic.c
+Copyright: 2007-2022 m. allan noah
+License: GPL-2+ with sane exception
+
+Files: backend/canon_pp-*.*
+       backend/canon_pp.*
+Copyright: 2001-2002 Matthew C. Duggan
+           2001-2002 Simon Krix
+License: GPL-2+ with sane exception
+
+Files: backend/coolscan2.*
+Copyright: 2001-2002 András Major <andras@users.sourceforge.net>
+License: GPL-2+ with sane exception
+
+Files: backend/coolscan3.*
+       include/sane/sanei_tcp.h
+       include/sane/sanei_udp.h
+       sanei/sanei_tcp.c
+       sanei/sanei_udp.c
+Copyright: 2006-2008 Tower Technologies <a.zummo@towertech.it>>
+License: GPL-2+ with sane exception
+
+Files: backend/dc210.*
+       backend/dc240.*
+Copyright: 1998      Brian J. Murrell
+License: GPL-2+ with sane exception
+
+Files: backend/dc25.*
+Copyright: 1998      Peter Fales
+License: GPL-2+ with sane exception
+
+Files: backend/dell1600n_net.*
+Copyright: 2006 Jon Chambers <jon@jon.demon.co.uk>
+License: GPL-2+ with sane exception
+
+Files: backend/dmc.*
+Copyright: 1998      David F. Skoll
+License: GPL-2+ with sane exception
+
+Files: backend/escl/*
+Copyright: 2019      Touboul Nathane
+           2019-2020 Thierry HUCHARD <thierry@ordissimo.com>
+License: GPL-2+ with sane exception
+
+Files: backend/epjitsu*.*
+Copyright: 2007-2022 m. allan noah <kitno455@gmail.com>
+           2009      Richard Goedeken <richard@fascinationsoftware.com>
+License: GPL-2+ with sane exception
+
+Files: backend/epson.*
+Copyright: 1997      Hypercore Software Design, Ltd.
+           1998-1999 Christian Bucher <bucher@vernetzt.at>
+           1998-1999 Kling & Hautzinger GmbH
+           1999      Norihiko Sawa <sawa@yb3.so-net.ne.jp>
+           2000      Mike Porter <mike@udel.edu>
+           2003      EPSON KOWA Corporation
+           1999-2005 Karl Heinz Kremer <khk@khk.net>
+           2006      Claus Boje <claus@egehuset.dk>
+License: GPL-2+ with sane exception
+
+Files: backend/epson2-cct.*
+Copyright: 2001-2009 SEIKO EPSON Corporation
+           2009      Tower Technologies
+License: GPL-2+
+
+Files: backend/epson2-commands.*
+       backend/epson2-io.*
+       backend/epson2-ops.*
+       backend/epson2_net.*
+       backend/epson2.*
+       backend/epsonds*.*
+Copyright: 2006-2015 Tower Technologies
+License: GPL-2+
+
+Files: backend/fujitsu.*
+Copyright: 2000      Randolph Bentson
+           2001      Frederik Ramm
+           2001-2004 Oliver Schirrmeister
+           2003-2022 m. allan noah
+License: GPL-2+ with sane exception
+
+Files: backend/genesys/genesys.h
+Copyright: 2003-2004 Henning Meier-Geinitz <henning@meier-geinitz.de>
+           2004-2005 Gerhard Jaeger <gerhard@gjaeger.de>
+           2004-2013 Stéphane Voltz <stef.dev@free.fr>
+           2005-2009 Pierre Willenbrock <pierre@pirsoft.dnsalias.org>
+License: GPL-2+ with sane exception
+
+Files: backend/genesys/gl124.*
+       backend/genesys/gl841.h
+       backend/genesys/gl843.*
+       backend/genesys/gl846.*
+       backend/genesys/gl847.*
+       backend/rts88*.*
+       backend/umax_pp*.*
+Copyright: 2010-2016 Stéphane Voltz <stef.dev@free.fr>
+License: GPL-2+ with sane exception
+
+Files: backend/genesys/error.cpp
+       backend/genesys/serialize.h
+       backend/genesys/error.h
+       backend/genesys/value_filter.h
+       backend/genesys/tables_memory_layout.cpp
+       backend/genesys/gl842.cpp
+Copyright: 2019-2020 Povilas Kanapickas <povilas@radix.lt>
+License: GPL-2+ with sane exception
+
+Files: backend/genesys/gl646.h
+Copyright: 2003-2004 Henning Meier-Geinitz <henning@meier-geinitz.de>
+           2004      Gerhard Jaeger <gerhard@gjaeger.de>
+           2004-2013 Stéphane Voltz <stef.dev@free.fr>
+           2005-2009 Pierre Willenbrock <pierre@pirsoft.dnsalias.org>
+License: GPL-2+ with sane exception
+
+Files: backend/genesys/low.h
+Copyright: 2003      Oliver Rauch
+           2003-2004 Henning Meier-Geinitz <henning@meier-geinitz.de>
+           2004-2005 Gerhard Jaeger <gerhard@gjaeger.de>
+           2004-2013 Stéphane Voltz <stef.dev@free.fr>
+           2005-2009 Pierre Willenbrock <pierre@pirsoft.dnsalias.org>
+           2006      Laurent Charpentier <laurent_pubs@yahoo.com>
+License: GPL-2+ with sane exception
+
+Files: backend/gphoto2.*
+Copyright:  2001     Peter Fales <gphoto2-devel@fales-lorenz.net>
+License: GPL-2+ with sane exception
+
+Files: backend/gt68xx.c
+       backend/gt68xx_high.c
+Copyright: 2002      Sergey Vlasov <vsu@altlinux.ru>
+           2002-2007 Henning Geinitz <sane@geinitz.org>
+           2009      Stéphane Voltz <stef.dev@free.fr>
+License: GPL-2+ with sane exception
+
+Files: backend/gt68xx.h
+Copyright: 2002      Sergey Vlasov <vsu@altlinux.ru>
+License: GPL-2+ with sane exception
+
+Files: backend/gt68xx_devices.*
+       backend/gt68xx_generic.c
+       backend/gt68xx_gt6801.c
+       backend/gt68xx_gt6816.c
+       backend/gt68xx_high.h
+       backend/gt68xx_low.*
+       backend/gt68xx_mid.c
+Copyright: 2002      Sergey Vlasov <vsu@altlinux.ru>
+           2002-2007 Henning Geinitz <sane@geinitz.org>
+License: GPL-2+ with sane exception
+
+Files: backend/gt68xx_generic.h
+       backend/gt68xx_gt6801.h
+       backend/gt68xx_gt6816.h
+       backend/gt68xx_mid.h
+       backend/gt68xx_shm_channel.*
+Copyright: 2002      Sergey Vlasov <vsu@altlinux.ru>
+License: GPL-2+ with sane exception
+
+Files: backend/hp-*.*
+       backend/hp.*
+Copyright: 1997      Geoffrey T. Dairiki
+License: GPL-2+ with sane exception
+
+Files: backend/hp3900*.*
+Copyright: 2005-2008 Jonathan Bravo Lopez <jkdsoft@gmail.com>
+License: GPL-2+ with sane exception
+
+Files: backend/hp4200*.*
+Copyright: 2000      Adrian Perez Jorge
+License: GPL-2+ with sane exception
+
+Files: backend/hp5400.*
+       backend/hp5400_debug.*
+       backend/hp5400_sane.*
+       backend/hp5400_xfer.*
+Copyright: 2003      Martijn van Oosterhout <kleptog@svana.org>
+           2003      Thomas Soumarmon <thomas.soumarmon@cogitae.net>
+           2020      Ralph Little <skelband@gmail.com>
+License: GPL-2+ with sane exception
+
+Files: backend/hp5400_internal.*
+       backend/hp5400_sanei.*
+Copyright: 2003      Martijn van Oosterhout <kleptog@svana.org>
+           2003      Thomas Soumarmon <thomas.soumarmon@cogitae.net>
+           2003      Henning Meier-Geinitz, <henning@meier-geinitz.de>
+           2020      Ralph Little <skelband@gmail.com>
+License: GPL-2+ with sane exception
+
+Files: backend/hp5590*.*
+Copyright: 2007      Ilia Sotnikov <hostcc@gmail.com>
+License: GPL-2+ with sane exception
+
+Files: backend/hpljm1005.c
+Copyright: 2007-2008 Philippe Rétornaz
+License: GPL-2+ with sane exception
+
+Files: backend/hpsj5s*.*
+Copyright: 2002      Max Vorobiev <pcwizard@telecoms.sins.ru>
+License: GPL-2+ with sane exception
+
+Files: backend/hs2p*.*
+Copyright: 2007      Jeremy Johnson
+License: GPL-2+ with sane exception
+
+Files: backend/kodakaio.*
+Copyright: 2011-2017 Paul Newall
+License: GPL-2+
+
+Files: backend/kvs1025.c
+       backend/kvs20xx*.*
+       backend/kvs40xx.c
+       backend/kvs40xx_*.c
+Copyright:  2008      Panasonic Russia Ltd.
+            2010-2011 m. allan noah
+License: GPL-2+
+
+Files: backend/kvs1025.h
+       backend/kvs1025_*.*
+       backend/kvs40xx.h
+Copyright:  2008      Panasonic Russia Ltd.
+License: GPL-2+
+
+Files: backend/leo.*
+       backend/matsushita.*
+       backend/sceptre.*
+       backend/teco1.*
+       backend/teco3.*
+       backend/umax-usb.c
+Copyright: 2002-2004 Frank Zago <sane@zago.net>
+License: GPL-2+ with sane exception
+
+Files: backend/lexmark.*
+Copyright: 2003-2004 Lexmark International, Inc.
+           2005      Fred Odendaal
+           2006-2013 Stéphane Voltz <stef.dev@free.fr>
+           2010      Torsten Houwaart <ToHo@gmx.de>
+License: GPL-2+ with sane exception
+
+Files: backend/lexmark_low.c
+Copyright: 2005      Fred Odendaal
+           2006-2013 Stéphane Voltz <stef.dev@free.fr>
+           2010      Torsten Houwaart <ToHo@gmx.de>
+License: GPL-2+ with sane exception
+
+Files: backend/lexmark_models.c
+       backend/lexmark_sensors.c
+Copyright: 2006-2013 Stéphane Voltz <stef.dev@free.fr>
+           2010      Torsten Houwaart <ToHo@gmx.de>
+License: GPL-2+ with sane exception
+
+Files: backend/lm9830.h
+Copyright: 2001      Nathan Rutman <nathan@gordian.com>
+License: GPL-2+
+
+Files: backend/ma1509.*
+       backend/test-picture.c
+       backend/test.*
+Copyright: 2003      Henning Meier-Geinitz <henning@meier-geinitz.de>.
+License: GPL-2+ with sane exception
+
+Files: backend/magicolor.*
+Copyright: 2010      Reinhold Kainhofer <reinhold@kainhofer.com>
+License: GPL-2+
+
+Files: backend/microtek.*
+Copyright: 2002      Matthew Marjanovic
+License: GPL-2+ with sane exception
+
+Files: backend/microtek2.*
+Copyright: 1998-1999 Bernd Schroeder
+           2000-2001 Karsten Festag
+License: GPL-2+ with sane exception
+
+Files: backend/mustek.c
+Copyright: 1996-1997 David Mosberger-Tang
+           1996-1997 Andreas Czechanowski
+           1998      Andreas Bolsch
+           2000-2005 Henning Meier-Geinitz
+           2003      James Perry
+License: GPL-2+ with sane exception
+
+Files: backend/mustek.h
+Copyright: 1996-1997 David Mosberger-Tang
+           1998      Andreas Bolsch
+           2000-2005 Henning Meier-Geinitz
+License: GPL-2+ with sane exception
+
+Files: backend/mustek_pp.*
+       backend/mustek_pp_ccd300.*
+       backend/mustek_pp_null.*
+       include/sane/sanei_auth.h
+       include/sane/sanei_pa4s2.h
+       sanei/sanei_auth.c
+Copyright: 2000-2003 Jochen Eisinger <jochen.eisinger@gmx.net>
+License: GPL-2+ with sane exception
+
+Files: backend/mustek_pp_cis.*
+Copyright: 2001-2003 Eddy De Greef <eddy_de_greef@scarlet.be>
+License: GPL-2+ with sane exception
+
+Files: backend/mustek_scsi_pp.*
+Copyright: 2003       James Perry
+License: GPL-2+ with sane exception
+
+Files: backend/mustek_usb.*
+       backend/mustek_usb_*.*
+       backend/mustek_usb2.*
+Copyright: 2000-2005 Mustek
+           2001-2005 Henning Meier-Geinitz
+License: GPL-2+ with sane exception
+
+Files: backend/mustek_usb2_*.*
+Copyright: 2000-2005 Mustek
+License: GPL-2+ with sane exception
+
+Files: backend/nec.*
+Copyright: 2000-2001 Kazuya Fukuda
+License: GPL-2+ with sane exception
+
+Files: backend/net.*
+Copyright: 1997      David Mosberger-Tang
+           2003-2008 Julien BLACHE <jb@jblache.org>
+License: GPL-2+ with sane exception
+
+Files: backend/niash.*
+Copyright: 2001      Bertrik Sikken <bertrik@zonnet.nl>
+License: GPL-2+
+
+Files: backend/p5*.*
+Copyright: 2009-12 Stéphane Voltz <stef.dev@free.fr>
+License: GPL-2+
+
+Files: backend/pie*.*
+Copyright: 2000      Simon Munton
+           2012-2015 Jan Vleeshouwers, Michael Rickmann, Klaus Kaempf
+License: GPL-2+ with sane exception
+
+Files: backend/pint.c
+Copyright: 1997      Gordon Matzigkeit
+           1997      David Mosberger-Tang
+License: GPL-2+ with sane exception
+
+Files: backend/pint.h
+Copyright: 1997      Gordon Matzigkeit
+License: GPL-2+ with sane exception
+
+Files: backend/pixma/pixma*.*
+Copyright: 2007-2008 Nicolas Martin, <nicols-guest@alioth.debian.org>
+           2006-2007 Wittawat Yamwong <wittawat@web.de>
+           2011-2020 Rolf Bensch <rolf@bensch-online.de>
+License: GPL-2+ with sane exception
+
+Files: backend/pixma/pixma_bjnp*.*
+Copyright: 2008-2012 Louis Lagendijk
+License: GPL-2+ with sane exception
+
+Files: backend/pixma/pixma_common.h
+       backend/pixma/pixma_io_sanei.c
+       backend/pixma/pixma_mp750.c
+Copyright: 2006-2007 Wittawat Yamwong <wittawat@web.de>
+           2011-2016 Rolf Bensch <rolf@bensch-online.de>
+License: GPL-2+ with sane exception
+
+Files: backend/pixma/pixma_io.h
+       backend/pixma/pixma_rename.h
+Copyright: 2006-2007 Wittawat Yamwong <wittawat@web.de>
+License: GPL-2+ with sane exception
+
+Files: backend/plustek-pp.h
+       backend/plustek.h
+Copyright:  1997      Hypercore Software Design, Ltd.
+            2001-2013 Gerhard Jaeger <gerhard@gjaeger.de>
+License: GPL-2+ with sane exception
+
+Files: backend/plustek-pp_dac.c
+       backend/plustek-pp_detect.c
+       backend/plustek-pp_genericio.c
+       backend/plustek-pp_hwdefs.h
+       backend/plustek-pp_image.c
+       backend/plustek-pp_io.c
+       backend/plustek-pp_map.c
+       backend/plustek-pp_misc.c
+       backend/plustek-pp_models.c
+       backend/plustek-pp_motor.c
+       backend/plustek-pp_p12.c
+       backend/plustek-pp_p12ccd.c
+       backend/plustek-pp_p48xx.c
+       backend/plustek-pp_p9636.c
+       backend/plustek-pp_procs.h
+       backend/plustek-pp_ptdrv.c
+       backend/plustek-pp_scandata.h
+       backend/plustek-pp_tpa.c
+       backend/plustek-pp_wrapper.c
+       backend/plustek-usb.*
+       backend/plustek-usbcal.c
+       backend/plustek-usbdevs.c
+       backend/plustek-usbhw.c
+       backend/plustek-usbimg.c
+       backend/plustek-usbio.c
+       backend/plustek-usbmap.c
+       backend/plustek-usbscan.c
+       backend/plustek-usbshading.c
+Copyright: 1998      Plustek Inc.
+           2000-2013 Gerhard Jaeger <gerhard@gjaeger.de>
+License: GPL-2+ with sane exception
+
+Files: backend/plustek-pp_dbg.h
+       backend/plustek-pp_procfs.c
+       backend/plustek-pp_scale.c
+       backend/plustek-pp_scan.h
+       backend/plustek-pp_sysdep.h
+       backend/plustek-pp_types.h
+       backend/plustek-usbcalfile.c
+       backend/plustek.c
+       backend/u12*.*
+       include/sane/sanei_access.h
+       include/sane/sanei_lm983x.h
+       include/sane/sanei_pp.h
+       sanei/sanei_access.c
+       sanei/sanei_lm983x.c
+       sanei/sanei_pp.c
+Copyright: 2000-2013 Gerhard Jaeger <gerhard@gjaeger.de>
+License: GPL-2+ with sane exception
+
+Files: backend/pnm.c
+Copyright: 1996-1997 Andreas Beck
+           2000-2001 Michael Herder <crapsite@gmx.net>
+           2001-2002 Henning Meier-Geinitz <henning@meier-geinitz.de>
+           2008      Stéphane Voltz <stef.dev@free.fr>
+License: GPL-2+ with sane exception
+
+Files: backend/ricoh*.*
+Copyright: 1998      F.W. Dillema <dillema@acm.org>
+License: GPL-2+ with sane exception
+
+Files: backend/ricoh2.c
+       backend/ricoh2_buffer.c
+Copyright: 2018      Stanislav Yuzvinsky
+License: GPL-2+ with sane exception
+
+Files: backend/s9036*.*
+Copyright: 1997      Ingo Schneider
+License: GPL-2+ with sane exception
+
+Files: backend/sane_strstatus.c
+       include/sane/sane.h
+       include/sane/sanei_codec_ascii.h
+       include/sane/sanei_codec_bin.h
+       include/sane/sanei_net.h
+       include/sane/saneopts.h
+       sanei/sanei_constrain_value.c
+       sanei/sanei_init_debug.c
+Copyright: 1996-1999 David Mosberger-Tang
+           1996-1999 Andreas Beck
+License: GPL-2+ with sane exception
+
+Files: backend/sharp.*
+Copyright: 1998-1999 Kazuya Fukuda
+           1998-1999 Abel Deuring
+License: GPL-2+ with sane exception
+
+Files: backend/sm3600*.*
+Copyright: 2001      Marian Eichholz
+License: GPL-2+ with sane exception
+
+Files: backend/sm3840*.*
+Copyright: 2005-2007 Earle F. Philhower, III
+License: GPL-2+ with sane exception
+
+Files: backend/snapscan-data.c
+Copyright: 2006      Oliver Schwartz
+License: GPL-2+ with sane exception
+
+Files: backend/snapscan-mutex.c
+Copyright: 2000-2004 Henrik Johansson
+           2000-2004 Oliver Schwartz
+License: GPL-2+ with sane exception
+
+Files: backend/snapscan-options.c
+Copyright: 1997-2013 Franck Schnefra
+           1997-2013 Michel Roelofs
+           1997-2013 Emmanuel Blot
+           1997-2013 Mikko Tyolajarvi
+           1997-2013 David Mosberger-Tang
+           1997-2013 Wolfgang Goeller
+           1997-2013 Petter Reinholdtsen
+           1997-2013 Gary Plewa
+           1997-2013 Sebastien Sable
+           1997-2013 Mikael Magnusson
+           1997-2013 Andrew Goodbody
+           1997-2013 Oliver Schwartz
+           1997-2013 Kevin Charter
+License: GPL-2+ with sane exception
+
+Files: backend/snapscan-scsi.c
+Copyright: 1997-2013 Franck Schnefra
+           1997-2013 Michel Roelofs
+           1997-2013 Emmanuel Blot
+           1997-2013 Mikko Tyolajarvi
+           1997-2013 David Mosberger-Tang
+           1997-2013 Wolfgang Goeller
+           1997-2013 Petter Reinholdtsen
+           1997-2013 Gary Plewa
+           1997-2013 Sebastien Sable
+           1997-2013 Mikael Magnusson
+           1997-2013 Max Ushakov
+           1997-2013 Andrew Goodbody
+           1997-2013 Oliver Schwartz
+           1997-2013 Kevin Charter
+License: GPL-2+ with sane exception
+
+Files: backend/snapscan-sources.c
+Copyright: 1997-2013 Franck Schnefra
+           1997-2013 Michel Roelofs
+           1997-2013 Emmanuel Blot
+           1997-2013 Mikko Tyolajarvi
+           1997-2013 David Mosberger-Tang
+           1997-2013 Wolfgang Goeller
+           1997-2013 Petter Reinholdtsen
+           1997-2013 Gary Plewa
+           1997-2013 Sebastien Sable
+           1997-2013 Max Ushakov
+           1997-2013 Andrew Goodbody
+           1997-2013 Oliver Schwartz
+           1997-2013 Kevin Charter
+License: GPL-2+ with sane exception
+
+Files: backend/snapscan-sources.h
+      backend/snapscan-usb.*
+Copyright: 2000       Henrik Johansson
+License: GPL-2+ with sane exception
+
+Files: backend/snapscan.c
+Copyright: 1997-2013 Franck Schnefra
+           1997-2013 Michel Roelofs
+           1997-2013 Emmanuel Blot
+           1997-2013 Mikko Tyolajarvi
+           1997-2013 David Mosberger-Tang
+           1997-2013 Wolfgang Goeller
+           1997-2013 Simon Munton
+           1997-2013 Petter Reinholdtsen
+           1997-2013 Gary Plewa
+           1997-2013 Sebastien Sable
+           1997-2013 Mikael Magnusson
+           1997-2013 Max Ushakov
+           1997-2013 Andrew Goodbody
+           1997-2013 Oliver Schwartz
+           1997-2013 Kevin Charter
+License: GPL-2+ with sane exception
+
+Files: backend/snapscan.h
+Copyright: 1997-2013 Franck Schnefra
+           1997-2013 Michel Roelofs
+           1997-2013 Emmanuel Blot
+           1997-2013 Mikko Tyolajarvi
+           1997-2013 David Mosberger-Tang
+           1997-2013 Wolfgang Goeller
+           1997-2013 Petter Reinholdtsen
+           1997-2013 Gary Plewa
+           1997-2013 Sebastien Sable
+           1997-2013 Mikael Magnusson
+           1997-2013 Andrew Goodbody
+           1997-2013 Oliver Schwartz
+           1997-2013 Kevin Charter
+License: GPL-2+ with sane exception
+
+Files: backend/st400.*
+Copyright: 1999-2000 Ingo Wilken <Ingo.Wilken@informatik.uni-oldenburg.de>
+License: GPL-2+ with sane exception
+
+Files: backend/stv680.*
+Copyright: 2004-2006 Gerard Klaver <gerard@gkall.hobby.nl>
+License: GPL-2
+
+Files: backend/tamarack.*
+Copyright: 1996-1997 David Mosberger-Tang
+           1997      R.E.Wolff@BitWizard.nl
+License: GPL-2+
+
+Files: backend/teco2.*
+Copyright: 2002-2003 Frank Zago <sane@zago.net>
+           2003-2008 Gerard Klaver <gerard@gkall.hobby.nl>
+License: GPL-2+ with sane exception
+
+Files: backend/umax-scanner.*
+       backend/umax-uc*.c
+       backend/umax-ug*.c
+       backend/umax.*
+       tools/gamma4scanimage.c
+Copyright: 1997-2004 Oliver Rauch
+License: GPL-2+ with sane exception
+
+Files: backend/umax-scsidef.h
+Copyright: 1996-1997 Michael K. Johnson
+           1997-2002 Oliver Rauch
+License: GPL-2+ with sane exception
+
+Files: backend/umax1220u-common.c
+Copyright: 1999      Paul Mackerras
+           2000      Adrian Perez Jorge
+           2001      Frank Zago
+           2001      Marcio Teixeira
+           2006      Patrick Lessard
+License: GPL-2+ with sane exception
+
+Files: backend/umax1220u.c
+Copyright: 2001      Marcio Luis Teixeira
+           1996-1997 Andreas Beck
+           2000-2001 Michael Herder <crapsite@gmx.net>
+           2001      Henning Meier-Geinitz <henning@meier-geinitz.de>
+           2006      Patrick Lessard
+License: GPL-2+ with sane exception
+
+Files: backend/v4l.*
+Copyright: 1999      Juergen G. Schimmer
+           2002-2004 Henning Meier-Geinitz
+License: GPL-2+ with sane exception
+
+Files: backend/xerox_mfp-tcp.c
+Copyright: 2010      Alexander Kuznetsov <acca@cpan.org>
+License: GPL-2+ with sane exception
+
+Files: backend/xerox_mfp-usb.c
+       backend/xerox_mfp.*
+Copyright: 2008-2016 ABC <abc@telekom.ru>
+License: GPL-2+ with sane exception
+
+Files: doc/descriptions/epson2.desc
+       doc/descriptions/epsonds.desc
+Copyright: 2009-2015 Alessandro Zummo
+License: GPL-2
+
+Files: doc/descriptions/magicolor.desc
+Copyright: 2010-2011 Reinhold Kainhofer
+License: GPL-2
+
+Files: doc/descriptions-external/epkowa.desc
+Copyright: 2010-2011 Reinhold Kainhofer
+           2004-2015 Olaf Meeuwissen
+License: GPL-2+
+
+Files: doc/descriptions-external/utsushi.desc
+Copyright: 2004-2021 Olaf Meeuwissen
+License: GPL-3+
+
+Files: po/Makevars
+Copyright: 2016-2019  Olaf Meeuwissen and the SANE developers
+License: GPL-2+ with sane exception
+
+Files: po/he.po
+       po/ca@valencia.po
+       po/ca.po
+Copyright: 2018-2020 The SANE developers
+License: GPL-2+ with sane exception
+
+Files: po/de.po
+Copyright: 2002-2020 SANE Project
+License: GPL-2+ with sane exception
+
+Files: po/fr.po
+Copyright: 2002      Frank Zago <fzago@austin.rr.com>
+           2003-2010 Yann E. MORIN <yann.morin.1998@anciens.enib.fr>
+License: GPL-2+ with sane exception
+
+Files: frontend/saned.c
+Copyright: 1997      Andreas Beck
+           2001-2004 Henning Meier-Geinitz
+           2003-2008 Julien BLACHE <jb@jblache.org>2010-2011 Reinhold Kainhofer
+License: GPL-2+
+
+Files: frontend/jpegtopdf.*
+Copyright: 2021      Thierry HUCHARD <thierry@ordissimo.com>
+License: GPL-2+
+
+Files: frontend/scanimage.c
+Copyright: 1996-1998 Andreas Beck
+           1996-1998 David Mosberger
+           2015      Rolf Bensch
+License: GPL-2+
+
+Files: frontend/stiff.c
+Copyright: 2000      Peter Kirchgessner
+           2002      Oliver Rauch
+           2017      Aaron Muir Hamilton <aaron@correspondwith.me>
+License: GPL-2+
+
+Files: frontend/stiff.h
+Copyright: 2000      Peter Kirchgessner
+License: GPL-2+
+
+Files: frontend/sicc.*
+Copyright: 2017      Aaron Muir Hamilton <aaron@correspondwith.me>
+License: GPL-2+
+
+Files: frontend/test.c
+Copyright: 1997      Andreas Beck
+License: GPL-2+
+
+Files: frontend/tstbackend.c
+Copyright: 2002      Frank Zago <sane@zago.net>
+           2013      Stéphane Voltz <stef.dev@free.fr>
+License: GPL-2+
+
+Files: include/sane/sanei.h
+Copyright: 1996      David Mosberger-Tang
+           1996      Andreas Beck
+           2002-2003 Henning Meier-Geinitz
+License: GPL-2+ with sane exception
+
+Files: include/sane/sanei_ab306.h
+Copyright: 1996      Andreas Czechanowski
+License: GPL-2+ with sane exception
+
+Files: include/sane/sanei_cderror.h
+       include/sane/sanei_jinclude.h
+       include/sane/sanei_jpeg.h
+Copyright: 1991-1994 Thomas G. Lane
+License: GPL-2+ with sane exception
+
+Files: include/sane/sanei_config.h
+       japi/*
+       sanei/sanei_config.c
+Copyright: 1997      Jeffrey S. Freedman
+License: GPL-2+ with sane exception
+
+Files: include/sane/sanei_pio.h
+       sanei/sanei_pio.c
+Copyright: 1998      Christian Bucher
+           1998      Kling & Hautzinger GmbH
+License: GPL-2+ with sane exception
+
+Files: include/sane/sanei_pv8630.h
+       sanei/sanei_pv8630.c
+Copyright:  2000     Adrian Perez Jorge
+            2001     Frank Zago
+            2001     Marcio Teixeira
+License: GPL-2+ with sane exception
+
+Files: include/sane/sanei_thread.h
+Copyright: 1998-2001 Yuri Dario
+           2002-2003 Henning Meier-Geinitz
+           2003-2004 Gerhard Jaeger
+License: GPL-2+ with sane exception
+
+Files: include/sane/sanei_usb.h
+Copyright: 2001-2002 Henning Meier-Geinitz
+           2003-2005 Rene Rebe
+           2008      m. allan noah
+           2011      Reinhold Kainhofer
+License: GPL-2+ with sane exception
+
+Files: lib/snprintf.c
+Copyright: 1988-1997 Patrick Powell <papowell@sdsu.edu>
+License: Artistic
+
+Files: lib/getopt.c
+       lib/getopt1.c
+       lib/md5.c
+       lib/sigprocmask.c
+       lib/strcasestr.c
+       lib/strdup.c
+       lib/strndup.c
+       lib/strsep.c
+       lib/usleep.c
+Copyright: 1987-2002 Free Software Foundation
+License: LGPL-2.1+
+
+Files: sanei/sanei_ab306.c
+Copyright: 1997      Andreas Czechanowski
+           1997      David Mosberger
+License: GPL-2+ with sane exception
+
+Files: sanei/sanei_pa4s2.c
+Copyright: 2000-2003 Jochen Eisinger <jochen.eisinger@gmx.net>
+           2003      James Perry
+License: GPL-2+ with sane exception
+
+Files: sanei/sanei_scsi.c
+Copyright: 1996-1997 David Mosberger-Tang
+           2003      Frank Zago
+License: GPL-2+ with sane exception
+
+Files: sanei/sanei_thread.c
+Copyright: 1998-2001 Yuri Dario
+           2003-2004 Gerhard Jaeger
+License: GPL-2+ with sane exception
+
+Files: sanei/sanei_usb.c
+Copyright: 2001-2005 Henning Meier-Geinitz
+           2001      Frank Zago
+           2003      Rene Rebe
+           2005      Paul Smedley <paul@smedley.info>
+           2008      m. allan noah
+           2009      Julien BLACHE <jb@jblache.org>
+           2011      Reinhold Kainhofer <reinhold@kainhofer.com>
+License: GPL-2+ with sane exception
+
+Files: testsuite/backend/genesys/*
+Copyright: 2019      Povilas Kanapickas <povilas@radix.lt>
+License: GPL-2+ with sane exception
+
+Files: testsuite/backend/Makefile.am
+       testsuite/backend/genesys/Makefile.am
+Copyright: 2019      Sane Developers
+License: GPL-2+ with sane exception
+
+Files: tools/git-version-gen
+Copyright: 2007-2021 Free Software Foundation, Inc.
+License: GPL-3+
+
+Files: tools/create-release.sh
+       tools/create-changelog.sh
+       tools/update-upstreams.sh
+Copyright: 2017-2021 Olaf Meeuwissen
+License: GPL-3+
+
+Files: tools/RenSaneDlls.cmd
+Copyright: 2004-2005 Franz Bakan
+License: GPL-2+
+
+Files: tools/check-usb-chip.c
+Copyright: 2003-2005 Henning Meier-Geinitz <henning@meier-geinitz.de>
+           2003      Gerhard Jaeger <gerhard@gjaeger.de>
+           2003      Gerard Klaver <gerard@gkall.hobby.nl>
+License: GPL-2+ with sane exception
+
+Files: tools/mustek600iin-off.c
+Copyright: 1997-1999 Andreas Czechanowski
+License: GPL-2+
+
+Files: tools/sane-desc.c
+Copyright: 2002-2006 Henning Meier-Geinitz <henning@meier-geinitz.de>
+           2004      Jose Gato <jgato@gsyc.escet.urjc.es>
+           2006      Mattias Ellert <mattias.ellert@tsl.uu.se>
+           2009      Dr. Ing. Dieter Jurzitza <dieter.jurzitza@t-online.de>
+           2013      Tom Gundersen <teg@jklm.no>
+License: GPL-2+
+
+Files: tools/sane-find-scanner.c
+Copyright: 1997-2013 Oliver Rauch
+           1997-2013 Henning Meier-Geinitz
+License: GPL-2+
+
+License: Artistic
+ The "Artistic License"
+ .
+ Preamble
+ .
+ The intent of this document is to state the conditions under which a
+ Package may be copied, such that the Copyright Holder maintains some
+ semblance of artistic control over the development of the package,
+ while giving the users of the package the right to use and distribute
+ the Package in a more-or-less customary fashion, plus the right to make
+ reasonable modifications.
+ .
+ Definitions:
+ .
+  "Package" refers to the collection of files distributed by the
+  Copyright Holder, and derivatives of that collection of files
+  created through textual modification.
+ .
+  "Standard Version" refers to such a Package if it has not been
+  modified, or has been modified in accordance with the wishes
+  of the Copyright Holder as specified below.
+ .
+  "Copyright Holder" is whoever is named in the copyright or
+  copyrights for the package.
+ .
+  "You" is you, if you are thinking about copying or distributing
+  this Package.
+ .
+  "Reasonable copying fee" is whatever you can justify on the
+  basis of media cost, duplication charges, time of people involved,
+  and so on.  (You will not be required to justify it to the
+  Copyright Holder, but only to the computing community at large
+  as a market that must bear the fee.)
+ .
+  "Freely Available" means that no fee is charged for the item
+  itself, though there may be fees involved in handling the item.
+  It also means that recipients of the item may redistribute it
+  under the same conditions they received it.
+ .
+ 1. You may make and give away verbatim copies of the source form of the
+ Standard Version of this Package without restriction, provided that you
+ duplicate all of the original copyright notices and associated disclaimers.
+ .
+ 2. You may apply bug fixes, portability fixes and other modifications
+ derived from the Public Domain or from the Copyright Holder.  A Package
+ modified in such a way shall still be considered the Standard Version.
+ .
+ 3. You may otherwise modify your copy of this Package in any way, provided
+ that you insert a prominent notice in each changed file stating how and
+ when you changed that file, and provided that you do at least ONE of the
+ following:
+ .
+  a) place your modifications in the Public Domain or otherwise make them
+  Freely Available, such as by posting said modifications to Usenet or
+  an equivalent medium, or placing the modifications on a major archive
+  site such as uunet.uu.net, or by allowing the Copyright Holder to include
+  your modifications in the Standard Version of the Package.
+ .
+  b) use the modified Package only within your corporation or organization.
+ .
+  c) rename any non-standard executables so the names do not conflict
+  with standard executables, which must also be provided, and provide
+  a separate manual page for each non-standard executable that clearly
+  documents how it differs from the Standard Version.
+ .
+  d) make other distribution arrangements with the Copyright Holder.
+ .
+ 4. You may distribute the programs of this Package in object code or
+ executable form, provided that you do at least ONE of the following:
+ .
+  a) distribute a Standard Version of the executables and library files,
+  together with instructions (in the manual page or equivalent) on where
+  to get the Standard Version.
+ .
+  b) accompany the distribution with the machine-readable source of
+  the Package with your modifications.
+ .
+  c) give non-standard executables non-standard names, and clearly
+  document the differences in manual pages (or equivalent), together
+  with instructions on where to get the Standard Version.
+ .
+  d) make other distribution arrangements with the Copyright Holder.
+ .
+ 5. You may charge a reasonable copying fee for any distribution of this
+ Package.  You may charge any fee you choose for support of this
+ Package.  You may not charge a fee for this Package itself.  However,
+ you may distribute this Package in aggregate with other (possibly
+ commercial) programs as part of a larger (possibly commercial) software
+ distribution provided that you do not advertise this Package as a
+ product of your own.
+ .
+ 6. The name of the Copyright Holder may not be used to endorse or promote
+ products derived from this software without specific prior written permission.
+ .
+ 7. THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+ WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+License: GPL-2+ with sane exception
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ The complete text of the GNU General Public License
+ can be found in /usr/share/common-licenses/GPL-2 file.
+ .
+ As a special exception, the authors of SANE give permission for
+ additional uses of the libraries contained in this release of SANE.
+ The exception is that, if you link a SANE library with other files
+ to produce an executable, this does not by itself cause the
+ resulting executable to be covered by the GNU General Public
+ License.  Your use of that executable is in no way restricted on
+ account of linking the SANE library code into it.
+ This exception does not, however, invalidate any other reasons why
+ the executable file might be covered by the GNU General Public
+ License.
+ .
+ If you submit changes to SANE to the maintainers to be included in
+ a subsequent release, you agree by submitting the changes that
+ those changes may be distributed with this exception intact.
+ If you write modifications of your own for SANE, it is your choice
+ whether to permit this exception to apply to your modifications.
+ If you do not wish that, delete this exception notice.
+
+License: GPL-2+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ The complete text of the GNU General Public License
+ can be found in /usr/share/common-licenses/GPL-2 file.
+
+License: GPL-2
+ This program is free software; you can redistribute it
+ and/or modify it under the terms of the GNU General Public
+ License as published by the Free Software Foundation version
+ 2 of the License.
+ .
+ This program is distributed in the hope that it will be
+ useful, but WITHOUT ANY WARRANTY; without even the implied
+ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ PURPOSE.  See the GNU General Public License for more
+ details.
+ .
+ You should have received a copy of the GNU General Public
+ License along with this package; if not, write to the Free
+ Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+ Boston, MA  02110-1301 USA
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-2'.
+
+License: GPL-3+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
+ .
+ On Debian systems, the complete text of the GNU Lesser General Public License
+ version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".

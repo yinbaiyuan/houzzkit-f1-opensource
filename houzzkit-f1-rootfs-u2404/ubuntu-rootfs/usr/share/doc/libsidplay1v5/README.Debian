@@ -1,0 +1,67 @@
+libsidplay for DEBIAN/Linux
+****************************
+
+This package was debianised, packaged and is currently maintained by me,
+Ulf Jaenicke-Roessler <ujr@debian.org>, from the sources that I obtained
+from the SidPlay HomePage at
+ http://www.geocities.com/SiliconValley/Lakes/5147/
+Packaging was taken over by Laszlo Boszormenyi (GCS) <gcs@debian.hu>
+The author can be reached by mailing him to sidplay@geocities.com.
+
+Generally I'm using pristine sources (since version 1.36.11).
+First, there were .tgz's provided by the author. Later on he
+moved to src.rpm's. These were unpacked by
+ rpm -i sidplay-{version}.src.rpm
+and
+ rpm -bp sidplay-{version}.spec (or just rpm -bp sidplay.spec)
+So far, both libsidplay and sidplay were distributed in one package.
+However, recently the upstream archives are split into libsidplay
+and sidplay-base. We will use this layout too.
+Sometimes the author supplies patches for new upstream versions before
+he uploads a complete new version to the location above. These patches
+are also used if appropriate.
+
+Version 1.36.20 (and newer) use GNU autoconf. ./configure is automatically
+run as part of rpm -bp, which agrees perfectly to our policy and
+packaging manual. Unfortunately, it doesn't simplify the package build
+in debian/rules very much, because we need to compile static and shared
+libraries with different compiler flags.
+Besides, the cache file remains in the archive and doesn't get rebuild on
+other architecture (simply because it exists). First, I added a 'distclean'
+target to Makefile.in myself, now it is already included in the upstream
+sources. This means, we can call it in "debian/rules clean" and (re)run
+./configure afterwards during "debian/rules build" to recreate the
+information on every other supported architecture.
+
+In 1.36.18 I changed the major version of the library (and therefore its
+soname as well) from 1 to 1.36 in order to synchronize with the upstream
+sources again (the upstream author made this change already in 1.36.11).
+
+Starting in version 1.36.36 (maybe that was the reason for the splitting),
+libtool is used. Unfortunately, somehow this changed the sonames to 1.0.0,
+which is not any longer consistent with the library version and could in
+fact violate policy somehow. I must admit, I have not yet completely understood
+the libtool usage, so I have still to investigate this. But hey, that's
+what unstable is for...
+
+The only really remarkable point while adding support for the Debian package
+maintenance scheme was the execution of the upstream Makefiles with CXXFLAGS
+including -fPIC and -D_REENTRANT (according to the policy manual).
+
+Don't use gcc/g++ 2.7.2 with optimisation to build this package! It will
+produce bad code. Fortunately, gcc/g++ > 2.95 is now the default C/C++
+compiler in Debian. The egcs successor seems to create stable programs with
+all necessary commandline options, even -fPIC, -g and optimizations (what gcc
+didn't).
+
+The package contains now the updated html-info files from the SidPlay-Homepage,
+which don't actually belong to the upstream source, but fit very well (IMHO).
+This is an invaluable piece of information for SidPlay interna and background.
+These files replace the outdated sidplay-info files, which were included in
+previous versions.
+The files are small enough to justify the addition, and to prevent splitting
+them into something like a libsidplay-doc package.
+
+Ulf Jaenicke-Roessler <ujr@debian.org>, Fri, 12 May 2000 15:32:48 +0200
+
+ vim:tw=79

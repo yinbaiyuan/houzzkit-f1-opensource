@@ -1,0 +1,9 @@
+#
+# Iptables extensions are plug-ins.  Some are very simple and do not use symbols from libc.
+#
+library-not-linked-against-libc [usr/lib/*/xtables/libip6t_eui64.so]
+library-not-linked-against-libc [usr/lib/*/xtables/libxt_TRACE.so]
+#
+# "iif" is not a typo.
+#
+spelling-error-in-binary iif if [usr/lib/*/xtables/libxt_*.so]

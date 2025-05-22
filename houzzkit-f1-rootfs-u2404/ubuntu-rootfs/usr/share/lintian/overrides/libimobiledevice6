@@ -1,0 +1,2 @@
+# There is not compatibility break so don't rename the package yet
+libimobiledevice6: package-name-doesnt-match-sonames libimobiledevice-1.0-6

@@ -1,0 +1,1 @@
+libpci3: exit-in-shared-library [usr/lib/*]

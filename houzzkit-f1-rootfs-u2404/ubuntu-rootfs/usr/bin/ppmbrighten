@@ -1,0 +1,60 @@
+#! /bin/sh
+
+# This is just for backward compatibility.  New applications should use
+# 'pambrighten'.
+
+# We don't try very hard to respond well to invalid syntax, because backward
+# compatibility is mostly like existing, working applications.
+
+pambrightenOpts=''
+normalize='no'
+expectValue='no'
+
+for word in "$@"; do
+
+    if test "$expectValue" = 'yes'; then
+        # This is the value of an option, like "40" in "-saturation 40"
+        pambrightenOpts="$pambrightenOpts $word"
+        expectValue='no'
+    else
+        # 'word_one_hyphen' is 'word' except if 'word' is a double-hyphen
+        # option, 'word_one_hyphen' is the single-hyphen version of it.
+        # E.g. word=--saturation word_one_hyphen=-saturation .
+        word_one_hyphen=$(echo "$word" | sed s/^--/-/ )
+    
+        case $word_one_hyphen in
+            -version )
+                pambrighten -version; exit $?
+                ;;
+            -normalize|-normaliz|-normali|-normal|-norma|-norm|-nor|-no|-n)
+                normalize='yes'
+                ;;
+            -*=*)
+                pambrightenOpts="$pambrightenOpts $word"
+                # This is an option with value such as "-saturation=40"
+                ;;
+            -*)
+                pambrightenOpts="$pambrightenOpts $word"
+                # Starts with hyphen, no equals sign, so the next word is the
+                # option's value (note that the only valid ppmbrighten flag
+                # option is -normalized, handled above).
+                #
+                # E.g. "-saturation 40"
+                expectValue='yes'
+                ;;
+            *)
+                # Not an option or option value - only non-option argument
+                # ppmbrighten has is optional input file name
+                infile="$word"
+                ;;
+                
+        esac
+    fi
+done
+
+if test "$normalize" = 'yes'; then
+    pnmnorm -bsingle -wsingle -colorvalue -keephues $infile | \
+        pambrighten $pambrightenOpts | ppmtoppm
+else
+    pambrighten $pambrightenOpts $infile | ppmtoppm
+fi

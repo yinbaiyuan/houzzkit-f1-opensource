@@ -1,0 +1,62 @@
+# pgrep(1) and pkill(1) completion                         -*- shell-script -*-
+
+_pgrep()
+{
+    local cur prev words cword
+    _init_completion || return
+
+    case $prev in
+        --delimiter | --pgroup | --session | --terminal | -!(-*)[cdgJMNstTz])
+            return
+            ;;
+        --signal)
+            _signals
+            return
+            ;;
+        --pidfile | -!(-*)F)
+            _filedir
+            return
+            ;;
+        --group | -!(-*)G)
+            _gids
+            return
+            ;;
+        -j)
+            COMPREPLY=($(compgen -W 'any none' -- "$cur"))
+            return
+            ;;
+        --parent | --ns | -!(-*)P)
+            _pids
+            return
+            ;;
+        --euid | --uid | -!(-*)[uU])
+            _uids
+            return
+            ;;
+        --nslist)
+            local prefix=
+            [[ $cur == *,* ]] && prefix="${cur%,*},"
+            COMPREPLY=(
+                $(IFS="$IFS," compgen -W '$($1 --help 2>&1 |
+                    command sed -ne "s/^[[:space:]]*Available namespaces://p")' \
+                    -- "${cur##*,}"))
+            ((${#COMPREPLY[@]} == 1)) && COMPREPLY=(${COMPREPLY/#/$prefix})
+            return
+            ;;
+    esac
+
+    if [[ $cur == -* ]]; then
+        local help=$(_parse_help "$1")
+        [[ $help ]] || help='$("$1" --usage 2>&1 |
+            command sed -e "s/\[-signal\]//" -e "s/\[-SIGNAL\]//" |
+            _parse_usage -)'
+        COMPREPLY=($(compgen -W "$help" -- "$cur"))
+        [[ $cword -eq 1 && $1 == *pkill ]] && _signals -
+        return
+    fi
+
+    _pnames -s
+} &&
+    complete -F _pgrep pgrep pkill
+
+# ex: filetype=sh

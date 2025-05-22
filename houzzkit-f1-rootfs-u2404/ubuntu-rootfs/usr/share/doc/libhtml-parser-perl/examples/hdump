@@ -1,0 +1,27 @@
+#!/usr/bin/perl
+
+# This script will output event information as it parses the HTML document.
+# This gives the user a "Parser's eye view" of an HTML document.
+
+use strict;
+use warnings;
+
+use HTML::Parser ();
+use Data::Dumper qw(Dumper);
+
+sub h {
+    my ($event, $line, $column, $text, $tagname, $attr) = @_;
+
+    my @d = (uc(substr($event, 0, 1)) . " L$line C$column");
+    substr($text, 40) = "..." if length($text) > 40;
+    push(@d, $text);
+    push(@d, $tagname) if defined $tagname;
+    push(@d, $attr) if $attr;
+
+    print Dumper(@d), "\n";
+}
+
+my $p = HTML::Parser->new(api_version => 3);
+$p->handler(default => \&h, "event, line, column, text, tagname, attr");
+
+$p->parse_file(@ARGV ? shift : *STDIN);
