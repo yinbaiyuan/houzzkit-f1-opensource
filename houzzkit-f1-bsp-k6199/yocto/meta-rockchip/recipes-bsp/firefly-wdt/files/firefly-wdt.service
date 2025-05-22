@@ -1,0 +1,10 @@
+[Unit]
+Description=start/stop firefly-watchdog service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/firefly-wdt-ctl start
+ExecStop=/usr/bin/firefly-wdt-ctl stop
+
+[Install]
+WantedBy=local-fs.target

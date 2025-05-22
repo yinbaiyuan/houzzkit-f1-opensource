@@ -1,0 +1,25 @@
+From 7fd5396e271b3be5bbf7117a1bdcc956681b0fae Mon Sep 17 00:00:00 2001
+From: lvsx <lvsx@t-chip.com.cn>
+Date: Mon, 6 May 2024 15:21:08 +0800
+Subject: [PATCH] firefly: use local lz4
+
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 7ea80ae636df..020e2b6f95ca 100644
+--- a/Makefile
++++ b/Makefile
+@@ -483,7 +483,7 @@ KGZIP		= gzip
+ KBZIP2		= bzip2
+ KLZOP		= lzop
+ LZMA		= lzma
+-LZ4		= $(objtree)/scripts/lz4
++LZ4		= lz4
+ XZ		= xz
+ ZSTD		= zstd
+ 
+-- 
+2.25.1
+

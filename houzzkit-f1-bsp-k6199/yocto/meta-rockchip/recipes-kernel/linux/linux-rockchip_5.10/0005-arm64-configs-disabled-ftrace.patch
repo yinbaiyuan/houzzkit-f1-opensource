@@ -1,0 +1,21 @@
+From fccf281c8be87fd5083c63d9eb53ada9605da6ee Mon Sep 17 00:00:00 2001
+From: lvsx <lvsx@t-chip.com.cn>
+Date: Mon, 6 May 2024 15:10:37 +0800
+Subject: [PATCH] arm64: configs: disabled ftrace
+
+---
+ arch/arm64/configs/firefly_linux_defconfig | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/arch/arm64/configs/firefly_linux_defconfig b/arch/arm64/configs/firefly_linux_defconfig
+index 91730126826d..315b3dfdc0d8 100644
+--- a/arch/arm64/configs/firefly_linux_defconfig
++++ b/arch/arm64/configs/firefly_linux_defconfig
+@@ -649,3 +649,4 @@ CONFIG_RCU_CPU_STALL_TIMEOUT=60
+ CONFIG_FUNCTION_TRACER=y
+ CONFIG_BLK_DEV_IO_TRACE=y
+ CONFIG_LKDTM=y
++CONFIG_DYNAMIC_FTRACE=n
+-- 
+2.25.1
+

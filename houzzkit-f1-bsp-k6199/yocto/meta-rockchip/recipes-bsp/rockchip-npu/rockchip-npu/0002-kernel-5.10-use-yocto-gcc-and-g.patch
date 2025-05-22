@@ -1,0 +1,31 @@
+From d9a77cf1da84a5e22d65addac3bc8c366d1c6acc Mon Sep 17 00:00:00 2001
+From: lvsx <lvsx@t-chip.com.cn>
+Date: Fri, 21 Jun 2024 09:59:21 +0800
+Subject: [PATCH] kernel 5.10 use yocto gcc and g++
+
+---
+ examples/rknn_yolov5_demo/build-linux_RK3566_RK3568.sh | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/examples/rknn_yolov5_demo/build-linux_RK3566_RK3568.sh b/examples/rknn_yolov5_demo/build-linux_RK3566_RK3568.sh
+index fded0e1..51b8fa5 100755
+--- a/examples/rknn_yolov5_demo/build-linux_RK3566_RK3568.sh
++++ b/examples/rknn_yolov5_demo/build-linux_RK3566_RK3568.sh
+@@ -1,11 +1,11 @@
+ set -e
+ 
+ TARGET_SOC="RK3566_RK3568"
+-GCC_COMPILER=aarch64-linux-gnu
++#GCC_COMPILER=aarch64-linux-gnu
+ 
+ export LD_LIBRARY_PATH=${TOOL_CHAIN}/lib64:$LD_LIBRARY_PATH
+-export CC=${GCC_COMPILER}-gcc
+-export CXX=${GCC_COMPILER}-g++
++#export CC=${GCC_COMPILER}-gcc
++#export CXX=${GCC_COMPILER}-g++
+ 
+ ROOT_PWD=$( cd "$( dirname $0 )" && cd -P "$( dirname "$SOURCE" )" && pwd )
+ 
+-- 
+2.17.1
+

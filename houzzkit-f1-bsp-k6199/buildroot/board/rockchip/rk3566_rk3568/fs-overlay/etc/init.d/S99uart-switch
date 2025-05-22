@@ -1,0 +1,9 @@
+#! /bin/sh
+case "$1" in
+  start)
+    /bin/bash /usr/bin/uart-switch.sh
+    ;;
+  *)
+    ;;
+esac
+exit 0

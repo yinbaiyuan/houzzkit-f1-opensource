@@ -1,0 +1,60 @@
+#!/bin/sh
+#
+# ufw-init: helper script to be used by ufw itself
+#
+# Copyright 2008-2015 Canonical Ltd.
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License version 3,
+#    as published by the Free Software Foundation.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+set -e
+
+
+
+
+IDENTIFY_VERSION_start()
+{
+	BOARD_VERSION=`cat /sys/firmware/devicetree/base/model`
+	echo $BOARD_VERSION | egrep -iq "R1|R2"
+	if [ "$?" == "0" ]; then
+		START_WATCHDOG
+	fi
+}
+
+
+START_WATCHDOG()
+{
+    if [ -e "/dev/wdt_crl" ];then
+        echo e > /dev/wdt_crl
+
+        while true
+        do
+            sleep 7
+            echo 2 > /dev/wdt_crl
+        done
+    else
+        exit 0
+    fi
+}
+
+case "$1" in
+start)
+    IDENTIFY_VERSION_start
+    ;;
+stop)
+    echo d > /dev/wdt_crl
+    ;;
+*)
+    echo "Usage: /lib/ufw/ufw-init {start|stop|restart|force-reload|force-stop|flush-all|status}"
+    exit 1
+    ;;
+esac

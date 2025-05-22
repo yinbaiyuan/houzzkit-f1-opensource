@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+model_name=$(tr -d '\0' </sys/firmware/devicetree/base/model | tr 'a-z' 'A-Z')
+
+while read line
+do
+	chip_name=$(echo ${line} | cut -d ' ' -f 1)
+
+	if [[ ${model_name} == *3588* ]]; then
+		uart=$(basename /sys/firmware/devicetree/base/pinctrl/wireless-bluetooth/uart*-gpios | tr -cd "[0-9]")
+		uart="/dev/ttyS${uart}"
+		break
+	elif [[ ${model_name} == *${chip_name}* ]]; then
+		uart=$(echo ${line} | cut -d ' ' -f 2)
+		break
+	fi
+
+done < /usr/bin/bt_uart.cfg
+
+bt_type=$(rk_wifi_gettype)
+
+rtk_attach() {
+	ret=`ps -ef |grep rtk_hciattach |grep -v "grep" |wc -l`
+	if [ ${ret} = 1 ]; then
+	    killall rtk_hciattach
+	    sleep 1
+	fi
+	/usr/bin/rtk_hciattach -n -s 115200 ${uart} rtk_h5 1500000 noflow &
+}
+
+if [[ ${bt_type} = "RTL"* ]]; then
+	rtk_attach
+	exit 0
+else
+	killall brcm_patchram_plus1
+	fwname=$(/usr/bin/bt_fwname ${uart})
+
+	if [[ ${fwname} = "bcm43438a1.hcd" ]]; then
+		ln -sf /vendor/etc/firmware/nvram_ap6212a.txt /vendor/etc/firmware/nvram.txt
+	elif [[ ${fwname} = "BCM4345C0.hcd" ]]; then
+		ln -sf /vendor/etc/firmware/nvram_ap6255.txt /vendor/etc/firmware/nvram.txt
+	fi
+
+	start-stop-daemon --start --oknodo --pidfile /var/run/hciattach.pid --background --startas \
+/usr/bin/brcm_patchram_plus1 -- --enable_hci --no2bytes --use_baudrate_for_download \
+--tosleep  200000 --baudrate 1500000 --patchram /system/etc/firmware/${fwname} ${uart}
+fi
+
+exit 0

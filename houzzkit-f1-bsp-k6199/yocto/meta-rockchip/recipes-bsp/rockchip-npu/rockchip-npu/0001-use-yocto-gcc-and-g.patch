@@ -1,0 +1,31 @@
+From 90bdf66eacf900a878752a59e63f39e228f38c39 Mon Sep 17 00:00:00 2001
+From: lvsx <lvsx@t-chip.com.cn>
+Date: Thu, 20 Jun 2024 17:41:42 +0800
+Subject: [PATCH] use yocto gcc and g++
+
+---
+ examples/rknn_yolov5_demo/build-linux_RK356X.sh | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/examples/rknn_yolov5_demo/build-linux_RK356X.sh b/examples/rknn_yolov5_demo/build-linux_RK356X.sh
+index 05dacdc..0466f5c 100755
+--- a/examples/rknn_yolov5_demo/build-linux_RK356X.sh
++++ b/examples/rknn_yolov5_demo/build-linux_RK356X.sh
+@@ -1,11 +1,11 @@
+ set -e
+ 
+ TARGET_SOC="rk356x"
+-GCC_COMPILER=aarch64-linux-gnu
++#GCC_COMPILER=aarch64-linux-gnu
+ 
+ export LD_LIBRARY_PATH=${TOOL_CHAIN}/lib64:$LD_LIBRARY_PATH
+-export CC=${GCC_COMPILER}-gcc
+-export CXX=${GCC_COMPILER}-g++
++#export CC=${GCC_COMPILER}-gcc
++#export CXX=${GCC_COMPILER}-g++
+ 
+ ROOT_PWD=$( cd "$( dirname $0 )" && cd -P "$( dirname "$SOURCE" )" && pwd )
+ 
+-- 
+2.17.1
+

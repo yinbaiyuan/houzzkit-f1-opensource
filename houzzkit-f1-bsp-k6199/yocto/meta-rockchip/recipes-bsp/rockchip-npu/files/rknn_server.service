@@ -1,0 +1,11 @@
+[Unit]
+Description=start rknn_server service
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+ExecStart=rknn_server
+
+[Install]
+WantedBy=local-fs.target

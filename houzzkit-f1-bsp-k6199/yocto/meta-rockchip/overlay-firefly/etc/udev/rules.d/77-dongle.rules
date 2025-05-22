@@ -1,0 +1,37 @@
+ACTION=="add|change", SUBSYSTEM=="tty", KERNEL=="ttyUSB*", GOTO="dongle_usb_rules"
+GOTO="dongle_rules_end"
+
+LABEL="dongle_usb_rules"
+
+ENV{ID_VENDOR_ID}=="2c7c", ENV{ID_MODEL_ID}=="0125", GOTO="quectel_dialing_start"
+ENV{ID_VENDOR_ID}=="2c7c", ENV{ID_MODEL_ID}=="0121", GOTO="quectel_dialing_start"
+ENV{ID_VENDOR_ID}=="05c6", ENV{ID_MODEL_ID}=="9215", GOTO="quectel_dialing_start"
+ENV{ID_VENDOR_ID}=="05c6", ENV{ID_MODEL_ID}=="9090", GOTO="quectel_dialing_start"
+ENV{ID_VENDOR_ID}=="05c6", ENV{ID_MODEL_ID}=="9003", GOTO="quectel_dialing_start"
+# RM500Q
+ENV{ID_VENDOR_ID}=="2c7c", ENV{ID_MODEL_ID}=="0800", KERNEL=="ttyUSB2", GOTO="quectel_simdet_start"
+# RM500U
+ENV{ID_VENDOR_ID}=="2c7c", ENV{ID_MODEL_ID}=="0900", KERNEL=="ttyUSB2", GOTO="quectel_simdet_start"
+# EC200S/EC200N
+ENV{ID_VENDOR_ID}=="2c7c", ENV{ID_MODEL_ID}=="6002", GOTO="ec200_dialing_start"
+# EC200A
+ENV{ID_VENDOR_ID}=="2c7c", ENV{ID_MODEL_ID}=="6005", GOTO="ec200_dialing_start"
+# EC200T
+ENV{ID_VENDOR_ID}=="2c7c", ENV{ID_MODEL_ID}=="6026", GOTO="ec200_dialing_start"
+
+GOTO="dongle_rules_end"
+
+LABEL="quectel_simdet_start"
+RUN+="/usr/local/bin/quectel-simdet.sh"
+RUN+="/usr/local/bin/disable_ModemManager.sh"
+
+LABEL="quectel_dialing_start"
+RUN+="/usr/local/bin/disable_ModemManager.sh"
+TAG+="systemd", ENV{SYSTEMD_WANTS}="ec20.service", SYMLINK+="Quectel_modem"
+GOTO="dongle_rules_end"
+
+LABEL="ec200_dialing_start"
+RUN+="/usr/local/bin/ec200.sh init"
+GOTO="dongle_rules_end"
+
+LABEL="dongle_rules_end"

@@ -1,0 +1,35 @@
+From 3bff7253c03dc5b45e39897784bcf1d9495272b8 Mon Sep 17 00:00:00 2001
+From: lvsx <lvsx@t-chip.com.cn>
+Date: Mon, 6 May 2024 14:25:19 +0800
+Subject: [PATCH] drivers: input: fix compile error
+
+---
+ .../input/touchscreen/hxchipset/himax_ic_incell_core.c    | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/input/touchscreen/hxchipset/himax_ic_incell_core.c b/drivers/input/touchscreen/hxchipset/himax_ic_incell_core.c
+index 51c1f005c5f3..fe504f44c098 100644
+--- a/drivers/input/touchscreen/hxchipset/himax_ic_incell_core.c
++++ b/drivers/input/touchscreen/hxchipset/himax_ic_incell_core.c
+@@ -446,13 +446,15 @@ static void himax_mcu_sense_on(uint8_t FlashMode)
+ 
+ 			ret = himax_bus_write(pic_op->adr_i2c_psw_lb[0],
+ 					tmp_data, 1, HIMAX_I2C_RETRY_TIMES);
+-			if (ret < 0)
++			if (ret < 0) {
+ 				E("%s: i2c access fail!\n", __func__);
++			}
+ 
+-				ret = himax_bus_write(pic_op->adr_i2c_psw_ub[0],
++			ret = himax_bus_write(pic_op->adr_i2c_psw_ub[0],
+ 					tmp_data, 1, HIMAX_I2C_RETRY_TIMES);
+-			if (ret < 0)
++			if (ret < 0) {
+ 				E("%s: i2c access fail!\n", __func__);
++			}
+ 
+ 			g_core_fp.fp_register_write(
+ 				pfw_op->addr_safe_mode_release_pw,
+-- 
+2.25.1
+

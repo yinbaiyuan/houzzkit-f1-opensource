@@ -1,0 +1,3 @@
+SUBSYSTEM=="rfkill", ACTION=="change", ATTR{name}=="bt_default", ATTR{type}=="bluetooth", ATTRS{state}=="1", RUN+="/bin/systemctl start bt-attach.service"
+
+SUBSYSTEM=="rfkill", ACTION=="change", ATTR{name}=="bt_default", ATTR{type}=="bluetooth", ATTRS{state}=="0", RUN+="/bin/systemctl stop bt-attach.service"

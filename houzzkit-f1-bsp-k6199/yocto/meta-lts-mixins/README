@@ -1,0 +1,32 @@
+"Mixin" layer for adding Rust 1.68.x toolchain into the Yocto Project LTS.
+
+At the time Kirkstone was released in May 2022 it included Rust 1.59.0,
+and officially Kirkstone supports only that. This thin special-purpose
+mixin layer is meant to provide a working Rust 1.68.x toolchain for
+Kirkstone by backporting the appropriate recipes from the mickledore
+branch of openembedded-core.
+
+Notes:
+- cargo-update-recipe-crates.bbclass has been left out of the backport
+  since it would bump the Python requirement to 3.10, and that is a
+  bigger can of worms than this mixin attempts to address.  It is
+  recommended that recipe crates .inc files are updated using a newer
+  YP release and backported.
+- The newer version of librsvg from mickledore has been backported since
+  there is not a straightforward way to update the existing one via
+  bbappend.  Backporting a working recipe should be easier to maintain
+  than developing an update of the older recipe in kirkstone.  There are
+  no breaking API changes mentioned in the librsvg release notes between
+  the two versions.
+- python3-cryptography has been left alone since the recipe in kirkstone
+  still works with the newer toolchain, and updating it seems to have
+  more potential impact due to upstream API changes and its known to be
+  finicky build.  This may change if sufficient rationale for doing the
+  backport becomes apparent.
+- The intent is to just track any further 1.68.x upgrades that occur in
+  the mickledore branch of oe-core.  Supporting newer versions of Rust
+  or trying to support more than one version of Rust should use a
+  different mixin layer.
+
+Maintainers:
+Scott Murray <scott.murray@konsulko.com>

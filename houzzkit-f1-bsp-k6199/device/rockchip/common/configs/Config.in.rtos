@@ -1,0 +1,46 @@
+#
+
+comment "RTOS should not have kernel"
+	depends on RK_KERNEL_CFG != ""
+
+if RK_KERNEL_CFG = ""
+
+menu "RTOS"
+
+config RK_RTOS
+	bool "RTOS"
+	select RK_UBOOT_SPL
+
+if RK_RTOS
+
+config RK_RTTHREAD_TARGET
+	string "RT-thread target"
+	default "rk3308-32"
+
+config RK_RTOS_UBOOT_CFG
+	string "RTOS u-boot config"
+	default "rk3308-aarch32-amp"
+
+config RK_RTOS_ARCH
+	string
+	default "arm" if RK_RTOS_ARM32
+	default "arm64" if RK_RTOS_ARM64
+
+choice
+	prompt "RTOS arch"
+	default RK_RTOS_ARM32
+
+config RK_RTOS_ARM64
+	bool "arm64"
+	depends on !RK_CHIP_ARM32
+
+config RK_RTOS_ARM32
+	bool "arm"
+
+endchoice
+
+endif
+
+endmenu # RTOS
+
+endif

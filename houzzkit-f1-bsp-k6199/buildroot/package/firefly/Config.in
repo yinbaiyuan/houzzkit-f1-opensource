@@ -1,0 +1,7 @@
+menuconfig BR2_PACKAGE_FIREFLY
+	bool "Firefly packages"
+
+if BR2_PACKAGE_FIREFLY
+source "package/firefly/quectel-CM/Config.in"
+
+endif
